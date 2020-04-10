@@ -13,6 +13,12 @@
 - tool-bar — панель инструментов.
 - flex-tool-bar ― данный плагин служит для настройки предыдущего плагина, где вы можете гибко создать свою панель инструментов
 как настраивать панель [flex-tool-bar setting](https://atom.io/packages/flex-tool-bar).
+- gcc-make-run - компилятор и Make  
+  > Для использования windows  установить [tdm-gcc](https://jmeubank.github.io/tdm-gcc/)
+  > затем прописать в PATH C:\TDM-GCC-64\bin\g++
+
+- platformio-ide-terminal - терминал
+> вызов Ctrl +
 
 ### Вызвать консоль   
 > Ctrl+Shift+P
@@ -31,3 +37,10 @@
 ### Изменение букв заглавные/маленькие   
 > Через Ctrl + K + U, чтоб все буквы стали большими.    
 > Через Ctrl + K + L, чтоб все буквы стали маленькими.
+
+
+строка 1
+start /D "{working_directory}" C:\Windows\System32\cmd.exe /u /k "{launcher}" "{file_path}" {args}
+
+строка 2
+start /D "{working_directory}" C:\Windows\System32\cmd.exe /u /k
