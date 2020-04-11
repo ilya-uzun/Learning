@@ -13,9 +13,6 @@
 - tool-bar — панель инструментов.
 - flex-tool-bar ― данный плагин служит для настройки предыдущего плагина, где вы можете гибко создать свою панель инструментов
 как настраивать панель [flex-tool-bar setting](https://atom.io/packages/flex-tool-bar).
-- gcc-make-run - компилятор и Make  
-  > Для использования windows  установить [tdm-gcc](https://jmeubank.github.io/tdm-gcc/)
-  > затем прописать в PATH C:\TDM-GCC-64\bin\g++
 
 - platformio-ide-terminal - терминал
 > вызов Ctrl +

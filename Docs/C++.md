@@ -160,11 +160,6 @@ Qt Creator `setlocale (LC_ALL, "");` не помогает
 ### Сборка из нескольких файлов  командной строке
 `g++ -c main.cpp add.cpp -o main` - где main.cpp основной файл, add.cpp второй, main имя проекта   
 
-### Компиляция в windows  
-cd путь\к папке
-g++ Work_S1_1.cpp -o Work
-Work -  запустить
-
 ### Системная пауза
 ``` C++
 #include <cstdlib>
