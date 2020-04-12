@@ -11,8 +11,8 @@ fraction make_fraction(int F, int S) {
 
 int main()
 {
-	SetConsoleCP(866);// установка кодовой страницы win-cp 1251 в поток ввода
-	SetConsoleOutputCP(866); // для вывода
+	//SetConsoleCP(866);// установка кодовой страницы win-cp 1251 в поток ввода
+	//SetConsoleOutputCP(866); // для вывода
 
 
 	// статическая инициализация структуры

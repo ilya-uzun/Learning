@@ -5,7 +5,7 @@ using namespace std;
 
 void fraction::Read()
 {
-	cout <<  "\n Введите цену товара -  ";
+	cout <<  "\n Введите цену товара hg - ";
 	cin >> first;
 	cout << "\n Введите количество товара -  ";
 	cin >> second;
