@@ -11,8 +11,11 @@
 ## Cygwin
 
 - запуск файла на исполнение ` ./name.exe`
-
-
+- установка новых пакетов apt-cyg packege inslall но сперва установить установщик:
+```
+wget rawgit.com/transcode-open/apt-cyg/master/apt-cyg
+install apt-cyg /bin
+```
 ## Linux
 
 > ls -la - полный список и все файлы (скрытые)
