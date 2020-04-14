@@ -1,28 +1,28 @@
 #pragma once
 #include"Pair.h"
 
-class Rightangled : public Pair 
+class Rightangled : public Pair
 {
 public:
 
-	Rightangled(void); //âûçûâàåì êîíñòðóêòîð áåç ïàðàìåòðîâ áàçîâîãî êëàññà 
-	Rightangled(int, int, int);//êîíñòðóêòîð ñ ïàðàìåòðàìè áàçîâîãî êëàññà
-	Rightangled(const Rightangled&); //êîíñòðóêòîð 
-	~Rightangled(void); //äåñòðóêòîð
-	// ñåëåêòîð
+	Rightangled(void); //Ð²Ñ‹Ð·Ñ‹Ð²Ð°ÐµÐ¼ ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ð±ÐµÐ· Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð² Ð±Ð°Ð·Ð¾Ð²Ð¾Ð³Ð¾ ÐºÐ»Ð°ÑÑÐ°
+	Rightangled(int, int, int);//ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ñ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð°Ð¼Ð¸ Ð±Ð°Ð·Ð¾Ð²Ð¾Ð³Ð¾ ÐºÐ»Ð°ÑÑÐ°
+	Rightangled(const Rightangled&); //ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€
+	~Rightangled(void); //Ð´ÐµÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€
+	// ÑÐµÐ»ÐµÐºÑ‚Ð¾Ñ€
 	void set_hypatenuse(int);
-	//ìîäèôèêàòîðû 
+	//Ð¼Ð¾Ð´Ð¸Ñ„Ð¸ÐºÐ°Ñ‚Ð¾Ñ€Ñ‹
 	int get_hypatenuse() { return hypatenuse; }
-	// ïåðåãðóçêà îïèðàöèè ïðèñâàèâàíèÿ
+	// Ð¿ÐµÑ€ÐµÐ³Ñ€ÑƒÐ·ÐºÐ° Ð¾Ð¿Ð¸Ñ€Ð°Ñ†Ð¸Ð¸ Ð¿Ñ€Ð¸ÑÐ²Ð°Ð¸Ð²Ð°Ð½Ð¸Ñ
 	Rightangled& operator = (const Rightangled&);
 
-	//ãëîáàëüíûå  îïåðàòîðû ôóíêöèè ââîäà-âûâîäà
+	//Ð³Ð»Ð¾Ð±Ð°Ð»ÑŒÐ½Ñ‹Ðµ  Ð¾Ð¿ÐµÑ€Ð°Ñ‚Ð¾Ñ€Ñ‹ Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¸ Ð²Ð²Ð¾Ð´Ð°-Ð²Ñ‹Ð²Ð¾Ð´Ð°
 	friend std::istream& operator >> (std::istream& in,  Rightangled& rightangled);
 	//int Hypatenuse(Rightangled& rightangled);
 	friend std::ostream& operator << (std::ostream& out, const Rightangled& rightangled);
 
-//àòðèáóòû
+//Ð°Ñ‚Ñ€Ð¸Ð±ÑƒÑ‚Ñ‹
 protected:
-	int hypatenuse; 
+	int hypatenuse;
 
 };

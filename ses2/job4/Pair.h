@@ -4,27 +4,27 @@
 //using namespace std;
 
 class Pair {
-	// êîíòñòğóêòîğ áåç ïàğàìåòğîâ
+	// ĞºĞ¾Ğ½Ñ‚ÑÑ‚Ñ€ÑƒĞºÑ‚Ğ¾Ñ€ Ğ±ĞµĞ· Ğ¿Ğ°Ñ€Ğ°Ğ¼ĞµÑ‚Ñ€Ğ¾Ğ²
 public:
 	Pair(void);
-	//äåñòğóêòîğ
+	//Ğ´ĞµÑÑ‚Ñ€ÑƒĞºÑ‚Ğ¾Ñ€
 	virtual ~Pair(void);
-	//êîíñòğóêòîğ ñ ïàğàìåòğàìè
+	//ĞºĞ¾Ğ½ÑÑ‚Ñ€ÑƒĞºÑ‚Ğ¾Ñ€ Ñ Ğ¿Ğ°Ñ€Ğ°Ğ¼ĞµÑ‚Ñ€Ğ°Ğ¼Ğ¸
 	Pair(int, int);
-	//êîíñòğóêòîğ êîïèğîâàíèÿ
+	//ĞºĞ¾Ğ½ÑÑ‚Ñ€ÑƒĞºÑ‚Ğ¾Ñ€ ĞºĞ¾Ğ¿Ğ¸Ñ€Ğ¾Ğ²Ğ°Ğ½Ğ¸Ñ
 	Pair(const Pair&);
-	//ñåëåêòîğû
+	//ÑĞµĞ»ĞµĞºÑ‚Ğ¾Ñ€Ñ‹
 	int get_first(){ return first; }
 	int get_second() { return second; }
-	//ìîäèôèêàòîğû
+	//Ğ¼Ğ¾Ğ´Ğ¸Ñ„Ğ¸ĞºĞ°Ñ‚Ğ¾Ñ€Ñ‹
 	int set_first(int);
 	int set_second(int);
-	// ïåğåãğóçêà îïèğàöèè ïğèñâàèâàíèÿ
+	// Ğ¿ĞµÑ€ĞµĞ³Ñ€ÑƒĞ·ĞºĞ° Ğ¾Ğ¿Ğ¸Ñ€Ğ°Ñ†Ğ¸Ğ¸ Ğ¿Ñ€Ğ¸ÑĞ²Ğ°Ğ¸Ğ²Ğ°Ğ½Ğ¸Ñ
 	Pair& operator= (const Pair&);
-	//ãëîáàëüíûå  îïåğàòîğû ôóíêöèè ââîäà-âûâîäà
+	//Ğ³Ğ»Ğ¾Ğ±Ğ°Ğ»ÑŒĞ½Ñ‹Ğµ  Ğ¾Ğ¿ĞµÑ€Ğ°Ñ‚Ğ¾Ñ€Ñ‹ Ñ„ÑƒĞ½ĞºÑ†Ğ¸Ğ¸ Ğ²Ğ²Ğ¾Ğ´Ğ°-Ğ²Ñ‹Ğ²Ğ¾Ğ´Ğ°
 	friend std::istream& operator >> (std::istream &in, Pair& pair);
 	friend std::ostream& operator << (std::ostream &out, const Pair& pair);
-//àòğèáóòû
+//Ğ°Ñ‚Ñ€Ğ¸Ğ±ÑƒÑ‚Ñ‹
 protected:
 	int first;
 	int second;

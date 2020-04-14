@@ -10,17 +10,21 @@
 using namespace std;
 
 int main(){
-   setlocale(LC_CTYPE, "rus");
-   // Класс Pair
-   Pair a;
-   cin >> a;
-   cout << a;
+  setlocale(LC_CTYPE, "rus");
+  // Класс Pair
+  Pair a;
+  cout << " Ввод параметров класса Rair - "<< endl;
+  cin >> a;
+  cout << " Вывод результата класса Rair - "<< endl;
+  cout << a;
 
-   Rightangled b;
-   cin >> b;
-   cout << b;
-  
-   return 0;
+  Rightangled b;
+  cout << " Ввод параметров класса Rightangled - "<< endl;
+  cin >> b;
+  cout << " Вывод результата класса Rightangled - "<< endl;
+  cout << b;
+
+  return 0;
 }
 
 // Запуск прою "Файл" > "Открыть" > "Проект" и выберите SLN-файл.

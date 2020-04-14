@@ -2,24 +2,24 @@
 #include <iostream>
 #include"Pair.h"
 
-// консруктор без параметров 
+// РєРѕРЅСЃСЂСѓРєС‚РѕСЂ Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ
 Pair::Pair(void) {
 	first = 0;
 	second = 0;
 }
-//деструктор
+//РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 Pair::~Pair(void){}
-//Конструктор с параметрами
+//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 Pair::Pair(int F, int S) {
 	first = F;
 	second = S;
 }
-//Конструктор копирования 
+//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 Pair::Pair(const Pair& pair) {
 	first = pair.first;
 	second = pair.second;
 }
-// модификаторы
+// РјРѕРґРёС„РёРєР°С‚РѕСЂС‹
 int Pair::set_first(int F) {
 	first = F;
 	return first;
@@ -28,8 +28,8 @@ int Pair::set_second(int S) {
 	second = S;
 	return second;
 }
-// перегрузка операторов присваивания
-Pair& Pair::operator=(const Pair& pair) 
+// РїРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂРѕРІ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
+Pair& Pair::operator=(const Pair& pair)
 {
 	if (&pair == this)return *this;
 	first = pair.first;
@@ -37,19 +37,19 @@ Pair& Pair::operator=(const Pair& pair)
 	return *this;
 }
 
-//глобальная функция для ввода
-std::istream& operator>>(std::istream& in, Pair& pair) 
+//РіР»РѕР±Р°Р»СЊРЅР°СЏ С„СѓРЅРєС†РёСЏ РґР»СЏ РІРІРѕРґР°
+std::istream& operator>>(std::istream& in, Pair& pair)
 {
-	std::cout << "\n введите (first) : ";
+	std::cout << " Р’РІРµРґРёС‚Рµ (first) : ";
 	in >> pair.first;
-	std::cout << "\n введите (second) : ";
+	std::cout << " Р’РІРµРґРёС‚Рµ (second) : ";
 	in >> pair.second;
 	return in;
 }
-//глобальная функция для  вывода
-std::ostream& operator <<(std::ostream& out, const Pair& pair) 
+//РіР»РѕР±Р°Р»СЊРЅР°СЏ С„СѓРЅРєС†РёСЏ РґР»СЏ  РІС‹РІРѕРґР°
+std::ostream& operator <<(std::ostream& out, const Pair& pair)
 {
-	out << "\n first  ="<< pair.first;
-	out << "\n second  ="<< pair.second;
+	out << " Р’С‹РІРѕРґ (first)  = "<< pair.first << std::endl;
+	out << " Р’С‹РІРѕРґ (second)  = "<< pair.second << std::endl;
 	return out;
 }
