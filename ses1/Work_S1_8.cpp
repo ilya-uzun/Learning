@@ -19,14 +19,14 @@ int main()
 	complex<double> a_i(15, 3);
 	complex<double> b_i(7, 7);
 
-	cout << "умножения целых чисел  " << multiply(a, b)<< endl;
-	cout << "умножения комплексных чисел "<< multiply(a_i, b_i) << endl;
+	cout << "умножения целых чисел  " << multiply(a, b) << endl;
+	cout << "умножения комплексных чисел " << multiply(a_i, b_i) << endl;
 	return 0;
 }
 
 // ---------------- Часть 2 ---------------
 
-#include<iostream>
+#include <iostream>
 #include <cstdarg>
 using namespace std;
 
