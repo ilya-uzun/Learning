@@ -63,7 +63,7 @@ l_list* listCreate(int num, ...)
 void listPrint(l_list* begin)
 {
 	if (begin == nullptr) {
-		std::cout << "Список пуст.\n";
+		std::cout << "Список пуст.\n ";
 		return;
 	}
 	cout << "  Конец списка" << endl;
@@ -72,7 +72,7 @@ void listPrint(l_list* begin)
 		cout << begin->data << "    ";
 		begin = begin->next;
 	}
-	cout << begin->data << "  Конец списка"<<endl;
+	cout << begin->data << "  Конец списка " <<endl;
 }
 
 void listAddBegin(l_list*& begin, const char* str)
