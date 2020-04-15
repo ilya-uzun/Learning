@@ -54,5 +54,5 @@ istream& operator >> (istream& in, Time& t) {
 
 //перегрузка глобальной функции-оператора вывода
 ostream& operator << (ostream& out, const Time& t) {
-	return (out << t.min << " : " << t.sec );
+	return (out << t.min << ":" << t.sec );
 }
