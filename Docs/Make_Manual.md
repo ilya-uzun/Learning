@@ -96,3 +96,12 @@ all: $(SOURCES) $(EXECUTABLE)
 $(EXECUTABLE): $(OBJECTS)
 	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
 ```
+
+## Запуск Emacs в новом окне   
+- команда mintty emacs
+~~~ Makefile
+SRC := main.cpp overload.cpp overload.h
+....
+cod:  $(SRC)
+	mintty emacs $(SRC)
+~~~
