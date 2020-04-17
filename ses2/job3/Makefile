@@ -1,7 +1,7 @@
 CC := g++
 JOB = job
 PREFIX := obj/
-SRC := main.cpp Time.cpp
+SRC := main.cpp Time.cpp Time.h
 OBJ := $(patsubst %.cpp, $(PREFIX)%.o, $(SRC))
 
 $(JOB): $(OBJ)
@@ -12,6 +12,9 @@ $(PREFIX)%.o: %.cpp
 
 debug: $(JOB)
 	gdb -x gdb.config $(JOB)
+
+cod:  $(SRC)
+	mintty emacs $(SRC)
 
 clean:
 	rm -rf *.exe $(PREFIX)*.o
