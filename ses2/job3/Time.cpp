@@ -45,9 +45,9 @@ Time Time::operator+(const Time& t) {
 
 //Перегрузка глобальной функции-оператора ввода
 istream& operator >> (istream& in, Time& t) {
-	cout << "min ? ";
+	cout << "min : ";
 	in >> t.min;
-	cout << "sec ? ";
+	cout << "sec : ";
 	in >> t.sec;
 	return in;
 }
