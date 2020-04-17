@@ -16,7 +16,8 @@
 wget rawgit.com/transcode-open/apt-cyg/master/apt-cyg
 install apt-cyg /bin
 ```
-## Linux
+## Linux bash
 
 > ls -la - полный список и все файлы (скрытые)
 > Запуск команды просто - make (в каталоге где нужный Makefile)
+> pwd - показывает в какой директории находишься
