@@ -17,8 +17,8 @@ Time &Time::operator++() {
 
 	int temp = min * 60 + sec;
 	temp++;
-	min = temp / 60;
-	sec = temp % 60;
+	min = temp / 60;// целая часть при делении мин
+	sec = temp % 60;// остаток при делении секунды
 	return *this;
 }
 
