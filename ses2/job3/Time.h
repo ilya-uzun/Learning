@@ -30,7 +30,10 @@ public:
 	Time &operator = (const Time&); // опирация присваивания
 	Time &operator ++ (); //
 	Time operator ++ (int);// постфиксная операция
-	Time operator + (const Time&);
+	// перегрузка вычтания
+	Time operator - (const Time&);
+	// перегрузка сложения через дружественную функцию
+	friend Time operator + (const Time&, const Time&);
 	//Перегрузить операции ввода и вывода объектов с помощью потоков.
 	friend istream &operator >> (istream&in, Time &t);
 	friend ostream &operator << (ostream&out, const Time& t);

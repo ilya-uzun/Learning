@@ -34,12 +34,22 @@ Time Time::operator ++ (int) {
 }
 
 //Перегрузка бинарной операции сложения
-Time Time::operator+(const Time& t) {
-	int temp1 = min * 60 + sec;
-	int temp2 = t.min * 60 + t.sec;
+Time operator+(const Time& x, const Time& y) {
+	int temp1 = x.min * 60 + x.sec;
+	int temp2 = y.min * 60 + y.sec;
 	Time p;
 	p.min = (temp1 + temp2) / 60;
 	p.sec = (temp1 + temp2) % 60;
+	return p;
+}
+
+//Перегрузка бинарной операции сложения
+Time Time::operator-(const Time& t) {
+	int temp1 = min * 60 + sec;
+	int temp2 = t.min * 60 + t.sec;
+	Time p;
+	p.min = (temp1 - temp2) / 60;
+	p.sec = (temp1 - temp2) % 60;
 	return p;
 }
 
