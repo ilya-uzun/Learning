@@ -37,7 +37,7 @@ Rightangled& Rightangled::operator=(const Rightangled& rightangled)
 	second = rightangled.second;
 
 	return *this;
-}
+};
 
 std::istream& operator >> (std::istream& in,  Rightangled& rightangled)
 {

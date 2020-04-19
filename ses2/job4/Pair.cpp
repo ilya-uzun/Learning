@@ -46,7 +46,7 @@ std::istream& operator>>(std::istream& in, Pair& pair)
 	std::cout << " Введите (second) : ";
 	in >> pair.second;
 	return in;
-};
+}
 //глобальная функция для  вывода
 std::ostream& operator <<(std::ostream& out, const Pair& pair)
 {
