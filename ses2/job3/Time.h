@@ -31,7 +31,7 @@ public:
 	Time &operator ++ (); //
 	Time operator ++ (int);// постфиксная операция
 	// перегрузка вычтания
-	Time operator - (const Time&);
+	friend Time operator - (Time&, int valuve);
 	// перегрузка сложения через дружественную функцию
 	friend Time operator + (const Time&, const Time&);
 	//Перегрузить операции ввода и вывода объектов с помощью потоков.

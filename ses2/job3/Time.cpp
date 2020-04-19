@@ -4,7 +4,8 @@
 using namespace std;
 
 // перегрузка операции присваивания
-Time &Time::operator=(const Time &t) {
+Time &Time::operator=(const Time &t)
+{
 	//перегрузка на само присваивание
 	if (&t == this) return *this;
 	min = t.min;
@@ -23,8 +24,8 @@ Time &Time::operator++() {
 }
 
 // перегрузка постфиксная операции инкремент
-Time Time::operator ++ (int) {
-
+Time Time::operator ++ (int)
+{
 	int temp = min * 60 + sec;
 	temp++;
 	Time t(min, sec);
@@ -34,7 +35,8 @@ Time Time::operator ++ (int) {
 }
 
 //Перегрузка бинарной операции сложения
-Time operator+(const Time& x, const Time& y) {
+Time operator+(const Time& x, const Time& y)
+{
 	int temp1 = x.min * 60 + x.sec;
 	int temp2 = y.min * 60 + y.sec;
 	Time p;
@@ -43,18 +45,27 @@ Time operator+(const Time& x, const Time& y) {
 	return p;
 }
 
-//Перегрузка бинарной операции сложения
-Time Time::operator-(const Time& t) {
-	int temp1 = min * 60 + sec;
-	int temp2 = t.min * 60 + t.sec;
+//Перегрузка бинарной операции вычетния объектов
+Time operator-( Time& t, int valuve)
+{
+	int temp = (t.min * 60 + t.sec) - valuve;
 	Time p;
-	p.min = (temp1 - temp2) / 60;
-	p.sec = (temp1 - temp2) % 60;
-	return p;
+	if (temp > 0) // блокировка деления на ноль
+		{
+		p.min = temp / 60;
+		p.sec = temp % 60;
+		}
+		else // при пытке вычесть больше секунд, чем есть выводим 0
+ 		{
+		p.min = 0;
+		p.sec = 0;
+		}
+		return p;
 }
 
 //Перегрузка глобальной функции-оператора ввода
-istream& operator >> (istream& in, Time& t) {
+istream& operator >> (istream& in, Time& t)
+{
 	cout << "min : ";
 	in >> t.min;
 	cout << "sec : ";
