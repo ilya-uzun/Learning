@@ -28,6 +28,11 @@ void Rightangled::set_hypatenuse(int H)
 	hypatenuse = H;
 }
 
+int Rightangled::Hypatenuse()
+{
+	return (hypatenuse = (pow(first, 2) + pow(second, 2)));
+}
+
 //перегрузка операторов присваивания
 Rightangled& Rightangled::operator=(const Rightangled& rightangled)
 {
@@ -35,27 +40,22 @@ Rightangled& Rightangled::operator=(const Rightangled& rightangled)
 	hypatenuse = rightangled.hypatenuse;
 	first = rightangled.first;
 	second = rightangled.second;
-
 	return *this;
 };
 
 std::istream& operator >> (std::istream& in,  Rightangled& rightangled)
 {
-	 //cout << "\n (b hypatenuse)  = ";
-	 //in >> rightangled.hypatenuse;
-	 std::cout << " first  = ";
+	 std::cout << " Введите (first) класса Rightangled = ";
 	 in >> rightangled.first;
-	 std::cout << " second  = ";
+	 std::cout << " Введите (second) класса Rightangled = ";
 	 in >> rightangled.second;
 	 return in;
 }
 
-
 //глобальная функция для  вывода
 std::ostream& operator <<(std::ostream& out, const Rightangled& rightangled) {
-	int hys = (pow(rightangled.first, 2) + pow(rightangled.second, 2));
-	out << " hypatenuse  = " << hys;
-	out << " first  = " << rightangled.first;
-	out << " second  = " << rightangled.second;
+	out << " \n Hypatenuse  = " << rightangled.hypatenuse;
+	out << " \n First  = " << rightangled.first ;
+	out << " \n Second  = " << rightangled.second ;
 	return out;
 }

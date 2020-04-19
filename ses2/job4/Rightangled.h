@@ -13,6 +13,7 @@ public:
 	void set_hypatenuse(int);
 	//модификаторы
 	int get_hypatenuse() { return hypatenuse; }
+	int Hypatenuse ();
 	// перегрузка опирации присваивания
 	 Rightangled& operator = (const Rightangled&);
 
@@ -24,5 +25,4 @@ public:
 //атрибуты
 protected:
 	int hypatenuse;
-
 };

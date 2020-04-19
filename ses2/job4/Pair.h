@@ -13,11 +13,12 @@ public:
 	//конструктор копирования
 	Pair(const Pair&);
 	//селекторы
-	int get_first(){ return first; }
-	int get_second() { return second; }
+	int  get_first(){ return first; }
+	int  get_second() { return second; }
 	//модификаторы
 	int set_first(int);
 	int set_second(int);
+
 	int perimeter ();
 	// перегрузка опирации присваивания
 	Pair& operator= (const Pair&);
