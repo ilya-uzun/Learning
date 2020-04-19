@@ -7,16 +7,15 @@ using namespace std;
 class Vector
 {
 public:
-	Vector(void);// кнтсруктор без параметров 
-	Vector(int);// контруктор копирования
+	Vector(void);// РєРЅС‚СЃСЂСѓРєС‚РѕСЂ Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ
+	Vector(int);// РєРѕРЅС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 public:
-	~Vector(void);// деструктор
-	void Add(Object*);//добавление элемента в вектор
-	friend ostream& operator<< (ostream &out, const Vector&);// операция вывода
+	~Vector(void);// РґРµСЃС‚СЂСѓРєС‚РѕСЂ
+	void Add(Object*);//РґРѕР±Р°РІР»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РІ РІРµРєС‚РѕСЂ
+	friend ostream& operator<< (ostream &out, const Vector&);// РѕРїРµСЂР°С†РёСЏ РІС‹РІРѕРґР°
 private:
-	Object** beg;// указтель на первый элемент вектора
-	int size;// размер
-	int cur;// текущая позиция
+	Object** beg;// СѓРєР°Р·С‚РµР»СЊ РЅР° РїРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚ РІРµРєС‚РѕСЂР°
+	int size;// СЂР°Р·РјРµСЂ
+	int cur;// С‚РµРєСѓС‰Р°СЏ РїРѕР·РёС†РёСЏ
 
 };
-

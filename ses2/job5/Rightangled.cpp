@@ -1,29 +1,29 @@
 #include "Rightangled.h"
 
-// консруктор без параметров
+// РєРѕРЅСЃСЂСѓРєС‚РѕСЂ Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ
 Rightangled::Rightangled(void) :Pair() {
 	hypatenuse = 0;
 }
-//деструктор 
+//РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 Rightangled::~Rightangled(void) {}
 
-//Конструктор с параметрами
+//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 Rightangled::Rightangled(int F, int S, int H) : Pair(F, S) {
 	hypatenuse = H;
 }
 
-//Конструктор копирования 
+//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 Rightangled::Rightangled(const Rightangled& rightangled) {
 	hypatenuse = rightangled.hypatenuse;
 	first = rightangled.first;
 	second = rightangled.second;
 }
-// модификаторы
+// РјРѕРґРёС„РёРєР°С‚РѕСЂС‹
 void Rightangled::set_hypatenuse(int H) {
 	hypatenuse = H;
 }
 
-// перегрузка операторов присваивания
+// РїРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂРѕРІ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
 Rightangled& Rightangled::operator=(const Rightangled& rightangled) {
 	if (&rightangled == this)return *this;
 	hypatenuse = rightangled.hypatenuse;
@@ -44,7 +44,7 @@ istream& operator >> (istream& in, Rightangled& rightangled) {
 };
 
 
-//глобальная функция для  вывода
+//РіР»РѕР±Р°Р»СЊРЅР°СЏ С„СѓРЅРєС†РёСЏ РґР»СЏ  РІС‹РІРѕРґР°
 ostream& operator <<(ostream& out, const Rightangled& rightangled) {
 	int hys = (pow(rightangled.first, 2) + pow(rightangled.second, 2));
 	out << "\n hypatenuse  = " << hys;

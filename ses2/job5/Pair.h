@@ -1,4 +1,4 @@
-#pragma once
+
 #include <string>
 #include <iostream>
 #include "Object.h"
@@ -6,31 +6,30 @@
 using namespace std;
 class Pair:
 public Object{
-	// êîíòñòðóêòîð áåç ïàðàìåòðîâ
+	// ÐºÐ¾Ð½Ñ‚ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ð±ÐµÐ· Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð²
 public:
 	Pair(void);
 public:
-	//äåñòðóêòîð
+	//Ð´ÐµÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€
 	virtual ~Pair(void);
-	void Show(); // ôóíêöèÿ äëÿ ïðîñìîòðîâ êëàññà ñ ïîìîùüþ óêàçàòåëÿ
-	//êîíñòðóêòîð ñ ïàðàìåòðàìè
+	void Show(); // Ñ„ÑƒÐ½ÐºÑ†Ð¸Ñ Ð´Ð»Ñ Ð¿Ñ€Ð¾ÑÐ¼Ð¾Ñ‚Ñ€Ð¾Ð² ÐºÐ»Ð°ÑÑÐ° Ñ Ð¿Ð¾Ð¼Ð¾Ñ‰ÑŒÑŽ ÑƒÐºÐ°Ð·Ð°Ñ‚ÐµÐ»Ñ
+	//ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ñ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð°Ð¼Ð¸
 	Pair(int, int);
-	//êîíñòðóêòîð êîïèðîâàíèÿ
+	//ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ ÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ
 	Pair(const Pair&);
-	//ñåëåêòîðû
+	//ÑÐµÐ»ÐµÐºÑ‚Ð¾Ñ€Ñ‹
 	int get_first() { return first; }
 	int get_second() { return second; }
-	//ìîäèôèêàòîðû
+	//Ð¼Ð¾Ð´Ð¸Ñ„Ð¸ÐºÐ°Ñ‚Ð¾Ñ€Ñ‹
 	int set_first(int);
 	int set_second(int);
-	// ïåðåãðóçêà îïèðàöèè ïðèñâàèâàíèÿ
+	// Ð¿ÐµÑ€ÐµÐ³Ñ€ÑƒÐ·ÐºÐ° Ð¾Ð¿Ð¸Ñ€Ð°Ñ†Ð¸Ð¸ Ð¿Ñ€Ð¸ÑÐ²Ð°Ð¸Ð²Ð°Ð½Ð¸Ñ
 	Pair& operator= (const Pair&);
-	//ãëîáàëüíûå  îïåðàòîðû ôóíêöèè ââîäà-âûâîäà
+	//Ð³Ð»Ð¾Ð±Ð°Ð»ÑŒÐ½Ñ‹Ðµ  Ð¾Ð¿ÐµÑ€Ð°Ñ‚Ð¾Ñ€Ñ‹ Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¸ Ð²Ð²Ð¾Ð´Ð°-Ð²Ñ‹Ð²Ð¾Ð´Ð°
 	friend istream& operator >> (istream& in, Pair& pair);
 	friend ostream& operator << (ostream& out, const Pair& pair);
-	//àòðèáóòû
+	//Ð°Ñ‚Ñ€Ð¸Ð±ÑƒÑ‚Ñ‹
 protected:
 	int first;
 	int second;
 };
-

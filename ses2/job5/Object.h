@@ -4,5 +4,5 @@ public:
 	Object(void);
 public:
 	~Object(void);
-	virtual void Show() = 0;//виртуалная функция 
+	virtual void Show() = 0;//РІРёСЂС‚СѓР°Р»РЅР°СЏ С„СѓРЅРєС†РёСЏ
 };
