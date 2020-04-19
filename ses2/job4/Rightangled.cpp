@@ -1,5 +1,4 @@
 #include "Rightangled.h"
-#include"Pair.h"
 #include <iostream>
 #include <math.h>
 
@@ -29,7 +28,7 @@ void Rightangled::set_hypatenuse(int H)
 	hypatenuse = H;
 }
 
-// перегрузка операторов присваивания
+//перегрузка операторов присваивания
 Rightangled& Rightangled::operator=(const Rightangled& rightangled)
 {
 	if (&rightangled == this)return *this;
@@ -49,7 +48,7 @@ std::istream& operator >> (std::istream& in,  Rightangled& rightangled)
 	 std::cout << " second  = ";
 	 in >> rightangled.second;
 	 return in;
-};
+}
 
 
 //глобальная функция для  вывода

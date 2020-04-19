@@ -2,7 +2,6 @@
 //
 
 #include <iostream>
-#include <clocale>
 #include <string>
 #include"Pair.h"
 #include "Rightangled.h"
@@ -10,7 +9,7 @@
 using namespace std;
 
 int main(){
-  setlocale(LC_CTYPE, "rus");
+
   // Класс Pair
   Pair a;
   cout << " Ввод параметров класса Rair - "<< endl;

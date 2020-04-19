@@ -14,7 +14,7 @@ public:
 	//модификаторы
 	int get_hypatenuse() { return hypatenuse; }
 	// перегрузка опирации присваивания
-	Rightangled& operator = (const Rightangled&);
+	// Rightangled& operator = (const Rightangled&);
 
 	//глобальные  операторы функции ввода-вывода
 	friend std::istream& operator >> (std::istream& in,  Rightangled& rightangled);
