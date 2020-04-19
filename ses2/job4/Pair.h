@@ -18,11 +18,13 @@ public:
 	//модификаторы
 	int set_first(int);
 	int set_second(int);
+	int perimeter ();
 	// перегрузка опирации присваивания
 	Pair& operator= (const Pair&);
 	//глобальные  операторы функции ввода-вывода
 	friend std::istream& operator >> (std::istream &in, Pair& pair);
 	friend std::ostream& operator << (std::ostream &out, const Pair& pair);
+
 //атрибуты
 protected:
 	int first;

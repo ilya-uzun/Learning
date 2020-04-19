@@ -29,6 +29,11 @@ int Pair::set_second(int S) {
 	second = S;
 	return second;
 }
+
+int Pair::perimeter() {
+	return (first*second);
+}
+
 // перегрузка операторов присваивания
 Pair& Pair::operator=(const Pair& pair)
 {

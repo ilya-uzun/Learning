@@ -1,9 +1,7 @@
-﻿// Lab4.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-
+﻿
 #include <iostream>
 #include <string>
-#include"Pair.h"
+//#include"Pair.h"
 #include "Rightangled.h"
 
 using namespace std;
@@ -14,8 +12,8 @@ int main(){
   Pair a;
   cout << " Ввод параметров класса Rair - "<< endl;
   cin >> a;
-  cout << " Вывод результата класса Rair - "<< endl;
-  cout << a;
+  cout << " Вывод результата класса Rair - " << a << endl;
+  //cout <<  "периметр а - " << a.perimeter();
 
   Rightangled b;
   cout << " Ввод параметров класса Rightangled - "<< endl;
