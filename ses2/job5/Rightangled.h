@@ -1,12 +1,10 @@
-#pragma once
-#include "Pair.h"
 
-class Rightangled :
-	public Pair
+#include"Pair.h"
+
+class Rightangled : public Pair
 {
-//Rightangled() : Pair() {}; //вызываем конструктор без параметров базового класса
-//Rightangled() : Pair() { int A, int B; } //конструктор с параметрами базового класса
-//Rightangled(const Rightangled&); //конструктор
+public:
+
 	Rightangled(void); //вызываем конструктор без параметров базового класса
 	Rightangled(int, int, int);//конструктор с параметрами базового класса
 	Rightangled(const Rightangled&); //конструктор
@@ -15,14 +13,16 @@ class Rightangled :
 	void set_hypatenuse(int);
 	//модификаторы
 	int get_hypatenuse() { return hypatenuse; }
-	// перегрузка опирации присваивани¤16+
-	Rightangled& operator = (const Rightangled&);
+	int Hypatenuse ();
+	// перегрузка опирации присваивания
+	 Rightangled& operator = (const Rightangled&);
 
 	//глобальные  операторы функции ввода-вывода
-	friend istream& operator >> (istream& in, Rightangled& rightangled);
+	friend std::istream& operator >> (std::istream& in,  Rightangled& rightangled);
 	//int Hypatenuse(Rightangled& rightangled);
-	friend ostream& operator << (ostream& out, const Rightangled& rightangled);
-	//атрибуты
+	friend std::ostream& operator << (std::ostream& out, const Rightangled& rightangled);
+
+//атрибуты
 protected:
 	int hypatenuse;
 };
