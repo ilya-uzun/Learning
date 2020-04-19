@@ -1,5 +1,4 @@
 #include "Rightangled.h"
-#include"Pair.h"
 #include <iostream>
 #include <math.h>
 

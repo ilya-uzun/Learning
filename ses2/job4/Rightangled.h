@@ -1,4 +1,4 @@
-#pragma once
+
 #include"Pair.h"
 
 class Rightangled : public Pair

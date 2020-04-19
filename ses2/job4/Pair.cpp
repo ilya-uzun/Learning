@@ -3,7 +3,8 @@
 #include"Pair.h"
 
 // консруктор без параметров
-Pair::Pair(void) {
+Pair::Pair(void)
+{
 	first = 0;
 	second = 0;
 }
