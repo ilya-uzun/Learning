@@ -13,6 +13,7 @@
 - tool-bar — панель инструментов.
 - flex-tool-bar ― данный плагин служит для настройки предыдущего плагина, где вы можете гибко создать свою панель инструментов
 как настраивать панель [flex-tool-bar setting](https://atom.io/packages/flex-tool-bar).
+- linter-eslint (Eslint) это утилита, проверяющая стандарты кодирования на JavaScript. Стандарт де-факто в мире JS.
 
 - platformio-ide-terminal - терминал
 > вызов Ctrl +
