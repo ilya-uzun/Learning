@@ -13,6 +13,14 @@
   <div id="app">
     <div class="stats">
       <h3 class="stats__title">Текуще задачи </h3>
+      <taks @task_done="delete_task(index)" :data='data' v-for="(data, index) in tasks" :key="index">
+    </div>
+    <div class="add_task">
+      <div class="add_task__input">
+          <input type="text" v-model="new_task.title" placeholder="Новая задача">
+          <textarea v-model="new_task.desc" placeholder="Описание"></textarea>
+      </div>
+      <button @click="add_task()" class="add_task__btn">+</button>
     </div>
   </div>
   </body>

@@ -1,0 +1,9 @@
+:root{
+  --main : #2F4858;
+  --white: #fff;
+}
+* {
+  padding: 0;
+  margin: 0;
+  transitino: all 0.3s;
+}
