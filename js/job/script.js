@@ -14,12 +14,12 @@ Vue.component('taks', {
     <button @click="task_done()" class="task__done">#</button>
   </div>
   `
-})
+});
 
 var vue = new Vue({
   el: '#app',
-  data:{
-    new_task:{
+  data: {
+    new_task: {
       title: '',
       desc: ''
     },
@@ -36,7 +36,7 @@ var vue = new Vue({
   },
   methods: {
     delete_task(id){
-      this.tasks.splite(id, 1);
+      this.tasks.splice(id, 1);
     },
     add_task() {
         if(this.new_task.title!=''){

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=adge">
     <link rel="stylesheet" href="style.css">
     <script src="https://vuejs.org/js/vue.js"></script>
-    <title></title>
+    <title>Задачи</title>
   </head>
   <body>
   <div id="app">
     <div class="stats">
-      <h3 class="stats__title">Текуще задачи </h3>
-      <taks @task_done="delete_task(index)" :data='data' v-for="(data, index) in tasks" :key="index">
+      <h3 class="stats__title">{{"Текуще задачи: " + tasks.length}} </h3>
+      <taks @task_done="delete_task(index)" :data='data' v-for="(data, index) in tasks" :key="index"></taks>
     </div>
     <div class="add_task">
       <div class="add_task__input">
