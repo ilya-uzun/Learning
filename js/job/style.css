@@ -5,5 +5,35 @@
 * {
   padding: 0;
   margin: 0;
-  transitino: all 0.3s;
+  transition: all 0.3s;
+}
+#app{
+  width: 320px;
+  box-shadow: 0 3px 20px #00000023;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 10px;
+  margin: 20px 0 0 20px;
+  color: var(--main);
+}
+.stars{
+  margin: 0px;
+}
+.stats__title{
+  margin: -10px -10px 10px -10px;
+  padding: 10px;
+  background-color: var(--main);
+  color: var(--main);
+  font-weight: 500;
+}
+.task{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: -10px -10px 10px -10px;
+  padding: 10px;
+  max-width: 100%;
+}
+.task__title{
+  background-color: #2f485811;
 }
