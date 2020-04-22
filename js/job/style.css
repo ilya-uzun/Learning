@@ -37,3 +37,6 @@
 .task__title{
   background-color: #2f485811;
 }
+.task__desc{
+  font-weight: 500;
+}

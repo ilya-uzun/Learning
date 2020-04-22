@@ -1,4 +1,4 @@
-Vue.component('taks'{
+Vue.component('taks', {
   props:['data'],
   methods: {
     task_done(){
@@ -37,8 +37,8 @@ var vue = new Vue({
   methods: {
     delete_task(id){
       this.tasks.splite(id, 1);
-    }
-    add_task(){
+    },
+    add_task() {
         if(this.new_task.title!=''){
           this.tasks.push({
             title: this.new_task.title,
@@ -49,4 +49,4 @@ var vue = new Vue({
         }
     }
  }
-})
+});
