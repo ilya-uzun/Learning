@@ -1,8 +1,15 @@
+var value;
+function toLocal() {
+  value = list.innerHTML;
+  localStorage.setItem('taks', value);
+}
+
 Vue.component("taks", {
   props:["data"],
   methods: {
     task_done() {
       this.$emit('task_done');
+      toLocal(); 
     }
  },
   template: `
@@ -15,6 +22,7 @@ Vue.component("taks", {
   </div>
   `
 });
+
 
 var vue = new Vue({
   el: "#app",
@@ -40,4 +48,8 @@ var vue = new Vue({
         }
     }
  }
+
 });
+if(localStorage.getItem('value')){
+  list.innerHTML = localStorage.getItem('value');
+}

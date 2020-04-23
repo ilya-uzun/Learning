@@ -4,7 +4,6 @@ var todos;
 function toLocal() {
   todos = list.innerHTML;
   localStorage.setItem('todos', todos);
-  
 }
 
 list.addEventListener('click', function (ev){
