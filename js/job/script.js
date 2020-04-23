@@ -11,7 +11,7 @@ Vue.component("taks", {
       <h3 class="task__title">{{data.title}}</h3>
       <p class="task__desc">{{data.desc}}</p>
     </div>
-    <button @click="task_done()" class="task__done">✔️</button>
+    <button @click="task_done()" class="task__done">✅</button>
   </div>
   `
 });
@@ -23,16 +23,7 @@ var vue = new Vue({
       title: '',
       desc: ''
     },
-    tasks: [
-      {
-        title: 'Изучить Vue.js',
-        desc: 'Прочитать книгу "Величие Vue.js 2"'
-      },
-      {
-        title: 'Записать видио',
-        desc: 'Расказать  про vuex и vue-router'
-      },
-    ]
+    tasks: []
   },
   methods: {
     delete_task(id){

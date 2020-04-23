@@ -28,3 +28,8 @@ Lab1_la_work - передвижение по форме объекта с пом
 11. Work_S1_11.cpp - удаляем и добавляем числа в одномерный массив, динамический массив.
 12. Work_S1_12.cpp - SetConsoleCP, SetConsoleOutputCP, создание списка, запись его в файл и удаление.
 >
+
+
+## js - javascript    
+1. job - список дел на Veu без сохранения LocalStorage
+2. job2 - список дел и сохранение в LocalStorage

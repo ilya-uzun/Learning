@@ -53,7 +53,7 @@
 }
 .task__done:hover{
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 6px;
   background-color: rgb(163, 171, 163);
 }
 .add_task{
@@ -81,6 +81,6 @@
 }
 .add_task__btn:hover {
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 20px;
   background-color:   rgb(163, 171, 163);
 }
