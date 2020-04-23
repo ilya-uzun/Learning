@@ -1,5 +1,6 @@
 :root{
-  --main : rgb(40, 220, 4);
+  --main : rgb(38, 165, 9);
+  --text : rgb(20, 74, 8);
   --white: #fff;
 }
 * {
@@ -13,16 +14,16 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
   padding: 10px;
   margin: 20px 0 0 20px;
-  color: var(--main);
+  color: var(--text);
 }
-.stars{
+.stats{
   margin: 0px;
 }
 .stats__title{
   margin: -10px -10px 10px -10px;
   padding: 10px;
   background-color: var(--main);
-  color: var(--main);
+  color: var(--white);
   font-weight: 500;
 }
 .task{
@@ -34,9 +35,52 @@
   padding: 10px;
   max-width: 100%;
 }
+.task:hover{
+  background-color:  rgb(140, 247, 140);
+}
 .task__title{
-  background-color: #2f485811;
+  font-size: 14px;
 }
 .task__desc{
   font-weight: 500;
+  font-size: 16px;
+}
+.task__done{
+  height: 30px;
+  width: 30px !important;
+  border: none;
+  background-color: unset;
+}
+.task__done:hover{
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: rgb(163, 171, 163);
+}
+.add_task{
+  display: flex;
+}
+.add_task__input{
+  width: 80%;
+}
+.add_task__input input, textarea{
+  width: 100%;
+  max-width: 100%;
+  padding: 10px 0 10px 10px;
+  font-family: 'Times New Roman', sans-serif;
+  border: 1px solid  rgb(1, 37, 1);
+  border-radius: 4px;
+}
+.add_task__input input{
+  margin-bottom: 5px;
+}
+.add_task__btn {
+  width: 20%;
+  border: none;
+  margin-left: 20px;
+  background-color: unset;
+}
+.add_task__btn:hover {
+  cursor: pointer;
+  border-radius: 4px;
+  background-color:   rgb(163, 171, 163);
 }
