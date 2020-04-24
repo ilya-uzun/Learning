@@ -8,7 +8,7 @@
             "type": "chrome",
             "name": "Chrome ",
             "request": "launch",
-            "file": "${workspaceFolder}/js/job/index.html"
+            "file": "${workspaceFolder}/js/test/studyJS/index.html"
         }
     ]
 }
