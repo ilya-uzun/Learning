@@ -28,6 +28,7 @@ extends:
 7. document.getElementById('id') - найти элемент в html по id (id Это имя нужного элемента)
 8. document.getElementByClassName('className') - отстеживание по имени класса
 9. document.getElementByName('Name') - отстеживание по имени
+10. node.appendChild();- объекта Node позволяет добавить узел в конец списка дочерних элементов указанного родительского узла.
 
 
 [Справка](http://htmlbook.ru/html)   

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" 
-          content="width=device-width, initial-scale=1.0, maxsimum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=adge">
     <link rel="stylesheet" href="style.css">
     <title>Список задач</title>
@@ -12,8 +12,8 @@
   <div class="wrapper">
     <div class= "header">
       <h2>Список дел</h2>
-      <input type="text" placeholder="Введите новое дело ..." id="toDoEl">
-      <span class="addBtn" onclick="newElement()">Добавить</span>
+      <input type="text" placeholder="Введите новое дело ..." id="newCase" onkeydown="checkKey(event)">
+      <span class="addBtn" onclick="newElement()" ">Добавить</span>
     </div>
     <ul id="list">
     </ul>
