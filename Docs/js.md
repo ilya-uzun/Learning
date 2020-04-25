@@ -25,6 +25,9 @@ extends:
 4. document.write(""); - вывод данных на странице, может выодить теги html 
 5. Math.round(); - округляет число
 6. nameArray.length - вывод до последнего массива  
+7. document.getElementById('id') - найти элемент в html по id (id Это имя нужного элемента)
+8. document.getElementByClassName('className') - отстеживание по имени класса
+9. document.getElementByName('Name') - отстеживание по имени
 
 
 [Справка](http://htmlbook.ru/html)   

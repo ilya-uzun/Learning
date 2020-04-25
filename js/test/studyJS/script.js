@@ -63,29 +63,84 @@ for (var i  = 0; i < colors3.length; i++) {
   }
 
   // switch
-  var res = 3;
-  switch (res) {
-    case 1:
-      alert ("Вариант 1");
-      break;
-    case 2:
-      alert ("Вариант 2");
-      break;  
-    case 3:
-      alert ("Вариант 3");
-      break;
-    default:// срабатывает если другие на сработали       
-  }
+  // var res = 3;
+  // switch (res) {
+  //   case 1:
+  //     alert ("Вариант 1");
+  //     break;
+  //   case 2:
+  //     alert ("Вариант 2");
+  //     break;  
+  //   case 3:
+  //     alert ("Вариант 3");
+  //     break;
+  //   default:// срабатывает если другие на сработали       
+  // }
 
   // создание объктов
   var person = {
     firstName: 'Илья',
-    ege: 32,
+    age: 32,
     children: ['Диана', 'Рита'],
     arress:{//новый объект в объекте
       street:'22',
       city: 'Perm'
+    },
+    NameAge: function () {
+      return this.firstName + ", age is - " + this.age;
     }
   }
   document.write(person.arress.city, "<br>");//вывод адреса
   document.write(person.children[1], "<br>");//вывод массива
+  document.write(person.NameAge(), "<br>");//вывод массива
+
+  // Использование констрктора при создание объекта
+  // var apple = new Object();
+  // apple.color = 'green';
+  // apple.shape = 'round';
+  // //добавление функции
+  // apple.descride = function () {
+  //   return 'An apple is ' + this.color;
+  // }
+  // console.log(apple.descride());
+
+  // консруктор иницилизация сразу после создания
+  // создаём конструктор
+  function Fruit(color, shape) {
+    this.color = color;
+    this.shape = shape;
+  }
+  // создаём новую функцию и передаёт туда значения из конструктор
+ var  melon = new Fruit ('yellow', 'round');
+ var  apple = new Fruit ('red', 'round');
+
+ apple.descride = function () {
+     return 'An apple is ' + this.color;
+   }
+   console.log(apple.descride());
+
+   melon.descride = function () {
+    return 'An apple is ' + this.color;
+  }
+   console.log(melon.descride());
+
+
+   // события связь с html
+
+   function changeColor(newColor) {
+     var element = document.getElementById("text");
+     element.style.color = newColor;
+   }
+
+   // функция для формы
+   function validataForm() {
+     var element = document.forms["myForm"]["fname"].value;
+     var tel = document.forms["myForm"]["ftel"].value;
+     if(element == "") {//Если елемент(поле формы) не чему не равно
+      alert("Имя должно быть заполнено");
+      return false;// если не вернём folse Submit  обновит строницу
+    } else if (tel == ""){
+      alert("Введите телефон");
+      return false;
+    }
+   }
