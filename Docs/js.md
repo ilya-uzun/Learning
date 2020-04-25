@@ -31,8 +31,10 @@ extends:
 10. node.appendChild();- объекта Node позволяет добавить узел в конец списка дочерних элементов указанного родительского узла.
 
 
+
 [Справка](http://htmlbook.ru/html)   
 [Пример](https://www.youtube.com/watch?v=JkYOYtIAwR0)
+[вставка элементов](https://learn.javascript.ru/modifying-document)
 
 ##Переменные
 > Вжно иницилизировать да оспользования иначе ошибка

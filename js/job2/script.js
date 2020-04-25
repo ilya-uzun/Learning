@@ -1,6 +1,7 @@
 
 //Добавление локального хранилища
 var saveLine;
+
 function toLocal() {
   saveLine = list.innerHTML;
   localStorage.setItem('saveLine', saveLine);
@@ -25,29 +26,30 @@ function checkKey(event){
 }
 // Добавление в список дел
 function newElement() {
-  var li = document.createElement('li');
-  var inputValue = document.getElementById('newCase').value;// получаем значения поля ввода
-  var t = document.createTextNode(inputValue);
+  var doc = document;//улучшение произодительности 
+  var li = doc.createElement('li');
+  var inputValue = doc.getElementById('newCase').value;// получаем значения поля ввода
+  var t = doc.createTextNode(inputValue);
   li.appendChild(t);// сформирован элемент списка
 
   if(inputValue == ""){
     alert("Введите ваше дело!")
   }else{
-    document.getElementById('list').appendChild(li);// добавляем в список дел
+    doc.getElementById('list').appendChild(li);// добавляем в список дел
   }
   // очистка значения списка
-  document.getElementById('newCase').value = "";
-  var span = document.createElement('SPAN');//создать новый элемент
-  var txt = document.createTextNode("Удалить");
+  doc.getElementById('newCase').value = "";
+  var span = doc.createElement('SPAN');//создать новый элемент
+  var txt = doc.createTextNode("Удалить");
   span.className = "close";
   span.appendChild(txt);//
   li.appendChild(span);
 
-  var done = document.createElement('span');//создать новый элемент
-  var txtDone = document.createTextNode("Не выполнено");
+  var done = doc.createElement('span');//создать новый элемент
+  var txtDone = doc.createTextNode("Не выполнено ");
   done.className = "done";
-  done.appendChild(txtDone);//
-  li.appendChild(done);
+  li.prepend(txtDone);//
+  li.prepend(done);
 
   toLocal();
 }
