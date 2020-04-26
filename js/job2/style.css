@@ -12,7 +12,7 @@ ul li {
   cursor: pointer;
   position: relative;
   padding: 12px 8px 12px 0px;
-  background: rgb(203, 236, 198);
+  background: rgb(220, 238, 217);
   font-size: 18px;
   transition: 0.2s;
   -webkit-user-select: none;
@@ -29,25 +29,26 @@ ul li:nth-child(odd) {
   background: #ddd;
 } */
 
-/* ul li.checked {
+ ul li.checked:before{
   background: #888;
   color: #fff;
   text-decoration: line-through;
-} */
+}
+ 
+
  .done:before {
   content: "Не выполнено";
   position: inherit; 
   padding: 12px 10px 12px 10px;
+  color: rgb(177, 40, 6);
  }
  .done.checked:before  {
   content: "Выполнено";
-  /* background: rgb(165, 165, 165); */
-  color: blue;
-}
- .done:hover { 
   color: green;
 }
-
+.done:hover::before { 
+  color: rgb(77, 0, 128);
+}
 .close {
   position: absolute;
   right: 0;

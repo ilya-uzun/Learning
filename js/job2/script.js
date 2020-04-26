@@ -8,11 +8,8 @@ function toLocal() {
 }
 var list = document.querySelector('ul');
 list.addEventListener('click', function (ev){
-  if(ev.target.tagName === "SPAN"){// если кликнули по элементу списка LI
-      ev.target.classList.toggle('checked');//Устаноавливаем класс 'checked'элементу списка 
-      txtDone = document.createTextNode("Dыполнено ");
-      // var div2 = ev.target.parentNode;
-      // div2.target.classList.toggle('checked');
+  if(ev.target.tagName === "SPAN"){
+      ev.target.classList.toggle('checked');//Устаноавливаем класс 'checked'элементу списка
       toLocal();
       }else if(ev.target.tagName === "SPAN2"){//
       var div = ev.target.parentNode;
@@ -43,15 +40,8 @@ function newElement() {
   // очистка значения списка
   doc.getElementById('newCase').value = "";
 
-  var done = doc.createElement('span');//создать новый элемент
+  var done = doc.createElement('SPAN');//создать новый элемент
   done.className = "done";
-  // var txtDone;
-  // if(done.checked){
-  //   txtDone = doc.createTextNode("Выполнено ");
-  // }else{
-  //   txtDone = doc.createTextNode("Не выполнено ");
-  // }
-  // done.prepend(txtDone);//
   li.prepend(done);
 
   var span = doc.createElement('SPAN2');//создать новый элемент
