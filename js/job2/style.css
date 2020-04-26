@@ -29,27 +29,26 @@ ul li:nth-child(odd) {
   background: #ddd;
 } */
 
-ul li.checked {
+/* ul li.checked {
   background: #888;
   color: #fff;
   text-decoration: line-through;
-}
-
- .done {
-  position: inherit;
-  right: 0;
-  top: 0;
-  padding: 12px 5px 12px 5px;
+} */
+ .done:before {
+  content: "Не выполнено";
+  position: inherit; 
+  padding: 12px 10px 12px 10px;
  }
- .done:hover {
- 
-  background-color: #0db621;
-  color: white;
-  text-decoration: line-through;
+ .done.checked:before  {
+  content: "Выполнено";
+  /* background: rgb(165, 165, 165); */
+  color: blue;
+}
+ .done:hover { 
+  color: green;
 }
 
 .close {
- 
   position: absolute;
   right: 0;
   top: 0;
