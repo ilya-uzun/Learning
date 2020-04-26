@@ -11,8 +11,8 @@ ul {
 ul li {
   cursor: pointer;
   position: relative;
-  padding: 12px 8px 12px 40px;
-  background: #eee;
+  padding: 12px 8px 12px 0px;
+  background: rgb(203, 236, 198);
   font-size: 18px;
   transition: 0.2s;
   -webkit-user-select: none;
@@ -25,9 +25,9 @@ ul li:nth-child(odd) {
   background: #f9f9f9;
 }
 
-ul li:hover{
+/* ul li:hover{
   background: #ddd;
-}
+} */
 
 ul li.checked {
   background: #888;
@@ -36,10 +36,10 @@ ul li.checked {
 }
 
  .done {
-  position: absolute;
-  right: 100;
-  top: 100;
-  padding: 12px 16px 12px 16px;
+  position: inherit;
+  right: 0;
+  top: 0;
+  padding: 12px 5px 12px 5px;
  }
  .done:hover {
  

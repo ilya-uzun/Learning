@@ -9,9 +9,9 @@ function toLocal() {
 var list = document.querySelector('ul');
 list.addEventListener('click', function (ev){
   if(ev.target.tagName === "LI"){// если кликнули по элементу списка
-      ev.target.classList.toggle('checked');//Устаноавливаем класс 'checked'элементу списка 
+      //ev.target.classList.toggle('checked');//Устаноавливаем класс 'checked'элементу списка 
       toLocal();
-}else if(ev.target.tagName === "SPAN"){//
+      }else if(ev.target.tagName === "SPAN2"){//
       var div = ev.target.parentNode;
       div.remove();
       toLocal();
@@ -39,18 +39,18 @@ function newElement() {
   }
   // очистка значения списка
   doc.getElementById('newCase').value = "";
-  var span = doc.createElement('SPAN');//создать новый элемент
-  var txt = doc.createTextNode("Удалить");
-  span.className = "close";
-  span.appendChild(txt);//
-  li.appendChild(span);
-
+  
   var done = doc.createElement('span');//создать новый элемент
   var txtDone = doc.createTextNode("Не выполнено ");
   done.className = "done";
-  li.prepend(txtDone);//
+  done.prepend(txtDone);//
   li.prepend(done);
 
+  var span = doc.createElement('SPAN2');//создать новый элемент
+  var txt = doc.createTextNode("Удалить");
+  span.className = "close";
+  span.append(txt);//
+  li.append(span);
   toLocal();
 }
 
