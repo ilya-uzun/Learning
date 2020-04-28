@@ -16,7 +16,7 @@ public:
    // здась можно поставить очистку ресурсов
     cout << "Hello form ~Derived()" << endl;
    }
-}
+};
  
 int main ()
 {
