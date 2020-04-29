@@ -11,7 +11,7 @@ public:
 class Derived : public Base
 {
 public:
-   virtual ~Derived()
+  virtual ~Derived()
    {
    // здась можно поставить очистку ресурсов
     cout << "Hello form ~Derived()" << endl;
