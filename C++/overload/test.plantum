@@ -1,0 +1,42 @@
+@startuml
+
+CanTakeDamage <|-- Hero
+Hero <|-- Mage
+Hero <|-- Warrior
+
+enum Spell {
+    FIREBALL
+    THUNDERBOLT
+}
+
+enum Weapon {
+    SWORD
+    BOW
+}
+
+interface CanTakeDamage {
+    TakeDamage(num int) int
+}
+
+class Hero {
+    Name: string
+    HP: int
+    XP: int
+
+    IsDead() bool
+    IsMage() bool
+    IsWarrior() bool
+    Attack(enemy CanTakeDamage)
+}
+
+class Warrior {
+    Weapon: Weapon
+    ArrowsNumber: int
+}
+
+class Mage {
+    Spellbook: []Spell
+    Mana: int
+}
+
+@enduml
