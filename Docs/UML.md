@@ -29,3 +29,9 @@ stop
 +  | public
 -  | private
 `#`| protected
+
+
+### Комментарии
+note left of main #while: Комментарий.
+>  где left - положенеи слево
+> #while - цвет

@@ -1,18 +1,21 @@
-kinparam shadowing false
  @startuml
+note left of main #while: Комментарий.
+note top of Rightangled : Комментарий.
+note top of Object : Комментарий.
+note top of Vector : Комментарий.
 main --> Rightangled
 main --> Pain
 main ..> Object
 main ..> Vector
 Object ..> Vector
 Rightangled --> Pain
-class main{
+class main<<(m,#FF7700)>>{
     Vector v
     Pair a
     Rightangled b
     Object* p = &a
-}
-class Object{
+} 
+abstract class Object{
     + virtual void Show() = 0
 }
 class Rightangled{
