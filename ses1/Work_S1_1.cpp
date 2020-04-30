@@ -22,4 +22,5 @@ double dr = (h - j) / k;
 cout << "type double:" << dr << endl;
 
 return 0;
+
 }
