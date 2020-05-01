@@ -9,6 +9,14 @@ Rightangled::Rightangled(void):Pair() {
 //деструктор
 Rightangled::~Rightangled(void) {}
 
+void Rightangled::Show()
+{
+	std::cout<<"\n first"<<first;
+	std::cout<<"\n second"<<second;
+	std::cout<<"\n hypatenuse"<<hypatenuse;
+	std::cout<<"\n";
+}
+
 //Конструктор с параметрами
 Rightangled::Rightangled(int F, int S, int H): Pair( F, S)
 {

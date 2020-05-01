@@ -2,12 +2,16 @@
 #include <iostream>
 //using namespace std;
 
-class Pair {
+class Pair:
+	public Object
+ {
 	// контструктор без параметров
 public:
 	Pair(void);
+public:
 	//деструктор
 	virtual ~Pair(void);
+	void Show();//функция для просмотра атрибутов класса с помощью указателя
 	//конструктор с параметрами
 	Pair(int, int);
 	//конструктор копирования

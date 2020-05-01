@@ -8,7 +8,8 @@ main --> Pain
 main ..> Object
 main ..> Vector
 Object ..> Vector
-Rightangled --> Pain
+Object ..> Pain 
+Pain -->  Rightangled
 class main<<(m,#FF7700)>>{
     Vector v
     Pair a
@@ -18,18 +19,6 @@ class main<<(m,#FF7700)>>{
 abstract class Object{
     + virtual void Show() = 0
 }
-class Rightangled{
-    .. protected varible ..
-    # int hypatenuse
-    .. public metod ..
-    + void set_hypatenuse(int)
-    + int get_hypatenuse() 
-    + int Hypatenuse()
-    .. friend metod ..
-    + Rightangled& operator = (const Rightangled&)
-    + friend istream& operator >> (istream& in,  Rightangled& rightangled)
-    + friend ostream& operator << (ostream& out, const Rightangled& rightangled)
-}
 class Pain{
     .. public varible ..
     + int  perimeter
@@ -37,6 +26,7 @@ class Pain{
     # int first
     # int second
     .. public metod ..
+    + void Show()
     + int  get_first()
     + int  get_second() 
     + int  set_first()
@@ -45,6 +35,19 @@ class Pain{
     .. friend metod ..
     + friend istream& operator >> (istream &in, Pair& pair)
     + friend ostream& operator << (ostream &out, const Pair& pair)
+}
+class Rightangled{
+    .. protected varible ..
+    # int hypatenuse
+    .. public metod ..
+    + void Show()
+    + void set_hypatenuse(int)
+    + int get_hypatenuse() 
+    + int Hypatenuse()
+    .. friend metod ..
+    + Rightangled& operator = (const Rightangled&)
+    + friend istream& operator >> (istream& in,  Rightangled& rightangled)
+    + friend ostream& operator << (ostream& out, const Rightangled& rightangled)
 }
 class Vector{
     .. privat varible ..

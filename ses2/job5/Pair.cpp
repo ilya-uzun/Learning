@@ -11,6 +11,12 @@ Pair::Pair(void)
 //деструктор
 Pair::~Pair(void){}
 //Конструктор с параметрами
+void Piar::Show()
+{
+	std::cout<<"\n first"<<first;
+	std::cout<<"\n second"<<second;
+	std::cout<<"\n";
+}
 Pair::Pair(int F, int S) {
 	first = F;
 	second = S;
