@@ -11,10 +11,10 @@ Rightangled::~Rightangled(void) {}
 
 void Rightangled::Show()
 {
-	std::cout<<"\n first"<<first;
-	std::cout<<"\n second"<<second;
-	std::cout<<"\n hypatenuse"<<hypatenuse;
-	std::cout<<"\n";
+	std::cout<<" Rightangled::Show() "<< std::endl;
+	std::cout<<" first - "<<first << std::endl;
+	std::cout<<" second - "<<second << std::endl;
+	std::cout<<" hypatenuse - "<<hypatenuse << std::endl;
 }
 
 //Конструктор с параметрами

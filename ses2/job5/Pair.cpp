@@ -13,9 +13,10 @@ Pair::~Pair(void){}
 //Конструктор с параметрами
 void Pair::Show()
 {
-	std::cout<<"\n first"<<first;
-	std::cout<<"\n second"<<second;
-	std::cout<<"\n";
+	std::cout<<" Pair::Show() "<< std::endl;
+	std::cout<<" first - "<< first << std::endl;
+	std::cout<<" second - "<< second << std::endl;
+	std::cout<<std::endl;
 }
 Pair::Pair(int F, int S) {
 	first = F;
@@ -52,7 +53,7 @@ Pair& Pair::operator=(const Pair& pair)
 //глобальная функция для ввода
 std::istream& operator>>(std::istream& in, Pair& pair)
 {
-	std::cout << " Input (first) class Pair = ";// ввод first 
+	std::cout << " Input (first) class Pair : ";// ввод first 
 	in >> pair.first;
 	std::cout << " Input (second) class Pair : ";
 	in >> pair.second;
