@@ -57,6 +57,7 @@ std::istream& operator>>(std::istream& in, Pair& pair)
 	in >> pair.first;
 	std::cout << " Input (second) class Pair : ";
 	in >> pair.second;
+	std::cout << std::endl;
 	return in;
 }
 //глобальная функция для  вывода

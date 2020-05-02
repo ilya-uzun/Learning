@@ -57,6 +57,7 @@ std::istream& operator >> (std::istream& in,  Rightangled& rightangled)
 	 in >> rightangled.first;
 	 std::cout << " Input (second) class Rightangled = "; // ввод second
 	 in >> rightangled.second;
+	 std::cout << std::endl;
 	 return in;
 }
 
