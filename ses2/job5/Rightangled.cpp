@@ -53,9 +53,9 @@ Rightangled& Rightangled::operator=(const Rightangled& rightangled)
 
 std::istream& operator >> (std::istream& in,  Rightangled& rightangled)
 {
-	 std::cout << " Введите (first) класса Rightangled = ";
+	 std::cout << " Input (first) class Rightangled = ";// ввод first
 	 in >> rightangled.first;
-	 std::cout << " Введите (second) класса Rightangled = ";
+	 std::cout << " Input (second) class Rightangled = "; // ввод second
 	 in >> rightangled.second;
 	 return in;
 }

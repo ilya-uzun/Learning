@@ -1,7 +1,7 @@
-﻿
+﻿#pragma once
 #include "Pair.h"
 #include "Rightangled.h"
-#include "Object.h"
+//#include "Object.h"
 #include "Vector.h"
 #include <iostream>
 #include  <string>
@@ -14,11 +14,11 @@ int main()
     cin >> a;
     cout<<a<<endl;//вывод с помощью перегруженной операции
     Object* p = &a; // стаим указатель на объект класса  Pair
-    p ->Shon();//вывод с помощью метода Show() и указателя
+    p ->Show();//вывод с помощью метода Show() и указателя
     Rightangled b; //  объект класса Rightangled
     cin >> b; 
     p=&b;
-    p ->Shon();
+    p ->Show();
 
     v.Add(p);// добавляем объект в вектор
     p = &b; // ставим указатель на объект класса Rightangled
@@ -26,4 +26,3 @@ int main()
     cout << v;// вывод вектора
 
 }
-

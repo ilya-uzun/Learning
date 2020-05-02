@@ -1,8 +1,7 @@
-
+#pragma once
 #include"Pair.h"
 
-class Rightangled : 
-public Pair
+class Rightangled : public Pair
 {
 public:
 	Rightangled(void); //вызываем конструктор без параметров базового класса

@@ -6,7 +6,7 @@ Vector::Vector(void) {
 	cur = 0;
 }
 //деструктор
-Vector::Vector(void) {
+Vector::~Vector(void) {
 	if (beg != 0)delete[] beg;
 	beg = 0;
 }

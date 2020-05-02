@@ -1,9 +1,10 @@
+#pragma once
 #include <string>
 #include <iostream>
+#include "Object.h"
 //using namespace std;
 
-class Pair:
-	public Object
+class Pair : public Object
  {
 	// контструктор без параметров
 public:
