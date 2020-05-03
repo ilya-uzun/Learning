@@ -63,7 +63,7 @@ ostream& operator<<(ostream& out,const Vector& a)
 	for (int i = 0; i < a.len(); ++i)
 		out << a.data[i]<< " ";
 	return out;
-
+}
 istream& operator>>(istream& in, Vector& a) 
 {
 	for (int i = 0; i < a.len(); ++i)

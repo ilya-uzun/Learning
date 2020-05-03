@@ -7,16 +7,16 @@ struct Node
 	Node* pNext;
 };
 
-class Vector // Определяем односвязный список
+class List // Определяем односвязный список
 {
 private:
 	Node* pFirst;
 
 public:
-	Vector() : pFirst(NULL) {}
+	List() : pFirst(NULL) {}
 
 	// метод добавления записи
-	Vector& push_front(int);
+	List& push_front(int);
 
 	// Перегрузка операции обращения по индексу
 	int& operator [] (int);
