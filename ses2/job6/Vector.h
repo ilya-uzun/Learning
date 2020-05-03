@@ -2,6 +2,24 @@
 #include <iostream>
 using namespace std;
 
+class Iterator
+{
+	friend class Vector;//дружеский класс
+public:
+	Iterator() { elem = 0; }//конструктор без параметров
+	Iterator(const Iterator& it) { elem = it.elem; }//консруктор копирования
+	//перегруженные операции сравнения
+	bool operator ==(const Iterator& it) { return elem == it.elem; }
+	bool operator !=(const Iterator& it) { return elem != it.elem; };
+	//перегруженная операция  инкремент
+	void operator ++() { ++elem; };
+	//перегруженная операция декремент
+	void operator --() { --elem; }
+	//перегруженная операция разыменованя
+	int& operator *() const { return *elem; }
+private:
+	int* elem;// указатель на элемент типа int
+};
 class Vector
 {
 public:
@@ -12,26 +30,9 @@ public:
 	//конструктор с параметрами
 	~Vector();
 	//деструктор
-	
+
 	// Объявление внутреннего класса-итератора
-	class Iterator
-	{
-		friend class Vector;//дружеский класс
-	public:
-		Iterator() { elem = 0; }//конструктор без параметров
-		Iterator(const Iterator& it) { elem = it.elem; }//консруктор копирования
-		//перегруженные операции сравнения
-		bool operator ==(const Iterator& it) { return elem == it.elem; }
-		bool operator !=(const Iterator& it) { return elem != it.elem; };
-		//перегруженная операция  инкремент
-		void operator ++() { ++elem; };
-		//перегруженная операция декремент
-		void operator --() { --elem; }
-		//перегруженная операция разыменованя
-		int& operator *() const { return *elem; }
-	private:
-		int* elem;// указатель на элемент типа int
-	};
+
 
 	Vector& operator=(const Vector& a);
 	//операция присваивания

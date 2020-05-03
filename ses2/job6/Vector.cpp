@@ -53,20 +53,20 @@ Vector Vector::operator + (const int k)
 //операция для присваивания констаты
 
 //операция для получения длины вектора
-int& Vector::operator ()() 
+int Vector::operator ()() 
 {
-	return len();
+	return size;
 }
 //операция ввода-вывода
 ostream& operator<<(ostream& out,const Vector& a) 
 {
-	for (int i = 0; i < a.len(); ++i)
+	for (int i = 0; i < a.size; ++i)
 		out << a.data[i]<< " ";
 	return out;
 }
 istream& operator>>(istream& in, Vector& a) 
 {
-	for (int i = 0; i < a.len(); ++i)
+	for (int i = 0; i < a.size; ++i)
 		in >> a.data[i];
 	return in;
 }
