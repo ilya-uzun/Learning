@@ -24,10 +24,11 @@ Vector::~Vector() {
 	data = 0;
 }
 //операция присваивания
-Vector& Vector::operator = (const Vector& a) {
-	if (this == &a)return *this;
+Vector& Vector::operator = (const Vector& a) 
+{
+	if (this == &a) return *this;
 	size = a.size;
-	if (data != 0)delete[]data;
+	if (data != 0) delete[]data;
 	data = new int[size];
 	for (int i = 0; i < size; i++)
 		data[i] = a.data[i];
@@ -36,34 +37,38 @@ Vector& Vector::operator = (const Vector& a) {
 	return *this;
 }
 //операция доспупа  по индексу
-Vector Vector::operator + (const int k) {
+int& Vector::operator[](int index)
+{
+if (index<size) return data[index];
+else std::cout<<"\nError! Index>size";
+}
+//операция для добавления константы
+Vector Vector::operator + (const int k) 
+{
 	Vector temp(size);
 	for (int i = 0; i < size; i++)
 		temp.data[i] += data[i]+k;
 	return temp;
 }
 //операция для присваивания констаты
-int Vector::operator()() {
+
+//операция для получения длины вектора
+int& Vector::operator ()() 
+{
 	return len();
 }
-//операция для получения длины вектора
-int& Vector::operator[](int index) {
-	if (index < size) return data[index];
-	else cout << "\n Error! Index>size";
-}
 //операция ввода-вывода
-ostream& operator<<(ostream& out,const Vector& a) {
+ostream& operator<<(ostream& out,const Vector& a) 
+{
 	for (int i = 0; i < a.len(); ++i)
 		out << a.data[i]<< " ";
 	return out;
 
-istream& operator>>(istream& in, Vector& a) {
+istream& operator>>(istream& in, Vector& a) 
+{
 	for (int i = 0; i < a.len(); ++i)
 		in >> a.data[i];
 	return in;
 }
 
-
-
-///----///----///----///----///----///----///----///----///
 
