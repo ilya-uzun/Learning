@@ -1,7 +1,7 @@
 #include "Vector.h"
 #include <iostream>
 
-//rтруктор с параметрами 
+//rС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 Vector::Vector(int s, int k) {
 	size = s;
 	data = new int[size];
@@ -9,7 +9,7 @@ Vector::Vector(int s, int k) {
 	beg.elem = &data[0];
 	end.elem = &data[size];
 }
-//конструкор копирования 
+//РєРѕРЅСЃС‚СЂСѓРєРѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ 
 Vector::Vector(const Vector& a) {
 	size = a.size;
 	data = new int[size];
@@ -18,12 +18,12 @@ Vector::Vector(const Vector& a) {
 	beg = a.beg;
 	end = a.end;
 }
-//деструктор
+//РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 Vector::~Vector() {
 	delete[]data;
 	data = 0;
 }
-//операция присваивания
+//РѕРїРµСЂР°С†РёСЏ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
 Vector& Vector::operator = (const Vector& a) {
 	if (this == &a)return *this;
 	size = a.size;
@@ -35,23 +35,23 @@ Vector& Vector::operator = (const Vector& a) {
 	end = a.end;
 	return *this;
 }
-//операция доспупа  по индексу
+//РѕРїРµСЂР°С†РёСЏ РґРѕСЃРїСѓРїР°  РїРѕ РёРЅРґРµРєСЃСѓ
 Vector Vector::operator + (const int k) {
 	Vector temp(size);
 	for (int i = 0; i < size; i++)
 		temp.data[i] += data[i]+k;
 	return temp;
 }
-//операция для присваивания констаты
+//РѕРїРµСЂР°С†РёСЏ РґР»СЏ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ РєРѕРЅСЃС‚Р°С‚С‹
 int Vector::operator()() {
 	return len();
 }
-//операция для получения длины вектора
+//РѕРїРµСЂР°С†РёСЏ РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ РґР»РёРЅС‹ РІРµРєС‚РѕСЂР°
 int& Vector::operator[](int index) {
 	if (index < size) return data[index];
 	else cout << "\n Error! Index>size";
 }
-//операция ввода-вывода
+//РѕРїРµСЂР°С†РёСЏ РІРІРѕРґР°-РІС‹РІРѕРґР°
 ostream& operator<<(ostream& out,const Vector& a) {
 	for (int i = 0; i < a.len(); ++i)
 		out << a.data[i]<< " ";
@@ -66,5 +66,4 @@ istream& operator>>(istream& in, Vector& a) {
 
 
 ///----///----///----///----///----///----///----///----///
-
 
