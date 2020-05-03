@@ -31,9 +31,6 @@ public:
 	~Vector();
 	//деструктор
 
-	// Объявление внутреннего класса-итератора
-
-
 	Vector& operator=(const Vector& a);
 	//операция присваивания
 	int& operator[](int index);
