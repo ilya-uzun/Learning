@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-using namespace std;
+//using namespace std;
 // template <class T>
 // class Iterator
 // {
@@ -26,9 +26,9 @@ class Vector
 {
 public:
 	//конструктор с параметрами: выделяет паметь под s элемент и заполняет ихзначение к
-	Vector(int s, T k = 0);
+	 Vector(int s,T k);
 	//конструкор копирования 
-	Vector(const Vector<T> &a);
+	 Vector(const Vector<T> &a);
 	//конструктор с параметрами
 	~Vector();
 	//деструктор
@@ -40,8 +40,8 @@ public:
 	//операция для добавления константы
 	int operator()();
 	// перегруженные операции ввода-вывода
-	friend ostream& operator << <>(ostream& out, const Vector<T> &a);
-	friend istream& operator >> <>(istream& in, Vector<T> &a);
+	template <typename T1> friend std::ostream& operator << (std::ostream& out, const Vector<T1> &a);
+	template <typename T1> friend std::istream& operator >> (std::istream& in, Vector<T1> &a);
 
 	//Iterator first() { return beg; } //возвращает указатель на первый элемент
 	//Iterator last() { return end; } // возвращает ук. следующий за последним

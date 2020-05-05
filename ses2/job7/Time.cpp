@@ -26,14 +26,14 @@ t+=kt;
 Time temp(t/60,t%60);
 return temp;
 }
-ostream&operator<<(ostream&out, const Time&t)
+std::ostream&operator<<(std::ostream&out, const Time&t)
 {
 out<<t.min<<" : "<<t.sec;
 return out;
 }
-istream&operator>>(istream&in,Time&t)
+std::istream&operator>>(std::istream&in,Time&t)
 {
-cout<<"\nmin?"; in>>t.min;
-cout<<"\nsec?";in>>t.sec;
+std::cout<<"\nmin?"; in>>t.min;
+std::cout<<"\nsec?";in>>t.sec;
 return in;
 }

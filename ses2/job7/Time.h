@@ -1,5 +1,5 @@
 #include <iostream>
-using namespace std;
+
 class Time
 {
 public:
@@ -9,8 +9,8 @@ Time(const Time&);
 Time&operator=(const Time&);
 Time operator+(Time k);
 //перегруженные операции ввода-вывода
-friend ostream& operator<< (ostream& out, const Time&);
-friend istream& operator>> (istream& in, Time&);
+friend std::ostream& operator<< (std::ostream& out, const Time&);
+friend std::istream& operator>> (std::istream& in, Time&);
 public:
 virtual ~Time(void){};
 private:
