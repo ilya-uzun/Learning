@@ -1,47 +1,55 @@
 #pragma once
 #include <iostream>
+using namespace std;
 
-struct Node
+class Iterator
 {
-	int data;
-	Node* pNext;
+	friend class Vector;//дружеский класс
+public:
+	Iterator() { elem = 0; }//конструктор без параметров
+	Iterator(const Iterator& it) { elem = it.elem; }//консруктор копирования
+	//перегруженные операции сравнения
+	bool operator ==(const Iterator& it) { return elem == it.elem; }
+	bool operator !=(const Iterator& it) { return elem != it.elem; };
+	//перегруженная операция  инкремент
+	void operator ++() { ++elem; };
+	//перегруженная операция декремент
+	void operator --() { --elem; }
+	//перегруженная операция разыменованя
+	int& operator *() const { return *elem; }
+private:
+	int* elem;// указатель на элемент типа int
 };
 
-class Vector // Определяем односвязный список
+class Vector
 {
-private:
-	Node* pFirst;
-
 public:
-	Vector() : pFirst(NULL) {}
+	//конструктор с параметрами: выделяет паметь под s элемент и заполняет ихзначение к
+	Vector(int s, int k = 0);
+	//конструкор копирования 
+	Vector(const Vector& a);
+	//конструктор с параметрами
+	~Vector();
+	//деструктор
 
-	// метод добавления записи
-	Vector& push_front(int);
+	Vector& operator=(const Vector& a);
+	//операция присваивания
+	int& operator[](int index);
+	//операция доступа по индексу
+	Vector operator+(const int k);
+	//операция для добавления константы
+	int operator()();
+	// перегруженные операции ввода-вывода
+	friend ostream& operator << (ostream& out, const Vector& a);
+	friend istream& operator >> (istream& in, Vector& a);
 
-	// Перегрузка операции обращения по индексу
-	int& operator [] (int);
+	Iterator first() { return beg; } //возвращает указатель на первый элемент
+	Iterator last() { return end; } // возвращает ук. следующий за последним
 
-	// Объявление внутреннего класса-итератора
-	class Iterator
-	{
-	protected:
-		Node* iter;
+private:
+	int size;//размер вектора
+	int* data;// указатель на денамический массив значеий вектора
+	Iterator beg;//указатель на первый элемент
+	Iterator end;// уазатель на элемент следущий за последним
 
-	public:
-		Iterator(Node* node) : iter(node) {}
-
-		// перегрузка инкрементов
-		Iterator& operator ++ ();
-		Iterator operator ++ (int);
-
-		// перегрузка сравнения итераторов
-		bool operator != (Iterator right);
-
-		// получение ссылки на запись
-		int& get();
-	};
-
-	// Получение итераторов
-	Iterator start();
-	Iterator end();
 };
