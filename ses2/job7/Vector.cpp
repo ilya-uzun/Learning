@@ -2,29 +2,33 @@
 #include <iostream>
 
 //rтруктор с параметрами
-Vector::Vector(int s, int k) {
+template <class T>
+Vector<T>::Vector(int s, T k) {
 	size = s;
 	data = new int[size];
 	for (int i = 0; i < size; i++) data[i] = k;
-	beg.elem = &data[0];
-	end.elem = &data[size];
+	// beg.elem = &data[0];
+	// end.elem = &data[size];
 }
-//конструкор копирования 
-Vector::Vector(const Vector& a) {
+//конструкор копирования
+template <class T> 
+Vector<T>::Vector(const Vector& a) {
 	size = a.size;
 	data = new int[size];
 	for (int i = 0; i < size; i++) 
 		data[i] = a.data[i];
-	beg = a.beg;
-	end = a.end;
+	// beg = a.beg;
+	// end = a.end;
 }
 //деструктор
-Vector::~Vector() {
+template <class T>
+Vector<T>::~Vector() {
 	delete[]data;
 	data = 0;
 }
 //операция присваивания
-Vector& Vector::operator = (const Vector& a) 
+template <class T>
+Vector<T> &Vector<T>::operator = (const Vector<T> &a) 
 {
 	if (this == &a) return *this;
 	size = a.size;
@@ -32,18 +36,20 @@ Vector& Vector::operator = (const Vector& a)
 	data = new int[size];
 	for (int i = 0; i < size; i++)
 		data[i] = a.data[i];
-	beg = a.beg;
-	end = a.end;
+	// beg = a.beg;
+	// end = a.end;
 	return *this;
 }
 //операция доспупа  по индексу
-int& Vector::operator[](int index)
+template <class T>
+T& Vector<T>::operator[](int index)
 {
 if (index<size) return data[index];
 else std::cout<<"\nError! Index>size";
 }
 //операция для добавления константы
-Vector Vector::operator + (const int k) 
+template <class T>
+Vector<T> Vector<T>::operator + (const T k) 
 {
 	Vector temp(size);
 	for (int i = 0; i < size; i++)
@@ -53,18 +59,21 @@ Vector Vector::operator + (const int k)
 //операция для присваивания констаты
 
 //операция для получения длины вектора
-int Vector::operator ()() 
+template <class T>
+int Vector<T>::operator ()() 
 {
 	return size;
 }
 //операция ввода-вывода
-ostream& operator<<(ostream& out,const Vector& a) 
+template <class T>
+ostream& operator<<(ostream& out,const Vector<T> &a) 
 {
 	for (int i = 0; i < a.size; ++i)
 		out << a.data[i]<< " ";
 	return out;
 }
-istream& operator>>(istream& in, Vector& a) 
+template <class T>
+istream& operator>>(istream& in, Vector<T> &a) 
 {
 	for (int i = 0; i < a.size; ++i)
 		in >> a.data[i];
