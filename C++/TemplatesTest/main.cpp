@@ -39,23 +39,24 @@ MyNumber <float> mf; // объект mf работает с типом float
 
 int d = 8;
 int dd = 9;
-double z;
+double z = 1.1;
 float x = 9.3f;
-long int t;
-float f;
+long int t = 2;
+float f =5;
 // умножение числа на 2
-; // d = 16
+// d = 16
 cout << mi.Mult2(d) << endl;
-mf.Mult2(x); // x = 18.6
-
+; // x = 18.6
+cout <<mf.Mult2(x) << endl;
 // возведение числа в квадрат
-
-dd = mi.MySquare(9); // dd = 81 - целое число
-cout << mi.Mult2(d) << endl;
-z = mf.MySquare(1.1); // z = 1.21000... - вещественное число
-
+// dd = 81 - целое число
+// z = 1.21000... - вещественное число
+cout << mi.MySquare(dd) << endl;
+cout << mf.MySquare(z) << endl;
 // деление чисел
-t = mi.DivNumbers(5, 2); // t = 2 - деление целых чисел
-f = mf.DivNumbers(5, 2); // f = 2.5 - деление вещественных чисел
+// t = 2 - деление целых чисел
+// f = 2.5 - деление вещественных чисел
+cout << mi.DivNumbers(t, 2) << endl;
+cout << mf.DivNumbers(f, 2) << endl;
 cout << "end";
 }
