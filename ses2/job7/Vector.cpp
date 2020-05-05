@@ -66,14 +66,14 @@ int Vector<T>::operator ()()
 }
 //операция ввода-вывода
 template <class T>
-ostream& operator<<(ostream& out,const Vector<T> &a) 
+ostream& operator<< (ostream& out,const Vector<T> &a) 
 {
 	for (int i = 0; i < a.size; ++i)
 		out << a.data[i]<< " ";
 	return out;
 }
 template <class T>
-istream& operator>>(istream& in, Vector<T> &a) 
+istream& operator>> (istream& in, Vector<T> &a) 
 {
 	for (int i = 0; i < a.size; ++i)
 		in >> a.data[i];
