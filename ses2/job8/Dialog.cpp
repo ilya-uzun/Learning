@@ -1,3 +1,4 @@
+#include "Dialog.h"
 //конструктор
 Dialog::Dialog(void):Vector()
 {
@@ -39,54 +40,56 @@ void Dialog::GetEvent(TEvent &event)
 }
 
 int Dialog::Execute()
-{ TEvent event;
-do{
-EndState=0;
- GetEvent(event); //получить событие
- HandleEvent(event); //обработать событие
-}
- while(!Valid());
- return EndState;
-}
+    { TEvent event;
+    do{
+        EndState=0;
+        GetEvent(event); //получить событие
+        HandleEvent(event); //обработать событие
+      }
+    while(!Valid());
+     return EndState;
+    }
 int Dialog::Valid()
-{ if (EndState == 0) return 0;
- else return 1;
+{   
+    if (EndState == 0) return 0;
+    else return 1;
 }
+
 void Dialog::ClearEvent(TEvent& event)
 {
- event. what= evNothing;//пустое событие
+    event. what= evNothing;//пустое событие
 }
 void Dialog::EndExec()
 {
- EndState= 1;
+    EndState= 1;
 }
 //обработчик событий
 void Dialog::HandleEvent(TEvent& event)
- {
- if( event.what == evMessage)
- {
- switch( event.command )
- {
-case cmMake://создание группы
-size=event.a; //размер группы
-beg=new Object*[size];//выделяем память под массив указателей
-cur=0; //текущая позиция
-ClearEvent(event);//очищаем событие
-break;
- case cmAdd://добавление
-Add();
- ClearEvent( event );
- break;
-case cmDel:Del(); //удаление
- ClearEvent( event );
- break;
-case cmShow:Show(); //просмотр
- ClearEvent( event );
- break;
+{
+  if( event.what == evMessage)
+  {
+    switch( event.command )
+    {
+    case cmMake://создание группы
+        size=event.a; //размер группы
+        beg=new Object*[size];//выделяем память под массив указателей
+        cur=0; //текущая позиция
+        ClearEvent(event);//очищаем событие
+    break;
+    case cmAdd://добавление
+        Add();
+        ClearEvent( event );
+    break;
+    case cmDel:Del(); //удаление
+         ClearEvent( event );
+    break;
+    case cmShow:Show(); //просмотр
+        ClearEvent( event );
+    break;
 
- case cmQuit:EndExec(); //выход
- ClearEvent( event );
- break;
- };
- };
+    case cmQuit:EndExec(); //выход
+         ClearEvent( event );
+    break;
+    };
+  };
  }

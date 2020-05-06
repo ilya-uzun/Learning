@@ -1,6 +1,6 @@
 #include "Vector.h"
-class Dialog :
-public Vector
+#include "Event.h"
+class Dialog : public Vector
 {
 public:
 Dialog(void);//контруктор

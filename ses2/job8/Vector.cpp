@@ -1,80 +1,71 @@
 #include "Vector.h"
-#include <iostream>
 
-//конструктор с параметрами
-
-template <class T>
-Vector<T>::Vector(int s,T k)
-{
-size=s;
-data=new T[size];
-for(int i=0;i<size;i++)
-data[i]=k;
-}
-//конструкор копирования
-template <class T> 
-Vector<T>::Vector(const Vector<T>& a) {
-	size = a.size;
-	data = new T[size];
-	for (int i = 0; i < size; i++) 
-		data[i] = a.data[i];
-}
 //деструктор
-template <class T>
-Vector<T>::~Vector() {
-	delete[]data;
-	data = 0;
-}
-//операция присваивания
-template <class T>
-Vector<T> &Vector<T>::operator = (const Vector<T> &a) 
+Vector::~Vector(void)
 {
-	if (this == &a) return *this;
-	size = a.size;
-	if (data != 0) delete[]data;
-	data = new T[size];
-	for (int i = 0; i < size; i++)
-		data[i] = a.data[i];
-	return *this;
+	if(beg!=0)delete [] beg;
+	beg=0;
 }
-//операция доспупа  по индексу
-template <class T>
-T& Vector<T>::operator[](int index)
+//конструктор с параметрами
+Vector::Vector(int n)
 {
-if (index < size) return data[index];
-else std::cout<<"\nError! Index > size";
+	beg=new Object*[n];
+	cur=0;
+	size=n;
 }
-//операция для добавления константы
-template <class T>
-Vector<T> Vector<T>::operator + (const T k) 
+//добавление объекта, на который указывает указатель p в вектор
+void Vector::Add()
 {
-	Vector<T> temp(size, k);
-	for (int i = 0; i < size; i++)
-		temp.data[i] += data[i]+k;
-	return temp;
-}
-//операция для присваивания констаты
-
-//операция для получения длины вектора
-template <class T>
-int Vector<T>::operator ()() 
+	Object*p;
+//выбор из объектов двух возможных классов
+	std::cout<<"1.Car"<<endl;
+	std::cout<<"2.Lorry"<<endl;
+	int y;
+	std::cin>>y;
+	if(y==1)//добавление объекта класса Car
+	{
+		Car*a=new (Car);
+		a->Input();//ввод значений атрибутов
+		p=a;
+		if(cur<size)
+		{
+			beg[cur]=p;//добавление в вектор
+			cur++;
+		}
+	}
+	else
+		if(y==2) //добавление объекта класса Lorry
+		{
+			Lorry *b=new Lorry;
+			b->Input();
+			p=b;
+				if(cur<size)
+				{
+					beg[cur]=p;
+					cur++;
+				}
+		}
+	else return;
+}//void Vector::Add()
+//просмотр вектора
+void Vector::Show()
 {
-	return size;
+	if(cur==0) cout<<"Empty"<<endl;
+	Object **p=beg;//указатель на указатель типа Object
+	for(int i=0;i<cur;i++)
+	{
+		(*p)->Show();//вызов метода Show() (позднее связывание)
+		p++;//передвигаем указатель на следующий объект
+	}
 }
-//операция ввода-вывода
-template< typename T>
-std::ostream& operator << (std::ostream& out,const Vector<T> &a) 
-{
-	for (int i = 0; i < a.size; ++i)
-		out << a.data[i]<< " ";
-	return out;
-}
-template< typename T>
-std::istream& operator >> (std::istream& in, Vector<T> &a) 
-{
-	for (int i = 0; i < a.size; ++i)
-		in >> a.data[i];
-	return in;
-}
-
-
+//операция, которая возвращает размер вектора
+int Vector::operator ()()
+ {
+	return cur;
+ }
+//удаление элемента из вектора, память не освобождается!
+void Vector::Del()
+ {
+	if(cur==0)return;//пустой
+ 	cur--;
+ }
