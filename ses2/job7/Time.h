@@ -24,14 +24,18 @@ public:
 	void set_min(int m) { min = m; }
 	void set_sec(int s) { sec = s; }
 
+	void simTime (int *minS, int *secS);
 	//перегруженные операторы
 	Time &operator = (const Time&); // опирация присваивания
 	Time &operator ++ (); //
 	Time operator ++ (int);// постфиксная операция
+	
 	// перегрузка сложения через дружественную функцию
-	 Time operator+(Time k);
-	// перегрузка вычтания
+	friend Time operator + (const Time&, const Time&);
+	 // перегрузка вычетания
 	friend Time operator - (Time&, int valuve);
+	 // перегрузка вычетания
+	friend Time operator + (Time&, int valuve);
 	//Перегрузить операции ввода и вывода объектов с помощью потоков.
 	friend istream &operator >> (istream&in, Time &t);
 	friend ostream &operator << (ostream&out, const Time& t);

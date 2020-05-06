@@ -2,6 +2,7 @@
 #include "Time.h"
 using namespace std;
 
+
 // перегрузка операции присваивания
 Time &Time::operator=(const Time &t)
 {
@@ -32,21 +33,39 @@ Time Time::operator ++ (int)
 	sec = temp % 60;
 	return t;
 }
-
 //Перегрузка бинарной операции сложения
-Time Time::operator+(Time k)
+Time operator+(const Time& x, const Time& y)
 {
-int t=min*60+sec;
-int kt=k.min*60+k.sec;
-t+=kt;
-Time temp(t/60,t%60);
-return temp;
+	int temp1 = x.min * 60 + x.sec;
+	int temp2 = y.min * 60 + y.sec;
+	Time p;
+	p.min = (temp1 + temp2) / 60;
+	p.sec = (temp1 + temp2) % 60;
+	return p;
 }
 
 //Перегрузка бинарной операции вычетния объектов
 Time operator-( Time& t, int valuve)
 {
 	int temp = (t.min * 60 + t.sec) - valuve;
+	Time p;
+	if (temp > 0) // блокировка деления на ноль
+		{
+		p.min = temp / 60;
+		p.sec = temp % 60;
+		}
+		else // при пытке вычесть больше секунд, чем есть выводим 0
+ 		{
+		p.min = 0;
+		p.sec = 0;
+		}
+		return p;
+}
+
+//Перегрузка бинарной операции вычетния объектов
+Time operator+( Time& t, int valuve)
+{
+	int temp = (t.min * 60 + t.sec) + valuve;
 	Time p;
 	if (temp > 0) // блокировка деления на ноль
 		{
