@@ -1,0 +1,41 @@
+ @startuml
+note left of main #while: Комментарий.
+
+Dialog --> Vector
+Vector --> Object
+Person --> Object
+Abiturient --> Person
+
+class main<<(m,#FF7700)>>{
+    Vector v
+    Pair a
+    Rightangled b
+    Object* p = &a
+} 
+abstract class Object{
+    + virtual void Show() = 0
+}
+
+class Person{
+    .. protected varible ..
+    # int hypatenuse
+    .. public metod ..
+    + void Show()
+    .. friend metod ..
+    + Rightangled& operator = (const Rightangled&)
+   
+}
+class Vector{
+    .. privat varible ..
+    - Object** beg
+    - int size
+    + void Add(Object*)
+    .. friend metod ..
+    + friend ostream& operator<< (ostream &out, const Vector&)
+}
+class Abiturient{
+    .. privat varible ..
+    .. friend metod ..
+}
+ @enduml
+
