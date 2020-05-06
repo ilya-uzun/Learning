@@ -34,7 +34,6 @@ int main()
 	cin >> N;
 	cout << "Output Vector<Time> N(5,t) = ";
 	cout << N << endl;
-	N = N + 4;
    
 return 0;
 }
