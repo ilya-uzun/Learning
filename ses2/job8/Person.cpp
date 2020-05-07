@@ -4,60 +4,55 @@
 
 Person::Person(void)
 {
-	mark="";
-	cyl=0;
-	power=0;
+	name = "";
+	age = 0;
 }
 //деструктор
 Person::~Person(void){}
 //констрктор с параметрами
-Person::Person(string M,int C,int P)
+Person::Person(std::string N, int A)
 {
-	mark=M;
-	cyl=C;
-	power=P;
+	name = N;
+	age = A;
 }
 //конструктор копирования
 Person::Person(const Person& Person)
 {
-	mark=Person.mark;
-	cyl=Person.cyl;
-	power=Person.power;
+	name = Person.name;
+	age = Person.age;
 }
 //селекторы
-void Person::Set_cyl(int C)
+
+void Person::Set_name(std::string N)
 {
-	cyl = C;
+	name = N;
 }
-void Person::Set_mark(string M)
+
+void Person::Set_age(int A)
 {
-	mark = M;
-}
-void Person::Set_power(int P)
-{
-	power=P;
+	age = A;
 }
 //оператор присваивания
 Person& Person::operator=(const Person&c)
 {
-if(&c==this)return *this;
-mark=c.mark;
-power=c.power;
-cyl=c.cyl;
+if(&c == this) return *this;
+name = c.name;
+age = c.age;
 return *this;
 }
 //метод для просмотра атрибутов
 void Person::Show()
  {
-cout<<"\nMARK : "<<mark;
-cout<<"\nCYL : "<<cyl;
-cout<<"\nPOWER : "<<power;
-cout<<"\n";
+std::cout <<"\n name : " <<name;
+std::cout <<"\n age : " <<age;
+std::cout <<"\n";
  }
 //метод для ввода значений атрибутов
 void Person::Input()
 {
- cout<<"\nMark:"; cin>>mark;
-cout<<"\nPower:";cin>>power;
-cout<<"\nCyl:";cin>>cyl;
+ std::cout << "\nname:"; 
+ std::cin >> name;
+ std::cout << "\nPower:";
+ std::cout << "\nage:";
+ std::cin >> age;
 }
