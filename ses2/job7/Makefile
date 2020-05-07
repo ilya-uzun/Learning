@@ -1,7 +1,13 @@
 CC := g++
 JOB = job
 PREFIX := obj/
-SRC := main.cpp Vector.cpp Vector.h Time.cpp  Time.h
+# SRCDIR   = include
+# BINDIR   = source
+INCLUDES := include/
+SOURCES := source/
+# SOU := $(SOURCE)*.cpp
+# INC := include $(INCLUDES)*.h
+SRC := $(SOURCES)*.cpp $(INCLUDES)*.h
 OBJ := $(patsubst %.cpp, $(PREFIX)%.o, $(SRC))
 
 $(JOB): $(OBJ)
