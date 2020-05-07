@@ -35,7 +35,9 @@
 ### Изменение букв заглавные/маленькие   
 > Через Ctrl + K + U, чтоб все буквы стали большими.    
 > Через Ctrl + K + L, чтоб все буквы стали маленькими.
-
+  
+## Замена слова    
+> ctrl+h  
 
 строка 1
 start /D "{working_directory}" C:\Windows\System32\cmd.exe /u /k "{launcher}" "{file_path}" {args}

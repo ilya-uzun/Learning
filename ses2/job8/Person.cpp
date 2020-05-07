@@ -1,96 +1,63 @@
+#pragma once
 #include <iostream>
-#include "Time.h"
-using namespace std;
+#include "Person.h"
 
-
-// перегрузка операции присваивания
-Time &Time::operator=(const Time &t)
+Person::Person(void)
 {
-	//перегрузка на само присваивание
-	if (&t == this) return *this;
-	min = t.min;
-	sec = t.sec;
-	return *this;
+	mark="";
+	cyl=0;
+	power=0;
 }
-
-// перегрузка префиской операции инкремент
-Time &Time::operator++() {
-
-	int temp = min * 60 + sec;
-	temp++;
-	min = temp / 60;// целая часть при делении мин
-	sec = temp % 60;// остаток при делении секунды
-	return *this;
-}
-
-// перегрузка постфиксная операции инкремент
-Time Time::operator ++ (int)
+//деструктор
+Person::~Person(void){}
+//констрктор с параметрами
+Person::Person(string M,int C,int P)
 {
-	int temp = min * 60 + sec;
-	temp++;
-	Time t(min, sec);
-	min = temp / 60;
-	sec = temp % 60;
-	return t;
+	mark=M;
+	cyl=C;
+	power=P;
 }
-//Перегрузка бинарной операции сложения
-Time operator+(const Time& x, const Time& y)
+//конструктор копирования
+Person::Person(const Person& Person)
 {
-	int temp1 = x.min * 60 + x.sec;
-	int temp2 = y.min * 60 + y.sec;
-	Time p;
-	p.min = (temp1 + temp2) / 60;
-	p.sec = (temp1 + temp2) % 60;
-	return p;
+	mark=Person.mark;
+	cyl=Person.cyl;
+	power=Person.power;
 }
-
-//Перегрузка бинарной операции вычетния объектов
-Time operator-( Time& t, int valuve)
+//селекторы
+void Person::Set_cyl(int C)
 {
-	int temp = (t.min * 60 + t.sec) - valuve;
-	Time p;
-	if (temp > 0) // блокировка деления на ноль
-		{
-		p.min = temp / 60;
-		p.sec = temp % 60;
-		}
-		else // при пытке вычесть больше секунд, чем есть выводим 0
- 		{
-		p.min = 0;
-		p.sec = 0;
-		}
-		return p;
+	cyl = C;
 }
-
-//Перегрузка бинарной операции вычетния объектов
-Time operator+( Time& t, int valuve)
+void Person::Set_mark(string M)
 {
-	int temp = (t.min * 60 + t.sec) + valuve;
-	Time p;
-	if (temp > 0) // блокировка деления на ноль
-		{
-		p.min = temp / 60;
-		p.sec = temp % 60;
-		}
-		else // при пытке вычесть больше секунд, чем есть выводим 0
- 		{
-		p.min = 0;
-		p.sec = 0;
-		}
-		return p;
+	mark = M;
 }
-
-//Перегрузка глобальной функции-оператора ввода
-istream& operator >> (istream& in, Time& t)
+void Person::Set_power(int P)
 {
-	cout << "min : ";
-	in >> t.min;
-	cout << "sec : ";
-	in >> t.sec;
-	return in;
+	power=P;
 }
-
-//перегрузка глобальной функции-оператора вывода
-ostream& operator << (ostream& out, const Time& t) {
-	return (out << t.min << ":" << t.sec );
+//оператор присваивания
+Person& Person::operator=(const Person&c)
+{
+if(&c==this)return *this;
+mark=c.mark;
+power=c.power;
+cyl=c.cyl;
+return *this;
+}
+//метод для просмотра атрибутов
+void Person::Show()
+ {
+cout<<"\nMARK : "<<mark;
+cout<<"\nCYL : "<<cyl;
+cout<<"\nPOWER : "<<power;
+cout<<"\n";
+ }
+//метод для ввода значений атрибутов
+void Person::Input()
+{
+ cout<<"\nMark:"; cin>>mark;
+cout<<"\nPower:";cin>>power;
+cout<<"\nCyl:";cin>>cyl;
 }
