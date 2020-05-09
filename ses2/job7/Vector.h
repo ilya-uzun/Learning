@@ -26,4 +26,4 @@ private:
 	T* data;// указатель на денамический массив значеий вектора
 };
 
-#include "Vector.cpp"
+//#include "Vector.cpp" // не компелировался проект
