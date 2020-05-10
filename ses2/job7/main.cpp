@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "Time.h"
-//#include "Vector.cpp"
-#include "Vector.h"
+#include "Vector.cpp"
+//#include "Vector.h"
 #include <iostream>
 using namespace std;
 
