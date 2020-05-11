@@ -1,6 +1,4 @@
-﻿// lab2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-
+﻿#pragma once
 #include <iostream>
 #include <string>
 #include <windows.h>
@@ -12,11 +10,11 @@ Route make_Route() {
 	string s;
 	string i;
 	float d;
-	cout << " Введите наименование : ";
+	cout << "Enter the name of the: ";// Введите наименование 
 	cin >> s;
-	cout << " Введите количество : ";
+	cout << "Enter the quantity : ";//Введите количество
 	cin >> i;
-	cout << " Введите стоимость : ";
+	cout << "Enter the cost : ";//Введите стоимость 
 	cin >> d;
 	Route t(s, i, d);
 	return t;

@@ -10,29 +10,29 @@ int main()
   Time c;//конструктор без параметров
   Time d;//конструктор без параметров
 
-  cout << "Класс a - " << endl;
-  cout << "Введите минуты - ";
+  cout << "Class a - " << endl; //
+  cout << "Enter minutes - "; 
   int min_a;
   cin >> min_a ; // объявление и инициализция новой перем.
   a.set_min(min_a);// ввод мин через set
-  cout << "Введите секунды - " ;
+  cout << "Enter seconds - " ;
   int sec_a;
   cin >> sec_a;
   a.set_sec(sec_a);
 
-  cout << "Класс b - " << endl;
+  cout << "Class b - " << endl;
   cin >> b;// ввод через потоки istream
   /*-------- Операции с классами --------*/
   a++;// префикная операция инкремент
-  cout << "Вывод результата после операции инкремент a++ :  "  << a << '\n';
+  cout << "Output the result after the increment operation a++ :  "  << a << '\n'; // Выведите Результат после операции инкремента
   c = a + b;
-  cout << "Вывод результата после операции сложния a+b :  "  << c << '\n';
+  cout << "Output the result after the addition operati a+b :  "  << c << '\n'; // Вывод результата после операции сложения
   a = b;
-  cout << "Вывод результата после операции присваивания a=b :  "  << a << '\n';
-  cout << "Вычесть секунды  :  ";
+  cout << "Output the result after the assignment opera a=b :  "  << a << '\n'; // Вывод результата после операции присваивания
+  cout << "Subtract seconds :  "; // ычесть секунды
   int sek_;
   cin >> sek_ ;
   d = a - sek_;// Перегружается operator -
-  cout << "Вывод результата после вычетания секунд  :  "  << d << '\n';
+  cout << "Output the result after subtracting seconds :  "  << d << '\n'; // Вывод результата после вычитания секунд
   return 0;
 }
