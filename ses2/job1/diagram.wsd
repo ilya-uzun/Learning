@@ -1,0 +1,24 @@
+ @startuml
+' note left of main #while: Комментарий.
+skinparam dpi 200
+skinparam shadowing false
+main <-- Fraction
+class main<<(m,#FF7700)>>{
+    fraction A;
+    fraction* X = new fraction;
+    fraction mas[3];
+    fraction* p_mas = new fraction[3];
+    fraction F = make_fraction;
+} 
+class Fraction{
+    .. **privat varible** ..
+    - int first
+    - int second
+    .. **public metod** ..
+    + void Read()
+    + int Cost()
+    + int Init()
+    + void Show()
+}
+ @enduml
+

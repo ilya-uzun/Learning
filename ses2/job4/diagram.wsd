@@ -1,15 +1,16 @@
  @startuml
-note left of main #while: Комментарий.
-note top of Rightangled : Комментарий.
-main --> Rightangled
-main --> Pain
-
-Rightangled --> Pain
+' note left of main #while: Комментарий.
+' note top of Rightangled : Комментарий.
+skinparam dpi 200
+skinparam shadowing false
+main <-- Pain
+main <-- Rightangled
+Rightangled <|--  Pain
 class main<<(m,#FF7700)>>{
+    .. **Объекты** ..
     Pair a
     Rightangled b
 } 
-
 class Rightangled{
     .. protected varible ..
     # int hypatenuse
@@ -33,8 +34,8 @@ class Pain{
     + int  get_second() 
     + int  set_first()
     + int  set_second()
+    .. **Операции перегрузки** ..
     + Pair& operator= (const Pair&)
-    .. friend metod ..
     + friend istream& operator >> (istream &in, Pair& pair)
     + friend ostream& operator << (ostream &out, const Pair& pair)
 }

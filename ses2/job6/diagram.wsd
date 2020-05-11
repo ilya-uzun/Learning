@@ -5,41 +5,17 @@
 ' note top of Vector : Комментарий.
 skinparam dpi 200
 skinparam shadowing fals
-main <-- Rightangled
-main <-- Pain
-main ... Object
 main <-- Vector
-Vector <|-- Object 
-Pain <|-- Object
-Rightangled <|--  Pain
+main <-- Iterator
+Vector o--  Iterator
 class main<<(m,#FF7700)>>{
     .. **Объекты** ..
-    Vector v
-    Pair a
-    Rightangled b
-    Object* p = &a
+    Vector a(5)
+    Vector b(3)
+    Vector c(2)
+    Iterator i
 } 
-abstract class Object{
-    + virtual void Show() = 0
-}
-class Pain{
-    .. **public varible** ..
-    + int  perimeter
-    .. **protected varible** ..
-    # int first
-    # int second
-    .. **public metod** ..
-    + void Show()
-    + int  get_first()
-    + int  get_second() 
-    + int  set_first()
-    + int  set_second()
-    .. **Операции перегрузки**..
-    + Pair& operator= (const Pair&)
-    + friend istream& operator >> (istream &in, Pair& pair)
-    + friend ostream& operator << (ostream &out, const Pair& pair)
-}
-class Rightangled{
+class Iterator{
     .. **protected varible** ..
     # int hypatenuse
     .. **public metod** ..
@@ -54,12 +30,21 @@ class Rightangled{
 }
 class Vector{
     .. **privat varible** ..
-    - Object** beg
     - int size
+    - int* data
+    - Iterator beg
+    - Iterator end
     ..**public metod** ..
     + void Add(Object*)
     .. **Операции перегрузки** ..
-    + friend ostream& operator<< (ostream &out, const Vector&)
+    + Vector& operator=(const Vector& a)
+    + int& operator[](int index)
+    + Vector operator+(const int k)
+    + int operator()()
+    + friend ostream& operator << (ostream& out, const Vector& a)
+    + friend istream& operator >> (istream& in, Vector& a)
+    + Iterator first() 
+    + Iterator last()
 }
  @enduml
 

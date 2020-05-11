@@ -1,0 +1,30 @@
+ @startuml
+' note left of main #while: Комментарий.
+skinparam dpi 200
+skinparam shadowing false
+main <-- Route
+class main<<(m,#FF7700)>>{
+   .. **Функции** ..
+   Route make_Route()
+   void print_Route(Route t)
+   .. **Объекты** ..
+   Route t1
+   Route t2
+   Route t3 = t2
+} 
+class Route{
+    .. **privat varible** ..
+    - string start
+    - string finish
+    - float time_in_way
+    .. **public metod** ..
+    + string get_start()
+    + string get_finish()
+    + float  get_time_in_way()
+    + void set_start(string)
+    + void set_finish(string)
+    + void set_time_in_way(float)
+    + void show()
+}
+ @enduml
+
