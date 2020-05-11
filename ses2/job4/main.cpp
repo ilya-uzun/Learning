@@ -9,16 +9,16 @@ int main(){
 
   // Класс Pair
   Pair a;
-  cout << " Ввод параметров класса Rair "<< endl;
+  cout << "  "<< endl;// Ввод параметров класса Rair 
   cin >> a;
-  cout << " Вывод результата класса Rair \n" << a << endl;
-  cout << " Периметр класса Rair - " << a.perimeter() << endl;
+  cout << "\n Entering parameters of the Rair class " << a << endl;// Вывод результата класса Rair
+  cout << "\n Perimeter of the Rair class - " << a.perimeter() << endl;// Периметр класса Rair 
 
   Rightangled b;
-  cout << "\n Ввод параметров класса Rightangled "<< endl;
+  cout << "\n  "<< endl;// Ввод параметров класса Rightangled
   cin >> b;
-  cout << " \n Гипатенуза класса Rightangled  - " << b.Hypatenuse() << endl;
-  cout << " Вывод результата класса Rightangled "<< endl;
+  cout << "\n Entering parameters of the Rightangled class - " << b.Hypatenuse() << endl;// Гипатенуза класса Rightangled
+  cout << "\n Output of the Rightangled class result "<< endl;// Вывод результата класса Rightangled
   cout << b;
 
   return 0;
