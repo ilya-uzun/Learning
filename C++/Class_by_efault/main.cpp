@@ -1,26 +1,21 @@
 #include <iostream>
-#include <string>
 
 using namespace std;
 class Student
 {
-    string name;
     int age;
 public:
-    string set_name(string s)
+    int set_age(int a)
     {
-        name = s;
-        return name;
-    };
-    int set_age(int)
-    {
+        age = a;
+        return age;
+    }
 
-    };
-
-}
+};
 int main()
 {
 
-
+    Student  r; 
+    cout << r; 
 	return 0;
 }
