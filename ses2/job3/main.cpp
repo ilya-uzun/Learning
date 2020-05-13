@@ -11,7 +11,7 @@ int main()
   Time d;//конструктор без параметров
 
   cout << "Class a - " << endl; //
-  cout << "Enter minutes - "; 
+  cout << "Enter minutes - ";
   int min_a;
   cin >> min_a ; // объявление и инициализция новой перем.
   a.set_min(min_a);// ввод мин через set
@@ -23,13 +23,13 @@ int main()
   cout << "Class b - " << endl;
   cin >> b;// ввод через потоки istream
   /*-------- Операции с классами --------*/
-  a++;// префикная операция инкремент
+  a++;// префиксная операция инкремент
   cout << "Output the result after the increment operation a++ :  "  << a << '\n'; // Выведите Результат после операции инкремента
   c = a + b;
   cout << "Output the result after the addition operati a+b :  "  << c << '\n'; // Вывод результата после операции сложения
   a = b;
   cout << "Output the result after the assignment opera a=b :  "  << a << '\n'; // Вывод результата после операции присваивания
-  cout << "Subtract seconds :  "; // ычесть секунды
+  cout << "Subtract seconds :  "; // вычесть секунды
   int sek_;
   cin >> sek_ ;
   d = a - sek_;// Перегружается operator -

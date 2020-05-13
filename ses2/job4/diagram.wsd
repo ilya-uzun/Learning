@@ -10,20 +10,20 @@ class main<<(m,#FF7700)>>{
     .. **Объекты** ..
     Pair a
     Rightangled b
-} 
+}
 class Rightangled{
     .. protected varible ..
     # int hypatenuse
     .. public metod ..
     + void set_hypatenuse(int)
-    + int get_hypatenuse() 
+    + int get_hypatenuse()
     + int Hypatenuse()
     .. friend metod ..
     + Rightangled& operator = (const Rightangled&)
     + friend istream& operator >> (istream& in,  Rightangled& rightangled)
     + friend ostream& operator << (ostream& out, const Rightangled& rightangled)
 }
-class Pain{
+class Pair{
     .. public varible ..
     + int  perimeter
     .. protected varible ..
@@ -31,7 +31,7 @@ class Pain{
     # int second
     .. public metod ..
     + int  get_first()
-    + int  get_second() 
+    + int  get_second()
     + int  set_first()
     + int  set_second()
     .. **Операции перегрузки** ..
@@ -41,4 +41,3 @@ class Pain{
 }
 
  @enduml
-
