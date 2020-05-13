@@ -5,17 +5,16 @@ class Student
 {
     int age;
 public:
-    int set_age(int a)
+    int get_age()
     {
-        age = a;
+        age = 12;
         return age;
     }
 
 };
 int main()
 {
-
-    Student  r; 
-    cout << r; 
+    Student  r;   
+    cout << r.get_age();
 	return 0;
 }
