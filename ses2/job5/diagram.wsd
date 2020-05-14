@@ -4,12 +4,12 @@
 ' note top of Object : Комментарий.
 ' note top of Vector : Комментарий.
 skinparam dpi 200
-skinparam shadowing fals
+skinparam shadowing false
 main <-- Rightangled
 main <-- Pain
 main ... Object
 main <-- Vector
-Vector <|-- Object 
+Vector <|-- Object
 Pain <|-- Object
 Rightangled <|--  Pain
 class main<<(m,#FF7700)>>{
@@ -18,7 +18,7 @@ class main<<(m,#FF7700)>>{
     Pair a
     Rightangled b
     Object* p = &a
-} 
+}
 abstract class Object{
     + virtual void Show() = 0
 }
@@ -31,7 +31,7 @@ class Pain{
     .. **public metod** ..
     + void Show()
     + int  get_first()
-    + int  get_second() 
+    + int  get_second()
     + int  set_first()
     + int  set_second()
     .. **Операции перегрузки**..
@@ -45,7 +45,7 @@ class Rightangled{
     .. **public metod** ..
     + void Show()
     + void set_hypatenuse(int)
-    + int get_hypatenuse() 
+    + int get_hypatenuse()
     + int Hypatenuse()
     .. **Операции перегрузки** ..
     + Rightangled& operator = (const Rightangled&)
@@ -62,4 +62,3 @@ class Vector{
     + friend ostream& operator<< (ostream &out, const Vector&)
 }
  @enduml
-

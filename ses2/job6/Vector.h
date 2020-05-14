@@ -7,7 +7,7 @@ class Iterator
 	friend class Vector;//дружеский класс
 public:
 	Iterator() { elem = 0; }//конструктор без параметров
-	Iterator(const Iterator& it) { elem = it.elem; }//консруктор копирования
+	Iterator(const Iterator& it) { elem = it.elem; }//конструктор копирования
 	//перегруженные операции сравнения
 	bool operator ==(const Iterator& it) { return elem == it.elem; }
 	bool operator !=(const Iterator& it) { return elem != it.elem; };
@@ -15,7 +15,7 @@ public:
 	void operator ++() { ++elem; };
 	//перегруженная операция декремент
 	void operator --() { --elem; }
-	//перегруженная операция разыменованя
+	//перегруженная операция разыменования
 	int& operator *() const { return *elem; }
 private:
 	int* elem;// указатель на элемент типа int
@@ -23,9 +23,9 @@ private:
 class Vector
 {
 public:
-	//конструктор с параметрами: выделяет паметь под s элемент и заполняет ихзначение к
+	////конструктор с параметрами: выделяет память под s элемент и заполняет их значение к
 	Vector(int s, int k = 0);
-	//конструкор копирования 
+	//конструкор копирования
 	Vector(const Vector& a);
 	//конструктор с параметрами
 	~Vector();
@@ -47,10 +47,7 @@ public:
 
 private:
 	int size;//размер вектора
-	int* data;// указатель на денамический массив значеий вектора
+	int* data;// указатель на динамический массив значений вектора
 	Iterator beg;//указатель на первый элемент
-	Iterator end;// уазатель на элемент следущий за последним
-
+	Iterator end;// указатель на элемент следящий за последним
 };
-
-
