@@ -3,12 +3,12 @@ int main ()
 {
     int num;
     printf("\nEnter number");
-    scanf(num);
+    scanf("%d", &num);
     int half = num/2;
     int div = 2;
     while (div < half)
-    {/* condition */
-        if (!(num % div)) printf("\n div");
+    {
+        if (!(num % div)) printf("\ndiv=%d", div);
         div++;
     }
 return 0;
