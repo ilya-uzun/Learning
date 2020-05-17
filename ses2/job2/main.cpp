@@ -37,7 +37,7 @@ int main(){
 	//конструкор копирования
 	Route t3 = t2;
 	t3.set_start("Perm 2");
-	t3.set_finish("Moskow");
+	t3.set_finish("Moscow");
 	t3.set_time_in_way(24.0);
 	//конструкор копирования
 	print_Route(t3);
