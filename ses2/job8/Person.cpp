@@ -52,6 +52,17 @@ void Person::Input()
 {
  std::cout << "\n name:"; 
  std::cin >> name;
- std::cout << " age:";
+ std::cout << "\n age:";
  std::cin >> age;
 }
+void Person::HandleEvent(const TEvent &e)
+ {
+ 	if(e.what == evMessage)//событие-сообщение
+ 	{
+		switch(e.command)
+ 		{
+			case cmGet:std::cout << "age =" << Get_age() << std::endl;
+			break;
+ 		}
+ 	}
+ }

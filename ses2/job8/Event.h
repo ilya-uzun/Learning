@@ -8,6 +8,7 @@ const int cmGet = 3;//вывести атрибут всех объектов
 const int cmShow = 4;//вывести всю группу
 const int cmAverageAge = 5;//вывести всю группу
 const int cmMake = 6;//создать группу
+const int cmHelp = 7;//помощь
 const int cmQuit = 101;//выход
 //класс событие
 struct TEvent

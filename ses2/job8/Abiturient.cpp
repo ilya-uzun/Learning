@@ -29,16 +29,16 @@ Abiturient& Abiturient::operator=(const Abiturient &l)
 }
  void Abiturient::Show()
 {
-    std::cout << " Name : " << name;
-    std::cout << " Age : " << age;
-    std::cout << " Person_ID : " << person_ID;
+    std::cout << " Name : " << name << std::endl;
+    std::cout << " Age : " << age << std::endl;
+    std::cout << " Person_ID : " << person_ID << std::endl;
 }
 void Abiturient::Input()
 {
-    std::cout<<"\n Enter Name :";
+    std::cout<<" Enter Name :" << std::endl;
     std::cin >> name;
-    std::cout<<"\n Enter Age : "; 
+    std::cout<<" Enter Age : " << std::endl;
     std::cin >> age;
-    std::cout<<"\n Enter person_ID :"; 
+    std::cout<<" Enter person_ID :" << std::endl;
     std::cin >> person_ID;
 }

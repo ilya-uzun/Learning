@@ -80,6 +80,20 @@ void Vector::AverageAge()
 	sum /= size;
 	std::cout << " Average Age = " << sum << std::endl;	
  }
+void Vector::HandleEvent(const TEvent &e)
+ {
+	if(e.what == evMessage)
+	 {
+ 		Object**p=beg;
+		for(int i=0;i<cur;i++)
+		{
+			(*p)->HandleEvent(e);//вызов метода (позднее связывание)
+			p++;//передвигаем указатель на следующий объект
+		}
+ 	}
+ }
+
+
 //удаление элемента из вектора, память не освобождается!
 void Vector::Del()
  {

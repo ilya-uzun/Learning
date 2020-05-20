@@ -15,6 +15,7 @@ void Del();
 void AverageAge();
 void Show();
 int operator()();//размер вектора
+virtual void HandleEvent(const TEvent&e); // события 
 protected:
 Object**beg;//указатель на первый элемент вектора
 int size;//размер

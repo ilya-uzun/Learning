@@ -22,6 +22,7 @@ public:
 	void Set_age(int);
 
 	Person& operator=(const Person&);//перегрузка операции присваивания
+	void HandleEvent(const TEvent &e); // для событий
 protected:
 	std::string name;
 	int age;

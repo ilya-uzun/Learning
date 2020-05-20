@@ -11,7 +11,7 @@ Dialog::~Dialog(void)
 //получение события
 void Dialog::GetEvent(TEvent &event)
 {
-    std::string OpInt = "+-sqam"; //строка содержит коды операций
+    std::string OpInt = "+-/sqamh"; //строка содержит коды операций
     std::string s;
     std::string param;
     char code;
@@ -23,12 +23,14 @@ void Dialog::GetEvent(TEvent &event)
     event.what = evMessage;
         switch(code)
         {
-            case 'm':event.command=cmMake; break;//создать группу
+            case 'm': event.command=cmMake; break;//создать группу, требуется создать в первую очередь иначе ошибка Segmentation fault 
             case '+': event.command=cmAdd; break;//добавить объект в группу
             case '-': event.command=cmDel; break;//удалить объект из группы
             case 'a': event.command=cmAverageAge; break;//средний возраст группы
             case 's': event.command=cmShow; break;//просмотр группы
+            case '/': event.command=cmGet;break; 
             case 'q': event.command=cmQuit; break; //конец работы
+            case 'h': event.command=cmHelp; break; //конец работы
         }
 //выделяем параметры команды, если они есть
         if(s.length()>1)
@@ -91,10 +93,21 @@ void Dialog::HandleEvent(TEvent& event)
     case cmShow:Show(); //просмотр
         ClearEvent( event );
     break;
-
     case cmQuit:EndExec(); //выход
          ClearEvent( event );
     break;
+    case cmHelp: //выход
+         std::cout << "(m) - create group" << std::endl;
+         std::cout << "(+) - add an object to a group" << std::endl;
+         std::cout << "(-) - delete an item from a group" << std::endl;
+         std::cout << "(a) - average age of the group" << std::endl;
+         std::cout << "(s) - viewing a group" << std::endl;
+         std::cout << "(/) - Show age" << std::endl;
+         std::cout << "(q) - end" << std::endl;
+         std::cout << "(h) - help" << std::endl;
+         //ClearEvent( event );
+    break;
+    default:Vector::HandleEvent(event);
     };
   };
  }
