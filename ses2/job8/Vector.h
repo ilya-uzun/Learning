@@ -1,5 +1,8 @@
 #pragma once
 #include "Object.h"
+#include "Person.h"
+#include "Abiturient.h"
+#include <iostream>
 class Vector
 {
 public:

@@ -3,7 +3,7 @@
 //деструктор
 Vector::~Vector(void)
 {
-	if(beg!=0)delete [] beg;
+	if(beg!=0) delete [] beg; // beg указатель на первый элемент
 	beg=0;
 }
 //конструктор с параметрами
@@ -18,25 +18,25 @@ void Vector::Add()
 {
 	Object *p;
 //выбор из объектов двух возможных классов
-	std::cout <<" 1.Person " << endl;
-	std::cout <<" 2.Abiturient " << endl;
+	std::cout <<" 1.Person " << std::endl;
+	std::cout <<" 2.Abiturient " << std::endl;
 	int y;
 	std::cin >> y;
 	if (y==1)//добавление объекта класса Car
 	{
-		Person *a=new (Person);
+		Person *a = new Person;
 		a -> Input();//ввод значений атрибутов
 		p = a;
-		if(cur<size)
+		if(cur < size)
 		{
 			beg[cur]=p;//добавление в вектор
 			cur++;
 		}
 	}
 	else
-		if (y==2) //добавление объекта класса Lorry
+		if (y == 2) //добавление объекта класса Lorry
 		{
-			Abiturient *b=new Abiturient;
+			Abiturient *b = new Abiturient;
 			b -> Input();
 			p = b;
 				if(cur<size)
@@ -50,8 +50,8 @@ void Vector::Add()
 //просмотр вектора
 void Vector::Show()
 {
-	if (cur==0) cout << " Empty " << endl;// Пустой
-	Object **p=beg;//указатель на указатель типа Object
+	if (cur==0) std::cout << " Empty " << std::endl;// Пустой
+	Object **p = beg;//указатель на указатель типа Object
 	for(int i=0; i < cur; i++)
 	{
 		(*p) -> Show();//вызов метода Show() (позднее связывание)
@@ -66,6 +66,6 @@ int Vector::operator ()()
 //удаление элемента из вектора, память не освобождается!
 void Vector::Del()
  {
-	if(cur==0)return;//пустой
+	if(cur == 0) return;//пустой
  	cur--;
  }

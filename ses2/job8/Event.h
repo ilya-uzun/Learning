@@ -1,4 +1,5 @@
 #pragma once
+
 const int evNothing = 0;//пустое событие
 const int evMessage = 100;//непустое событие
 const int cmAdd = 1;//добавить объект в группу
