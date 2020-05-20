@@ -85,7 +85,10 @@ void Dialog::HandleEvent(TEvent& event)
     case cmDel:Del(); //удаление
          ClearEvent( event ); 
     break;
-    case cmAverageAge:AverageAge(); //просмотр
+    //case cmAverageAge:AverageAge(); //средний возрст
+    case cmAverageAge:
+        int sum; 
+        sum = size;
         ClearEvent( event ); 
     break;
     case cmShow:Show(); //просмотр

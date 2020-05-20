@@ -56,10 +56,11 @@ void Person::Input()
  std::cin >> age;
 }
 void Person::AverageAge()
- {
-std::cout <<"\n name AAA: " <<name;
-std::cout <<" age : SSSS" <<age;
-std::cout <<"\n";
+ {	
+	int sum;
+	sum = age / 2;
+	std::cout <<" Average age : " <<sum;
+	std::cout <<"\n";
  }
 void Person::HandleEvent(const TEvent &e)
  {
@@ -67,7 +68,12 @@ void Person::HandleEvent(const TEvent &e)
  	{
 		switch(e.command)
  		{
-			case cmGet:std::cout << "age =" << Get_age() << std::endl;
+			case cmGet:
+				
+			std::cout << "age =" << Get_age() << std::endl;
+				int sum;
+				sum = age / 2;
+			std::cout << "sum =" << sum << std::endl;
 			break;
  		}
  	}
