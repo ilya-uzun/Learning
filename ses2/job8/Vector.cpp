@@ -9,9 +9,9 @@ Vector::~Vector(void)
 //конструктор с параметрами
 Vector::Vector(int n)
 {
-	beg=new Object*[n];
-	cur=0;
-	size=n;
+	beg = new Object*[n];
+	cur = 0;
+	size = n;
 }
 //добавление объекта, на который указывает указатель p в вектор
 void Vector::Add()
@@ -50,7 +50,7 @@ void Vector::Add()
 //просмотр вектора
 void Vector::Show()
 {
-	if (cur==0) std::cout << " Empty " << std::endl;// Пустой
+	if (cur == 0) std::cout << " Empty " << std::endl;// Пустой
 	Object **p = beg;//указатель на указатель типа Object
 	for(int i=0; i < cur; i++)
 	{
@@ -62,6 +62,20 @@ void Vector::Show()
 int Vector::operator ()()
  {
 	return cur;
+ }
+ //средний возраст 
+void Vector::AverageAge()
+ {
+	int sum;
+	if (cur == 0) std::cout << " Empty " << std::endl;// Пустой
+	Object **p = beg;//указатель на указатель типа Object
+	for(int i = 0; i < cur; i++)
+	{
+		sum += p[i];
+		p++; //передвигаем указатель на следующий объект
+	}
+	sum /= size;
+	std::cout << " Average Age = " << sum << std::endl;	
  }
 //удаление элемента из вектора, память не освобождается!
 void Vector::Del()

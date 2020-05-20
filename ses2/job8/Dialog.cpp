@@ -11,7 +11,7 @@ Dialog::~Dialog(void)
 //получение события
 void Dialog::GetEvent(TEvent &event)
 {
-    std::string OpInt = "+-?/qam"; //строка содержит коды операций
+    std::string OpInt = "+-sqam"; //строка содержит коды операций
     std::string s;
     std::string param;
     char code;
@@ -23,10 +23,11 @@ void Dialog::GetEvent(TEvent &event)
     event.what = evMessage;
         switch(code)
         {
-            case 'm':event.command=cmMake;break;//создать группу
-            case '+': event.command=cmAdd;break;//добавить объект в группу
-            case '-': event.command=cmDel;break;//удалить объект из группы
-            case '?': event.command=cmShow;break;//просмотр группы
+            case 'm':event.command=cmMake; break;//создать группу
+            case '+': event.command=cmAdd; break;//добавить объект в группу
+            case '-': event.command=cmDel; break;//удалить объект из группы
+            case 'a': event.command=cmAverageAge; break;//средний возраст группы
+            case 's': event.command=cmShow; break;//просмотр группы
             case 'q': event.command=cmQuit; break; //конец работы
         }
 //выделяем параметры команды, если они есть
@@ -83,6 +84,9 @@ void Dialog::HandleEvent(TEvent& event)
     break;
     case cmDel:Del(); //удаление
          ClearEvent( event );
+    break;
+    case cmAverageAge:AverageAge(); //просмотр
+        ClearEvent( event );
     break;
     case cmShow:Show(); //просмотр
         ClearEvent( event );

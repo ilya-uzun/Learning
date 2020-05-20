@@ -10,7 +10,7 @@ int main()
     Person *a = new Person; //создаем объект класса Person
     a -> Input();
     Abiturient *b = new Abiturient; //создаем объект класса Abiturient
-    b->Input();
+    b -> Input();
     Vector v(10); //Создаем вектор
     Object *p = a; //ставим указатель на объект класса Person
     //v.Add(p); //добавляем объект в вектор

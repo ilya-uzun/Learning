@@ -12,6 +12,7 @@ public:
 ~Vector(void);//деструктор
 void Add();//добавление элемента в вектор
 void Del();
+void AverageAge();
 void Show();
 int operator()();//размер вектора
 protected:
