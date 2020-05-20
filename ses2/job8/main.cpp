@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "Person.h"
 #include "Abiturient.h"
-#include "Vector.cpp"
+#include "Vector.h"
 #include <iostream>
 using namespace std;
 

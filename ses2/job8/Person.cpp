@@ -50,9 +50,8 @@ std::cout <<"\n";
 //метод для ввода значений атрибутов
 void Person::Input()
 {
- std::cout << "\nname:"; 
+ std::cout << "\n name:"; 
  std::cin >> name;
- std::cout << "\nPower:";
- std::cout << "\nage:";
+ std::cout << "\n age:";
  std::cin >> age;
 }
