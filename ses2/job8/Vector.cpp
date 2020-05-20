@@ -67,12 +67,15 @@ int Vector::operator ()()
 void Vector::AverageAge()
  {
 	int sum;
-	if (cur == 0) std::cout << " Empty " << std::endl;// Пустой
-	Object **p = beg;//указатель на указатель типа Object
+	Object *p2; 
+	Abiturient *a2 = new Abiturient;
+	a2 -> Input();
+	p2 = a2;
+	if (cur == 0) std::cout << " Empty average age " << std::endl;// Пустой
 	for(int i = 0; i < cur; i++)
 	{
-		sum += p[i];
-		p++; //передвигаем указатель на следующий объект
+		sum += a2->Get_age();
+		a2++; //передвигаем указатель на следующий объект
 	}
 	sum /= size;
 	std::cout << " Average Age = " << sum << std::endl;	
