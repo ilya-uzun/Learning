@@ -19,30 +19,26 @@ void Abiturient::Set_Person_ID(int G)
 {
     person_ID = G;
 }
-Abiturient& Abiturient::operator=(const Abiturient&l)
+Abiturient& Abiturient::operator=(const Abiturient &l)
 {
     if (&l == this) return *this;
-    mark = l.mark;
-    power = l.power;
-    cyl = l.cyl;
+    name = l.name;
+    age = l.age;
+    person_ID = l.person_ID;
     return *this;
 }
  void Abiturient::Show()
 {
-    std::cout << "\nMARK : " << mark;
-    std::cout << "\nCYL : " << cyl;
-    std::cout << "\nPOWER : " << power;
-    std::cout << "\nGRUZ : " << gruz;
-    std::cout << "\n";
+    std::cout << "\n Name : " << name;
+    std::cout << "\n Age : " << age;
+    std::cout << "\n Person_ID : " << person_ID;
 }
 void Abiturient::Input()
 {
-    std::cout<<"\nMark:";
-    std::cin >> mark;
-    std::cout<<"\nPower:"; 
-    std::cin >> power;
-    std::cout<<"\nCyl:"; 
-    std::cin >> cyl;
-    std::cout<<"\nGRUZ : ";
-    std::cin >> gruz;
+    std::cout<<"\n Enter Name :";
+    std::cin >> name;
+    std::cout<<"\n Enter Age : "; 
+    std::cin >> age;
+    std::cout<<"\n Enter person_ID :"; 
+    std::cin >> person_ID;
 }

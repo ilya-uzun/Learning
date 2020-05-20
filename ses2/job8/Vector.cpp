@@ -16,17 +16,17 @@ Vector::Vector(int n)
 //добавление объекта, на который указывает указатель p в вектор
 void Vector::Add()
 {
-	Object*p;
+	Object *p;
 //выбор из объектов двух возможных классов
-	std::cout<<"1.Car"<<endl;
-	std::cout<<"2.Lorry"<<endl;
+	std::cout <<" 1.Person " << endl;
+	std::cout <<" 2.Abiturient " << endl;
 	int y;
-	std::cin>>y;
-	if(y==1)//добавление объекта класса Car
+	std::cin >> y;
+	if (y==1)//добавление объекта класса Car
 	{
-		Car*a=new (Car);
-		a->Input();//ввод значений атрибутов
-		p=a;
+		Person *a=new (Person);
+		a -> Input();//ввод значений атрибутов
+		p = a;
 		if(cur<size)
 		{
 			beg[cur]=p;//добавление в вектор
@@ -34,11 +34,11 @@ void Vector::Add()
 		}
 	}
 	else
-		if(y==2) //добавление объекта класса Lorry
+		if (y==2) //добавление объекта класса Lorry
 		{
-			Lorry *b=new Lorry;
-			b->Input();
-			p=b;
+			Abiturient *b=new Abiturient;
+			b -> Input();
+			p = b;
 				if(cur<size)
 				{
 					beg[cur]=p;
@@ -50,11 +50,11 @@ void Vector::Add()
 //просмотр вектора
 void Vector::Show()
 {
-	if(cur==0) cout<<"Empty"<<endl;
+	if (cur==0) cout << " Empty " << endl;// Пустой
 	Object **p=beg;//указатель на указатель типа Object
-	for(int i=0;i<cur;i++)
+	for(int i=0; i < cur; i++)
 	{
-		(*p)->Show();//вызов метода Show() (позднее связывание)
+		(*p) -> Show();//вызов метода Show() (позднее связывание)
 		p++;//передвигаем указатель на следующий объект
 	}
 }
