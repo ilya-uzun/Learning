@@ -13,10 +13,10 @@ public:
 	void Input();//функция для ввода значений атрибутов
 	Person(std::string, int);//конструктор с параметрами
 	Person(const Person&);//конструктор копирования
-	//селекторы
+	//селекторы./
 	std::string Get_name(){return name;}
 	int Get_age(){return age;}
-	
+
 	//модификаторы
 	void Set_name(std::string);
 	void Set_age(int);

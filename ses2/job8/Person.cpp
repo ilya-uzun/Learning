@@ -44,7 +44,7 @@ return *this;
 void Person::Show()
  {
 std::cout <<"\n name : " <<name;
-std::cout <<"\n age : " <<age;
+std::cout <<" age : " <<age;
 std::cout <<"\n";
  }
 //метод для ввода значений атрибутов
@@ -52,6 +52,6 @@ void Person::Input()
 {
  std::cout << "\n name:"; 
  std::cin >> name;
- std::cout << "\n age:";
+ std::cout << " age:";
  std::cin >> age;
 }
