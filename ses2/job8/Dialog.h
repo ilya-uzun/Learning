@@ -1,6 +1,8 @@
 #pragma once
 #include "Vector.h"
 #include "Event.h"
+#include <iostream>
+#include <string>
 class Dialog : public Vector
 {
 public:

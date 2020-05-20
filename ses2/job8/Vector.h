@@ -6,7 +6,8 @@
 class Vector
 {
 public:
-Vector(int);//конструктор с параметрами
+    Vector(void){};//по умолчанию для класса DIalog
+    Vector(int);//конструктор с параметрами
 public:
 ~Vector(void);//деструктор
 void Add();//добавление элемента в вектор
