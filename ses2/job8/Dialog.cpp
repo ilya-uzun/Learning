@@ -5,9 +5,7 @@ Dialog::Dialog(void):Vector()
 EndState = 0;
 }
 //деструктор
-Dialog::~Dialog(void)
-{
-}
+Dialog::~Dialog(void){}
 //получение события
 void Dialog::GetEvent(TEvent &event)
 {
@@ -28,9 +26,9 @@ void Dialog::GetEvent(TEvent &event)
             case '-': event.command=cmDel; break;//удалить объект из группы
             case 'a': event.command=cmAverageAge; break;//средний возраст группы
             case 's': event.command=cmShow; break;//просмотр группы
-            case '/': event.command=cmGet;break; 
+            case '/': event.command=cmGet; break; // показать возраст
             case 'q': event.command=cmQuit; break; //конец работы
-            case 'h': event.command=cmHelp; break; //конец работы
+            case 'h': event.command=cmHelp; break; //помощь
         }
 //выделяем параметры команды, если они есть
         if(s.length()>1)
@@ -82,19 +80,19 @@ void Dialog::HandleEvent(TEvent& event)
     break;
     case cmAdd://добавление
         Add();
-        ClearEvent( event );
+        ClearEvent( event ); 
     break;
     case cmDel:Del(); //удаление
-         ClearEvent( event );
+         ClearEvent( event ); 
     break;
     case cmAverageAge:AverageAge(); //просмотр
-        ClearEvent( event );
+        ClearEvent( event ); 
     break;
     case cmShow:Show(); //просмотр
         ClearEvent( event );
     break;
     case cmQuit:EndExec(); //выход
-         ClearEvent( event );
+         ClearEvent( event ); //очищаем событие
     break;
     case cmHelp: //выход
          std::cout << "(m) - create group" << std::endl;

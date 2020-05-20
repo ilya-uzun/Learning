@@ -6,6 +6,7 @@ class Object
     Object(void);
     virtual void Show() = 0;
     virtual void Input() = 0;
+    virtual void AverageAge() = 0;
     virtual ~Object(void);
     virtual void HandleEvent(const TEvent &e) = 0;
 };

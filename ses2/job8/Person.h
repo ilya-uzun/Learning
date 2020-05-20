@@ -11,6 +11,7 @@ public:
 	virtual ~Person(void);//деструктор
 	void Show();//функция для просмотра атрибутов класса с помощью указателя
 	void Input();//функция для ввода значений атрибутов
+	void AverageAge();
 	Person(std::string, int);//конструктор с параметрами
 	Person(const Person&);//конструктор копирования
 	//селекторы./
@@ -23,6 +24,7 @@ public:
 
 	Person& operator=(const Person&);//перегрузка операции присваивания
 	void HandleEvent(const TEvent &e); // для событий
+
 protected:
 	std::string name;
 	int age;

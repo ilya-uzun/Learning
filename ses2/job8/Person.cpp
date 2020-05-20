@@ -55,6 +55,12 @@ void Person::Input()
  std::cout << "\n age:";
  std::cin >> age;
 }
+void Person::AverageAge()
+ {
+std::cout <<"\n name AAA: " <<name;
+std::cout <<" age : SSSS" <<age;
+std::cout <<"\n";
+ }
 void Person::HandleEvent(const TEvent &e)
  {
  	if(e.what == evMessage)//событие-сообщение

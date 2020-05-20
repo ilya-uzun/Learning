@@ -66,19 +66,14 @@ int Vector::operator ()()
  //средний возраст 
 void Vector::AverageAge()
  {
-	int sum;
-	Object *p2; 
-	Abiturient *a2 = new Abiturient;
-	a2 -> Input();
-	p2 = a2;
-	if (cur == 0) std::cout << " Empty average age " << std::endl;// Пустой
-	for(int i = 0; i < cur; i++)
-	{
-		sum += a2->Get_age();
-		a2++; //передвигаем указатель на следующий объект
-	}
-	sum /= size;
-	std::cout << " Average Age = " << sum << std::endl;	
+
+ 		Object**p=beg;
+		for(int i=0; i<cur; i++)
+		{
+			(*p)->AverageAge();//вызов метода (позднее связывание)
+			p++;//передвигаем указатель на следующий объект
+		}
+ 	
  }
 void Vector::HandleEvent(const TEvent &e)
  {
