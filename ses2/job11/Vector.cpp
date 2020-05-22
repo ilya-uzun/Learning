@@ -89,7 +89,7 @@ int Vector<T>::operator ()()
 {
 	return size;
 }
-
+//задача 2 или задание 3 для пятой задачи
 //вычислить среднее арифметическое
 template<class T>
 T Vector<T>::Srednee()
@@ -106,6 +106,43 @@ void Vector<T>::Add(T el, int pos)
 {
 	v.insert(v.begin() + pos, el);
 }
+//задание 3 для пятой задачи
+template <class T>
+T Vector<T>::Srednee_Tack5()
+{
+//копируем стек в вектор
+	vector<T> v = copy_stack_to_vector(s);
+	int n=1;//количество элементов в стеке
+	T sum = s.top();//начальное значение для суммы
+	s.pop();//удаляем элемент из вершины стека
+	while(!s.empty())//пока стек не пустой
+	  {
+		sum = sum + s.top();//добавляем в сумму элемент из вершины стека
+		s.pop();//удаляем элемент из вершины стека
+		n++;//увеличиваем количество элементов
+      }
+	//копируем вектор в стек
+	s = copy_vector_to_stack(v);
+	return sum/n;
+}
+//добавление элемента el в стек на позицию pos
+template <class T>
+void Vector<T>::Add_Tack5(T el, int pos)
+{
+	vector <T> v;//вспомогательный вектор
+	T t;
+	int i=1;
+	while(!s.empty())//пока стек не пустой
+	  {
+		t=s.top();//получить элемент из вершины стека
+	//если номер элемента равен pos добавляем в вектор новый элемент
+	if(i==pos) v.push_back(el);
+	v.push_back(t);//добавляем t в вектор
+	s.pop();//удаляем элемент из вершины стека
+	i++;
+}
+s=copy_vector_to_stack(v);//копируем вектор в стек
+}
 //задача 3
 //поиск максимального элемента
 template <class T>
@@ -121,11 +158,44 @@ int Vector<T>::Max()
 		}
 	return n;
 }
+// метод для пятой задачи
+template <class T>
+T Vector<T>::Max_Task5()
+{
+	T m=s.top();//m присвоить значение из вершины стека
+	//в вектор скопировать элементы стека
+	vector<T> v = copy_stack_to_vector(s);
+	while(!s.empty())//пока стек не пустой
+ 	 {
+	//сравниваем m и элемент в вершине стека
+	if(s.top()>m) m = s.top();
+	s.pop();//удаляем элемент из вершины стека
+	 }
+s = copy_vector_to_stack(v);//копируем вектор в стек
+return m;
+}
 //удаление элемента из позиции pos
 template<class T>
 void Vector<T>::Del(int pos)
 {
 	v.erase(v.begin() + pos);
+}
+// метод для пятой задачи
+template <class T>
+void Vector<T>::Del_Task5()
+{
+	T m=Max();//поиск максимального
+	vector<T> v;
+	T t;
+	while(!s.empty())//пока стек не пустой
+	  {
+		t=s.top();//получить элемент из вершины стека
+	//если t не равен максимальному, то добавить его в вектор
+	if(t!=m) v.push_back(t);
+	s.pop();//удалить элемент из стека
+}
+//копируем вектор в стек
+s=copy_vector_to_stack(v);
 }
 //задача 4
 template <class T>
@@ -141,6 +211,21 @@ int Vector<T>::Min()
 		}
 	return n;
 }
+// метод для пятой задачи
+template <class T>
+T Vector<T>::Min_Task5()
+{
+	T m = s.top();
+	vector<T> v = copy_stack_to_vector(s);
+	while(!s.empty())
+	  {
+		if(s.top()<m) m = s.top();
+		s.pop();
+	  }
+	s = copy_vector_to_stack(v);
+	return m;
+}
+//
 //деление всех элементов вектора на минимальный элемент
 template <class T>
 void Vector<T>::Delenie()
@@ -150,7 +235,21 @@ void Vector<T>::Delenie()
 	for(int i=0; i<v.size(); i++)
 	v[i] = v[i] / min;
 }
-
+//деление всех элементов на минимальный
+template <class T>
+void Vector<T>::Delenie_Tesk5()
+{
+	T m=Min();
+	vector<T> v;
+	T t;
+	while(!s.empty())
+	  {
+		t = s.top();
+		v.push_back(t/m);
+		s.pop();
+		}
+	s = copy_vector_to_stack(v);
+}
 //операция ввода-вывода
 template< typename T>
 std::ostream& operator << (std::ostream& out,const Vector<T> &a) 
