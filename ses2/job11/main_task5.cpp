@@ -11,7 +11,7 @@ void main()
   Time s = vec.Srednee_Tack5();//среднее ариметическое
   cout <<"Srednee=" << s <<endl;
   cout <<"pos?";
-  int p;
+  int p, min;
   cin >> p;//ввести позицию для добавления
   vec.Add_Tack5(s,p);//добавить элемент в вектор
   vec.Print();//печать вектора
