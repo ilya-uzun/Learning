@@ -44,7 +44,7 @@ int Max(TMap v)
       if(m < (*i).second)
         {
           m = (*i).second;
-          nom=k;
+          nom = k;
         }
       i++;//итератор
       k++;//счетчик элементов
@@ -62,7 +62,7 @@ int Min(TMap v)
       if(m > (*i).second)
         {
           m = (*i).second;
-          nom=k;
+          nom = k;
         }
       i++;//итератор
       k++;//счетчик элементов
@@ -73,7 +73,7 @@ int Min(TMap v)
 void delenie(TMap &v)
 { 
   Time m = v[Min(v)];
-  for(int i=0; i < v.size(); i++)
+  for(int i = 0; i < v.size(); i++)
   v[i] = v[i] / m;
 }
 
