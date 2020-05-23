@@ -82,7 +82,7 @@ void delenie(Vec &v)
 }
 
 
-void main()
+int main()
 {
   try //  ловим исключения
     {

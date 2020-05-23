@@ -237,7 +237,7 @@ void Vector<T>::Delenie()
 }
 //деление всех элементов на минимальный
 template <class T>
-void Vector<T>::Delenie_Tesk5()
+void Vector<T>::Delenie_Task5();
 {
 	T m=Min();
 	vector<T> v;

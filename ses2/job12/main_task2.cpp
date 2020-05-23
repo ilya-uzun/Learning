@@ -77,7 +77,7 @@ void delenie(TMap &v)
   v[i] = v[i] / m;
 }
 
-void main()
+int main()
 {
   int n;
   cout <<"Ebter N :"; 

@@ -4,7 +4,7 @@
 using namespace std;
 
 
-void main()
+int main()
 {
   Vector <Time> vec(5);//создать вектор из 5 элементов
   vec.Print();//печать вектор

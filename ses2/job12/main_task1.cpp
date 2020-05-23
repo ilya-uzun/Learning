@@ -80,7 +80,7 @@ void delenie(TMap &v)
   v[i] = v[i] / m;
 }
 //основная функция
-void main()
+int main()
 {
   int n;
   cout<<"N?"; cin>>n;//количество элементов

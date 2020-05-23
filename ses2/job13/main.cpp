@@ -59,7 +59,7 @@ struct Equal_s
 {
     bool operator()(Time t)
       {
-        return t == s;
+        return t==s;
       }
 };
 // задание 7
@@ -68,10 +68,10 @@ void del(Time& t)
     t = t / s;
 }
 
-void main()
+int main()
 {
     int n;
-    cout << "Enter N :";
+    cout << "Enter int N :";
     cin >> n;
     TVector v;
     v = make_vector(n);
@@ -79,27 +79,27 @@ void main()
     //задание 3
     TVector::iterator i;
     //поставили итератор i на максимальный элемент
-    i=max_element(v.begin(),v.end());
-    cout << "max=" <<*(i) << endl;
+    i = max_element(v.begin(),v.end());
+    cout << "max = " <<*(i) << endl;
     Time m=*(i);
     s = srednee(v);//нашли среднее арифметическое вектора
-    cout<<"sred="<<s<<endl;
+    cout<<"Еhe arithmetic mean = "<< s <<endl;
     //замена с использованием предиката
     replace_if(v.begin(),v.end(), Greater_s(),m);
     cout << "Replacement" << endl; //замена
     print_vector(v);
     //задание 4
     //по убыванию
-    cout << "Sortirovka po ubivaniu:" << endl;
+    cout << "Descending sort: " << endl;// Сортировка по убыванию
     sort(v.begin(), v.end(), Comp_less());
     print_vector(v);
     //по возрастанию
-    cout << "Sortirovka po vozrasaniu:" << endl;
+    cout << "Ascending sort :" << endl;// Сортировка по возрастанию
     sort(v.begin(), v.end());
     print_vector(v);
     //задание 5
-    cout<<"POISK"<<endl;
-    cin>>s;
+    cout << "Search" << endl;// поиск
+    cin >> s;
     //поиск элементов, удовлетворяющих условию предиката
     i=find_if(v.begin(), v.end(), Equal_s());
     if(i != v.end())//если нет конца вектора
@@ -107,7 +107,7 @@ void main()
     else
     cout << "Not such element!" << endl;
     //задание 6
-    cout << "UDALENIE" << endl;
+    cout << "Delete " << endl;// Удаление
     i = min_element(v.begin(), v.end());
     s = *i;
     //переместили элементы совпадающие с min в конец вектора
@@ -116,7 +116,7 @@ void main()
     v.erase(i, v.end());
     print_vector(v);
     // задание 7
-    cout << "DELENIE" << endl;
+    cout << "Division " << endl; // 
     i = max_element(v.begin(), v.end());
     s = *i;
     //для каждого элемента вектора вызывается функция del

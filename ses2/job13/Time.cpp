@@ -64,6 +64,13 @@ bool Time::operator >(const Time &t)
 	if(min == t.min && sec > t.sec)return true;
 return false;
 }
+//перегрузка сранения
+bool Time::operator ==(const Time &t)
+{
+	if(min == t.min) return true;
+	if(min == t.min && sec == t.sec) return true;
+return false;
+}
 
 //Перегрузка бинарной операции сложения
 Time operator+(const Time& x, const Time& y)

@@ -132,7 +132,7 @@ void Delenie(St &s)
   s=copy_vector_to_stack(v);//копируем вектор в стек
 }
 
-void main()
+int main()
 {
   Time t;
   St s;

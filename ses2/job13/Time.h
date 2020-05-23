@@ -33,6 +33,7 @@ public:
 	Time operator/(const int&);
 	bool operator >(const Time&);
 	bool operator <(const Time&);
+	bool operator == (const Time&);
 	// перегрузка сложения через дружественную функцию
 	friend Time operator + (const Time&, const Time&);
 	 // перегрузка вычетания
