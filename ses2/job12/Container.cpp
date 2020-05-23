@@ -51,7 +51,7 @@ void Container<T>::Add(int n, T el)
 template <class T>
 int Container<T>::Max()
 {
-    map<int, T>::iterator i = v.begin();//итератор поставили на первый элемент
+    map <int, T> i=v.begin();//итератор поставили на первый элемент
     int nom = 0, k = 0;
     Time m = (*i).second;//значение первого элемента
     while(i != v.end()) //пока нет конца контейнера
@@ -77,7 +77,7 @@ void Container<T>::Del()
 template<class T>
 int Container<T>::Min()
 {
-    map<int, T>::iterator i=v.begin();
+    map<int, T> i=v.begin();
     int nom = 0, k = 0;
     Time m=(*i).second;//значение первого элемента
     while(i!=v.end())

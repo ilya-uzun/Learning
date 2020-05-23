@@ -18,6 +18,9 @@ public:
     int Max();
     int Min();
     void Del();
-    void Delenie()
+    void Delenie();
 };
+
 // 
+
+
