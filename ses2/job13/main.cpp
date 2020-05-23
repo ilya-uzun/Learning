@@ -116,7 +116,7 @@ int main()
     v.erase(i, v.end());
     print_vector(v);
     // задание 7
-    cout << "Division " << endl; // 
+    cout << "Division " << endl; // Удаление
     i = max_element(v.begin(), v.end());
     s = *i;
     //для каждого элемента вектора вызывается функция del

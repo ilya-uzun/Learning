@@ -83,24 +83,25 @@ void delenie(TMap &v)
 int main()
 {
   int n;
-  cout<<"N?"; cin>>n;//количество элементов
-  TMap m=make_map(n);//создать словарь
+  cout << "Enter int N :"; 
+  cin>>n;//количество элементов
+  TMap m = make_map(n);//создать словарь
   print_map(m);//напечатать словарь
   //задание 3
   //вычисление среднего
-  int el=srednee(m);
-  cout<<"srednee="<<el<<endl;
+  int el = srednee(m);
+  cout << "Aveage = "<< el << endl;// среднее
   //добавление в конец
-  m.insert(make_pair(n,el));
+  m.insert(make_pair(n, el));
   print_map(m);
   //задание 4
-  int max=Max(m);
-  cout<<"max="<<m[max]<<" nom="<<max<<endl;
+  int max = Max(m);
+  cout << "max = "<<m[max] <<" nom = " << max << endl;
   m.erase(max);//удаление элемента
   print_map(m);
   //задание 5
-  int min=Min(m);
-  cout<<"min="<<m[min]<<" nom="<<min<<endl;
+  int min = Min(m);
+  cout << "min = "<< m[min] << " nom = "<< min << endl;
   delenie(m);
   print_map(m);
 }
