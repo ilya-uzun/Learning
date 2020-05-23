@@ -1,6 +1,8 @@
-﻿#include "Time.h"
+﻿#pragma once
+#include "Time.h"
 #include "Container.h"
 #include <iostream>
+
 using namespace std;
 
 int main()
@@ -13,7 +15,7 @@ int main()
   // задание 3 
   Time t = v.Srednee();//найти среднее арифметическое
   cout << "Aveage =" << t <<endl;
-  cout << "Add aveage" <<endl;
+  cout << "Add aveage" << endl;
   cout << "Output pos - ";
   int pos;
   cin >> pos;//позиция для добавления

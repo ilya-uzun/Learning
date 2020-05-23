@@ -26,7 +26,7 @@ template <class T>
 void Container<T>::Print()
 {
     for(int i=0; i < v.size(); i++)
-    cout <<i << " - " << v[i] <<" " << endl;
+    cout << i << " - " << v[i] <<" " << endl;
     cout << endl;
 }
 //вычисление среднего арифметического
