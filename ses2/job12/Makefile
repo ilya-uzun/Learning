@@ -2,7 +2,7 @@ CC := g++
 JOB = job
 PREFIX := obj/
 # SRC := main_task1.cpp
-SRC := main_task2.cpp Vector.cpp Vector.h Container.cpp Container.h
+SRC := main_task2.cpp Time.cpp Time.h
 OBJ := $(patsubst %.cpp, $(PREFIX)%.o, $(SRC))
 
 $(JOB): $(OBJ)
