@@ -1,7 +1,8 @@
 CC := g++
 JOB = job
 PREFIX := obj/
-SRC := main.cpp Vector.h Vector.cpp Time.cpp Time.h
+# SRC := main.cpp Vector.h Vector.cpp Time.cpp Time.h
+SRC := main_task4.cpp Time.cpp Time.h
 OBJ := $(patsubst %.cpp, $(PREFIX)%.o, $(SRC))
 
 $(JOB): $(OBJ)
