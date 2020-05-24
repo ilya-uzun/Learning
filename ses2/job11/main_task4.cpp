@@ -136,7 +136,7 @@ void print_stack(St str)
   int k = 0;
   for(int i = 0; i < str.size(); i++) k++;
   cout << "Number of stack elements " << k << endl;
-  cout << "Outputc top stack - "  << str.top()<< endl;
+  cout << "Output top stack - "  << str.top()<< endl;
 }
 
 int main()
