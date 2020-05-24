@@ -1,4 +1,5 @@
-﻿#include "Time.h"
+﻿#pragma once
+#include "Time.h"
 #include "Vector.h"
 #include <iostream>
 using namespace std;
