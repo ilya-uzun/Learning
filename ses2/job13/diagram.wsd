@@ -1,0 +1,50 @@
+ @startuml
+' note left of main #while: Комментарий.
+' note top of Rightangled : Комментарий.
+' note top of Object : Комментарий.
+' note top of Vector : Комментарий.
+skinparam dpi 200
+skinparam shadowing fals
+main <-- Vector
+main <-- Iterator
+Vector o--  Iterator
+class main<<(m,#FF7700)>>{
+    .. **Объекты** ..
+    Vector a(5)
+    Vector b(3)
+    Vector c(2)
+    Iterator i
+} 
+class Iterator{
+    .. **protected varible** ..
+    # int hypatenuse
+    .. **public metod** ..
+    + void Show()
+    + void set_hypatenuse(int)
+    + int get_hypatenuse() 
+    + int Hypatenuse()
+    .. **Операции перегрузки** ..
+    + Rightangled& operator = (const Rightangled&)
+    + friend istream& operator >> (istream& in,  Rightangled& rightangled)
+    + friend ostream& operator << (ostream& out, const Rightangled& rightangled)
+}
+class Vector{
+    .. **privat varible** ..
+    - int size
+    - int* data
+    - Iterator beg
+    - Iterator end
+    ..**public metod** ..
+    + void Add(Object*)
+    .. **Операции перегрузки** ..
+    + Vector& operator=(const Vector& a)
+    + int& operator[](int index)
+    + Vector operator+(const int k)
+    + int operator()()
+    + friend ostream& operator << (ostream& out, const Vector& a)
+    + friend istream& operator >> (istream& in, Vector& a)
+    + Iterator first() 
+    + Iterator last()
+}
+ @enduml
+

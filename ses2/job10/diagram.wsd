@@ -1,0 +1,35 @@
+ @startuml
+' note left of main #while: Комментарий.
+' note top of Rightangled : Комментарий.
+' note top of Object : Комментарий.
+' note top of Vector : Комментарий.
+skinparam dpi 200
+skinparam shadowing false
+main <-- Vector
+main <-- Error
+class main<<(m,#FF7700)>>{
+    .. **Объекты** ..
+    Vector x(10);
+    Vector y;
+} 
+class  Vector{
+    .. **private varible** ..
+    # int min;
+    # int sec;
+    .. **Операции перегрузки** ..
+	+ Time &operator = (const Time&);
+	+ Time &operator ++ (); 
+	+ Time operator ++ (int);
+	+ friend istream &operator >> (istream&in, Time &t);
+	+ friend ostream &operator << (ostream&out, const Time& t);
+}
+class File_work{
+    int make_file(const char* f_name);
+    int print_file(const char*f_name);
+    int del_file(const char*f_name, int k);
+    int add_file(const char*f_name, int k, Person pp);
+    int add_end(const char*f_name, Person pp);
+    int change_file(const char*f_name, int k,Person pp);
+}
+ @enduml
+

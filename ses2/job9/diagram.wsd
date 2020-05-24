@@ -1,0 +1,87 @@
+ @startuml
+' note left of main #while: Комментарий.
+' note top of Rightangled : Комментарий.
+' note top of Object : Комментарий.
+' note top of Vector : Комментарий.
+skinparam dpi 200
+skinparam shadowing false
+' Vector <--  main
+' Error <-- main
+' IndexError <|-- Error
+' SizeError <|-- Error
+' MaxSizeError <|-- SizeError
+' EmptySizeError <|-- SizeError
+' IndexError1 <|-- IndexError
+' IndexError2 <|-- IndexError
+
+main <-- Vector
+main <-- Error
+Error <|-- IndexError
+Error <|-- SizeError
+SizeError <|-- MaxSizeError
+SizeError <|-- EmptySizeError
+IndexError <|-- IndexError1
+IndexError <|-- IndexError2
+class main<<(m,#FF7700)>>{
+    .. **Объекты** ..
+    Vector x(10);
+    Vector y;
+} 
+class  Vector{
+    .. **private varible** ..
+    - int min;
+    - int sec;
+    .. **Операции перегрузки** ..
+	+ Time &operator = (const Time&);
+	+ Time &operator ++ (); 
+	+ Time operator ++ (int);
+	+ friend istream &operator >> (istream&in, Time &t);
+	+ friend ostream &operator << (ostream&out, const Time& t);
+}
+class Error{
+    + virtual void what(){};
+}
+class IndexError{
+.. **protected varible** ..
+    # string msg;
+.. **public metod** ..
+    + IndexError();
+    + virtual void what();
+}
+class SizeError{
+.. **protected varible** ..
+    # string msg;
+.. **public metod** ..
+    + SizeError();
+    + virtual void what();
+}
+class MaxSizeError{
+.. **protected varible** ..
+    # string msg_;
+.. **public metod** ..
+    + MaxSizeError();
+    + virtual void what();
+}
+class EmptySizeError{
+.. **protected varible** ..
+    # string msg_;
+.. **public metod** ..
+    + EmptySizeError();
+    + virtual void what();
+}
+class IndexError1{
+.. **protected varible** ..
+    # string msg_;
+.. **public metod** ..
+    + IndexError1();
+    + virtual void what();
+}
+class IndexError2{
+.. **protected varible** ..
+    # string msg_;
+.. **public metod** ..
+    + IndexError1();
+    + virtual void what();
+}
+ @enduml
+

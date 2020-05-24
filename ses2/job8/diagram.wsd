@@ -1,41 +1,95 @@
  @startuml
-note left of main #while: Комментарий.
-
-Dialog --> Vector
-Vector --> Object
-Person --> Object
-Abiturient --> Person
-
+' note left of main #while: Комментарий.
+' note top of Rightangled : Комментарий.
+' note top of Object : Комментарий.
+' note top of Vector : Комментарий.
+skinparam dpi 200
+skinparam shadowing false
+main <-- Dialog
+Dialog <|-- Vector
+Dialog <-- Abiturient
+Person <|--  Object
+Abiturient <|-- Person
+Dialog <-- Event
 class main<<(m,#FF7700)>>{
-    Vector v
-    Pair a
-    Rightangled b
-    Object* p = &a
+    .. **Объекты** ..
+    Dialog D;
+}
+class Object{
+    ..**virtual metod** ..
+    + virtual void Show() = 0;
+    + virtual void Input() = 0;
+    + virtual void AverageAge() = 0;
+    + virtual void HandleEvent(const TEvent &e) = 0;
 } 
-abstract class Object{
-    + virtual void Show() = 0
-}
-
-class Person{
-    .. protected varible ..
-    # int hypatenuse
-    .. public metod ..
-    + void Show()
-    .. friend metod ..
-    + Rightangled& operator = (const Rightangled&)
-   
-}
 class Vector{
-    .. privat varible ..
-    - Object** beg
+    .. **privat varible** ..
     - int size
-    + void Add(Object*)
-    .. friend metod ..
-    + friend ostream& operator<< (ostream &out, const Vector&)
+    - int* data
+    - Object**beg
+    ..**public metod** ..
+    + void Add();
+    + void Del();
+    + void AverageAge();
+    + void Show();
+    + int operator()();
+    + virtual void HandleEvent(const TEvent&e); 
+}
+class Person{
+    .. **privat varible** ..
+    - string name;
+    - int age
+    ..**public metod** ..
+    + void Input();
+    + void Add();
+    + void Del();
+    + void AverageAge();
+    + void Show();
+    + int Get_age();
+    + void Set_name();
+    + void Set_age(int);
+    + Person& operator=(const Person&);
+	+ void HandleEvent(const TEvent &e);
+
 }
 class Abiturient{
-    .. privat varible ..
-    .. friend metod ..
+    .. **privat varible** ..
+    - int person_ID;
+    ..**public metod** ..
+    + void Show();
+    + void Input();
+    + Abiturient(std::string, int, int);
+    + Abiturient(const Abiturient & );
+    + int Get_Person_ID(){return person_ID;}
+    + void Set_Person_ID(int);
+     Abiturient& operator=(const Abiturient&); 
+}
+class Event{
+    .. **privat varible** ..
+    - int what;
+    ..**события** ..
+    const int evNothing = 0;//пустое событие
+    const int evMessage = 100;//непустое событие
+    const int cmAdd = 1;//добавить объект в группу
+    const int cmDel = 2;//удалить объект из группы
+    const int cmGet = 3;//вывести атрибут всех объектов
+    const int cmShow = 4;//вывести всю группу
+    const int cmAverageAge = 5;//вывести всю группу
+    const int cmMake = 6;//создать группу
+    const int cmHelp = 7;//помощь
+    const int cmQuit = 101;//выход  
+}
+class Dialog{
+    .. **privat varible** ..
+    - int EndState;
+    - int* data
+    ..**public metod** ..
+    + virtual void GetEvent (TEvent &event);
+    + virtual int Execute();
+    + virtual void HandleEvent (TEvent& event); 
+    + virtual void ClearEvent (TEvent& event);
+    + int Valid();
+    + void EndExec();
 }
  @enduml
 
