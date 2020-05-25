@@ -5,23 +5,22 @@
 ' note top of Vector : Комментарий.
 skinparam dpi 200
 skinparam shadowing false
-main <-- Vector
-main <-- Error
+main <-- Person
+main <-- File_work
 class main<<(m,#FF7700)>>{
     .. **Объекты** ..
-    Vector x(10);
-    Vector y;
+    Person p, p1, p2;
 } 
-class  Vector{
+class Person{
     .. **private varible** ..
     # int min;
     # int sec;
     .. **Операции перегрузки** ..
-	+ Time &operator = (const Time&);
-	+ Time &operator ++ (); 
-	+ Time operator ++ (int);
-	+ friend istream &operator >> (istream&in, Time &t);
-	+ friend ostream &operator << (ostream&out, const Time& t);
+	+ Person operator =(const Person&);
+    + friend ostream& operator <<(ostream &out, const Person&p);
+    + friend istream& operator>>(istream &in, Person &p);
+    + friend fstream& operator>>(fstream &fin, Person &p);
+    + friend fstream& operator <<(fstream &fout, const Person&p);
 }
 class File_work{
     int make_file(const char* f_name);

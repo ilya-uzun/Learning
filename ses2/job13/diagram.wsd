@@ -4,47 +4,40 @@
 ' note top of Object : Комментарий.
 ' note top of Vector : Комментарий.
 skinparam dpi 200
-skinparam shadowing fals
-main <-- Vector
-main <-- Iterator
-Vector o--  Iterator
+skinparam shadowing false
+
+main <-- Time
+
 class main<<(m,#FF7700)>>{
     .. **Объекты** ..
-    Vector a(5)
-    Vector b(3)
-    Vector c(2)
-    Iterator i
+    Time s;
+    TVector v;
 } 
-class Iterator{
-    .. **protected varible** ..
-    # int hypatenuse
-    .. **public metod** ..
-    + void Show()
-    + void set_hypatenuse(int)
-    + int get_hypatenuse() 
-    + int Hypatenuse()
-    .. **Операции перегрузки** ..
-    + Rightangled& operator = (const Rightangled&)
-    + friend istream& operator >> (istream& in,  Rightangled& rightangled)
-    + friend ostream& operator << (ostream& out, const Rightangled& rightangled)
-}
-class Vector{
+class Time{
     .. **privat varible** ..
-    - int size
-    - int* data
-    - Iterator beg
-    - Iterator end
-    ..**public metod** ..
-    + void Add(Object*)
+    # int min;
+    # int sec;
+    .. **public metod** ..
+    + int get_min() { return min; }
+	+ int get_sec() { return sec; }
+	+ void set_min(int m) { min = m; }
+	+ void set_sec(int s) { sec = s; }
+	+ void simTime (int *minS, int *secS);
     .. **Операции перегрузки** ..
-    + Vector& operator=(const Vector& a)
-    + int& operator[](int index)
-    + Vector operator+(const int k)
-    + int operator()()
-    + friend ostream& operator << (ostream& out, const Vector& a)
-    + friend istream& operator >> (istream& in, Vector& a)
-    + Iterator first() 
-    + Iterator last()
+    + Time &operator = (const Time&); 
+	+ Time &operator ++ (); 
+	+ Time operator ++ (int);
+	+ Time operator/(const Time&);
+	+ Time operator/(const int&);
+	+ bool operator >(const Time&);
+	+ bool operator <(const Time&);
+	+ bool operator !=(const Time&);
+	+ friend Time operator + (const Time&, const Time&);
+    + friend Time operator - (Time&, int valuve);
+	+ friend Time operator + (Time&, int valuve);
+	+ friend istream &operator >> (istream&in, Time &t);
+	+ friend ostream &operator << (ostream&out, const Time& t);
 }
+
  @enduml
 
