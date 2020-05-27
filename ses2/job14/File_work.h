@@ -11,11 +11,14 @@ int make_file(const char* f_name)
     int n;
     Person p;
     cout<<"Enter element base volume :";//Введите базу элементов объема
-    cin>>n;
+    cin >> n;
     for(int i=0; i < n; i++)
       {
+        int n = 0;
         cin >> p;//ввод атрибутов объекта из стандартного потока
         stream << p <<"\n";//запись объекта в файловый поток
+        n++; // добавление порядкового номера
+        p.set_number(n);
       }
     stream.close();//закрыть поток
     return n;//вернуть количество записанных объектов
@@ -64,8 +67,9 @@ int add_file(const char*f_name, int k, Person pp)
     fstream temp("temp", ios::out);//открыть для записи
     fstream stream(f_name,ios::in);//открыть для чтения
     if(!stream)return -1;//ошибка открытия файла
-    Person p; int i=0, l=0;
-    while(stream>>p)
+    Person p; 
+    int i=0, l=0;
+    while(stream >> p)
       {
         if (stream.eof())break;
         i++;

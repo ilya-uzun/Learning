@@ -10,6 +10,7 @@ public:
     Person(string, int, int);
     Person(const Person&);
     Person operator =(const Person&);
+    void set_number(int);
 friend ostream& operator <<(ostream &out, const Person&p);
 friend istream& operator>>(istream &in, Person &p);
 // для работы с файлом
