@@ -14,12 +14,22 @@ int make_file(const char* f_name)
     cin >> n;
     for(int i=0; i < n; i++)
       {
-        int n = 0;
         cin >> p;//ввод атрибутов объекта из стандартного потока
         stream << p <<"\n";//запись объекта в файловый поток
-        n++; // добавление порядкового номера
-        p.set_number(n);
       }
+     // сортировка
+        for (int i = 1; i <= n; i++)
+        {
+         for (int j = 1; j <= n-i; j++)     
+            {		
+               if ( p.number >  p.number+1 )     
+                 {
+		              buffer = ma[j].price;
+                  ma[j].price = ma[j+1].price;
+                  ma[j+1].price = buffer;
+                 }
+            }
+        } 
     stream.close();//закрыть поток
     return n;//вернуть количество записанных объектов
 }

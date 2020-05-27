@@ -35,7 +35,7 @@ void Person::set_number(int N)
 }
 ostream& operator<<(ostream& out, const Person &p)
 {
-    out<<"number:" <<p.number<<"name: "<<p.name<<" age:"<<p.age <<"\n";
+    out << p.number<<" name: "<<p.name<<" age:"<<p.age <<"\n";
     return out;
 }
 istream& operator>>(istream& in, Person&p)
@@ -44,14 +44,14 @@ istream& operator>>(istream& in, Person&p)
     in >> p.name;
     cout << "age? ";
     in >> p.age;
-    // cout << "number?";
-    // in >> p.number;
+    cout << "number element ?";
+    in >> p.number;
 return in;
 }
 // для работы с файлом
 fstream& operator>>(fstream& fin, Person&p)
 {
-    // fin >> p.number;
+    fin >> p.number;
     fin >> p.name;
     fin >> p.age;
     return fin;

@@ -11,6 +11,7 @@ public:
     Person(const Person&);
     Person operator =(const Person&);
     void set_number(int);
+    int number;
 friend ostream& operator <<(ostream &out, const Person&p);
 friend istream& operator>>(istream &in, Person &p);
 // для работы с файлом
@@ -21,5 +22,5 @@ public:
 private:
     string name;
 int age;
-int number;
+
 };
