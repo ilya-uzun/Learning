@@ -26,7 +26,7 @@ public:
 
 	void simTime (int *minS, int *secS);
 	//перегруженные операторы
-	Time &operator = (const Time&); // опирация присваивания
+	Time &operator = (const Time&); // операция присваивания
 	Time &operator ++ (); //
 	Time operator ++ (int);// постфиксная операция
 	Time operator/(const Time&);

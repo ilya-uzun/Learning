@@ -26,15 +26,15 @@ public:
 
 	void simTime (int *minS, int *secS);
 	//перегруженные операторы
-	Time &operator = (const Time&); // опирация присваивания
+	Time &operator = (const Time&); // операция присваивания
 	Time &operator ++ (); //
 	Time operator ++ (int);// постфиксная операция
 	
 	// перегрузка сложения через дружественную функцию
 	friend Time operator + (const Time&, const Time&);
-	 // перегрузка вычетания
+	 // перегрузка вычитания
 	friend Time operator - (Time&, int valuve);
-	 // перегрузка вычетания
+	 // перегрузка вычитания
 	friend Time operator + (Time&, int valuve);
 	//Перегрузить операции ввода и вывода объектов с помощью потоков.
 	friend istream &operator >> (istream&in, Time &t);

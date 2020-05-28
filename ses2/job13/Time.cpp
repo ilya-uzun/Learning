@@ -83,7 +83,7 @@ Time operator+(const Time& x, const Time& y)
 	return p;
 }
 
-//Перегрузка бинарной операции вычетния объектов
+//Перегрузка бинарной операции вычитания объектов
 Time operator-( Time& t, int valuve)
 {
 	int temp = (t.min * 60 + t.sec) - valuve;
@@ -101,7 +101,7 @@ Time operator-( Time& t, int valuve)
 		return p;
 }
 
-//Перегрузка бинарной операции вычетния объектов
+//Перегрузка бинарной операции вычитания объектов
 Time operator+( Time& t, int valuve)
 {
 	int temp = (t.min * 60 + t.sec) + valuve;
