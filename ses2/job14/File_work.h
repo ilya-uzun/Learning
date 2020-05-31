@@ -6,6 +6,18 @@
 #include <algorithm> 
 using namespace std;
 // сохранения объектов класса Person
+
+ // записать в вектор
+vector<Person> write_vector (vector<Person> vp_, Person p_, int size)
+{
+    for(int i = 0; i < size; i++)
+      {
+        cin >> p_;
+        vp_.push_back(p_);//ввод атрибутов объекта из стандартного потока
+      }
+      return vp_;
+}
+   
 int make_file(const char* f_name)
 {
     fstream stream(f_name, ios::out|ios::trunc);//открыть для записи
@@ -15,12 +27,8 @@ int make_file(const char* f_name)
     cin >> n;
     vector<Person> vp;
     Person p;
-    // запсть в вектор
-    for(int i = 0; i < n; i++)
-      {
-        cin >> p;
-        vp.push_back(p);//ввод атрибутов объекта из стандартного потока
-      }
+    // записать в вектор
+    vp = write_vector(vp, p, n);
       // сортировака по имени
     sort(vp.begin(), vp.end(), [](Person &p1, Person &p2)
       {
@@ -39,7 +47,6 @@ int print_file(const char*f_name)
 {
     fstream stream(f_name,ios::in);//открыть для чтения
     if(!stream) return -1;//ошибка открытия файла
-    vector<Person> vp;
     Person p; 
     int i = 0;
     while(stream >> p)
@@ -47,10 +54,6 @@ int print_file(const char*f_name)
         cout << p <<"\n";
         i++;
       }
-    // sort(vp.begin(), vp.end(), [](Person &p1, Person &p2)
-    // {
-    // return  (p1.get_name() < p1.get_name());
-    // }); 
     stream.close();
     return i;
 }
@@ -61,20 +64,25 @@ int del_file(const char*f_name, int k)
     fstream stream(f_name, ios::in);//открыть для чтения
     if(!stream) return -1;//ошибка открытия файла
     int i = 0;
+    vector<Person> vp;
     Person p;
-    while(stream >> p)//пока нет конца файла выполняем чтение объекта
-      {
-//если прочитан признак конца файла,то выход из цикла
-        if (stream.eof()) break;
-        i++;
-//если номер объекта не равен k, то записываем его во вспомогательый файл
-        if(i!=k) temp << p;
-      }//while(stream>>p)
-//закрыть файлы
-    stream.close(); 
-    temp.close();
-    remove(f_name);//удалить старый файл
-    rename("temp", f_name);// переименовать temp
+
+
+
+
+//     while(stream >> p)//пока нет конца файла выполняем чтение объекта
+//       {
+// //если прочитан признак конца файла,то выход из цикла
+//         if (stream.eof()) break;
+//         i++;
+// //если номер объекта не равен k, то записываем его во вспомогательый файл
+//         if(i!=k) temp << p;
+//       }//while(stream>>p)
+// //закрыть файлы
+//     stream.close(); 
+//     temp.close();
+//     remove(f_name);//удалить старый файл
+//     rename("temp", f_name);// переименовать temp
     return i;//количество прочитанных
 }
 //добавить объект в поток
