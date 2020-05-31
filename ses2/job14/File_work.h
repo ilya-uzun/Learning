@@ -2,6 +2,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector> 
+#include <algorithm> 
 using namespace std;
 // сохранения объектов класса Person
 int make_file(const char* f_name)
@@ -9,27 +11,19 @@ int make_file(const char* f_name)
     fstream stream(f_name, ios::out|ios::trunc);//открыть для записи
     if(!stream)return -1;//ошибка открытия файла
     int n;
-    Person p;
     cout<<"Enter element base volume :";//Введите базу элементов объема
     cin >> n;
-    for(int i=0; i < n; i++)
+    vector<Person> vp;
+    Person p;
+    for(int i = 0; i < n; i++)
       {
-        cin >> p;//ввод атрибутов объекта из стандартного потока
+        vp.push_back(p);//ввод атрибутов объекта из стандартного потока
         stream << p <<"\n";//запись объекта в файловый поток
       }
-     // сортировка
-        for (int i = 1; i <= n; i++)
-        {
-         for (int j = 1; j <= n-i; j++)     
-            {		
-               if ( p.number >  p.number+1 )     
-                 {
-		              buffer = ma[j].price;
-                  ma[j].price = ma[j+1].price;
-                  ma[j+1].price = buffer;
-                 }
-            }
-        } 
+     sort(vp.begin(), vp.end(), [](const Person &p1, const Person &p2)
+    {
+       return  (p1.number < p2.number);
+    });   
     stream.close();//закрыть поток
     return n;//вернуть количество записанных объектов
 }
