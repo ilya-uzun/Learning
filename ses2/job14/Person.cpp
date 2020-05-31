@@ -29,6 +29,14 @@ return*this;
 }
 Person::~Person(){}
 
+void Person::set_name(string Na)
+{
+    name = Na;
+}
+void Person::set_age(int a)
+{
+    age = a;
+}
 void Person::set_number(int N)
 {
     number = N;
@@ -40,11 +48,11 @@ ostream& operator<<(ostream& out, const Person &p)
 }
 istream& operator>>(istream& in, Person&p)
 {
-    cout <<"name? ";
+    cout <<"Enter name: ";
     in >> p.name;
-    cout << "age? ";
+    cout << "Enter age: ";
     in >> p.age;
-    cout << "number element ?";
+    cout << "Enter number element: ";
     in >> p.number;
 return in;
 }

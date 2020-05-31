@@ -20,9 +20,9 @@ int make_file(const char* f_name)
         vp.push_back(p);//ввод атрибутов объекта из стандартного потока
         stream << p <<"\n";//запись объекта в файловый поток
       }
-     sort(vp.begin(), vp.end(), [](const Person &p1, const Person &p2)
+     sort(vp.begin(), vp.end(), [](Person &p1, Person &p2)
     {
-       return  (p1.number < p2.number);
+       return  (p1.get_name() < p1.get_name());
     });   
     stream.close();//закрыть поток
     return n;//вернуть количество записанных объектов

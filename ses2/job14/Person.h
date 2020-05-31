@@ -10,8 +10,12 @@ public:
     Person(string, int, int);
     Person(const Person&);
     Person operator =(const Person&);
+    void set_name(string);
+    void set_age(int);
     void set_number(int);
-    
+    string get_name(){return name;}
+    int get_age(){return age;}
+    int get_number(){return number;}
 friend ostream& operator <<(ostream &out, const Person&p);
 friend istream& operator>>(istream &in, Person &p);
 // для работы с файлом
