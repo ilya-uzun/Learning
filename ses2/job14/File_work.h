@@ -15,15 +15,22 @@ int make_file(const char* f_name)
     cin >> n;
     vector<Person> vp;
     Person p;
+    // запсть в вектор
     for(int i = 0; i < n; i++)
       {
+        cin >> p;
         vp.push_back(p);//ввод атрибутов объекта из стандартного потока
-        stream << p <<"\n";//запись объекта в файловый поток
       }
-     sort(vp.begin(), vp.end(), [](Person &p1, Person &p2)
-    {
-       return  (p1.get_name() < p1.get_name());
-    });   
+      // сортировака по имени
+    sort(vp.begin(), vp.end(), [](Person &p1, Person &p2)
+      {
+         return  (p1.get_name() < p2.get_name());
+      });
+      // запись вектора в  файл
+     for(int i = 0; i < vp.size(); i++)
+      {
+        stream << vp[i];
+      }
     stream.close();//закрыть поток
     return n;//вернуть количество записанных объектов
 }
@@ -32,6 +39,7 @@ int print_file(const char*f_name)
 {
     fstream stream(f_name,ios::in);//открыть для чтения
     if(!stream) return -1;//ошибка открытия файла
+    vector<Person> vp;
     Person p; 
     int i = 0;
     while(stream >> p)
@@ -39,6 +47,10 @@ int print_file(const char*f_name)
         cout << p <<"\n";
         i++;
       }
+    sort(vp.begin(), vp.end(), [](Person &p1, Person &p2)
+    {
+    return  (p1.get_name() < p1.get_name());
+    }); 
     stream.close();
     return i;
 }

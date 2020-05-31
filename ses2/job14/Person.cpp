@@ -43,7 +43,7 @@ void Person::set_number(int N)
 }
 ostream& operator<<(ostream& out, const Person &p)
 {
-    out << p.number<<" name: "<<p.name<<" age:"<<p.age <<"\n";
+    out << "ID: " << p.number <<" name: "<<p.name<<" age:"<<p.age <<"\n";
     return out;
 }
 istream& operator>>(istream& in, Person&p)
