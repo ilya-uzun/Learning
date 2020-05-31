@@ -31,7 +31,12 @@ int main(void) {
         Person("Egor", 29),
         Person("Andrey", 31),
     };
- 
+    // сортировака
+    sort(people.begin(), people.end(), [](const Person &p1, const Person &p2)
+    {
+       return  (p1.name < p2.name);
+    });
+    // выводим
     for (auto element : people)
     {
         cout << element.name << endl;
