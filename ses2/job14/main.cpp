@@ -55,7 +55,7 @@ int main()
         cin >> p1;
         k = add_file(file_name,nom,p1);
         if(k<0) cout << "Can't read file";
-        if(k==0) k = add_end(file_name,p1);
+        if(k==0) k = add_end(file_name,p1);//
       break;
 
       case 5: cout<<"file name data base  ?";

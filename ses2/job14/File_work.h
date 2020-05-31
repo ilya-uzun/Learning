@@ -47,10 +47,10 @@ int print_file(const char*f_name)
         cout << p <<"\n";
         i++;
       }
-    sort(vp.begin(), vp.end(), [](Person &p1, Person &p2)
-    {
-    return  (p1.get_name() < p1.get_name());
-    }); 
+    // sort(vp.begin(), vp.end(), [](Person &p1, Person &p2)
+    // {
+    // return  (p1.get_name() < p1.get_name());
+    // }); 
     stream.close();
     return i;
 }
