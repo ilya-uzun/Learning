@@ -23,8 +23,13 @@ vector<Person> sort_vector(vector<Person> vp_)
   int c;
  do
   { //Меню сортировки
-      cout <<"\n1. sort name A-B " << endl;// создать файл
-      cout <<"\n2. sort name B-A " << endl;// печать файла
+      cout <<"\n1. sorting by name A-Z " ;// сортировка по алфавиту
+      cout <<"\n2. sorting by name Z-A " ;// сортировка по алфавиту с конца
+      cout <<"\n3. sorting by age min-max " ;// сортировка по возрасту возростающая
+      cout <<"\n4. sorting by age max-min " ;// сортировка по возрасту убывающая
+      cout <<"\n5. sorting by ID min-max " ;// сортировка по номеру, возростающая
+      cout <<"\n6. sorting by ID max-min " ;// сортировка по номеру, убывающая
+      cout << endl;
       cin >> c;
     
    switch(c)
@@ -36,20 +41,52 @@ vector<Person> sort_vector(vector<Person> vp_)
            });
         return vp_;
       break;
+
       case 2: 
         sort(vp_.begin(), vp_.end(), [](Person &p1, Person &p2)
           {
            return  (p1.get_name() > p2.get_name());
            });
         return vp_;
-      break;   
+      break;
+
+      case 3: 
+        sort(vp_.begin(), vp_.end(), [](Person &p1, Person &p2)
+          {
+           return  (p1.get_age() < p2.get_age());
+           });
+        return vp_;
+      break; 
+
+      case 4: 
+        sort(vp_.begin(), vp_.end(), [](Person &p1, Person &p2)
+          {
+           return  (p1.get_age() > p2.get_age());
+           });
+        return vp_;
+      break; 
+
+      case 5:
+        sort(vp_.begin(), vp_.end(), [](Person &p1, Person &p2)
+          {
+           return  (p1.get_name() < p2.get_name());
+           });
+        return vp_;
+      break;
+
+      case 6: 
+        sort(vp_.begin(), vp_.end(), [](Person &p1, Person &p2)
+          {
+           return  (p1.get_number() > p2.get_number());
+           });
+        return vp_;
+      break;       
       
     } // switch(c) 
   }//do
   while(c!=0);
+  return vp_;
 }
-
-
 
 int make_file(const char* f_name)
 {
