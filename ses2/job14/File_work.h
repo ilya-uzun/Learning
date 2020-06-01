@@ -17,7 +17,40 @@ vector<Person> write_vector (vector<Person> vp_, Person p_, int size)
       }
       return vp_;
 }
-   
+
+vector<Person> sort_vector(vector<Person> vp_) 
+{
+  int c;
+ do
+  { //Меню сортировки
+      cout <<"\n1. sort name A-B " << endl;// создать файл
+      cout <<"\n2. sort name B-A " << endl;// печать файла
+      cin >> c;
+    
+   switch(c)
+    {
+      case 1:
+        sort(vp_.begin(), vp_.end(), [](Person &p1, Person &p2)
+          {
+           return  (p1.get_name() < p2.get_name());
+           });
+        return vp_;
+      break;
+      case 2: 
+        sort(vp_.begin(), vp_.end(), [](Person &p1, Person &p2)
+          {
+           return  (p1.get_name() > p2.get_name());
+           });
+        return vp_;
+      break;   
+      
+    } // switch(c) 
+  }//do
+  while(c!=0);
+}
+
+
+
 int make_file(const char* f_name)
 {
     fstream stream(f_name, ios::out|ios::trunc);//открыть для записи
@@ -29,11 +62,8 @@ int make_file(const char* f_name)
     Person p;
     // записать в вектор
     vp = write_vector(vp, p, n);
-      // сортировака по имени
-    sort(vp.begin(), vp.end(), [](Person &p1, Person &p2)
-      {
-         return  (p1.get_name() < p2.get_name());
-      });
+      // сортировака
+    vp = sort_vector(vp); 
       // запись вектора в  файл
      for(int i = 0; i < vp.size(); i++)
       {
