@@ -131,25 +131,52 @@ int del_file(const char*f_name, int k)
     fstream stream(f_name, ios::in);//открыть для чтения
     if(!stream) return -1;//ошибка открытия файла
     int i = 0;
-    vector<Person> vp;
+    int c = 0;
+    // vector<Person> vp;
     Person p;
+    while(stream >> p)//пока нет конца файла выполняем чтение объекта
+      {
+        //если прочитан признак конца файла,то выход из цикла
+        if (stream.eof()) break;
+        i++;
+        //если номер объекта не равен k, то записываем его во вспомогательый файл
+        if(i!=k) temp << p;
+      }
+//   do
+//   { //Меню
+//       cout <<"\n1. delite by ID";// создать файл
+//       cout <<"\n2. delite by key";// печать файла
+//       cout << endl;// печать файла
+//       cin >> c;
+
+//    switch(c)
+//     {
+//       case 1: 
+  
+//       break;
+
+//       case 2: 
+  
+//       break;
+//      } // switch(c) 
+//   }//do
+// while(c!=0);
 
 
-
-
-//     while(stream >> p)//пока нет конца файла выполняем чтение объекта
+//     // записать в вектор
+//     vp = write_vector(vp, p, n);
+//       // сортировака
+//     vp = sort_vector(vp); 
+//       // запись вектора в  файл
+//      for(int i = 0; i < vp.size(); i++)
 //       {
-// //если прочитан признак конца файла,то выход из цикла
-//         if (stream.eof()) break;
-//         i++;
-// //если номер объекта не равен k, то записываем его во вспомогательый файл
-//         if(i!=k) temp << p;
-//       }//while(stream>>p)
-// //закрыть файлы
-//     stream.close(); 
-//     temp.close();
-//     remove(f_name);//удалить старый файл
-//     rename("temp", f_name);// переименовать temp
+//         stream << vp[i];
+//       }  
+    //закрыть файлы
+    stream.close(); 
+    temp.close();
+    remove(f_name);//удалить старый файл
+    rename("temp", f_name);// переименовать temp
     return i;//количество прочитанных
 }
 //добавить объект в поток

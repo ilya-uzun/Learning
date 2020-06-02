@@ -58,13 +58,14 @@ int main()
         if(k==0) k = add_end(file_name,p1);//
       break;
 
-      case 5: cout<<"file name data base  ?";
-        cin>>file_name;
-        cout<<"Number ?"; 
-        cin>>nom;
-        cout<<"New person:";
-        cin>>p2;
-        k = change_file(file_name,nom,p2);
+      case 5: 
+        cout << "file name data base  ?";
+        cin >> file_name;
+        cout << "Number ?"; 
+        cin >> nom;
+        cout << "New person:";
+        cin >> p2;
+        k = change_file(file_name, nom, p2);
         if(k<0) cout<<"\nCan't read file";
         if(k==0) cout<<"\nNot such record";
       break;
