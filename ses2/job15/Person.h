@@ -15,10 +15,10 @@ public:
     void set_simma(int);
     void set_account_number(int);
     // модификатор get
-    string get_FIO(){return FIO;}// ключ
+    const string &get_FIO() const;
     int get_simma(){return simma;}
     int get_account_number(){return account_number;}
- 
+    const string &getKey() const; // ключ
     // ввод вывод    
 friend ostream& operator <<(ostream &out, const Person&p);
 friend istream& operator>>(istream &in, Person &p);

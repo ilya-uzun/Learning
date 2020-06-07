@@ -42,6 +42,18 @@ void Person::set_account_number(int N)
 {
     account_number = N;
 }
+
+const string &Person::get_FIO() const {
+    return FIO;
+}
+/**
+ * Метод получения ключа
+ * @return
+ */
+const string &Person::getKey() const {
+    return get_FIO();
+}
+
 ostream& operator<<(ostream& out, const Person &p)
 {
     out << "FIO: " << p.FIO  <<" account_number:" << p.account_number <<" simma: "<< p.simma <<"\n";

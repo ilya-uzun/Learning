@@ -5,7 +5,7 @@
  *Метод получения размера таблицы
  * @return
  */
-int HashTable::getSize() {
+int Hash::getSize() {
     return size;
 }
 
@@ -13,7 +13,7 @@ int HashTable::getSize() {
  * Метод получения общего количества добавленных в таблицу элементов
  * @return
  */
-int HashTable::getFilledSize() {
+int Hash::getFilledSize() {
     int sum = 0;
 
     for (auto &cell : table) {
@@ -27,7 +27,7 @@ int HashTable::getFilledSize() {
  * Метод проверки, является ли таблица пустой
  * @return
  */
-bool HashTable::isEmpty() {
+bool Hash::isEmpty() {
     return getFilledSize() == 0;
 }
 
@@ -36,7 +36,7 @@ bool HashTable::isEmpty() {
  * @param key
  * @return
  */
-int HashTable::getIntKey(const string &key) {
+int Hash::getIntKey(const string &key) {
     int value = 0;
     for (char i : key) {
         value = 37 * value + i;
@@ -52,7 +52,7 @@ int HashTable::getIntKey(const string &key) {
  * @param key
  * @return
  */
-int HashTable::hash(const string &key) {
+int Hash::hash(const string &key) {
     int intKey = getIntKey(key);
     int M = size;
     long double A = (sqrt((long double) 5) - 1) / 2;
@@ -65,10 +65,10 @@ int HashTable::hash(const string &key) {
  * Метод вставки новой записи в хэш-таблицу
  * @param value
  */
-void HashTable::insert(const Data &value) {
-    auto &key = value.getKey();
+void Hash::insert(const Person &value) {
+    auto &key = value.get_FIO();
     int hashValue = hash(key);
-    list<pair<string, Data>> &cell = table[hashValue];
+    list<pair<string, Person>> &cell = table[hashValue];
     auto iter = cell.begin();
     bool keyExists = false;
     
@@ -91,7 +91,7 @@ void HashTable::insert(const Data &value) {
  * @param key
  * @return
  */
-bool HashTable::remove(const string &key) {
+bool Hash::remove(const string &key) {
     int hashValue = hash(key);
     auto &cell = table[hashValue];
     auto iter = cell.begin();
@@ -114,7 +114,7 @@ bool HashTable::remove(const string &key) {
  * @param key
  * @return
  */
-Data HashTable::search(const string &key) {
+Person Hash::search(const string &key) {
     int hashValue = hash(key);
     auto &cell = table[hashValue];
     auto iter = cell.begin();
@@ -134,11 +134,11 @@ Data HashTable::search(const string &key) {
  * @param pos
  * @return
  */
-list<Data> HashTable::search(const int pos) {
+list<Person> Hash::search(const int pos) {
     auto &cell = table[pos - 1];
 
     if (!cell.empty()) {
-        list<Data> result;
+        list<Person> result;
         for (auto & el : cell) {
             result.emplace_back(el.second);
         }
@@ -152,7 +152,7 @@ list<Data> HashTable::search(const int pos) {
  * Метод посчета коллизий
  * @return
  */
-int HashTable::getCollisionNum() {
+int Hash::getCollisionNum() {
     int sum = 0;
 
     for (auto &cell : table) {
@@ -167,7 +167,7 @@ int HashTable::getCollisionNum() {
 /**
  * Метод вывода записей хэш-таблицы в консоль
  */
-void HashTable::print() {
+void Hash::print() {
     if (getFilledSize() == 0) {
         throw runtime_error("Хэш-Таблица пустая, распечатывать нечего!");
     }
@@ -187,7 +187,7 @@ void HashTable::print() {
 /**
  * Метод удаления всех записей их хэш-таблицы
  */
-void HashTable::clear() {
+void Hash::clear() {
     for (auto &cell : table) {
         cell.clear();
     }

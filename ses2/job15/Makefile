@@ -1,7 +1,7 @@
 CC := g++
 JOB = job
 PREFIX := obj/
-SRC := main.cpp Person.cpp Person.h File_work.h
+SRC := main.cpp Person.cpp Person.h File_work.h Hash.h Hash.cpp
 OBJ := $(patsubst %.cpp, $(PREFIX)%.o, $(SRC))
 
 $(JOB): $(OBJ)

@@ -9,7 +9,7 @@ int main()
 { 
   Person p, p1, p2;
   int k, c;
-  char file_name[30];
+  char file_name[100];
   do
   { //Меню
       cout <<"\n1. Make file";// создать файл
