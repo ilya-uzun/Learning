@@ -34,6 +34,7 @@ int Hash::getIntKey(const string &key) {
 //  Метод, вычисляющи и возвращающий хэш-сумму
 //  на основе строкового ключа.
 //  Работает по формуле:
+// H(k)= k mod M
 // H(k)= [M (kAmod1)], 0<A<1, mod1 – получение дробной части, [] – получение целой части
  
 int Hash::hash(const string &key) {
@@ -43,6 +44,7 @@ int Hash::hash(const string &key) {
     long double kA = (long double) intKey * A;
     long double kAMod1 = (kA - floor(kA));
     return floor(M * kAMod1);
+    //  return floor(intKey * fmod(M, 2));
 }
 
 // Метод вставки новой записи в хэш-таблицу
@@ -139,9 +141,9 @@ void Hash::print() {
     for (int i = 0; i < size ; i++) {
         auto &cell = table[i];
         if (!cell.empty()) {
-            cout << i + 1 << ") ";
+            cout  << i + 1 << ": ";
             for (auto & el : cell) {
-                cout << " key = " << el.first << ", value = {" << el.second << "}";
+                cout << " key = " << el.first << ", " << el.second;
                 cout << endl;
             }
         }

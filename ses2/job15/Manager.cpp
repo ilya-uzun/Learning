@@ -16,14 +16,12 @@ void Manager::initHashPerson(unsigned int size) {
 }
 
 //  Метод вывода записей хэш-таблицы в консоль
- 
 void Manager::printHashPerson() {
     cout << "The elements of the hash table:" << endl;// Элементы хэш-таблицы:
     hashPerson.print();
 }
 
 //  Метод поиска записи в хэш-таблице
-
 void Manager::searchElement() {
     const string &key = getKey("\nEnter the key of the item you want to find!");// Введите ключ элемента, который, хотите найти!
     const Person &person = hashPerson.search(key);
@@ -102,7 +100,7 @@ void Manager::removeElement() {
 void Manager::testCollisions() {
     cout << "Test the number of collisions!" << endl << endl; // Тест количества коллизий!
     initHashPerson(40);
-    cout << "With 40 elements, the number of collisions =" << hashPerson.getCollisionNum() << endl << endl;// При 40 элементах кол-во коллизий =
+    cout << "With 40 elements, the number of collisions = " << hashPerson.getCollisionNum() << endl << endl;// При 40 элементах кол-во коллизий =
     initHashPerson(75);
     cout << "With 75 elements, the number of collisions = " << hashPerson.getCollisionNum() << endl << endl;// При 75 элементах кол-во коллизий =
     initHashPerson(90);
