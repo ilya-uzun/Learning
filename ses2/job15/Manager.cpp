@@ -4,26 +4,26 @@
  * Конструктор без параметров
  */
 Manager::Manager() {
-    initHashTable(100);
+    initHashPerson(100);
 }
- 
+
 /**
  * Метод инициализация хэш таблицы случайными значениями
  * @param size
  */
-void Manager::initHashTable(unsigned int size) {
-    hashTable.clear();
+void Manager::initHashPerson(unsigned int size) {
+    hashPerson.clear();
     for (unsigned int i = 0; i < size; i++) {
-        hashTable.insert(dataGenerator.getData());
+        hashPerson.insert(generatorPerson.getData());
     }
 }
 
 /**
  * Метод вывода записей хэш-таблицы в консоль
  */
-void Manager::printHashTable() {
+void Manager::printHashPerson() {
     cout << "Элементы хэш-таблицы:" << endl;
-    hashTable.print();
+    hashPerson.print();
 }
 
 /**
@@ -31,9 +31,9 @@ void Manager::printHashTable() {
  */
 void Manager::searchElement() {
     const string &key = getKey("\nВведите ключ элемента, который, хотите найти!");
-    const Data &data = hashTable.search(key);
+    const Person &Person = hashPerson.search(key);
     cout << "\nНайденный элемент: " << endl;
-    cout << data << endl;
+    cout << Person << endl;
 }
 
 /**
@@ -51,18 +51,18 @@ string Manager::getKey(const string &title) const {
  * Метод редактирования записи хэш-таблицы
  */
 void Manager::editElement() {
-    list<Data> dataList;
+    list<Person> dataList;
     SearchType opt = SearchType(getInt(string_format("\nКаким образом хотите отредактировать элемент?\n%d - По ключу\n%d - По номеру", BY_KEY, BY_POS), BY_KEY, BY_POS));
 
     switch (opt) {
         case BY_KEY: {
             const string &key = getKey("\nВведите ключ элемента, который, хотите отредкатировать!");
-            dataList.emplace_back(hashTable.search(key));
+            dataList.emplace_back(hashPerson.search(key));
             break;
         }
         case BY_POS: {
-            const int pos = getInt("\nВведите номер элемента, который, хотите отредактировать!", 1, hashTable.getSize());
-            dataList = hashTable.search(pos);
+            const int pos = getInt("\nВведите номер элемента, который, хотите отредактировать!", 1, hashPerson.getSize());
+            dataList = hashPerson.search(pos);
             break;
         }
     }
@@ -71,9 +71,9 @@ void Manager::editElement() {
         throw runtime_error("Элемент не был найден и поэтому не будет отредактирован!");
     }
 
-    Data data = getDataFromList(dataList, "\nНайдено несколько элементов, который из них вы хотите отредактировать?" + getStringFromDataList(dataList));
-    data = getEditedElement(data);
-    hashTable.insert(data);
+    Person Person = getDataFromList(dataList, "\nНайдено несколько элементов, который из них вы хотите отредактировать?" + getStringFromDataList(dataList));
+    Person = getEditedElement(Person);
+    hashPerson.insert(Person);
 
     cout << "Элемент был успешно отредактирован!" << endl;
 }
@@ -82,18 +82,18 @@ void Manager::editElement() {
  * Метод удаления записи хэш-таблицы
  */
 void Manager::removeElement() {
-    list<Data> dataList;
+    list<Person> dataList;
     SearchType opt = SearchType(getInt(string_format("\nКаким образом хотите удалить элемент?\n%d - По ключу\n%d - По номеру", BY_KEY, BY_POS), BY_KEY, BY_POS));
 
     switch (opt) {
         case BY_KEY: {
             const string &key = getKey("\nВведите ключ элемента, который, хотите удалить!");
-            dataList.emplace_back(hashTable.search(key));
+            dataList.emplace_back(hashPerson.search(key));
             break;
         }
         case BY_POS: {
-            const int pos = getInt("\nВведите номер элемента, который, хотите удалить!", 1, hashTable.getSize());
-            dataList = hashTable.search(pos);
+            const int pos = getInt("\nВведите номер элемента, который, хотите удалить!", 1, hashPerson.getSize());
+            dataList = hashPerson.search(pos);
             break;
         }
     }
@@ -102,8 +102,8 @@ void Manager::removeElement() {
         throw runtime_error("Элемент не был найден и поэтому не будет удален!");
     }
 
-    Data data = getDataFromList(dataList, "\nНайдено несколько элементов, который из них вы хотите удалить?" + getStringFromDataList(dataList));
-    hashTable.remove(data.getKey());
+    Person Person = getDataFromList(dataList, "\nНайдено несколько элементов, который из них вы хотите удалить?" + getStringFromDataList(dataList));
+    hashPerson.remove(Person.getKey());
 
     cout << "Элемент был успешно удален!" << endl;
 }
@@ -113,13 +113,13 @@ void Manager::removeElement() {
  */
 void Manager::testCollisions() {
     cout << "Тест количества коллизий!" << endl << endl;
-    initHashTable(40);
-    cout << "При 40 элементах кол-во коллизий = " << hashTable.getCollisionNum() << endl << endl;
-    initHashTable(75);
-    cout << "При 75 элементах кол-во коллизий = " << hashTable.getCollisionNum() << endl << endl;
-    initHashTable(90);
-    cout << "При 90 элементах кол-во коллизий = " << hashTable.getCollisionNum() << endl << endl;
-    initHashTable(100);
+    initHashPerson(40);
+    cout << "При 40 элементах кол-во коллизий = " << hashPerson.getCollisionNum() << endl << endl;
+    initHashPerson(75);
+    cout << "При 75 элементах кол-во коллизий = " << hashPerson.getCollisionNum() << endl << endl;
+    initHashPerson(90);
+    cout << "При 90 элементах кол-во коллизий = " << hashPerson.getCollisionNum() << endl << endl;
+    initHashPerson(100);
 }
 
 /**
@@ -129,28 +129,28 @@ void Manager::testCollisions() {
  * @param title
  * @return
  */
-Data Manager::getDataFromList(list<Data> &dataList, const string &title) const {
+Person Manager::getDataFromList(list<Person> &dataList, const string &title) const {
     if (dataList.empty()) {
         throw runtime_error("Нечего возвращать, т.к. список пустой!");
     }
 
-    Data data;
+    Person Person;
 
     if (dataList.size() == 1) {
-        data = dataList.back();
+        Person = dataList.back();
     } else {
         int editPos = getInt(title, 1, dataList.size());
         int i = 1;
         for (auto &el: dataList) {
             if (i == editPos) {
-                data = el;
+                Person = el;
                 break;
             }
             i++;
         }
     }
 
-    return data;
+    return Person;
 }
 
 /**
@@ -159,7 +159,7 @@ Data Manager::getDataFromList(list<Data> &dataList, const string &title) const {
  * @param dataList
  * @return
  */
-string Manager::getStringFromDataList(const list<Data> &dataList) const {
+string Manager::getStringFromDataList(const list<Person> &dataList) const {
     string result;
 
     if (dataList.empty()) {
@@ -177,11 +177,11 @@ string Manager::getStringFromDataList(const list<Data> &dataList) const {
 
 /**
  * Метод для получения отредактированной записи от пользователя  (диалог ввода)
- * @param data
+ * @param Person
  * @return
  */
-Data Manager::getEditedElement(const Data &data) {
-    Data result = data;
+Person Manager::getEditedElement(const Person &Person) {
+    Person result = Person;
     int field;
     string strValue;
 

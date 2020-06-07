@@ -21,9 +21,9 @@ public:
     const string &getKey() const; // ключ
     // ввод вывод    
 friend ostream& operator <<(ostream &out, const Person&p);
-friend istream& operator>>(istream &in, Person &p);
+friend istream& operator >> (istream &in, Person &p);
 // для работы с файлом
-friend fstream& operator>>(fstream &fin, Person &p);
+friend fstream& operator >> (fstream &fin, Person &p);
 friend fstream& operator <<(fstream &fout, const Person&p);
 public:
     ~Person();
