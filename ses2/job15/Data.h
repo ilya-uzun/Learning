@@ -23,7 +23,7 @@ public:
     //ДЕСТРУКТОР
     virtual ~Data();
 
-    //СЕЛЕКТОРЫ И МОДИФИКАТОРЫ ПОЛЕЙ
+    //СЕЛЕКТОРЫ И МОДИФИКАТОРЫ полей
     const string &getFio() const;
 
     void setFio(const string &fio);

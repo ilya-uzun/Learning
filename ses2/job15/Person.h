@@ -10,12 +10,16 @@ public:
     Person(string, int, int);
     Person(const Person&);
     Person operator =(const Person&);
-    void set_name(string);
-    void set_age(int);
-    void set_number(int);
-    string get_name(){return name;}
-    int get_age(){return age;}
-    int get_number(){return number;}
+    // модификатор set
+    void set_FIO(string);
+    void set_simma(int);
+    void set_account_number(int);
+    // модификатор get
+    string get_FIO(){return FIO;}// ключ
+    int get_simma(){return simma;}
+    int get_account_number(){return account_number;}
+ 
+    // ввод вывод    
 friend ostream& operator <<(ostream &out, const Person&p);
 friend istream& operator>>(istream &in, Person &p);
 // для работы с файлом
@@ -24,7 +28,7 @@ friend fstream& operator <<(fstream &fout, const Person&p);
 public:
     ~Person();
 private:
-    string name;
-    int age;
-    int number;
+    string FIO; // ФИО
+    int simma;  //
+    int account_number; // № счёта
 };

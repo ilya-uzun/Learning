@@ -1,71 +1,72 @@
 #include "Person.h"
 Person::Person()
 {
-    name = ""; 
-    age = 0;
+    FIO = ""; 
+    simma = 0;
+    account_number = 0;
 }
 
 Person::Person(string N,int A, int I)
 {
-    name = N; 
-    age = A;
-    number = I;
+    FIO = N; 
+    simma = A;
+    account_number = I;
 }
 
 Person::Person(const Person&p)
 {
-    name = p.name;
-    age = p.age;
-    number = p.number;
+    FIO = p.FIO;
+    simma = p.simma;
+    account_number = p.account_number;
 }
 
 Person Person::operator =(const Person&p)
 {
 if(&p==this) return *this;
-    name = p.name;
-    age = p.age;
-    number = p.number;
+    FIO = p.FIO;
+    simma = p.simma;
+    account_number = p.account_number;
 return*this;
 }
 Person::~Person(){}
 
-void Person::set_name(string Na)
+void Person::set_FIO(string Na)
 {
-    name = Na;
+    FIO = Na;
 }
-void Person::set_age(int a)
+void Person::set_simma(int a)
 {
-    age = a;
+    simma = a;
 }
-void Person::set_number(int N)
+void Person::set_account_number(int N)
 {
-    number = N;
+    account_number = N;
 }
 ostream& operator<<(ostream& out, const Person &p)
 {
-    out << "ID: " << p.number <<" name: "<< p.name <<" age:"<<p.age <<"\n";
+    out << "FIO: " << p.FIO  <<" account_number:" << p.account_number <<" simma: "<< p.simma <<"\n";
     return out;
 }
 istream& operator>>(istream& in, Person&p)
 {
-    cout <<"Enter name: ";
-    in >> p.name;
-    cout << "Enter age: ";
-    in >> p.age;
-    cout << "Enter number element: ";
-    in >> p.number;
+    cout <<"Enter FIO: ";
+    in >> p.FIO;
+    cout << "Enter account number: ";
+    in >> p.account_number;
+    cout << "Enter simma: ";
+    in >> p.simma;
 return in;
 }
 // для работы с файлом
 fstream& operator>>(fstream& fin, Person&p)
 {
-    fin >> p.number;
-    fin >> p.name;
-    fin >> p.age;
+    fin >> p.FIO;
+    fin >> p.account_number;
+    fin >> p.simma;
     return fin;
 }
 fstream& operator<<(fstream& fout, const Person &p)
 {
-    fout << p.number <<" " << p.name <<" "<< p.age <<"\n";
+    fout << p.FIO <<" "<< p.account_number <<" "<< p.simma <<"\n";
     return fout;
 }

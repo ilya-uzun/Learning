@@ -6,9 +6,8 @@
 
 using namespace std;
 
-/**
- * Класс "Хэш-таблица"
- */
+// Хэш-таблица
+ 
 class HashTable {
 private:
     static const int baseDegree = 10;               //Степень двойки для генерации размера таблицы

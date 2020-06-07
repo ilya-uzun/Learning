@@ -41,7 +41,8 @@ int main()
         cout <<"file name data base ?"; 
         cin >> file_name;
         int nom; 
-        cout << "Number ?"; cin>>nom;
+        cout << "Number ?"; 
+        cin>>nom;
         k = del_file(file_name,nom);
         if(k<0) cout << "Can't read file";  
       break;
