@@ -14,7 +14,7 @@ Dialog::Dialog() {
     menuItems.emplace_back("\n%d - Удалить элемент!");
     menuItems.emplace_back("\n%d - Протестировать коллизии!");
     menuItems.emplace_back("\n%d - Выход!");
-}
+} 
 
 //Деструктор
 Dialog::~Dialog() = default;
