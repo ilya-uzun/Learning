@@ -186,7 +186,7 @@ Person Manager::getEditedElement(const Person &person) {
             }
             case 2: {
                 strValue = getString("\nNew value for the field \"Summa\":"); // Новое значение для поля 
-                result.set_account_number(strValue);
+                result.set_summa(strValue);
                 break;
             }
             default:

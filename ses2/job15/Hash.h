@@ -21,9 +21,9 @@ public:
     static int getSize();                           //Метод получения размера таблицы
     bool isEmpty();                                 //Метод проверки, является ли таблица пустой
     int getCollisionNum();                          //Метод посчета коллизий
-    Person search(const string &key);                 //Метод поиска записи в хэш таблице по ключу
-    list<Person> search(int pos);                     //Метод поиска записей в хэш таблице по номеру
-    void insert(const Person &value);                 //Метод вставки новой записи в хэш-таблицу
+    Person search(const string &key);               //Метод поиска записи в хэш таблице по ключу
+    list<Person> search(int pos);                   //Метод поиска записей в хэш таблице по номеру
+    void insert(const Person &value);               //Метод вставки новой записи в хэш-таблицу
     bool remove(const string &key);                 //Метод удаления записи из хэш-таблицы
     void print();                                   //Метод вывода записей хэш-таблицы в консоль
     void clear();                                   //Метод удаления всех записей их хэш-таблицы

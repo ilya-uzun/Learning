@@ -38,8 +38,6 @@ public:
     static vector<string> makeSurnames();     //Статический метод инциализации списка фамилий
     static vector<string> makeNames();        //Статический метод инциализации списка имен
     static vector<string> makePatronymics();  //Статический метод инциализации списка отчеств
-    // static vector<string> makeSumma();    //Статический метод инциализации списка адресов
-    // static vector<string> makeAccount_number();    //Статический метод инциализации списка адресов
     unsigned int getRandomNumber(unsigned int from, unsigned int to);  //Метод получения случайного числа в заданном диапазоне
 
     string getFIO();            //Метод получения сегенерированного значения для поля "ФИО"

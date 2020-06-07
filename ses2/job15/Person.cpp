@@ -24,8 +24,8 @@ Person Person::operator =(const Person&p)
 {
 if(&p==this) return *this;
     FIO = p.FIO;
-    summa = p.summa;
     account_number = p.account_number;
+    summa = p.summa;
 return*this;
 }
 Person::~Person(){}
@@ -49,32 +49,27 @@ const string &Person::get_FIO() const {
 }
 
 const string &Person::get_account_number() const {
-    return FIO;
+    return account_number;
 }
 
 const string &Person::get_summa() const {
     return summa;
 }
-/**
- * Метод получения ключа
- * @return
- */
+//  Метод получения ключа
+ 
 const string &Person::getKey() const {
     return get_FIO();
 }
 
-/**
- * Метод возвращающий строковое представление данного объекта.
- * Просто делает форматированную строку из значений полей объекта.
- * @return
- */
+// Метод возвращающий строковое представление данного объекта.
+// Просто делает форматированную строку из значений полей объекта.
+ 
 string Person::toString() const {
     return string("FIO = " + get_FIO() + ", Account number = " + get_account_number() + ", Summa = " + get_summa());
 }
 
 ostream& operator<<(ostream& out, const Person &p)
 {
-    // out << "FIO: " << p.FIO  <<" account_number:" << p.account_number <<" summa: "<< p.summa <<"\n";
     return out << p.toString();
 }
 istream& operator>>(istream& in, Person&p)

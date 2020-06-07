@@ -139,9 +139,9 @@ void Hash::print() {
     for (int i = 0; i < size ; i++) {
         auto &cell = table[i];
         if (!cell.empty()) {
-            cout << i + 1 << ") " << endl;
+            cout << i + 1 << ") ";
             for (auto & el : cell) {
-                cout << "\tkey = " << el.first << ", value = {" << el.second << "}";
+                cout << " key = " << el.first << ", value = {" << el.second << "}";
                 cout << endl;
             }
         }

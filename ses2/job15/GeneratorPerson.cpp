@@ -17,8 +17,6 @@ GeneratorPerson::GeneratorPerson() {
     surnames = makeSurnames();
     names = makeNames();
     patronymics = makePatronymics();
-    // summa = makeSumma();
-    // account_number = makeAccount_number();
 }
 
 //Метод получения случайного числа в заданном диапазоне
@@ -44,7 +42,7 @@ string GeneratorPerson::getSumma() {
 }
 
 string GeneratorPerson::getAccount_number() {
-    return string_format("%d%d %d%d %d%d %d%d %d%d",
+    return string_format("%d%d.%d%d%d.%d%d%d",
                          getRandomNumber(1, 9), getRandomNumber(1, 9), 
                          getRandomNumber(1, 9), getRandomNumber(1, 9),
                          getRandomNumber(1, 9), getRandomNumber(1, 9), 
@@ -54,7 +52,7 @@ string GeneratorPerson::getAccount_number() {
 
 //Метод получения объекта типа "Данные" на основе сгенерированных полей
 Person GeneratorPerson::getData() {
-    return Person(getFIO(), getAccount_number(), getSumma());
+    return Person(getFIO(),getSumma(), getAccount_number());
 }
 
 // списка фамилий
