@@ -4,7 +4,7 @@
     template<typename ... Args>
 inline string string_format(const string &format, Args ... args) {
     size_t size = snprintf(nullptr, 0, format.c_str(), args ...) + 1; // Extra space for '\0'
-    if (size <= 0) { throw runtime_error("Ошибка в процессе форматирования!"); }
+    if (size <= 0) { throw runtime_error("Error in the formatting process!"); }// Ошибка в процессе форматирования!
     unique_ptr<char[]> buf(new char[size]);
     snprintf(buf.get(), size, format.c_str(), args ...);
     return string(buf.get(), buf.get() + size - 1); // We don't want the '\0' inside
@@ -38,8 +38,7 @@ string GeneratorPerson::getFIO() {
 
 //Метод получения сегенерированного значения для поля "Номер счёта"
 string GeneratorPerson::getSumma() {
-    return string_format("%d%d %d%d %d%d",
-                         getRandomNumber(1, 9), getRandomNumber(1, 9), 
+    return string_format("%d%d%d%d",
                          getRandomNumber(1, 9), getRandomNumber(1, 9), 
                          getRandomNumber(1, 9), getRandomNumber(1, 9));
 }

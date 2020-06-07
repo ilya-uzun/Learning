@@ -1,18 +1,12 @@
 #include "Hash.h"
 #include <stdexcept>
 
-/**
- *Метод получения размера таблицы
- * @return
- */
+// Метод получения размера таблицы
 int Hash::getSize() {
     return size;
 }
 
-/**
- * Метод получения общего количества добавленных в таблицу элементов
- * @return
- */
+//  Метод получения общего количества добавленных в таблицу элементов
 int Hash::getFilledSize() {
     int sum = 0;
 
@@ -23,19 +17,12 @@ int Hash::getFilledSize() {
     return sum;
 }
 
-/**
- * Метод проверки, является ли таблица пустой
- * @return
- */
+//  Метод проверки, является ли таблица пустой
 bool Hash::isEmpty() {
     return getFilledSize() == 0;
 }
 
-/**
- * Метод получения целочисленного ключа из строкового
- * @param key
- * @return
- */
+//  Метод получения целочисленного ключа из строкового
 int Hash::getIntKey(const string &key) {
     int value = 0;
     for (char i : key) {
@@ -44,14 +31,11 @@ int Hash::getIntKey(const string &key) {
     return value;
 }
 
-/**
- * Метод, вычисляющи и возвращающий хэш-сумму
- * на основе строкового ключа.
- * Работает по формуле:
- * H(k)= [M (kAmod1)], 0<A<1, mod1 – получение дробной части, [] – получение целой части
- * @param key
- * @return
- */
+//  Метод, вычисляющи и возвращающий хэш-сумму
+//  на основе строкового ключа.
+//  Работает по формуле:
+// H(k)= [M (kAmod1)], 0<A<1, mod1 – получение дробной части, [] – получение целой части
+ 
 int Hash::hash(const string &key) {
     int intKey = getIntKey(key);
     int M = size;
@@ -61,10 +45,7 @@ int Hash::hash(const string &key) {
     return floor(M * kAMod1);
 }
 
-/**
- * Метод вставки новой записи в хэш-таблицу
- * @param value
- */
+// Метод вставки новой записи в хэш-таблицу
 void Hash::insert(const Person &value) {
     auto &key = value.get_FIO();
     int hashValue = hash(key);
@@ -86,11 +67,7 @@ void Hash::insert(const Person &value) {
     }
 }
 
-/**
- * Метод удаления записи из хэш-таблицы
- * @param key
- * @return
- */
+//  Метод удаления записи из хэш-таблицы
 bool Hash::remove(const string &key) {
     int hashValue = hash(key);
     auto &cell = table[hashValue];
@@ -109,11 +86,7 @@ bool Hash::remove(const string &key) {
     return itemRemoved;
 }
 
-/**
- * Метод поиска записи в хэш таблице по ключу
- * @param key
- * @return
- */
+//  Метод поиска записи в хэш таблице по ключу
 Person Hash::search(const string &key) {
     int hashValue = hash(key);
     auto &cell = table[hashValue];
@@ -126,14 +99,10 @@ Person Hash::search(const string &key) {
         iter++;
     }
 
-    throw runtime_error("Элемент не был найден!");
+    throw runtime_error("The element was not found!");// Элемент не был найден!
 }
 
-/**
- * Метод поиска записей в хэш таблице по номеру
- * @param pos
- * @return
- */
+//  Метод поиска записей в хэш таблице по номеру
 list<Person> Hash::search(const int pos) {
     auto &cell = table[pos - 1];
 
@@ -145,13 +114,10 @@ list<Person> Hash::search(const int pos) {
         return result;
     }
 
-    throw runtime_error("Элемент не был найден!");
+    throw runtime_error("The element was not found!");// Элемент не был найден!
 }
 
-/**
- * Метод посчета коллизий
- * @return
- */
+//  Метод посчета коллизий
 int Hash::getCollisionNum() {
     int sum = 0;
 
@@ -164,12 +130,10 @@ int Hash::getCollisionNum() {
     return sum;
 }
 
-/**
- * Метод вывода записей хэш-таблицы в консоль
- */
+// Метод вывода записей хэш-таблицы в консоль
 void Hash::print() {
     if (getFilledSize() == 0) {
-        throw runtime_error("Хэш-Таблица пустая, распечатывать нечего!");
+        throw runtime_error("The hash table is empty, there is nothing to print!");// Хэш-Таблица пустая, распечатывать нечего
     }
 
     for (int i = 0; i < size ; i++) {
@@ -184,9 +148,7 @@ void Hash::print() {
     }
 }
 
-/**
- * Метод удаления всех записей их хэш-таблицы
- */
+//  Метод удаления всех записей их хэш-таблицы
 void Hash::clear() {
     for (auto &cell : table) {
         cell.clear();

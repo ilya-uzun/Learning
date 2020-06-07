@@ -41,7 +41,7 @@ public:
 template<typename ... Args>
 inline string string_format(const string &format, Args ... args) {
     size_t size = snprintf(nullptr, 0, format.c_str(), args ...) + 1; // Extra space for '\0'
-    if (size <= 0) { throw runtime_error("Ошибка в процессе форматирования!"); }
+    if (size <= 0) { throw runtime_error("Error in the formatting process!"); }//Ошибка в процессе форматирования!
     unique_ptr<char[]> buf(new char[size]);
     snprintf(buf.get(), size, format.c_str(), args ...);
     return string(buf.get(), buf.get() + size - 1); // We don't want the '\0' inside
@@ -59,7 +59,7 @@ inline int getIntFromInput() {
     getline(cin, str);
 
     while (!regex_match(trim_str(str), regex(R"(^(\+|-)?\d+$)"))) {
-        cout << "Неверный формат целочисленного значения! Введите снова!\n";
+        cout << "Invalid format of the real value! Enter again!\n";// Неверный формат целочисленного значения! Введите снова!
         getline(cin, str);
     }
 
@@ -75,7 +75,7 @@ inline float getFloatFromInput() {
     getline(cin, str);
 
     while (!regex_match(trim_str(str), regex(R"(^[-+]?\d*\.?\d*$)"))) {
-        cout << "Неверный формат вещественного значения! Введите снова!\n";
+        cout << "Invalid format of the real value! Enter again!\n";// Неверный формат вещественного значения! Введите снова!
         getline(cin, str);
     }
 
@@ -91,7 +91,7 @@ inline double getDoubleFromInput() {
     getline(cin, str);
 
     while (!regex_match(trim_str(str), regex(R"(^[-+]?\d*\.?\d*$)"))) {
-        cout << "Неверный формат вещественного значения! Введите снова!\n";
+        cout << "Invalid format of the real value! Enter again!\n";// Неверный формат вещественного значения! Введите снова!
         getline(cin, str);
     }
 
@@ -110,7 +110,7 @@ inline int getInt(const string &title, int minValue, int maxValue) {
     value = getIntFromInput();
 
     while (value < minValue || value > maxValue) {
-        cout << "Значение должно быть от " << minValue << " до " << maxValue << "!" << endl;
+        cout << "The value must be from " << minValue << " do " << maxValue << "!" << endl;// Значение должно быть от
         value = getIntFromInput();
     }
 
@@ -131,7 +131,7 @@ inline int getInt(const string &title, const vector<int> &codes, const string &o
             cout << outOfRangeMsg << endl;
         }
 
-        cout << "\nЗначение должно быть в пределах допустимого набора:\n";
+        cout << "\nThe value must be within the allowed set:\n"; // Значение должно быть в пределах допустимого набора
         const vector<int>::const_iterator &iterator = codes.begin();
         for (int el : codes) {
             cout << el << " ";
@@ -155,7 +155,7 @@ inline string getString(const string &title) {
     trim_str(value);
 
     while (value.empty()) {
-        cout << "Значение должно содержать минимум 1 символ!" << endl;
+        cout << "The value must contain at least 1 character!" << endl; // Значение должно содержать минимум 1 символ!
         getline(cin, value);
     }
 
@@ -174,7 +174,7 @@ inline string getString(const string &title, const string &regex_mask, const str
 
     while (!valid) {
         if (value.empty()) {
-            cout << "Значение должно содержать минимум 1 символ!" << endl;
+            cout << "The value must contain at least 1 character!" << endl; // Значение должно содержать минимум 1 символ!
         }
         if (!regex_match(value.c_str(), regex(regex_mask))) {
             cout << regexMismatchMsg << endl;
