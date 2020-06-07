@@ -31,9 +31,9 @@ void Manager::printHashPerson() {
  */
 void Manager::searchElement() {
     const string &key = getKey("\nВведите ключ элемента, который, хотите найти!");
-    const Person &Person = hashPerson.search(key);
+    const Person &person = hashPerson.search(key);
     cout << "\nНайденный элемент: " << endl;
-    cout << Person << endl;
+    cout << person << endl;
 }
 
 /**
@@ -71,9 +71,9 @@ void Manager::editElement() {
         throw runtime_error("Элемент не был найден и поэтому не будет отредактирован!");
     }
 
-    Person Person = getDataFromList(dataList, "\nНайдено несколько элементов, который из них вы хотите отредактировать?" + getStringFromDataList(dataList));
-    Person = getEditedElement(Person);
-    hashPerson.insert(Person);
+    Person person = getDataFromList(dataList, "\nНайдено несколько элементов, который из них вы хотите отредактировать?" + getStringFromDataList(dataList));
+    person = getEditedElement(person);
+    hashPerson.insert(person);
 
     cout << "Элемент был успешно отредактирован!" << endl;
 }
@@ -102,8 +102,8 @@ void Manager::removeElement() {
         throw runtime_error("Элемент не был найден и поэтому не будет удален!");
     }
 
-    Person Person = getDataFromList(dataList, "\nНайдено несколько элементов, который из них вы хотите удалить?" + getStringFromDataList(dataList));
-    hashPerson.remove(Person.getKey());
+    Person person = getDataFromList(dataList, "\nНайдено несколько элементов, который из них вы хотите удалить?" + getStringFromDataList(dataList));
+    hashPerson.remove(person.getKey());
 
     cout << "Элемент был успешно удален!" << endl;
 }
@@ -134,23 +134,23 @@ Person Manager::getDataFromList(list<Person> &dataList, const string &title) con
         throw runtime_error("Нечего возвращать, т.к. список пустой!");
     }
 
-    Person Person;
+    Person person;
 
     if (dataList.size() == 1) {
-        Person = dataList.back();
+        person = dataList.back();
     } else {
         int editPos = getInt(title, 1, dataList.size());
         int i = 1;
         for (auto &el: dataList) {
             if (i == editPos) {
-                Person = el;
+                person = el;
                 break;
             }
             i++;
         }
     }
 
-    return Person;
+    return person;
 }
 
 /**
@@ -180,13 +180,13 @@ string Manager::getStringFromDataList(const list<Person> &dataList) const {
  * @param Person
  * @return
  */
-Person Manager::getEditedElement(const Person &Person) {
-    Person result = Person;
+Person Manager::getEditedElement(const Person &person) {
+    Person result = person;
     int field;
     string strValue;
 
     string title =
-            "\nКакое поле нужно поменять?"
+            "\n Какое поле нужно поменять?"
             "\n1 - ФИО"
             "\n2 - Адрес\n";
 
@@ -203,12 +203,12 @@ Person Manager::getEditedElement(const Person &Person) {
         switch (field) {
             case 1: {
                 strValue = getString("\nНовое значение для поля \"ФИО\":");
-                result.setFio(strValue);
+                result.set_FIO(strValue);
                 break;
             }
             case 2: {
                 strValue = getString("\nНовое значение для поля \"Адрес\":");
-                result.setAddress(strValue);
+                result.set_account_number(strValue);
                 break;
             }
             default:

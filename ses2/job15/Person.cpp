@@ -2,21 +2,21 @@
 Person::Person()
 {
     FIO = ""; 
-    simma = 0;
-    account_number = 0;
+    summa = "";
+    account_number = "";
 }
 
-Person::Person(string N,int A, int I)
+Person::Person(string N,string A, string I)
 {
     FIO = N; 
-    simma = A;
+    summa = A;
     account_number = I;
 }
 
 Person::Person(const Person&p)
 {
     FIO = p.FIO;
-    simma = p.simma;
+    summa = p.summa;
     account_number = p.account_number;
 }
 
@@ -24,7 +24,7 @@ Person Person::operator =(const Person&p)
 {
 if(&p==this) return *this;
     FIO = p.FIO;
-    simma = p.simma;
+    summa = p.summa;
     account_number = p.account_number;
 return*this;
 }
@@ -34,17 +34,26 @@ void Person::set_FIO(string Na)
 {
     FIO = Na;
 }
-void Person::set_simma(int a)
+void Person::set_summa(string a)
 {
-    simma = a;
+    summa = a;
 }
-void Person::set_account_number(int N)
+
+void Person::set_account_number(string N)
 {
     account_number = N;
 }
 
 const string &Person::get_FIO() const {
     return FIO;
+}
+
+const string &Person::get_account_number() const {
+    return FIO;
+}
+
+const string &Person::get_summa() const {
+    return summa;
 }
 /**
  * Метод получения ключа
@@ -54,10 +63,19 @@ const string &Person::getKey() const {
     return get_FIO();
 }
 
+/**
+ * Метод возвращающий строковое представление данного объекта.
+ * Просто делает форматированную строку из значений полей объекта.
+ * @return
+ */
+string Person::toString() const {
+    return string("FIO = " + get_FIO() + ", Account number = " + get_account_number() + ", Summa = " + get_summa());
+}
+
 ostream& operator<<(ostream& out, const Person &p)
 {
-    out << "FIO: " << p.FIO  <<" account_number:" << p.account_number <<" simma: "<< p.simma <<"\n";
-    return out;
+    // out << "FIO: " << p.FIO  <<" account_number:" << p.account_number <<" summa: "<< p.summa <<"\n";
+    return out << p.toString();
 }
 istream& operator>>(istream& in, Person&p)
 {
@@ -65,8 +83,8 @@ istream& operator>>(istream& in, Person&p)
     in >> p.FIO;
     cout << "Enter account number: ";
     in >> p.account_number;
-    cout << "Enter simma: ";
-    in >> p.simma;
+    cout << "Enter summa: ";
+    in >> p.summa;
 return in;
 }
 // для работы с файлом
@@ -74,11 +92,11 @@ fstream& operator>>(fstream& fin, Person&p)
 {
     fin >> p.FIO;
     fin >> p.account_number;
-    fin >> p.simma;
+    fin >> p.summa;
     return fin;
 }
 fstream& operator<<(fstream& fout, const Person &p)
 {
-    fout << p.FIO <<" "<< p.account_number <<" "<< p.simma <<"\n";
+    fout << p.FIO <<" "<< p.account_number <<" "<< p.summa <<"\n";
     return fout;
 }

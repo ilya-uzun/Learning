@@ -1,4 +1,5 @@
 #include "Person.h"
+#include "Manager.h"
 #include <iostream>
 #include <fstream>
 #include <string>

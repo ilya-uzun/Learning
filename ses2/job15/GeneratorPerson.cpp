@@ -1,31 +1,33 @@
 #include "GeneratorPerson.h"
 
-/**
- * Конструктор без параметров
- */
+
+    template<typename ... Args>
+inline string string_format(const string &format, Args ... args) {
+    size_t size = snprintf(nullptr, 0, format.c_str(), args ...) + 1; // Extra space for '\0'
+    if (size <= 0) { throw runtime_error("Ошибка в процессе форматирования!"); }
+    unique_ptr<char[]> buf(new char[size]);
+    snprintf(buf.get(), size, format.c_str(), args ...);
+    return string(buf.get(), buf.get() + size - 1); // We don't want the '\0' inside
+}
+
+//Конструктор без параметров
+
 GeneratorPerson::GeneratorPerson() {
     engine = mt19937(rd());
     surnames = makeSurnames();
     names = makeNames();
     patronymics = makePatronymics();
-    addresses = makeAddresses();
+    // summa = makeSumma();
+    // account_number = makeAccount_number();
 }
 
-/**
- * Метод получения случайного числа в заданном диапазоне
- * @param from
- * @param to
- * @return
- */
+//Метод получения случайного числа в заданном диапазоне
 unsigned int GeneratorPerson::getRandomNumber(unsigned int from, unsigned int to) {
     uniform_int_distribution<unsigned int> dist(from, to);
     return dist(engine);
 }
 
-/**
- * Метод получения сегенерированного значения для поля "ФИО"
- * @return
- */
+ //Метод получения сегенерированного значения для поля "ФИО"
 string GeneratorPerson::getFIO() {
     return string_format("%s %s %s",
                          surnames[getRandomNumber(0, surnames.size() - 1)].c_str(),
@@ -33,76 +35,65 @@ string GeneratorPerson::getFIO() {
                          patronymics[getRandomNumber(0, patronymics.size() - 1)].c_str());
 }
 
-/**
- * Метод получения сегенерированного значения для поля "Номер паспорта"
- * @return
- */
-string GeneratorPerson::getPassportNumber() {
-    return string_format("%d%d %d%d %d%d%d%d%d%d",
-                         getRandomNumber(1, 9), getRandomNumber(1, 9), getRandomNumber(1, 9), getRandomNumber(1, 9),
-                         getRandomNumber(1, 9), getRandomNumber(1, 9), getRandomNumber(1, 9),
-                         getRandomNumber(1, 9), getRandomNumber(1, 9), getRandomNumber(1, 9));
+
+//Метод получения сегенерированного значения для поля "Номер счёта"
+string GeneratorPerson::getSumma() {
+    return string_format("%d%d %d%d %d%d",
+                         getRandomNumber(1, 9), getRandomNumber(1, 9), 
+                         getRandomNumber(1, 9), getRandomNumber(1, 9), 
+                         getRandomNumber(1, 9), getRandomNumber(1, 9));
 }
 
-/**
- * Метод получения сегенерированного значения для поля "Адрес"
- * @return
- */
-string GeneratorPerson::getAddress() {
-    return addresses[getRandomNumber(0, addresses.size() - 1)];
+string GeneratorPerson::getAccount_number() {
+    return string_format("%d%d %d%d %d%d %d%d %d%d",
+                         getRandomNumber(1, 9), getRandomNumber(1, 9), 
+                         getRandomNumber(1, 9), getRandomNumber(1, 9),
+                         getRandomNumber(1, 9), getRandomNumber(1, 9), 
+                         getRandomNumber(1, 9), getRandomNumber(1, 9), 
+                         getRandomNumber(1, 9), getRandomNumber(1, 9));
 }
 
-/**
- * Метод получения объекта типа "Данные" на основе сгенерированных полей
- * @return
- */
+
+// // Метод получения сегенерированного значения для поля "сумма"
+// string GeneratorPerson::getSumma() {
+//     return summa[getRandomNumber(0, summa.size() - 1)];
+// }
+
+//Метод получения объекта типа "Данные" на основе сгенерированных полей
 Person GeneratorPerson::getData() {
-    return Person(get_FIO(), getPassportNumber(), get_summa());
+    return Person(getFIO(), getAccount_number(), getSumma());
 }
 
-/**
- * Статический метод инциализации списка фамилий
- * @return
- */
+// списка фамилий
 vector<string> GeneratorPerson::makeSurnames() {
     vector<string> surnames = {
-            "Алексеев", "Иванов", "Петров", "Сидоров", "Семенов", "Тесла", "Маск", "Эйнштейн", "Ньютон", "Гук", "Кюри", "Сталин", "Ленин", "Маркс"
+            "Moore", "Taylor", "Garcia", "Jones", 
+            "Lewis", "Hill", "Nelson", "Phillips", "Parker", 
+            "Evans", "Smith", "Johnson", "Jones", "Brown"
     };
     return surnames;
 }
 
-/**
- * татический метод инциализации списка имен
- * @return
- */
+// списка имен
 vector<string> GeneratorPerson::makeNames() {
     vector<string> names = {
-            "Иван", "Петр", "Сидор", "Никола", "Илон", "Альберт", "Исаак", "Роберт", "Мария", "Иосиф", "Владимир", "Карл", "Алексей", "Михаил", "Дмитрий"
+            "James", "Jonh", "David", "Andrey", 
+            "Ilya", "Brian", "Mark", "Paul", 
+            "Daniel", "William", "Stevan", "Kapl", 
+            "Stanislav", "Georgiy", "Michael"
     };
     return names;
 }
 
-/**
- * Статический метод инциализации списка отчеств
- * @return
- */
+// списка отчеств
 vector<string> GeneratorPerson::makePatronymics() {
     vector<string> patronymics = {
-            "Иванович", "Петрович", "Сидорович", "Николаевич", "Илонович", "Альбертович", "Исаакович", "Робертович", "Маркович", "Иосифович", "Владимирович",
-            "Карлович", "Алексеевич", "Михаилович", "Дмитриевич"
+            "Ivanovich", "Petrovich", "Sidorovich", 
+            "Nikolaevich", "Jonovich", "Albertovich", 
+            "Isaakovich", "Robertovich", "Markovich", 
+            "Iosifovich", "Vladimirovich", "Karlovich", 
+            "Alekseevich", "Mihablovich", "Dmitrievich"
     };
     return patronymics;
 }
 
-/**
- * Статический метод инциализации списка адресов
- * @return
- */
-vector<string> GeneratorPerson::makeAddresses() {
-    vector<string> addresses = {
-            "Андрея Тарковского", "Берёзовая", "Боровская", "Герцена", "Гоголя", "Дачная", "Железнодорожная", "Ильинская", "Карла Маркса", "Кольцевая",
-            "Ленина", "Лермонтова", "Ломоносова", "Маяковского", "Новоизваринская", "Октябрьская", "Первомайская", "Пушкина", "Роберта Рождественского",
-            "Садовая", "Серафимовича", "Самуила Маршака", "Сказочная", "Трудовой переулок", "Чапаева", "Чехова", "Шоссейная", "Энгельса"
-    };
-    return addresses;
-}

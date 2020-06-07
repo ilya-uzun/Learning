@@ -7,17 +7,19 @@ class Person
 {
 public:
     Person();
-    Person(string, int, int);
+    Person(string, string, string);
     Person(const Person&);
     Person operator =(const Person&);
     // модификатор set
     void set_FIO(string);
-    void set_simma(int);
-    void set_account_number(int);
+    void set_summa(string);
+    void set_account_number(string);
     // модификатор get
     const string &get_FIO() const;
-    int get_simma(){return simma;}
-    int get_account_number(){return account_number;}
+    const string &get_summa() const;
+    const string &get_account_number() const;
+
+    string toString() const;  //Метод, возвращающий строковое представление данного объекта
     const string &getKey() const; // ключ
     // ввод вывод    
 friend ostream& operator <<(ostream &out, const Person&p);
@@ -29,6 +31,6 @@ public:
     ~Person();
 private:
     string FIO; // ФИО
-    int simma;  //
-    int account_number; // № счёта
+    string summa;  //
+    string account_number; // № счёта
 };
