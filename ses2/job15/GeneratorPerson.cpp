@@ -52,12 +52,6 @@ string GeneratorPerson::getAccount_number() {
                          getRandomNumber(1, 9), getRandomNumber(1, 9));
 }
 
-
-// // Метод получения сегенерированного значения для поля "сумма"
-// string GeneratorPerson::getSumma() {
-//     return summa[getRandomNumber(0, summa.size() - 1)];
-// }
-
 //Метод получения объекта типа "Данные" на основе сгенерированных полей
 Person GeneratorPerson::getData() {
     return Person(getFIO(), getAccount_number(), getSumma());
