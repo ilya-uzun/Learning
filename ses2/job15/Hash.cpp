@@ -44,7 +44,7 @@ int Hash::hash(const string &key) {
     long double kA = (long double) intKey * A;
     long double kAMod1 = (kA - floor(kA));
     return floor(M * kAMod1);
-    //  return floor(intKey * fmod(M, 2));
+    // return floor(intKey % 3);
 }
 
 // Метод вставки новой записи в хэш-таблицу
