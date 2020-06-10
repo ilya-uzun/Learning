@@ -7,7 +7,7 @@
 #include <algorithm>
 #include <random>
 #include "Node.h"
-#include "global.h""
+#include "global.h"
 #include "graphwidget.h"
 
 using namespace std;
