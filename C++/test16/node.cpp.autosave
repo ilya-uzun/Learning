@@ -164,6 +164,9 @@ void Node::insertRight(Node *node) {
     }
 }
 
+
+
+
 //Метод-обработчик события изменения параметров узла.
 
 QVariant Node::itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant &value) {

@@ -34,13 +34,6 @@ public:
 
     enum { Type = UserType + 1 };  //Переопредление индекса текущего класса в перечислении графических элементов данного приложения
 protected:
-    void mousePressEvent(QGraphicsSceneMouseEvent *event) override;     //Метод-обработчик события нажатия на кнопку мыши
-
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent *event) override;   //Метод-обработчик события отпускания кнопки мыши
-
-    void hoverEnterEvent(QGraphicsSceneHoverEvent *event) override;     //Метод-обработчик события входа курсора в пределы узла
-
-    void hoverLeaveEvent(QGraphicsSceneHoverEvent *event) override;     //Метод-обработчик события выхода курсора за пределы узла
 
     QVariant itemChange(GraphicsItemChange change, const QVariant &value) override;   //Метод-обработчик события изменения параметров узла
 

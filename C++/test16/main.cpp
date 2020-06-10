@@ -1,14 +1,8 @@
-#include "BTree.h"
+#include "btree.h"
 #include <QApplication>
 #include <QTime>
 #include "mainwindow.h"
 
-/**
- * Главная функция
- * @param argc
- * @param argv
- * @return
- */
 int main(int argc, char **argv) {
     QApplication app(argc, argv);  //Инициализация приложения
 

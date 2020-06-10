@@ -17,7 +17,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     btree.cpp \
-    global.cpp \
     graphwidget.cpp \
     inputdialog.cpp \
     main.cpp \
@@ -25,7 +24,7 @@ SOURCES += \
     node.cpp
 
 HEADERS += \
-    BTree.h \
+    btree.h \
     global.h \
     graphwidget.h \
     inputdialog.h \

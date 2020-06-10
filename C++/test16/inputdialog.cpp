@@ -2,36 +2,25 @@
 #include "ui_inputdialog.h"
 #include <stdexcept>
 
-/**
- * Конструктор с параметром указателя на родителський виджет
- * @param parent
- */
+// Конструктор с параметром указателя на родителський виджет
+
 InputDialog::InputDialog(QWidget *parent) : QDialog(parent), ui(new Ui::InputDialog) {
     ui->setupUi(this);
     ui->doubleValue->setValue(value);
 }
 
-/**
- * Деструктор
- */
 InputDialog::~InputDialog() {
     delete ui;
 }
 
-/**
- * Селектор для поля с вводимым значением
- * @return
- */
+//Селектор для поля с вводимым значением
+
 double InputDialog::getValue() {
     return value;
 }
 
-/**
- * Метод открытия диалога для ввода значения
- * @param parent
- * @param label
- * @return
- */
+// Метод открытия диалога для ввода значения
+
 double InputDialog::getDouble(QWidget *parent, QString label) {
     InputDialog inputDialog(parent);
     inputDialog.setModal(false);
@@ -44,23 +33,20 @@ double InputDialog::getDouble(QWidget *parent, QString label) {
     return value;
 }
 
-/**
- * Метод-обработчик события "При нажатии подтверждающей кнопки"
- */
+// Метод-обработчик события "При нажатии подтверждающей кнопки"
+
 void InputDialog::on_confirmButton_clicked() {
     this->accept();
 }
 
-/**
- * Метод-обработчик события "При отмене ввода"
- */
+// Метод-обработчик события "При отмене ввода"
+
 void InputDialog::on_InputDialog_rejected() {
     throw std::runtime_error("Окно было закрыто!");
 }
 
-/**
- * Метод-обработчик события "При принятии введенного значения"
- */
+// Метод-обработчик события "При принятии введенного значения"
+
 void InputDialog::on_InputDialog_accepted() {
     this->value = ui->doubleValue->value();
     this->close();

@@ -19,8 +19,6 @@ GraphWidget::GraphWidget(QWidget *parent) : QGraphicsView(parent) {
 
 /**
  * Метод отрисовки фона
- * @param painter
- * @param rect
  */
 void GraphWidget::drawBackground(QPainter *painter, const QRectF &rect) {
     Q_UNUSED(rect);
@@ -50,7 +48,6 @@ void GraphWidget::startItemUpdateTimer() {
  * Метод-обработчик события таймера.
  * Обновляет(перерисовывает) элементы, пока они движутся
  * и некоторое время после их остановки.
- * @param event
  */
 void GraphWidget::timerEvent(QTimerEvent *event) {
     Q_UNUSED(event);
@@ -73,7 +70,6 @@ void GraphWidget::timerEvent(QTimerEvent *event) {
 
 /**
  * Метод-обработчик события нажатия клавиш
- * @param event
  */
 void GraphWidget::keyPressEvent(QKeyEvent *event) {
     switch (event->key()) {
@@ -106,7 +102,6 @@ void GraphWidget::zoomOut() {
 
 /**
  * Метод масштабирования сцены по горизонтали и вертикали.
- * @param scaleFactor
  */
 void GraphWidget::scaleView(qreal scaleFactor) {
     qreal factor = transform().scale(scaleFactor, scaleFactor).mapRect(QRectF(0, 0, 1, 1)).width();

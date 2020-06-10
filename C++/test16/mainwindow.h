@@ -3,7 +3,7 @@
 
 #include "graphwidget.h"
 #include "inputdialog.h"
-#include "BTree.h"
+#include "btree.h"
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
