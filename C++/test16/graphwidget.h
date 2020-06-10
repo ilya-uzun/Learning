@@ -10,7 +10,7 @@ class Node;
  * По сути - холст, на котором отрисовывается дерево.
  */
 class GraphWidget : public QGraphicsView {
-Q_OBJECT
+//Q_OBJECT
 private:
     int timerId = 0;  //Идентификатор таймера
 protected:
@@ -26,5 +26,4 @@ public slots:
     void zoomIn();      //Метод увеличения масштаба сцены
     void zoomOut();     //Метод уменьшения масштаба сцены
 };
-
 #endif // GRAPHWIDGET_H

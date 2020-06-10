@@ -1,13 +1,9 @@
 #include "graphwidget.h"
-#include "Node.h"
+#include "node.h"
 #include <QKeyEvent>
 #include <QOpenGLWidget>
 
-/**
- * Конструктор с параметром родительского виджета.
- * Допускает NULL
- * @param parent
- */
+
 GraphWidget::GraphWidget(QWidget *parent) : QGraphicsView(parent) {
     QGraphicsScene *scene = new QGraphicsScene(this);
     scene->setItemIndexMethod(QGraphicsScene::NoIndex);

@@ -1,11 +1,10 @@
-#include"global.h"
+#include "global.h"
+//Color::Color() {
 
-Color::Color() {
+//}
 
-}
-
-Color::Color(double rr, double gg, double bb) {
-	r = rr;
-	g = gg;
-	b = bb;
-}
+//Color::Color(double rr, double gg, double bb) {
+//    r = rr;
+//    g = gg;
+//    b = bb;
+//}

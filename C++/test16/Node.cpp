@@ -1,4 +1,4 @@
-#include "Node.h"
+#include "node.h"
 #include "graphwidget.h"
 #include <QGraphicsSceneMouseEvent>
 #include <QStyleOption>

@@ -1,7 +1,8 @@
-#pragma once
+#ifndef NODE_H
+#define NODE_H
 
-#include "global.h""
-#include<cstdlib>
+#include "global.h"
+#include <cstdlib>
 #include <QGraphicsItem>
 #include <QVector>
 
@@ -28,7 +29,7 @@ public:
     double currY = 0;   //Текущая фактическая координата y
     bool isInPosition = false;  //Признак, прибыл ли узел в вычисленную целевую позицию
     bool highlighted = false;   //Признак, подсвечен ли данный узел
-    double nodeSpeed = 0.6;     //Базовая скорость движения узла из текущей позиции в целевую вычисленную
+    double nodeSpeed = 20.0;     //Базовая скорость движения узла из текущей позиции в целевую вычисленную
     GraphWidget *graph;         //Указатель на графический виджета для отрисовки узлов
 
     enum { Type = UserType + 1 };  //Переопредление индекса текущего класса в перечислении графических элементов данного приложения
@@ -107,3 +108,4 @@ public:
 
     bool operator>=(const double &value) const;
 };
+#endif // NODE_H

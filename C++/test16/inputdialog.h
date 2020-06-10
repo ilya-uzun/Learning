@@ -27,4 +27,5 @@ public:
     static double getDouble(QWidget *parent, QString label);   //Метод открытия диалога для ввода значения
 };
 
+
 #endif // INPUTDIALOG_H

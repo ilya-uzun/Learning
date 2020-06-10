@@ -1,6 +1,7 @@
-#pragma once
+#ifndef GLOBAL_H
+#define GLOBAL_H
 
-#include<string>
+#include <string>
 #include <cmath>
 
 using namespace std;
@@ -16,3 +17,5 @@ const double MAX_NODE_RADIUS = 80.0;    //Максимальный радиус 
 const double MIN_NODE_RADIUS = 25.0;    //Минимальный радиус узла
 const double HORIZONTAL_PADDING = 0;    //Горизонтальный отступ от краев
 const double VERTICAL_PADDING = 0;      //Вертикальный отступ от краев
+
+#endif // GLOBAL_H

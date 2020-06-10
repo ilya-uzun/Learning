@@ -1,4 +1,5 @@
-#pragma once
+#ifndef BTREE_H
+#define BTREE_H
 
 #include <utility>
 #include <vector>
@@ -6,7 +7,7 @@
 #include <sstream>
 #include <algorithm>
 #include <random>
-#include "Node.h"
+#include "node.h"
 #include "global.h"
 #include "graphwidget.h"
 
@@ -71,3 +72,8 @@ public:
     int countNodes(Node *root);     //Метод для подсчета числа узлов в дереве
     bool checkOrder();              //Метод проверки упорядоченности элементов в дереве
 };
+
+
+
+
+#endif // BTREE_H

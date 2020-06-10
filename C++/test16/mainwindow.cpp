@@ -44,7 +44,7 @@ void MainWindow::mousePressEvent(QMouseEvent *event) {
 void MainWindow::on_createButton_clicked() {
     try {
         tree.initializeWithStartValue();
-        showMessage("Сформировано новое идеально-сабалансированное дерево!");
+        showMessage("Сформировано новое дерево!");
     } catch (exception &e) {
         showMessage(e.what());
     }
