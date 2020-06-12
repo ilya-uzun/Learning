@@ -15,7 +15,7 @@ int compare(const void *a, const void *b) {
 
 //Функция-компаратор для сравнения чисел типа double. Используется в qsort.
 
-int f_compare(const double a, const double b) {
+int f_compare(const char a, const char b) {
     auto result = a - b;
     if (result > 0) {
         return 1;
@@ -42,7 +42,8 @@ BTree::~BTree() {
 //Метод для инциализации дерева изначальными значениями. Создает из этих значений иделаьно-сбалансированное дерево.
 
 void BTree::initializeWithStartValue() {
-    vector<double> datalist = {10, 5, 4, 7, 12, 2, 24};
+//    vector<double> datalist = {10, 5, 4, 7, 12, 2, 24};
+    vector<char> datalist = {'l', 'p', 'i', 'n', 'g', 's', 'a'};
     makeBalancedTree(datalist);
     update();
 }
@@ -66,14 +67,14 @@ void BTree::destroyTree(Node *node) {
 
 //Метод поиска элемента в дереве по значению
 
-Node *BTree::search(double key) {
+Node *BTree::search(char key) {
     return search(key, root);
 }
 
-//Рекрсивный метод поиска элемента в дереве по значению начиная с переданного узла.
+//Рекурсивный метод поиска элемента в дереве по значению начиная с переданного узла.
 //Поиск по правилам двоичного поиска.Если элмемент не найден то выбрасывается исключение.
 
-Node *BTree::search(double key, Node *node) {
+Node *BTree::search(char key, Node *node) {
     if (node != nullptr) {
         if (*node == key) {
             return node;
@@ -90,7 +91,7 @@ Node *BTree::search(double key, Node *node) {
 //Метод вставки узла с заданным значением в дерево.Поиск по правилам двоичного поиска.
 //Если элмемент уже есть в дереве, то вставка не производится и выбрасывается исключение.
 
-void BTree::insert(double key) {
+void BTree::insert(char key) {
     if (root != nullptr) {
         insert(key, root);
     } else {
@@ -103,7 +104,7 @@ void BTree::insert(double key) {
 // Поиск по правилам двоичного поиска. Если элмемент уже есть в дереве, то вставка не производится  и выбрасывается исключение.
 // Если вставка невозможна то тоже пробросится соответствующее исключение.
 
-void BTree::insert(double key, Node *node) {
+void BTree::insert(char key, Node *node) {
     bool added = false;
 
     while (node != nullptr) {
@@ -141,7 +142,7 @@ void BTree::insert(double key, Node *node) {
 // Метод для удаления узла с заданным значением. Поиск по правилам двоичного поиска.
 // Если элмемент не найден, то выбрасывается исключение.
 
-void BTree::remove(double key) {
+void BTree::remove(char key) {
     remove(key, root);
     update();
 }
@@ -149,7 +150,7 @@ void BTree::remove(double key) {
 //Рекурсивный метод для удаления узла с заданным значением, начиная с теущего переданного узла.
 //Поиск по правилам двоичного поиска.Если элмемент не найден, то выбрасывается исключение.
 
-void BTree::remove(double key, Node *node) {
+void BTree::remove(char key, Node *node) {
     if (node == nullptr) {
         throw runtime_error("Элемент не найден и поэтому не удален!");
     }
@@ -192,14 +193,14 @@ void BTree::remove(double key, Node *node) {
 
 //Метод для двоичного поиска элемента в дереве по значнеию. Возвращает true, если элемент найден,иначе - false.
 
-bool BTree::isFind(double key) {
+bool BTree::isFind(char key) {
     return isFind(key, root);
 }
 
 // Рекурсивный метод для двоичного поиска элемента в дереве по значнеию, начиная с текущего переданного узла.
 // Возвращает true, если элемент найден, иначе - false.
 
-bool BTree::isFind(double key, Node *node) {
+bool BTree::isFind(char key, Node *node) {
     if (nullptr == node) {
         return false;
     } else if (*node > key) {
@@ -332,7 +333,7 @@ void BTree::postOrder(Node *node) {
  * т.к. идеально-сбалансированное не означает, что оно является
  * еще и деревом поиска.
  */
-void BTree::makeBalancedTree(vector<double> &datalist) {
+void BTree::makeBalancedTree(vector<char> &datalist) {
     destroyTree();
     VectorIter iter = datalist.begin();
     VectorIter end = datalist.end();
@@ -368,7 +369,7 @@ Node *BTree::balancedTree(VectorIter *iter, VectorIter *end, long n) {
  * Рекурсивный метод для сохранения значений элементов дерева в массив
  * в симметричном обходе
  */
-void BTree::storeInOrder(Node *node, double *inorder, int *index_ptr) {
+void BTree::storeInOrder(Node *node, char *inorder, int *index_ptr) {
     if (node == nullptr) {
         return;
     }
@@ -395,7 +396,7 @@ void BTree::sortTree(Node *root) {
     int n = countNodes(root);
 
     // Create a temp array arr[] and store inorder traversal of tree in arr[]
-    double *arr = new double[n];
+    char *arr = new char[n];
     int i = 0;
     storeInOrder(root, arr, &i);
 
@@ -416,7 +417,7 @@ void BTree::sortTree(Node *root) {
  * Если элементы в массиве упорядочены, то делает
  * дерево упорядоченным.
  */
-void BTree::arrayToBST(double *arr, Node *root, int *index_ptr) {
+void BTree::arrayToBST(char *arr, Node *root, int *index_ptr) {
     if (root == nullptr) {
         return;
     }
@@ -436,7 +437,7 @@ void BTree::arrayToBST(double *arr, Node *root, int *index_ptr) {
  * Метод преобразования дерево в бинарное дерево поиска
  */
 void BTree::convertToBalancedBST() {
-    vector<double> datalist;
+    vector<char> datalist;
     storeDataInOrder(root, datalist);  //сбор данных в симматричном обходе
     makeBalancedTree(datalist);  //создание сбалансированного дерева на основе элементов списка
     sortTree(root);   //сортировка элементов дерева
@@ -457,7 +458,7 @@ void BTree::storeNodesPreOrder(Node *root, vector<Node *> &nodes) {
 
 // Метод сбора в вектор значений элементов дерева в прямом обходе
 
-void BTree::storeDataPreOrder(Node *root, vector<double> &dataList) {
+void BTree::storeDataPreOrder(Node *root, vector<char> &dataList) {
     if (root == nullptr) {
         return;
     }
@@ -469,7 +470,7 @@ void BTree::storeDataPreOrder(Node *root, vector<double> &dataList) {
 
 // Метод сбора в вектор значений элементов дерева в симметричном обходе
 
-void BTree::storeDataInOrder(Node *root, vector<double> &dataList) {
+void BTree::storeDataInOrder(Node *root, vector<char> &dataList) {
     if (root == nullptr) {
         return;
     }
@@ -617,7 +618,7 @@ int BTree::countNodes(Node *root) {
 // Возвращает true, если элменты упорядочены, иначе - false.
 
 bool BTree::checkOrder() {
-    vector<double> nodes;
+    vector<char> nodes;
     storeDataPreOrder(root, nodes);
 
     for (auto &el : nodes) {

@@ -22,10 +22,12 @@ bool f_more(double a, double b) {
     return !equals(a, b) && !signbit(a - b);
 }
 
-// Конструктор с парметром в виде указателя на родительский виджет.Создает условно пустой узел.
+ //Конструктор с парметром в виде указателя на родительский виджет.
+//Создает условно пустой узел.
 
 Node::Node(GraphWidget *graphWidget) : graph(graphWidget) {
-    this->data = -1000000.00;
+    //this->data = -1000000.00;
+    this->data = 'a';
     this->parent = nullptr;
     this->left = nullptr;
     this->right = nullptr;
@@ -43,7 +45,7 @@ Node::Node(GraphWidget *graphWidget) : graph(graphWidget) {
 // значением узла.
 // Создает узел с заданным значением.
 
-Node::Node(GraphWidget *graphWidget, double data) : graph(graphWidget) {
+Node::Node(GraphWidget *graphWidget, char data) : graph(graphWidget) {
     this->data = data;
     this->left = nullptr;
     this->right = nullptr;
@@ -163,6 +165,7 @@ void Node::insertRight(Node *node) {
         node->parent = this;
     }
 }
+
 
 //Метод-обработчик события изменения параметров узла.
 
@@ -378,13 +381,11 @@ bool Node::operator>(const double &value) const {
 }
 
 // Перегруженный оператор "==" для сравнения значенияузла с другим значением такого же типана отношение "<="
-
 bool Node::operator<=(const double &value) const {
     return f_less(data, value) || equals(data, value);
 }
 
 //Перегруженный оператор "==" для сравнения значения узла с другим значением такого же типа на отношение ">="
-
 bool Node::operator>=(const double &value) const {
     return f_more(data, value) || equals(data, value);
 }

@@ -14,9 +14,9 @@ class InputDialog : public QDialog {
 Q_OBJECT
 private:
     Ui::InputDialog *ui;  //Указатель на интерфейс
-    double value = 0;     //Поле под вводимое значение
+    char value ;     //Поле под вводимое значение
 private:
-    double getValue();    //Селектор для поля с вводимым значением
+    char getValue();    //Селектор для поля с вводимым значением
 private slots:
     void on_confirmButton_clicked();    //Метод-обработчик события "При нажатии подтверждающей кнопки"
     void on_InputDialog_rejected();     //Метод-обработчик события "При отмене ввода"
@@ -24,7 +24,7 @@ private slots:
 public:
     explicit InputDialog(QWidget *parent = nullptr);  //Конструктор с параметром в виде указателя на родителський виджет
     ~InputDialog();                                   //Деструктор
-    static double getDouble(QWidget *parent, QString label);   //Метод открытия диалога для ввода значения
+    static char getDouble(QWidget *parent, QString label);   //Метод открытия диалога для ввода значения
 };
 
 

@@ -17,7 +17,8 @@ public:
     static double nodeCurrentRadius;    //Фактический текущий радиус узла
     static const double nodeRadiusStep; //Шаг измнеения радиуса узла
 
-    double data;        //Поле с данными (значением узла)
+    //double data;        //Поле с данными (значением узла)
+    char data;
     Node *left;         //Указатель на левый дочерний узел
     Node *right;        //Указатель на правый дочерний узел
     Node *parent;       //Указатель на родительский узел
@@ -57,7 +58,7 @@ protected:
 public:
     //Конструкторы
     Node(GraphWidget *graphWidget);
-    explicit Node(GraphWidget *graphWidget, double data);
+    explicit Node(GraphWidget *graphWidget, char data);
     Node(Node &nd);
 
     //Деструктор

@@ -15,13 +15,13 @@ InputDialog::~InputDialog() {
 
 //Селектор для поля с вводимым значением
 
-double InputDialog::getValue() {
+char InputDialog::getValue() {
     return value;
 }
 
 // Метод открытия диалога для ввода значения
 
-double InputDialog::getDouble(QWidget *parent, QString label) {
+char InputDialog::getDouble(QWidget *parent, QString label) {
     InputDialog inputDialog(parent);
     inputDialog.setModal(false);
     inputDialog.setFixedSize(200, 150);
@@ -29,7 +29,7 @@ double InputDialog::getDouble(QWidget *parent, QString label) {
     inputDialog.ui->doubleValue->setRange(-100.0, +100.0);
     inputDialog.ui->doubleValue->setFocus();
     inputDialog.exec();
-    double value = inputDialog.getValue();
+    char value = inputDialog.getValue();
     return value;
 }
 
