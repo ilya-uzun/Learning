@@ -13,7 +13,7 @@ list.addEventListener('click', function (ev){
       toLocal();
       }else if(ev.target.tagName === "SPAN2"){//
       var div = ev.target.parentNode;
-      div.remove();
+      div.remove(); 
       toLocal();
   }
 }, false);
