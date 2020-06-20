@@ -1,0 +1,7 @@
+
+#field{
+  width: 320px;
+  height: 320px;
+  box-sizing: content-box;
+  border: 1px solid black;
+}
