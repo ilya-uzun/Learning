@@ -5,9 +5,9 @@ using namespace std;
 
 void fraction::Read()
 {
-	cout <<  "\n Введите цену товара r- ";
+	cout <<  "\n Enter the product price - ";// Введите цену товара
 	cin >> first;
-	cout << "\n Введите количество товара -  ";
+	cout << "\n Enter the quantity of the product -  ";// Введите количество продукта
 	cin >> second;
 }
 // стоимость товара
@@ -24,7 +24,7 @@ int fraction::Init()
   fraction::Read(); // вызов метода чтения
   if (cin.fail())
   {
-    cout << "\n Ошибка ввода, неверный тип данных! " << endl;
+    cout << "\n Input error, invalid data type! " << endl;//Ошибка ввода, неверный тип данных!
     system("pause");
     exit(1); //выход если ввод ошибочный
    }
@@ -34,6 +34,6 @@ int fraction::Init()
 void fraction::Show()
 {
 
-	cout <<" Стоимость товара = "<< fraction::Cost() << "\n ";
+	cout <<" Value of goods = "<< fraction::Cost() << "\n ";//Стоимость товара 
 	cout << "\n ";
 }

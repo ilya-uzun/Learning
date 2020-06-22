@@ -1,0 +1,34 @@
+ @startuml
+' note left of main #while: Комментарий.
+' note top of Rightangled : Комментарий.
+' note top of Object : Комментарий.
+' note top of Vector : Комментарий.
+skinparam dpi 200
+skinparam shadowing false
+main <-- Person
+main <-- File_work
+class main<<(m,#FF7700)>>{
+    .. **Объекты** ..
+    Person p, p1, p2;
+} 
+class Person{
+    .. **private varible** ..
+    # int min;
+    # int sec;
+    .. **Операции перегрузки** ..
+	+ Person operator =(const Person&);
+    + friend ostream& operator <<(ostream &out, const Person&p);
+    + friend istream& operator>>(istream &in, Person &p);
+    + friend fstream& operator>>(fstream &fin, Person &p);
+    + friend fstream& operator <<(fstream &fout, const Person&p);
+}
+class File_work{
+    int make_file(const char* f_name);
+    int print_file(const char*f_name);
+    int del_file(const char*f_name, int k);
+    int add_file(const char*f_name, int k, Person pp);
+    int add_end(const char*f_name, Person pp);
+    int change_file(const char*f_name, int k,Person pp);
+}
+ @enduml
+

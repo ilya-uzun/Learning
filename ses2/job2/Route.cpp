@@ -10,14 +10,14 @@ Route::Route()
 	finish = "";
 	time_in_way = 0.0;
 	// this указатель на класс
-	cout << "Конструктор без параметров для объекта " << this << endl;
+	cout << "Constructor without parameters for the object " << this << endl;//Конструктор без параметров для объекта
 }
 //  Конструктор c параметров
 Route::Route(string N, string K, float S) {
 	start = N;
 	finish = K;
 	time_in_way = S;
-	cout << "Конструктор c параметров для объекта " << this << endl;
+	cout << "Constructor with parameters for an object " << this << endl;//Конструктор c параметров для объекта 
 }
 //  Конструктор копирования
 Route::Route(const Route&t)
@@ -25,12 +25,12 @@ Route::Route(const Route&t)
 	start = t.start;
 	finish = t.finish;
 	time_in_way = t.time_in_way;
-	cout << "Конструктор копирования для объекта " << this << endl;
+	cout << "Copy constructor for an object " << this << endl;//Конструктор копирования для объекта 
 }
 //Деструктор
 Route::~Route()
 {
-	cout << "Деструктор для объекта " << this << endl;
+	cout << "Destructor for the object " << this << endl;//Деструктор для объекта 
 }
 //селекторы
 string Route::get_start()

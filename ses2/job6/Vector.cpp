@@ -1,7 +1,7 @@
 #include "Vector.h"
 #include <iostream>
 
-//rтруктор с параметрами 
+//rС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 Vector::Vector(int s, int k) {
 	size = s;
 	data = new int[size];
@@ -9,7 +9,7 @@ Vector::Vector(int s, int k) {
 	beg.elem = &data[0];
 	end.elem = &data[size];
 }
-//конструкор копирования 
+//РєРѕРЅСЃС‚СЂСѓРєРѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ 
 Vector::Vector(const Vector& a) {
 	size = a.size;
 	data = new int[size];
@@ -18,16 +18,17 @@ Vector::Vector(const Vector& a) {
 	beg = a.beg;
 	end = a.end;
 }
-//деструктор
+//РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 Vector::~Vector() {
 	delete[]data;
 	data = 0;
 }
-//операция присваивания
-Vector& Vector::operator = (const Vector& a) {
-	if (this == &a)return *this;
+//РѕРїРµСЂР°С†РёСЏ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
+Vector& Vector::operator = (const Vector& a) 
+{
+	if (this == &a) return *this;
 	size = a.size;
-	if (data != 0)delete[]data;
+	if (data != 0) delete[]data;
 	data = new int[size];
 	for (int i = 0; i < size; i++)
 		data[i] = a.data[i];
@@ -35,36 +36,39 @@ Vector& Vector::operator = (const Vector& a) {
 	end = a.end;
 	return *this;
 }
-//операция доспупа  по индексу
-Vector Vector::operator + (const int k) {
+//РѕРїРµСЂР°С†РёСЏ РґРѕСЃРїСѓРїР°  РїРѕ РёРЅРґРµРєСЃСѓ
+int& Vector::operator[](int index)
+{
+if (index<size) return data[index];
+else std::cout<<"\nError! Index>size";
+}
+//РѕРїРµСЂР°С†РёСЏ РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ РєРѕРЅСЃС‚Р°РЅС‚С‹
+Vector Vector::operator + (const int k) 
+{
 	Vector temp(size);
 	for (int i = 0; i < size; i++)
 		temp.data[i] += data[i]+k;
 	return temp;
 }
-//операция для присваивания констаты
-int Vector::operator()() {
-	return len();
+//РѕРїРµСЂР°С†РёСЏ РґР»СЏ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ РєРѕРЅСЃС‚Р°С‚С‹
+
+//РѕРїРµСЂР°С†РёСЏ РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ РґР»РёРЅС‹ РІРµРєС‚РѕСЂР°
+int Vector::operator ()() 
+{
+	return size;
 }
-//операция для получения длины вектора
-int& Vector::operator[](int index) {
-	if (index < size) return data[index];
-	else cout << "\n Error! Index>size";
-}
-//операция ввода-вывода
-ostream& operator<<(ostream& out,const Vector& a) {
-	for (int i = 0; i < a.len(); ++i)
+//РѕРїРµСЂР°С†РёСЏ РІРІРѕРґР°-РІС‹РІРѕРґР°
+ostream& operator<<(ostream& out,const Vector& a) 
+{
+	for (int i = 0; i < a.size; ++i)
 		out << a.data[i]<< " ";
 	return out;
-
-istream& operator>>(istream& in, Vector& a) {
-	for (int i = 0; i < a.len(); ++i)
+}
+istream& operator>>(istream& in, Vector& a) 
+{
+	for (int i = 0; i < a.size; ++i)
 		in >> a.data[i];
 	return in;
 }
-
-
-
-///----///----///----///----///----///----///----///----///
 
 

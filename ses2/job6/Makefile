@@ -1,7 +1,7 @@
 CC := g++
 JOB = job
 PREFIX := obj/
-SRC := main.cpp fraction.cpp fraction.h
+SRC := main.cpp Vector.cpp Vector.h
 OBJ := $(patsubst %.cpp, $(PREFIX)%.o, $(SRC))
 
 $(JOB): $(OBJ)

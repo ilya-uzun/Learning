@@ -1,67 +1,53 @@
-
 #pragma once
 #include <iostream>
 using namespace std;
-class Vector
-{
-public:
-	//конструктор с параметрами: выделяет  паметь под s элемент и заполняет ихзначение к
-
-	Vector(int s, int k = 0);
-	//конструкор копирования 
-	Vector(const Vector& a);
-	//конструктор с параметрами
-	~Vector();
-	//деструктор
-	Vector& operator=(const Vector& a);
-	//операция присваивания
-	int& operator[](int index);
-	//операция доступа по индексу
-	Vector operator+(const int k);
-	//операция для добавления константы
-	int operator()();
-	// перегруженные операции ввода-вывода
-	friend ostream &operator << (ostream& out, const Vector& a);
-	friend iostream &operator >> (iostream& out, const Vector& a);
-
-
-	Iterator first() { return beg; } //возвращает указатель на первый элемент
-	Iterator last() { return end; } // возвращает ук. следующий за последним
-
-private:
-	int size;//размер вектора
-	int* data;// указатель на денамический массив значеий вектора
-
-	//int size;
-	//int* data;
-	Iterator beg;//указатель на первый элемент
-	Iterator end;// уазатель на элемент следущий за последним
-
-};
-
-///----///----///----///----///----///----///----///----///
 
 class Iterator
 {
-	friend class Vector;//дружеский класс
-
+	friend class Vector;//РґСЂСѓР¶РµСЃРєРёР№ РєР»Р°СЃСЃ
 public:
-	Iterator() { emel = 0; }//конструктор без параметров
-	Iterator(const Iterator) { emel = it.elem; }//консруктор копирования
-	//перегруженные операции сравнения
+	Iterator() { elem = 0; }//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ
+	Iterator(const Iterator& it) { elem = it.elem; }//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
+	//РїРµСЂРµРіСЂСѓР¶РµРЅРЅС‹Рµ РѕРїРµСЂР°С†РёРё СЃСЂР°РІРЅРµРЅРёСЏ
 	bool operator ==(const Iterator& it) { return elem == it.elem; }
-	bool operator !=(const Iterator& it) { return elem != it.elem; }
-	//перегруженная операция  инкремент
-	void operator ++() { ++elem; }
-	//перегруженная операция декремент
+	bool operator !=(const Iterator& it) { return elem != it.elem; };
+	//РїРµСЂРµРіСЂСѓР¶РµРЅРЅР°СЏ РѕРїРµСЂР°С†РёСЏ  РёРЅРєСЂРµРјРµРЅС‚
+	void operator ++() { ++elem; };
+	//РїРµСЂРµРіСЂСѓР¶РµРЅРЅР°СЏ РѕРїРµСЂР°С†РёСЏ РґРµРєСЂРµРјРµРЅС‚
 	void operator --() { --elem; }
-	//перегруженная операция разыменованя
+	//РїРµСЂРµРіСЂСѓР¶РµРЅРЅР°СЏ РѕРїРµСЂР°С†РёСЏ СЂР°Р·С‹РјРµРЅРѕРІР°РЅРёСЏ
 	int& operator *() const { return *elem; }
+private:
+	int* elem;// СѓРєР°Р·Р°С‚РµР»СЊ РЅР° СЌР»РµРјРµРЅС‚ С‚РёРїР° int
+};
+class Vector
+{
+public:
+	////РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё: РІС‹РґРµР»СЏРµС‚ РїР°РјСЏС‚СЊ РїРѕРґ s СЌР»РµРјРµРЅС‚ Рё Р·Р°РїРѕР»РЅСЏРµС‚ РёС… Р·РЅР°С‡РµРЅРёРµ Рє
+	Vector(int s, int k = 0);
+	//РєРѕРЅСЃС‚СЂСѓРєРѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
+	Vector(const Vector& a);
+	//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
+	~Vector();
+	//РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 
+	Vector& operator=(const Vector& a);
+	//РѕРїРµСЂР°С†РёСЏ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
+	int& operator[](int index);
+	//РѕРїРµСЂР°С†РёСЏ РґРѕСЃС‚СѓРїР° РїРѕ РёРЅРґРµРєСЃСѓ
+	Vector operator+(const int k);
+	//РѕРїРµСЂР°С†РёСЏ РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ РєРѕРЅСЃС‚Р°РЅС‚С‹
+	int operator()();
+	// РїРµСЂРµРіСЂСѓР¶РµРЅРЅС‹Рµ РѕРїРµСЂР°С†РёРё РІРІРѕРґР°-РІС‹РІРѕРґР°
+	friend ostream& operator << (ostream& out, const Vector& a);
+	friend istream& operator >> (istream& in, Vector& a);
 
+	Iterator first() { return beg; } //РІРѕР·РІСЂР°С‰Р°РµС‚ СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РїРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚
+	Iterator last() { return end; } // РІРѕР·РІСЂР°С‰Р°РµС‚ СѓРє. СЃР»РµРґСѓСЋС‰РёР№ Р·Р° РїРѕСЃР»РµРґРЅРёРј
 
 private:
-	int* elem;// указатель на элемент типа int
-
-
+	int size;//СЂР°Р·РјРµСЂ РІРµРєС‚РѕСЂР°
+	int* data;// СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РґРёРЅР°РјРёС‡РµСЃРєРёР№ РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№ РІРµРєС‚РѕСЂР°
+	Iterator beg;//СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РїРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚
+	Iterator end;// СѓРєР°Р·Р°С‚РµР»СЊ РЅР° СЌР»РµРјРµРЅС‚ СЃР»РµРґСЏС‰РёР№ Р·Р° РїРѕСЃР»РµРґРЅРёРј
 };

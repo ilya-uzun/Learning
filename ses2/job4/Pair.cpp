@@ -46,16 +46,16 @@ Pair& Pair::operator=(const Pair& pair)
 //глобальная функция для ввода
 std::istream& operator>>(std::istream& in, Pair& pair)
 {
-	std::cout << " Введите (first) класса Pair : ";
+	std::cout << " Enter (first) class Pair : ";//
 	in >> pair.first;
-	std::cout << " Введите (second) класса Pair : ";
+	std::cout << " Enter (second) class Pair : ";//
 	in >> pair.second;
 	return in;
 }
 //глобальная функция для  вывода
 std::ostream& operator <<(std::ostream& out, const Pair& pair)
 {
-	out << " Вывод (first) класса Pair = "<< pair.first << std::endl;
-	out << " Вывод (second) класса Pair  = "<< pair.second << std::endl;
+	out << " Output (first) class Pair = "<< pair.first << std::endl;// 
+	out << " Output (second) class Pair  = "<< pair.second << std::endl;//
 	return out;
 }

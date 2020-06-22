@@ -1,11 +1,12 @@
-
+#pragma once
 #include"Pair.h"
 
 class Rightangled : public Pair
 {
 public:
-
 	Rightangled(void); //вызываем конструктор без параметров базового класса
+public:	
+	void Show();//функция для просмотра атрибутов класса с помощью указателя
 	Rightangled(int, int, int);//конструктор с параметрами базового класса
 	Rightangled(const Rightangled&); //конструктор
 	~Rightangled(void); //деструктор

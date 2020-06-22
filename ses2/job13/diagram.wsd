@@ -1,0 +1,43 @@
+ @startuml
+' note left of main #while: Комментарий.
+' note top of Rightangled : Комментарий.
+' note top of Object : Комментарий.
+' note top of Vector : Комментарий.
+skinparam dpi 200
+skinparam shadowing false
+
+main <-- Time
+
+class main<<(m,#FF7700)>>{
+    .. **Объекты** ..
+    Time s;
+    TVector v;
+} 
+class Time{
+    .. **privat varible** ..
+    # int min;
+    # int sec;
+    .. **public metod** ..
+    + int get_min() { return min; }
+	+ int get_sec() { return sec; }
+	+ void set_min(int m) { min = m; }
+	+ void set_sec(int s) { sec = s; }
+	+ void simTime (int *minS, int *secS);
+    .. **Операции перегрузки** ..
+    + Time &operator = (const Time&); 
+	+ Time &operator ++ (); 
+	+ Time operator ++ (int);
+	+ Time operator/(const Time&);
+	+ Time operator/(const int&);
+	+ bool operator >(const Time&);
+	+ bool operator <(const Time&);
+	+ bool operator !=(const Time&);
+	+ friend Time operator + (const Time&, const Time&);
+    + friend Time operator - (Time&, int valuve);
+	+ friend Time operator + (Time&, int valuve);
+	+ friend istream &operator >> (istream&in, Time &t);
+	+ friend ostream &operator << (ostream&out, const Time& t);
+}
+
+ @enduml
+

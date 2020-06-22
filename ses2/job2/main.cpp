@@ -1,6 +1,4 @@
-﻿// lab2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-
+﻿#pragma once
 #include <iostream>
 #include <string>
 #include <windows.h>
@@ -12,11 +10,11 @@ Route make_Route() {
 	string s;
 	string i;
 	float d;
-	cout << " Введите наименование : ";
+	cout << "Enter the name of the: ";// Введите наименование 
 	cin >> s;
-	cout << " Введите количество : ";
+	cout << "Enter the quantity : ";//Введите количество
 	cin >> i;
-	cout << " Введите стоимость : ";
+	cout << "Enter the cost : ";//Введите стоимость 
 	cin >> d;
 	Route t(s, i, d);
 	return t;
@@ -39,7 +37,7 @@ int main(){
 	//конструкор копирования
 	Route t3 = t2;
 	t3.set_start("Perm 2");
-	t3.set_finish("Moskow");
+	t3.set_finish("Moscow");
 	t3.set_time_in_way(24.0);
 	//конструкор копирования
 	print_Route(t3);

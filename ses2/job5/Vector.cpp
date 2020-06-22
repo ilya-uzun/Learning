@@ -6,7 +6,7 @@ Vector::Vector(void) {
 	cur = 0;
 }
 //деструктор
-Vector::Vector(void) {
+Vector::~Vector(void) {
 	if (beg != 0)delete[] beg;
 	beg = 0;
 }
@@ -26,7 +26,7 @@ void Vector::Add(Object* p) {
 //оператор вывода
 ostream& operator<<(ostream& out, const Vector& v) {
 	if (v.size == 0) out << "Empty" << endl;
-	Object** p = v.beg;// указатель на укаатель типа Odject
+	Object **p = v.beg;// указатель на укаатель типа Odject
 	for (int i = 0; i < v.cur; i++) {
 		(*p)->Show();//вызов метода Show() ()позднее связывание
 		p++; //передвигаем указатель на следующий объект

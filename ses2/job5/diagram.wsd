@@ -1,58 +1,64 @@
  @startuml
-note left of main #while: Комментарий.
-note top of Rightangled : Комментарий.
-note top of Object : Комментарий.
-note top of Vector : Комментарий.
-main --> Rightangled
-main --> Pain
-main ..> Object
-main ..> Vector
-Object ..> Vector
-Rightangled --> Pain
+' note left of main #while: Комментарий.
+' note top of Rightangled : Комментарий.
+' note top of Object : Комментарий.
+' note top of Vector : Комментарий.
+skinparam dpi 200
+skinparam shadowing false
+main <-- Rightangled
+main <-- Pain
+main ... Object
+main <-- Vector
+Vector <|-- Object
+Pain <|-- Object
+Rightangled <|--  Pain
 class main<<(m,#FF7700)>>{
+    .. **Объекты** ..
     Vector v
     Pair a
     Rightangled b
     Object* p = &a
-} 
+}
 abstract class Object{
     + virtual void Show() = 0
 }
+class Pain{
+    .. **public varible** ..
+    + int  perimeter
+    .. **protected varible** ..
+    # int first
+    # int second
+    .. **public metod** ..
+    + void Show()
+    + int  get_first()
+    + int  get_second()
+    + int  set_first()
+    + int  set_second()
+    .. **Операции перегрузки**..
+    + Pair& operator= (const Pair&)
+    + friend istream& operator >> (istream &in, Pair& pair)
+    + friend ostream& operator << (ostream &out, const Pair& pair)
+}
 class Rightangled{
-    .. protected varible ..
+    .. **protected varible** ..
     # int hypatenuse
-    .. public metod ..
+    .. **public metod** ..
+    + void Show()
     + void set_hypatenuse(int)
-    + int get_hypatenuse() 
+    + int get_hypatenuse()
     + int Hypatenuse()
-    .. friend metod ..
+    .. **Операции перегрузки** ..
     + Rightangled& operator = (const Rightangled&)
     + friend istream& operator >> (istream& in,  Rightangled& rightangled)
     + friend ostream& operator << (ostream& out, const Rightangled& rightangled)
 }
-class Pain{
-    .. public varible ..
-    + int  perimeter
-    .. protected varible ..
-    # int first
-    # int second
-    .. public metod ..
-    + int  get_first()
-    + int  get_second() 
-    + int  set_first()
-    + int  set_second()
-    + Pair& operator= (const Pair&)
-    .. friend metod ..
-    + friend istream& operator >> (istream &in, Pair& pair)
-    + friend ostream& operator << (ostream &out, const Pair& pair)
-}
 class Vector{
-    .. privat varible ..
+    .. **privat varible** ..
     - Object** beg
     - int size
+    ..**public metod** ..
     + void Add(Object*)
-    .. friend metod ..
+    .. **Операции перегрузки** ..
     + friend ostream& operator<< (ostream &out, const Vector&)
 }
  @enduml
-

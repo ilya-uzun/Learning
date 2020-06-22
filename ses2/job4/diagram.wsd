@@ -1,0 +1,43 @@
+ @startuml
+' note left of main #while: Комментарий.
+' note top of Rightangled : Комментарий.
+skinparam dpi 200
+skinparam shadowing false
+main <-- Pain
+main <-- Rightangled
+Rightangled <|--  Pain
+class main<<(m,#FF7700)>>{
+    .. **Объекты** ..
+    Pair a
+    Rightangled b
+}
+class Rightangled{
+    .. protected varible ..
+    # int hypatenuse
+    .. public metod ..
+    + void set_hypatenuse(int)
+    + int get_hypatenuse()
+    + int Hypatenuse()
+    .. friend metod ..
+    + Rightangled& operator = (const Rightangled&)
+    + friend istream& operator >> (istream& in,  Rightangled& rightangled)
+    + friend ostream& operator << (ostream& out, const Rightangled& rightangled)
+}
+class Pair{
+    .. public varible ..
+    + int  perimeter
+    .. protected varible ..
+    # int first
+    # int second
+    .. public metod ..
+    + int  get_first()
+    + int  get_second()
+    + int  set_first()
+    + int  set_second()
+    .. **Операции перегрузки** ..
+    + Pair& operator= (const Pair&)
+    + friend istream& operator >> (istream &in, Pair& pair)
+    + friend ostream& operator << (ostream &out, const Pair& pair)
+}
+
+ @enduml

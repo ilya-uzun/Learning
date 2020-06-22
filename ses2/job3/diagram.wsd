@@ -1,0 +1,33 @@
+ @startuml
+' note left of main #while: Комментарий.
+skinparam dpi 200
+skinparam shadowing false
+main <-- Time
+class main<<(m,#FF7700)>>{
+   .. **Объекты** ..
+   Time a
+   Time b
+   Time c
+   Time d
+} 
+class Time{
+    .. **privat varible** ..
+    - string start
+    - string finish
+    - float time_in_way
+    .. **public metod** ..
+    + int get_min()
+    + int get_sec()
+    + void set_min(int m)
+    + void set_sec(int s)
+    .. **Операции перегрузки** ..
+    + Time &operator = (const Time&)
+    + Time &operator ++ ()
+    + Time operator ++ (int)
+    + friend Time operator - (Time&, int valuve)
+    + friend Time operator + (const Time&, const Time&)
+    + friend istream &operator >> (istream&in, Time &t)
+    + friend ostream &operator << (ostream&out, const Time& t)
+}
+ @enduml
+

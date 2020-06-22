@@ -9,6 +9,14 @@ Rightangled::Rightangled(void):Pair() {
 //деструктор
 Rightangled::~Rightangled(void) {}
 
+void Rightangled::Show()
+{
+	std::cout<<" Rightangled::Show() "<< std::endl;
+	std::cout<<" first - "<<first << std::endl;
+	std::cout<<" second - "<<second << std::endl;
+	std::cout<<" hypatenuse - "<<hypatenuse << std::endl;
+}
+
 //Конструктор с параметрами
 Rightangled::Rightangled(int F, int S, int H): Pair( F, S)
 {
@@ -45,10 +53,11 @@ Rightangled& Rightangled::operator=(const Rightangled& rightangled)
 
 std::istream& operator >> (std::istream& in,  Rightangled& rightangled)
 {
-	 std::cout << " Введите (first) класса Rightangled = ";
+	 std::cout << " Input (first) class Rightangled = ";// ввод first
 	 in >> rightangled.first;
-	 std::cout << " Введите (second) класса Rightangled = ";
+	 std::cout << " Input (second) class Rightangled = "; // ввод second
 	 in >> rightangled.second;
+	 std::cout << std::endl;
 	 return in;
 }
 
