@@ -28,8 +28,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Intro */
 .intro {
     position: absolute;
-    width: auto;
+    max-width: 100;
     height: 620px;
-    
-    background: url("rectangle2.png");
+    background: url(file:///home/ilya/pgit/Study/js/test/st4/rectangle2.png);
 }
