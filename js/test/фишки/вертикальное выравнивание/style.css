@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* эквивалентно окну браузера */
+    height: 100vh;
+    /* эквивалентно ширине окна браузера */
+    width: 100vw;
+}
+.child{
+    width: 100px;
+    height: 100px;
+    background-color: #20126f;
+    ;
+}
