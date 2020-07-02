@@ -90,3 +90,20 @@ nav ul li a:hover {
     margin: 20px;
     background: var(--main-color);
 }
+
+html {
+    scroll-behavior: smooth;
+}
+a {
+    text-align: center;
+    width: 100%;
+    display: block;
+    font-weight: 100;
+    position: absolute;
+} 
+.sky {
+    background: linear-gradient(to botton, #64b3f4, #c2e59c);
+    /* высота страницы */
+    height: 6000px;
+    position: relative;
+}
