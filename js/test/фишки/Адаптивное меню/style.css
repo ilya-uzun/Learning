@@ -5,7 +5,7 @@ body {
     font-size: 18px;
 }
 nav {
-    border-bottom: column;
+    border-bottom: 1px solid #ccc;
     background: #f1f1f1;
     display: flex;
     position: relative;
@@ -74,7 +74,6 @@ nav ul li a:hover {
         display: block;
     }
 }
-
 /*глабальные переменные */
 :root {
     --main-color: red;
@@ -102,8 +101,10 @@ a {
     position: absolute;
 } 
 .sky {
-    background: linear-gradient(to botton, #64b3f4, #c2e59c);
-    /* высота страницы */
-    height: 6000px;
+    background: linear-gradient(to bottom, #64b3f4, #c2e59c);
+    height: 6000px;  /* высота страницы */
     position: relative;
+}
+a.top {
+    bottom: 0;
 }
