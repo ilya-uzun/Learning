@@ -78,7 +78,8 @@ nav ul li a:hover {
 :root {
     --main-color: red;
 }
-.bl {
+/* квадраты на экране */
+/* .bl {
     width: 100px;
     height: 100px;
     background: var(--main-color);
@@ -87,7 +88,7 @@ nav ul li a:hover {
     width: 120px;
     height: 120px;
     margin: 20px;
-    background: var(--main-color);
+    background: var(--main-color); */
 }
 
 html {
@@ -107,4 +108,11 @@ main a {
 }
 a.top {
     bottom: 0;
+}
+video {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
 }
