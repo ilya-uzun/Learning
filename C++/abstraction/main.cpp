@@ -2,27 +2,32 @@
 
 using namespace std;
 
+typedef std::string fulName;
+typedef int  TexId;
+typedef int jobClassification;
+
+
 class Employee
 {
 public:
 // открытай конструкторы и деструкторы
     Employee();
     Employee(
-      FulName name,
-      String address,
-      String workPhone,
-      String homePhon,
-      TexId taxIdNumber,
+      fulName name,
+      string address,
+      string workPhone,
+      string homePhon,
+      TexId texIdNumber,
       jobClassification jobClass
     );
     virtual ~Employee();
 // открытые методы
-    FullName GetName() const;
-    String GetAddress() const;
-    String GetWorkPhone() const;
-    String GetHomePhone() const;
-    TaxId GetTaxIdNumber() const;
-  jobClassification GetjobClassification() const;
+    fulName GetName() const;
+    string GetAddress() const;
+    string GetWorkPhone() const;
+    string GetHomePhone() const;
+    TexId GetTaxIdNumber() const;
+    jobClassification GetjobClassification() const;
 private:
 };
 
