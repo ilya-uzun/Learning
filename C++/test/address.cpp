@@ -1,4 +1,6 @@
 #include <iostream>
+#include <QAppLication>
+
 
 using namespace std;
 
