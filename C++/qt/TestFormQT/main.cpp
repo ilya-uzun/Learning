@@ -16,10 +16,8 @@ int main(int argc, char *argv[])
     int b = 3;
     int c = 5;
     ClassMath test;
-    int bc;
-    bc = test.summe_number(b,c);
-    QString dec = QString::number(bc);// преобразовываем int в QString
-    w.setLabelText(dec);
+    //выводим в leber результат метода summe_number
+    w.setLabelText(test.summe_number(b,c));
 
     return a.exec();
 }

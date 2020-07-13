@@ -1,6 +1,8 @@
 #ifndef CLASSMATH_H
 #define CLASSMATH_H
 
+#include <QString>
+
 class ClassMath
 {
 public:
@@ -15,7 +17,7 @@ public:
     int set_number1(int); //модификаторы
     int set_number2(int);
 
-    int summe_number (int, int); //метод сложения
+    QString summe_number (int, int); //метод сложения
 private:
     int number1;
     int number2;

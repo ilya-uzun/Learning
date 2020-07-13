@@ -28,9 +28,10 @@ int ClassMath::set_number2 (int n)
 }
 
 //метод сложения
-int ClassMath::summe_number (int n1, int n2)
+QString ClassMath::summe_number (int n1, int n2)
 {
     int summe = 0;
     summe = n1 + n2;
-    return summe;
+    QString dec = QString::number(summe);
+    return dec;
 }
