@@ -1,8 +1,8 @@
 #include "mainwindow.h"
 #include "classmath.h"
 #include <QApplication>
-#include <QLabel>
-#include <QString>
+//#include <QLabel>
+//#include <QString>
 
 using namespace std;
 
@@ -20,5 +20,7 @@ int main(int argc, char *argv[])
     int bc;
     bc = test.summe_number(b,c);
     //label.show();
+    QString sss = "dsds";
+    w.setLabelText(sss);
     return a.exec();
 }

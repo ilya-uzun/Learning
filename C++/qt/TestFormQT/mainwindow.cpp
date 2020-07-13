@@ -12,4 +12,13 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
+// label
+QString MainWindow::labelText()
+{
+    return ui->label->text();
+}
+// позваляет записать в label
+void MainWindow::setLabelText(QString text)
+{
+  ui->label->setText(text);
+}
