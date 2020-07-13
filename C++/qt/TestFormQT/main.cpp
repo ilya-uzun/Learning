@@ -13,14 +13,13 @@ int main(int argc, char *argv[])
     w.show();
 
     // test metod summe_nuber
-    //QLabel label ("sdsdd");
     int b = 3;
     int c = 5;
     ClassMath test;
     int bc;
     bc = test.summe_number(b,c);
-    //label.show();
-    QString sss = "dsds";
-    w.setLabelText(sss);
+    QString dec = QString::number(bc);// преобразовываем int в QString
+    w.setLabelText(dec);
+
     return a.exec();
 }
