@@ -18,6 +18,7 @@ public:
 public:
     QString labelText();
     void setLabelText(QString string);
+    QString get_TextEdit1();
 
 private:
     Ui::MainWindow *ui;
