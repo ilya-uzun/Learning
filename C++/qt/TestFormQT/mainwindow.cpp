@@ -25,10 +25,5 @@ void MainWindow::setLabelText(QString text)
 
 QString MainWindow::get_TextEdit1()
 {
-    QString text = "s";
-    text = ui->textEdit->toPlainText();
 
-//    int n = 0;
-//    n = text.toInt();
-    return text;
 }
