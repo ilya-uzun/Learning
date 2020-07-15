@@ -29,6 +29,7 @@
 12. Work_S1_12.cpp - SetConsoleCP, SetConsoleOutputCP, создание списка, запись его в файл и удаление.
 >
 
+## Qt
 
 ## js - javascript    
 1. job - список дел на Veu без сохранения LocalStorage
