@@ -25,6 +25,5 @@ int main(int argc, char *argv[])
 
 //    w.setLabelText();
     return a.exec();
-    auto mts =  new int;
 
 }
