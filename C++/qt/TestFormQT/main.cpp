@@ -22,6 +22,9 @@ int main(int argc, char *argv[])
 // тест Edit
 //    int n1;
     QString n1 = w.get_TextEdit1();
-    w.setLabelText();
+
+//    w.setLabelText();
     return a.exec();
+    auto mts =  new int;
+
 }
