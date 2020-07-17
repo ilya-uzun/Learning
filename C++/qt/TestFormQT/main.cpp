@@ -21,7 +21,8 @@ int main(int argc, char *argv[])
 
 // тест Edit
 //    int n1;
-    QString n1 = w.get_TextEdit1();
+    QString n1 = w.on_pushButton_clicked();
+    w.setLabelText(n1);
 
 //    w.setLabelText();
     return a.exec();

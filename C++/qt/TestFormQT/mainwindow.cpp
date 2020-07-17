@@ -12,6 +12,7 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
 // label
 QString MainWindow::labelText()
 {
@@ -25,5 +26,12 @@ void MainWindow::setLabelText(QString text)
 
 QString MainWindow::get_TextEdit1()
 {
+
+}
+
+QString MainWindow::on_pushButton_clicked()
+{
+    QString Ed1 = ui->textEdit->toPlainText();
+    return  Ed1;
 
 }

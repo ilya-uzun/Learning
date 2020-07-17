@@ -20,6 +20,8 @@ public:
     void setLabelText(QString string);
     QString get_TextEdit1();
 
+    QString on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
