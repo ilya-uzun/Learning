@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(nashSlot()));
 }
 
 MainWindow::~MainWindow()
@@ -27,10 +28,7 @@ void MainWindow::setLabelText(QString text)
 void MainWindow::nashSlot()
 {
     QString str1 = ui->lineEdit->text();  // получаем строку из первого QLineEdit
+    QString str2 = ui->lineEdit_2->text();
+    ui->pushButton->setText(str1);
 }
 
-
-void MainWindow::on_pushButton_clicked()
-{
-    QString str1 = ui->lineEdit->text();
-}

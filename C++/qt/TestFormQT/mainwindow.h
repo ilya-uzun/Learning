@@ -24,8 +24,6 @@ public:
 private slots:
     void nashSlot(); // слот
 
-    void on_pushButton_clicked();
-
 private:
     Ui::MainWindow *ui;
 };
