@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <QLabel>
+#include <QString>
+#include <QLineEdit>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,6 +21,10 @@ public:
     QString labelText();
     void setLabelText(QString string);
 
+private slots:
+    void nashSlot(); // слот
+
+    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;

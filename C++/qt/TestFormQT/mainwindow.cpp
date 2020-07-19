@@ -24,4 +24,13 @@ void MainWindow::setLabelText(QString text)
   ui->label->setText(text);
 }
 
+void MainWindow::nashSlot()
+{
+    QString str1 = ui->lineEdit->text();  // получаем строку из первого QLineEdit
+}
 
+
+void MainWindow::on_pushButton_clicked()
+{
+    QString str1 = ui->lineEdit->text();
+}
