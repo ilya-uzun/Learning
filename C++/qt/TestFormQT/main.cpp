@@ -24,3 +24,4 @@ int main(int argc, char *argv[])
     return a.exec();
 
 }
+// инфа по lineEdit http://easy-qt.blogspot.com/2012/02/qpushbutton-qlineedit.html
