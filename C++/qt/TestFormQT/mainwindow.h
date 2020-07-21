@@ -21,9 +21,10 @@ public:
     QString labelText();
     void setLabelText(QString string);
 
-private slots:
-    void nashSlot(); // слот
+    int getListEdit(int str1);
 
+public slots:
+    virtual void nashSlot(int& str1, int& str2);
 private:
     Ui::MainWindow *ui;
 };

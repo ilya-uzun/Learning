@@ -13,11 +13,14 @@ int main(int argc, char *argv[])
     w.show();
 
 // test metod summe_nuber
-//    int b = 3;
-//    int c = 5;
-//    ClassMath test;
-//    //выводим в leber результат метода summe_number
-//    w.setLabelText(test.summe_number(b,c));
+      int b = 0;
+      int c = 0;
+//      w.nashSlot(b,c);
+      w.getListEdit(b);
+      ClassMath test;
+//    выводим в leber результат метода summe_number
+
+      w.setLabelText(test.summe_number(b,c));
 
 // тест Edit
 

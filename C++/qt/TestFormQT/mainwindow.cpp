@@ -26,13 +26,23 @@ void MainWindow::setLabelText(QString text)
   ui->label->setText(text);
 }
 // считываем с lineEdit
-void MainWindow::nashSlot()
+void MainWindow::nashSlot(int& str1, int& str2)
 {
-    QString str1 = ui->lineEdit->text();  // получаем строку из первого QLineEdit
-    QString str2 = ui->lineEdit_2->text();
+
+//    QString str1 = ui->lineEdit->text();  // получаем строку из первого QLineEdit
+    // преообразовываем string в int
+    str1 = ui->lineEdit->text().toInt();
+    str2 = ui->lineEdit_2->text().toInt();
     // записать в label
-    setLabelText(str1);
+    // setLabelText(str1);
     // записать на кнопку
-    //ui->pushButton->setText(str1);
+    // ui->pushButton->setText(str1);
 }
+// вывод через return
+int MainWindow::getListEdit(int str1)
+{
+    str1 = ui->lineEdit->text().toInt();
+    return str1;
+}
+
 
