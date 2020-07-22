@@ -20,11 +20,16 @@ public:
 public:
     QString labelText();
     void setLabelText(QString string);
-
-    int getListEdit(int str1);
-
+    void nashSlot(int& str1, int& str2);
+    void nashSlot2(int*n);
 public slots:
-    virtual void nashSlot(int& str1, int& str2);
+    QString getListEdit();
+
+
+
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

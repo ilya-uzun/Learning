@@ -15,12 +15,12 @@ int main(int argc, char *argv[])
 // test metod summe_nuber
       int b = 0;
       int c = 0;
-//      w.nashSlot(b,c);
-      w.getListEdit(b);
+
+
       ClassMath test;
 //    выводим в leber результат метода summe_number
 
-      w.setLabelText(test.summe_number(b,c));
+      w.setLabelText(w.getListEdit());
 
 // тест Edit
 

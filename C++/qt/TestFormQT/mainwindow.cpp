@@ -7,7 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     // надпись на кнопке
-    connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(nashSlot()));
+
 }
 
 MainWindow::~MainWindow()
@@ -39,10 +39,17 @@ void MainWindow::nashSlot(int& str1, int& str2)
     // ui->pushButton->setText(str1);
 }
 // вывод через return
-int MainWindow::getListEdit(int str1)
+QString MainWindow::getListEdit()
 {
-    str1 = ui->lineEdit->text().toInt();
+
+    QString str1 = ui->lineEdit->text();
     return str1;
 }
 
 
+
+
+void MainWindow::on_pushButton_clicked()
+{
+    connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(getListEdit()));
+}
