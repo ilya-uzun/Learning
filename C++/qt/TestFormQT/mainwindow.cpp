@@ -51,5 +51,5 @@ QString MainWindow::getListEdit()
 
 void MainWindow::on_pushButton_clicked()
 {
-    connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(getListEdit()));
+    connect(pushButton, &QPushButton::clicked, qApp, &MainWindow::getListEdit)
 }
