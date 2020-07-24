@@ -21,10 +21,6 @@ public:
 public:
     QString labelText();
     void setLabelText(QString string);
-    void nashSlot(int& str1, int& str2);
-    void nashSlot2(int*n);
-public slots:
-    QString getListEdit();
 
 
 
