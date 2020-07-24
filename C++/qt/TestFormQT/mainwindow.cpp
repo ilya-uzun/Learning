@@ -51,5 +51,6 @@ QString MainWindow::getListEdit()
 
 void MainWindow::on_pushButton_clicked()
 {
-    connect(pushButton, &QPushButton::clicked, qApp, &MainWindow::getListEdit)
+    ui->pushButton->close();//  закрывает кнопку
+//    connect(pushButton, &QPushButton::clicked, qApp, &MainWindow::getListEdit)
 }

@@ -11,6 +11,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
+    w.
 
 // test metod summe_nuber
       int b = 0;
