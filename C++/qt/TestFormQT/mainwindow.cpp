@@ -47,10 +47,17 @@ QString MainWindow::getListEdit()
 }
 
 
-
+// вывод и суммы дdух lineEdit через кнопку
 
 void MainWindow::on_pushButton_clicked()
 {
-    ui->pushButton->close();//  закрывает кнопку
+   ClassMath m;
+   QString text;
+   int str1 = ui->lineEdit->text().toInt();
+   int str2 = ui->lineEdit_2->text().toInt();
+
+   text = m.summe_number(str1, str2);
+   ui->label->setText(text);
+    //ui->pushButton->close();//  закрывает кнопку
 //    connect(pushButton, &QPushButton::clicked, qApp, &MainWindow::getListEdit)
 }

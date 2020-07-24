@@ -5,6 +5,7 @@
 #include <QLabel>
 #include <QString>
 #include <QLineEdit>
+#include <classmath.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
