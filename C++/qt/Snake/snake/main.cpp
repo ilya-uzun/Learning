@@ -1,8 +1,13 @@
-#include <QCoreApplication>
+#include <QApplication>
+#include "snake.h"
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication a(argc, argv);
+    QApplication app(argc, argv);
 
-    return a.exec();
+    snake windows;
+
+    windows.setWindowTitle("Snake");
+    windows.show();
+    return app.exec();
 }

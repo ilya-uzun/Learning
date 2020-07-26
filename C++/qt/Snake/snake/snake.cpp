@@ -34,8 +34,14 @@ void snake::initGame()
     }
 
     locateApple();
-    timeID = startTimer(DELAY);
 
+    timeID = startTimer(DELAY);
+}
+
+void snake::paintEvent(QPaintEvent *e)
+{
+    Q_UNUSED(e);
+    doDrawing();
 }
 
 void snake::doDrawing()
@@ -54,13 +60,37 @@ void snake::doDrawing()
                 qp.drawImage(x[z], y[z], dot);
             }
         }
-
     }else {//if(inGame)
         gameOver(qp);
     }
 }
 
-void snake::checkCollision()
+void snake::gameOver(QPainter &qp)
+{
+    QString message = "Game over";
+    QFont font("Courier", 15, QFont::DemiBold);
+    QFontMetrics fm(font);
+    int textWidth = fm.width(message);
+
+    qp.setPen(QColor(Qt::white));
+    qp.setFont(font);
+    int h = height();
+    int w = width();
+
+    qp.translate(QPoint(w/2, h/2));
+    qp.drawText(-textWidth/2, 0, message);
+}
+
+void snake::checkApple()
+{
+    if ((x[0] == apple_x) && (y[0] == apple_y))
+    {
+        dots++;
+        locateApple();
+    }
+}
+
+void snake::move()
 {
     for (int z = dots; z > 0; z--) {
         x[z]= x[(z-1)];
@@ -74,4 +104,81 @@ void snake::checkCollision()
     if(upDirection) y[0] -= DOT_SIZE;
 
     if(downDirection) y[0] += DOT_SIZE;
+}
+void snake::checkCollision()
+{
+    for (int z = dots; z > 0; z--) {
+       if ((z > 4) && (x[0] == x[z]) && (y[0] == y[z])) inGame = false;
+    }
+
+    if(y[0] >= B_HEIGHT) inGame = false;
+
+    if(y[0] < 0) inGame = false;
+
+    if(x[0] >= B_WIDTH) inGame = false;
+
+    if(x[0] < 0) inGame = false;
+
+    if(! inGame) killTimer(timeID);
+}
+
+void snake::locateApple()
+{
+    QTime time = QTime::currentTime();
+    qsrand((uint) time.msec());
+
+    int r = qrand() % RAND_POS;
+    apple_x = (r * DOT_SIZE);
+
+    r = qrand() % RAND_POS;
+    apple_y = (r * DOT_SIZE);
+}
+
+void snake::timerEvent(QTimerEvent *e)
+{
+    Q_UNUSED(e);
+
+    if (inGame)
+    {
+        checkApple();
+        checkCollision();
+        move();
+    }
+
+    repaint();
+}
+
+void snake::keyPressEvent(QKeyEvent *e)
+{
+    int key = e->key();
+
+    if ((key == Qt::Key_Left) && (!rightDirection))
+    {
+        leftDirection = true;
+        upDirection = false;
+        downDirection = false;
+    }
+
+    if ((key == Qt::Key_Right) && (!leftDirection))
+    {
+        leftDirection = true;
+        upDirection = false;
+        downDirection = false;
+    }
+
+    if ((key == Qt::Key_Up) && (!downDirection))
+    {
+        leftDirection = true;
+        upDirection = false;
+        downDirection = false;
+    }
+
+    if ((key == Qt::Key_Down) && (!upDirection))
+    {
+        leftDirection = true;
+        upDirection = false;
+        downDirection = false;
+    }
+
+    QWidget::keyPressEvent(e);
 }
