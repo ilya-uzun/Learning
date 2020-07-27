@@ -18,11 +18,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     classmath.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    mybutton.cpp
 
 HEADERS += \
     classmath.h \
-    mainwindow.h
+    mainwindow.h \
+    mybutton.h
 
 FORMS += \
     mainwindow.ui

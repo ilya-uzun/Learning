@@ -54,10 +54,12 @@ OBJECTS_DIR   = ./
 
 SOURCES       = ../TestFormQT/classmath.cpp \
 		../TestFormQT/main.cpp \
-		../TestFormQT/mainwindow.cpp moc_mainwindow.cpp
+		../TestFormQT/mainwindow.cpp \
+		../TestFormQT/mybutton.cpp moc_mainwindow.cpp
 OBJECTS       = classmath.o \
 		main.o \
 		mainwindow.o \
+		mybutton.o \
 		moc_mainwindow.o
 DIST          = /home/ilya/Qt5.12.9/5.12.9/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/mkspecs/common/unix.conf \
@@ -233,9 +235,11 @@ DIST          = /home/ilya/Qt5.12.9/5.12.9/gcc_64/mkspecs/features/spec_pre.prf 
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/mkspecs/features/yacc.prf \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/mkspecs/features/lex.prf \
 		../TestFormQT/TestFormQT.pro ../TestFormQT/classmath.h \
-		../TestFormQT/mainwindow.h ../TestFormQT/classmath.cpp \
+		../TestFormQT/mainwindow.h \
+		../TestFormQT/mybutton.h ../TestFormQT/classmath.cpp \
 		../TestFormQT/main.cpp \
-		../TestFormQT/mainwindow.cpp
+		../TestFormQT/mainwindow.cpp \
+		../TestFormQT/mybutton.cpp
 QMAKE_TARGET  = TestFormQT
 DESTDIR       = 
 TARGET        = TestFormQT
@@ -611,8 +615,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /home/ilya/Qt5.12.9/5.12.9/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../TestFormQT/classmath.h ../TestFormQT/mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../TestFormQT/classmath.cpp ../TestFormQT/main.cpp ../TestFormQT/mainwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../TestFormQT/classmath.h ../TestFormQT/mainwindow.h ../TestFormQT/mybutton.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../TestFormQT/classmath.cpp ../TestFormQT/main.cpp ../TestFormQT/mainwindow.cpp ../TestFormQT/mybutton.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../TestFormQT/mainwindow.ui $(DISTDIR)/
 
 
@@ -755,6 +759,17 @@ moc_mainwindow.cpp: ../TestFormQT/mainwindow.h \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtouchdevice.h \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qtabwidget.h \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qicon.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/QLabel \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qlabel.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qframe.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/QString \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/QLineEdit \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qlineedit.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtextcursor.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtextformat.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qpen.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtextoption.h \
+		../TestFormQT/classmath.h \
 		moc_predefs.h \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/bin/moc
 	/home/ilya/Qt5.12.9/5.12.9/gcc_64/bin/moc $(DEFINES) --include /home/ilya/pgit/Study/C++/qt/build-TestFormQT-Desktop_Qt_5_12_9_GCC_64bit-Debug/moc_predefs.h -I/home/ilya/Qt5.12.9/5.12.9/gcc_64/mkspecs/linux-g++ -I/home/ilya/pgit/Study/C++/qt/TestFormQT -I/home/ilya/Qt5.12.9/5.12.9/gcc_64/include -I/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets -I/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui -I/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../TestFormQT/mainwindow.h -o moc_mainwindow.cpp
@@ -780,7 +795,39 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 ####### Compile
 
-classmath.o: ../TestFormQT/classmath.cpp ../TestFormQT/classmath.h
+classmath.o: ../TestFormQT/classmath.cpp ../TestFormQT/classmath.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/QString \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qstring.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qchar.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qglobal.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qconfig.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qtcore-config.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qsysinfo.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qlogging.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qflags.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qatomic.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qatomic_msvc.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qmutex.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qnumeric.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qversiontagging.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qbytearray.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qrefcount.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qnamespace.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qarraydata.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qstringliteral.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qstringview.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qstringbuilder.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o classmath.o ../TestFormQT/classmath.cpp
 
 main.o: ../TestFormQT/main.cpp ../TestFormQT/mainwindow.h \
@@ -890,6 +937,16 @@ main.o: ../TestFormQT/main.cpp ../TestFormQT/mainwindow.h \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtouchdevice.h \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qtabwidget.h \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qicon.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/QLabel \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qlabel.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qframe.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/QString \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/QLineEdit \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qlineedit.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtextcursor.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtextformat.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qpen.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtextoption.h \
 		../TestFormQT/classmath.h \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/QApplication \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qapplication.h \
@@ -897,7 +954,12 @@ main.o: ../TestFormQT/main.cpp ../TestFormQT/mainwindow.h \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qeventloop.h \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qdesktopwidget.h \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qguiapplication.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qinputmethod.h
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qinputmethod.h \
+		../TestFormQT/mybutton.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/QWidget \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/QPushButton \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qabstractbutton.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../TestFormQT/main.cpp
 
 mainwindow.o: ../TestFormQT/mainwindow.cpp ../TestFormQT/mainwindow.h \
@@ -1007,6 +1069,17 @@ mainwindow.o: ../TestFormQT/mainwindow.cpp ../TestFormQT/mainwindow.h \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtouchdevice.h \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qtabwidget.h \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qicon.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/QLabel \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qlabel.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qframe.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/QString \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/QLineEdit \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qlineedit.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtextcursor.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtextformat.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qpen.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtextoption.h \
+		../TestFormQT/classmath.h \
 		ui_mainwindow.h \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/QVariant \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/QApplication \
@@ -1016,22 +1089,128 @@ mainwindow.o: ../TestFormQT/mainwindow.cpp ../TestFormQT/mainwindow.h \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qdesktopwidget.h \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qguiapplication.h \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qinputmethod.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/QLabel \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qlabel.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qframe.h \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/QPushButton \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qpushbutton.h \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/QTextEdit \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qtextedit.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtextdocument.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtextoption.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtextcursor.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtextformat.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qpen.h \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../TestFormQT/mainwindow.cpp
+
+mybutton.o: ../TestFormQT/mybutton.cpp ../TestFormQT/mybutton.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/QWidget \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qwidget.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qglobal.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qconfig.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qtcore-config.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qsysinfo.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qlogging.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qflags.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qatomic.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qatomic_msvc.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qmutex.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qnumeric.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qversiontagging.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtgui-config.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qnamespace.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qobject.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qstring.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qchar.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qbytearray.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qrefcount.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qarraydata.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qstringliteral.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qstringview.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qlist.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qalgorithms.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qiterator.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qpair.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qstringlist.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qregexp.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qcoreevent.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qmetatype.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qobject_impl.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qmargins.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qrect.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qsize.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qpoint.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qpalette.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qcolor.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qrgb.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qrgba64.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qbrush.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qvector.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qmatrix.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qpolygon.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qregion.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qdatastream.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qiodevice.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qline.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtransform.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qpainterpath.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qimage.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qpixelformat.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qpixmap.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qshareddata.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qhash.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qfont.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qfontinfo.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qcursor.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qkeysequence.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qevent.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qvariant.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qmap.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qdebug.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qtextstream.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qlocale.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qset.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qurl.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qurlquery.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qfile.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qfiledevice.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qvector2d.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtouchdevice.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/QPushButton \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qicon.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/QApplication \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qapplication.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qeventloop.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qguiapplication.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qinputmethod.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mybutton.o ../TestFormQT/mybutton.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
