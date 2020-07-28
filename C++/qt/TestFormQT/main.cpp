@@ -11,11 +11,11 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
-    MyButton win;
+//    MyButton win;
 
-    win.resize(250, 250);
-    win.setWindowTitle("QPushButton");
-    win.show();
+//    win.resize(250, 250);
+//    win.setWindowTitle("QPushButton");
+//    win.show();
 
     return a.exec();
 

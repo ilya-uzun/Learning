@@ -6,6 +6,7 @@
 #include <QString>
 #include <QLineEdit>
 #include <classmath.h>
+#include <mybutton.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

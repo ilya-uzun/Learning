@@ -6,7 +6,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    // надпись на кнопке
+    // кнопка
+    MyButton win;
+
+    win.resize(250, 250);
 
 }
 
@@ -28,7 +31,7 @@ void MainWindow::setLabelText(QString text)
 
 
 
-// вывод и суммы дdух lineEdit через кнопку
+// вывод и суммы двух lineEdit через кнопку
 
 void MainWindow::on_pushButton_clicked()
 {
