@@ -18,11 +18,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     ../TestFormQT/mybutton.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    plusminus.cpp
 
 HEADERS += \
     ../TestFormQT/mybutton.h \
-    mainwindow.h
+    mainwindow.h \
+    plusminus.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
