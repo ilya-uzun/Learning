@@ -18,11 +18,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     btree.cpp \
     main.cpp \
-    MainWindow.cpp
+    MainWindow.cpp\
+    shapes.cpp
 
 HEADERS += \
     MainWindow.h \
-    btree.h
+    btree.h\
+    shapes.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
