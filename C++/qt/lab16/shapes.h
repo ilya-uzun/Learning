@@ -1,4 +1,5 @@
-#progma once
+#ifndef SHAPES_H
+#define SHAPES_H
 
 #include <QWidget>
 #include <QApplication>
@@ -16,4 +17,5 @@ protected:
 private:
     void doPainting();
 
-}
+};
+#endif // SHAPES_H

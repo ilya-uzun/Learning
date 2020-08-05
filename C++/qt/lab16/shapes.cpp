@@ -26,4 +26,6 @@ void Shapes::doPainting()
     painter.drawPath(path1);
 
     painter.drawPie(130, 20, 90, 60, 30*16, 120*16);
+
+    painter.drawEllipse(140, 200, 60, 60);
 }
