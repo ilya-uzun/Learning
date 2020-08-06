@@ -12,7 +12,6 @@ void Puff:: paintEvent(QPaintEvent *e)
 {
     Q_UNUSED(e);
     doPainting();
-
 }
 
 void Puff::doPainting()
@@ -49,10 +48,12 @@ void Puff::doPainting()
     painter.drawText(-textWidth/2, 0, text);
 }
 
+// Внутри timerEvent() мы увеличиваем размер шрифта и
+// перерисовываем виджет:
 void Puff::timeEvent(QTimerEvent *e)
 {
     Q_UNUSED(e)
 
-    x+=1;
+    x += 1;
     repaint();
 }
