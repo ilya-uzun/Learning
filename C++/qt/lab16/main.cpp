@@ -2,6 +2,7 @@
 
 #include <QApplication>
 #include "shapes.h"
+#include "puff.h"
 
 int main(int argc, char *argv[])
 {
@@ -10,7 +11,12 @@ int main(int argc, char *argv[])
 //    w.resize(400,400);
 //    w.show();
 
-    Shapes s;
+//    Shapes s;
+//    s.resize(300, 300);
+//    s.setWindowTitle("ss");
+//    s.show();
+
+    Puff s;
     s.resize(300, 300);
     s.setWindowTitle("ss");
     s.show();

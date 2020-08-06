@@ -19,11 +19,13 @@ SOURCES += \
     btree.cpp \
     main.cpp \
     MainWindow.cpp\
+    puff.cpp \
     shapes.cpp
 
 HEADERS += \
     MainWindow.h \
     btree.h\
+    puff.h \
     shapes.h
 
 # Default rules for deployment.
