@@ -20,12 +20,12 @@ void Shapes::doPainting()
     QPainterPath path1;
 /* QPainterPath это класс, используемый для создания более 
 сложных фигур при помощи заданной траектории рисования. */
-    path1.moveTo(5, 5);
-    path1.cubicTo(40, 5, 50, 50, 99, 99);
-    path1.cubicTo(5, 99, 50, 50, 5, 5);
-    painter.drawPath(path1);
+//    path1.moveTo(5, 5);
+//    path1.cubicTo(40, 5, 50, 50, 99, 99);
+//    path1.cubicTo(5, 99, 50, 50, 5, 5);
+//    painter.drawPath(path1);
 
-    painter.drawPie(130, 20, 90, 60, 30*16, 120*16);
+//    painter.drawPie(130, 20, 90, 60, 30*16, 120*16);
 
-    painter.drawEllipse(140, 200, 60, 60);
+    painter.drawEllipse(40, 100, 60, 60);// первые две цифры- корденаты
 }
