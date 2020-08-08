@@ -5,6 +5,7 @@
 #include <QApplication>
 #include <QPainter>
 #include <QPainterPath>
+#include "puff.h"
 
 class Shapes : public QWidget
 {

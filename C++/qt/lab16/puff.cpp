@@ -4,8 +4,7 @@ Puff::Puff(QWidget* parent)
     : QWidget(parent)
 {
     x = 1;
-    opacity = 1.0;
-//    timerId = startTimer(15);
+    opacity = 1.0;;
 }
 
 void Puff:: paintEvent(QPaintEvent *e)
@@ -19,7 +18,7 @@ void Puff::doPainting()
     QPainter painter(this);
     QTextStream out(stdout);
 
-    QString text = "Hello";
+    QString text = "U";
 
     painter.setPen(QPen(QBrush("#575555"), 1));
 
@@ -35,12 +34,6 @@ void Puff::doPainting()
         painter.setOpacity(opacity);
     }
 
-//    if (opacity <= 0)
-//    {
-//        killTimer(timerId);
-//        out << "timer stoopped" << endl;
-//    }
-
     int h = height();
     int w = width();
 
@@ -48,12 +41,3 @@ void Puff::doPainting()
     painter.drawText(-textWidth/2, 0, text);
 }
 
-// Внутри timerEvent() мы увеличиваем размер шрифта и
-// перерисовываем виджет:
-//void Puff::timerEvent(QTimerEvent *e)
-//{
-//    Q_UNUSED(e)
-
-//    x += 1;
-//    repaint();
-//}

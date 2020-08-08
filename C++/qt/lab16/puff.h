@@ -14,12 +14,10 @@ public:
 
 protected:
     void paintEvent(QPaintEvent* event);
-//    void timerEvent(QTimerEvent* event);
 
 private:
     int x;
     qreal opacity;
-//    int timerId;
 
     void doPainting();
 };
