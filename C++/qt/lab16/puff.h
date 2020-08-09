@@ -7,6 +7,8 @@
 #include <QPainter>
 #include <QString>
 
+// тестовый класс для вывода текста
+
 class Puff : public QWidget
 {
 public:

@@ -7,6 +7,8 @@
 #include <QPainterPath>
 #include "puff.h"
 
+//Класс рисует элементы
+
 class Shapes : public QWidget
 {
 public:

@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     btree.cpp \
+    btreewidget.cpp \
     main.cpp \
     MainWindow.cpp\
     puff.cpp \
@@ -25,6 +26,8 @@ SOURCES += \
 HEADERS += \
     MainWindow.h \
     btree.h\
+    btreewidget.h \
+    globalvariable.h \
     puff.h \
     shapes.h
 
