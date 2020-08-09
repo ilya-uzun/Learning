@@ -1,11 +1,15 @@
 #ifndef BTREE_H
 #define BTREE_H
 
+#include <QGraphicsItem>
+#include <QVector>
+
 struct node
 {
     int key_value;//ключ – значение узла, типа int
     node* left;  //указатель на левого потомка
     node* right; //указатель на правого потомка
+
 };
 
 
@@ -25,6 +29,7 @@ private:
     node* search(int key, node* leaf);//Рекурсивная функция поиска //узла дерева с заданным //ключевым значением
 
     node* root; //Атрибут класса(Корневой узел)
+
 };
 
 #endif // BTREE_H

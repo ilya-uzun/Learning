@@ -56,13 +56,11 @@ SOURCES       = ../lab16/btree.cpp \
 		../lab16/btreewidget.cpp \
 		../lab16/main.cpp \
 		../lab16/MainWindow.cpp \
-		../lab16/puff.cpp \
 		../lab16/shapes.cpp moc_MainWindow.cpp
 OBJECTS       = btree.o \
 		btreewidget.o \
 		main.o \
 		MainWindow.o \
-		puff.o \
 		shapes.o \
 		moc_MainWindow.o
 DIST          = /home/ilya/Qt5.12.9/5.12.9/gcc_64/mkspecs/features/spec_pre.prf \
@@ -242,12 +240,10 @@ DIST          = /home/ilya/Qt5.12.9/5.12.9/gcc_64/mkspecs/features/spec_pre.prf 
 		../lab16/btree.h \
 		../lab16/btreewidget.h \
 		../lab16/globalvariable.h \
-		../lab16/puff.h \
 		../lab16/shapes.h ../lab16/btree.cpp \
 		../lab16/btreewidget.cpp \
 		../lab16/main.cpp \
 		../lab16/MainWindow.cpp \
-		../lab16/puff.cpp \
 		../lab16/shapes.cpp
 QMAKE_TARGET  = lab16
 DESTDIR       = 
@@ -624,8 +620,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /home/ilya/Qt5.12.9/5.12.9/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../lab16/MainWindow.h ../lab16/btree.h ../lab16/btreewidget.h ../lab16/globalvariable.h ../lab16/puff.h ../lab16/shapes.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../lab16/btree.cpp ../lab16/btreewidget.cpp ../lab16/main.cpp ../lab16/MainWindow.cpp ../lab16/puff.cpp ../lab16/shapes.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../lab16/MainWindow.h ../lab16/btree.h ../lab16/btreewidget.h ../lab16/globalvariable.h ../lab16/shapes.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../lab16/btree.cpp ../lab16/btreewidget.cpp ../lab16/main.cpp ../lab16/MainWindow.cpp ../lab16/shapes.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -787,7 +783,96 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 
 ####### Compile
 
-btree.o: ../lab16/btree.cpp ../lab16/btree.h
+btree.o: ../lab16/btree.cpp ../lab16/btree.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/QGraphicsItem \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qgraphicsitem.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qglobal.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qconfig.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qtcore-config.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qsysinfo.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qlogging.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qflags.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qatomic.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qatomic_msvc.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qmutex.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qnumeric.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qversiontagging.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtgui-config.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qobject.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qnamespace.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qstring.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qchar.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qbytearray.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qrefcount.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qarraydata.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qstringliteral.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qstringview.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qlist.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qalgorithms.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qiterator.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qpair.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qstringlist.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qregexp.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qcoreevent.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qmetatype.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qobject_impl.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qvariant.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qmap.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qdebug.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qhash.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qtextstream.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qiodevice.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qlocale.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qshareddata.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qvector.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qpoint.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qset.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qrect.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qmargins.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qsize.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qpainterpath.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qmatrix.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qpolygon.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qregion.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qdatastream.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qline.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qpixmap.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qcolor.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qrgb.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qrgba64.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qimage.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qpixelformat.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtransform.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/QVector
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o btree.o ../lab16/btree.cpp
 
 btreewidget.o: ../lab16/btreewidget.cpp ../lab16/btreewidget.h \
@@ -902,7 +987,23 @@ btreewidget.o: ../lab16/btreewidget.cpp ../lab16/btreewidget.h \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qvector2d.h \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtouchdevice.h \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qgraphicsscene.h \
-		../lab16/globalvariable.h
+		../lab16/globalvariable.h \
+		../lab16/shapes.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/QWidget \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/QApplication \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qapplication.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qeventloop.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qguiapplication.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qinputmethod.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/QPainter \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/QPainterPath \
+		../lab16/puff.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/QTime \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qdatetime.h \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/QTextStream \
+		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/QString
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o btreewidget.o ../lab16/btreewidget.cpp
 
 main.o: ../lab16/main.cpp ../lab16/MainWindow.h \
@@ -1149,120 +1250,6 @@ MainWindow.o: ../lab16/MainWindow.cpp ../lab16/MainWindow.h \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qtabwidget.h \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qicon.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MainWindow.o ../lab16/MainWindow.cpp
-
-puff.o: ../lab16/puff.cpp ../lab16/puff.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/QWidget \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qwidget.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtguiglobal.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qglobal.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qconfig-bootstrapped.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qconfig.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qtcore-config.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qsystemdetection.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qprocessordetection.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qcompilerdetection.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qtypeinfo.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qsysinfo.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qlogging.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qflags.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qatomic.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qbasicatomic.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qatomic_bootstrap.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qgenericatomic.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qatomic_cxx11.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qatomic_msvc.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qglobalstatic.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qmutex.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qnumeric.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qversiontagging.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtgui-config.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qtwidgets-config.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qwindowdefs.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qobjectdefs.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qnamespace.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qwindowdefs_win.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qobject.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qstring.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qchar.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qbytearray.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qrefcount.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qarraydata.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qstringliteral.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qstringalgorithms.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qstringview.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qstringbuilder.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qlist.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qalgorithms.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qiterator.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qhashfunctions.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qpair.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qbytearraylist.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qstringlist.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qregexp.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qstringmatcher.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qcoreevent.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qscopedpointer.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qmetatype.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qvarlengtharray.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qcontainerfwd.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qobject_impl.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qmargins.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qpaintdevice.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qrect.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qsize.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qpoint.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qpalette.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qcolor.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qrgb.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qrgba64.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qbrush.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qvector.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qmatrix.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qpolygon.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qregion.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qdatastream.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qiodevice.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qline.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtransform.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qpainterpath.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qimage.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qpixelformat.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qpixmap.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qsharedpointer.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qshareddata.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qhash.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qfont.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qfontmetrics.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qfontinfo.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/qsizepolicy.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qcursor.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qkeysequence.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qevent.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qvariant.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qmap.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qdebug.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qtextstream.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qlocale.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qset.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qcontiguouscache.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qurl.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qurlquery.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qfile.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qfiledevice.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qvector2d.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtouchdevice.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/QTime \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qdatetime.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/QTextStream \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/QPainter \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qpainter.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qtextoption.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtGui/qpen.h \
-		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtCore/QString
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o puff.o ../lab16/puff.cpp
 
 shapes.o: ../lab16/shapes.cpp ../lab16/shapes.h \
 		/home/ilya/Qt5.12.9/5.12.9/gcc_64/include/QtWidgets/QWidget \

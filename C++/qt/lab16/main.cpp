@@ -8,14 +8,14 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-//    MainWindow w;
-//    w.resize(400,400);
-//    w.show();
 
-    BtreeWidget s;
+    MainWindow w;
+    w.resize(400,400);
+    w.show();
 
-    s.setWindowTitle("lab16");
-    s.show();
+//    Shapes s;
+//    s.setWindowTitle("lab16");
+//    s.show();
 
 //    Puff s;
 //    s.resize(300, 300);

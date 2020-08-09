@@ -20,7 +20,6 @@ SOURCES += \
     btreewidget.cpp \
     main.cpp \
     MainWindow.cpp\
-    puff.cpp \
     shapes.cpp
 
 HEADERS += \
@@ -28,7 +27,6 @@ HEADERS += \
     btree.h\
     btreewidget.h \
     globalvariable.h \
-    puff.h \
     shapes.h
 
 # Default rules for deployment.
