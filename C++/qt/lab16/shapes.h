@@ -14,7 +14,7 @@ class Shapes : public QWidget
 public:
     Shapes(QWidget* parent = 0);
 
-protected:
+public:
     void paintEvent(QPaintEvent* e);
 
 private:

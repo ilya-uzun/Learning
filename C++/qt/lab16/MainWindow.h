@@ -12,5 +12,6 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr); //Конструктор с параметром в виде указателя на родителський виджет
     ~MainWindow();
+
 };
 #endif // MAINWINDOW_H
