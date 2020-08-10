@@ -11,6 +11,7 @@ int main(int argc, char *argv[])
 
     MainWindow w;
     w.resize(400,400);
+
     w.show();
 
 //    Shapes s;

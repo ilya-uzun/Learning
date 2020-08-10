@@ -1,7 +1,7 @@
 
 #include "shapes.h"
 
-Shapes::Shapes(QWidget* parent) : QWidget(parent) {}
+Shapes::Shapes()  {}
 
 void Shapes::paintEvent(QPaintEvent* e)
 {
@@ -13,7 +13,6 @@ void Shapes::doPainting()
 {
     QPainter painter(this);
 
-//    Shapes text;
     QString text = "U"; // выводимый текст
     painter.setRenderHint(QPainter::Antialiasing);
     painter.setPen(QPen(QBrush("#888"), 1));

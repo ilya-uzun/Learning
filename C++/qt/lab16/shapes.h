@@ -12,12 +12,12 @@
 class Shapes : public QWidget
 {
 public:
-    Shapes(QWidget* parent = 0);
+    Shapes();
 
 public:
     void paintEvent(QPaintEvent* e);
 
-private:
+public:
     void doPainting();
 
 };
