@@ -27,12 +27,13 @@ public:
     QLabel *label;
     QLineEdit *lineEdit;
     QLineEdit *lineEdit_2;
+    QPushButton *pushButton_2;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(300, 135);
+        MainWindow->resize(300, 301);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         pushButton = new QPushButton(centralwidget);
@@ -47,6 +48,9 @@ public:
         lineEdit_2 = new QLineEdit(centralwidget);
         lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
         lineEdit_2->setGeometry(QRect(140, 70, 101, 31));
+        pushButton_2 = new QPushButton(centralwidget);
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        pushButton_2->setGeometry(QRect(10, 140, 101, 41));
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
@@ -59,6 +63,7 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
         pushButton->setText(QString());
         label->setText(QString());
+        pushButton_2->setText(QApplication::translate("MainWindow", "PushButton2", nullptr));
     } // retranslateUi
 
 };
