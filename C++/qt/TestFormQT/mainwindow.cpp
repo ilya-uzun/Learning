@@ -6,7 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-        ui->pushButton_2->setText("Hello");// название кнопки
+    ui->pushButton_2->setText("Hello");// название кнопки
 
     // кнопка
     MyButton win;
