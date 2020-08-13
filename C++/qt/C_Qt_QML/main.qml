@@ -6,4 +6,10 @@ Window {
     width: 640
     height: 480
     title: qsTr("Hello World")
+    // подключаем Tile
+    Tile {
+        //указыаем геометрию фигуры
+        width: 50
+        height: 50
+    }
 }
