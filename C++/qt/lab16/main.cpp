@@ -9,13 +9,11 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    MainWindow w;
-    w.resize(400,400);
-
-    w.show();
+    MainWindow *w = new MainWindow;
+    w->resize(400,400);
+    w->show();
 
 //    Shapes s;
-//    s.setWindowTitle("lab16");
 //    s.show();
 
 //    Puff s;
