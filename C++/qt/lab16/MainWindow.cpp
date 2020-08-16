@@ -5,13 +5,6 @@ MainWindow::MainWindow(QWidget *parent)
 {
 }
 
-
-void MainWindow::test()
-{
-    Shapes * www = new Shapes;
-    www->doPainting();
-}
-
 MainWindow::~MainWindow()
 {
 
