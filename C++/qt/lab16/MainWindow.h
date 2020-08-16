@@ -4,6 +4,7 @@
 #include <QDialog>
 #include <QMainWindow>
 #include <QHBoxLayout> // горизонтальное расположение
+#include <QVBoxLayout> // Вертикальное расположение
 #include "shapes.h"
 
 
@@ -17,5 +18,6 @@ public:
 
 private:
         Shapes *circle;
+        Shapes *circle_2;
 };
 #endif // MAINWINDOW_H
