@@ -7,8 +7,8 @@ MainWindow::MainWindow(QWidget *parent)
     ed = new QTextEdit;
     
     // первый горизонтальный слой
-    QHBoxLayout *layout_Н1 = new QHBoxLayout;
-    layout_Н1->addWidget(circle); // добавить  горизонтальное расположение круг
+    QHBoxLayout *layout_H = new QHBoxLayout;
+    layout_H->addWidget(circle); // добавить  горизонтальное расположение круг
 
     // первый вертикальный слой
     QVBoxLayout *layout_V1 = new QVBoxLayout;
@@ -16,8 +16,8 @@ MainWindow::MainWindow(QWidget *parent)
     
     // Основной  горизонтальный слой
     QHBoxLayout *main = new QHBoxLayout;
-    main->addLayout(layout);// Добавить на слой
-    main->addLayout(layout_2)
+    main->addLayout(layout_H);// Добавить на слой
+    main->addLayout(layout_V1);
     setLayout(main);// помещаем на окно
 }
 
