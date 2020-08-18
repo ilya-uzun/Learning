@@ -4,20 +4,17 @@ MainWindow::MainWindow(QWidget *parent)
     : QDialog(parent)
 {
     circle = new Shapes;
-    ed = new QTextEdit;
+    ed = new QLineEdit;
     
-    // первый горизонтальный слой
-    QHBoxLayout *layout_H = new QHBoxLayout;
-    layout_H->addWidget(circle); // добавить  горизонтальное расположение круг
+    // первый вертикальный слой (Оставил т.к. на горезонтальном находят друг на друга )
+    QVBoxLayout *layout = new QVBoxLayout;
+    layout->addWidget(circle); // добавить  горизонтальное расположение круг
+    layout->addWidget(ed);
 
-    // первый вертикальный слой
-    QVBoxLayout *layout_V1 = new QVBoxLayout;
-    layout_V1->addWidget(ed); // добавить  горизонтальное расположение Edit
-    
+
     // Основной  горизонтальный слой
-    QHBoxLayout *main = new QHBoxLayout;
-    main->addLayout(layout_H);// Добавить на слой
-    main->addLayout(layout_V1);
+    QVBoxLayout *main = new QVBoxLayout;
+    main->addLayout(layout);// Добавить на слой
     setLayout(main);// помещаем на окно
 }
 

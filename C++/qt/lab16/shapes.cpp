@@ -12,13 +12,12 @@ void Shapes::paintEvent(QPaintEvent* e)
 void Shapes::doPainting()
 {
     QPainter painter(this);
-
+    const QRect rect = QRect(40, 100, 60, 60);
     QString text = "U"; // выводимый текст
     painter.setRenderHint(QPainter::Antialiasing);
-    painter.setPen(QPen(QBrush("#888"), 1));
-    painter.setBrush(QBrush(QColor("#888")));
+    painter.setPen(QPen(QBrush("#888"), 2));// цифра толщена линии, #888 - цвет
+    //painter.setBrush(QBrush(QColor("#888"))); // заполнение фигуры
+    painter.drawText(rect, Qt::AlignCenter, text);
     painter.drawEllipse(40, 100, 60, 60);// первые две цифры- корденаты
-    QPainter painter2(this);
-    painter2.drawText(40, 100, text);
-
+// если передовать одинаковые кардинаты то тект и фигура будут вместе
 }
