@@ -11,8 +11,12 @@
 
 class Shapes : public QWidget
 {
+private:
+	QString text;	
+	
 public:
     Shapes();
+    ~Shapes();
 
 public:
     void paintEvent(QPaintEvent* e);
@@ -20,6 +24,7 @@ public:
 public:
     void doPainting();
     void getText();
+    QString setText();
 
 };
 #endif // SHAPES_H
