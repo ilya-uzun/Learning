@@ -23,7 +23,7 @@ public:
 
 public:
     void doPainting();
-    void getText();
+    void getText(QString t);
     QString setText();
 
 };

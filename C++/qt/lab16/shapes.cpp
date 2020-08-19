@@ -22,16 +22,16 @@ void Shapes::doPainting()
 // если передовать одинаковые кардинаты то тект и фигура будут вместе
 }
 
-QString Shapes::getText()
+QString Shapes::setText()
 {
 	return text;
 }
 
-void Shapes::setText(QString t)
+void Shapes::getText(QString t)
 {
 	text = t;
 }
 
-~Shapes::Shapes()
+Shapes::~Shapes()
 {
 }

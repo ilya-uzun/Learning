@@ -7,6 +7,8 @@
 #include <QVBoxLayout> // Вертикальное расположение
 #include "shapes.h"
 #include <QTextEdit>
+#include <QLineEdit>
+#include <QPushButton>
 
 
 class MainWindow : public QDialog
@@ -19,7 +21,7 @@ public:
 
 private:
         Shapes *circle;
-        QTextEdit *ed;
+        QLineEdit *ed;
         QPushButton *bt;
 
 };
