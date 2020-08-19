@@ -20,9 +20,9 @@ public:
     ~MainWindow();
 
 private:
-        Shapes *circle;
-        QLineEdit *ed;
-        QPushButton *bt;
-
+    Shapes *circle;
+    QLineEdit *ed;
+    QPushButton *bt;
+    void setMainText();
 };
 #endif // MAINWINDOW_H

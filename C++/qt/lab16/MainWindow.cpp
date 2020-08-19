@@ -5,7 +5,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     circle = new Shapes;
     ed = new QLineEdit;
-    bt = new QPushButton;// кнопка
+    bt = new QPushButton("Название");// кнопка
     
     // первый вертикальный слой (Оставил т.к. на горезонтальном находят друг на друга )
     QVBoxLayout *layout = new QVBoxLayout;
@@ -19,8 +19,14 @@ MainWindow::MainWindow(QWidget *parent)
     setLayout(main);// помещаем на окно
 }
 
+void MainWindow::setMainText()
+{
+
+}
+
 MainWindow::~MainWindow()
 {
+    QString t;
 
 }
 
