@@ -19,6 +19,7 @@ public:
 
 public:
     void doPainting();
+    void getText();
 
 };
 #endif // SHAPES_H
