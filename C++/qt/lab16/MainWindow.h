@@ -23,6 +23,7 @@ private:
     Shapes *circle;
     QLineEdit *ed;
     QPushButton *bt;
+private slots:
     void setMainText();
 };
 #endif // MAINWINDOW_H
