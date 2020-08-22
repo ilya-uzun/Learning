@@ -9,7 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
     QString t;
     connect(bt, SIGNAL(clicked()), this, SLOT(setMainText()));
     ed->returnPressed();// сигнал что нажат Enter
-    //ed->setText(t);//setText - записывает в строку
+    ed->setText(t);//setText - записывает в строку
 
     circle->getText(t);
 
