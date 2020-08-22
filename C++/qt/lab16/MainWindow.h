@@ -24,6 +24,6 @@ private:
     QLineEdit *ed;
     QPushButton *bt;
 private slots:
-    void setMainText();
+    QString setMainText();
 };
 #endif // MAINWINDOW_H

@@ -6,10 +6,11 @@ MainWindow::MainWindow(QWidget *parent)
     circle = new Shapes;
     ed = new QLineEdit;
     bt = new QPushButton("Название");// кнопка
-    QString t = "dss";
-
+    QString t;
+    connect(bt, SIGNAL(clicked()), this, SLOT(setMainText()));
     ed->returnPressed();// сигнал что нажат Enter
     //ed->setText(t);//setText - записывает в строку
+
     circle->getText(t);
 
 
@@ -26,9 +27,10 @@ MainWindow::MainWindow(QWidget *parent)
 //    QObject::connect(ed, SIGNAL(textChanged(const QString)),circle,SLOT(getText(const QString)));
 }
 
-void MainWindow::setMainText()
+QString MainWindow::setMainText()
 {
-    QString t;
+      QString text = ed->text();
+      return text;
 }
 
 MainWindow::~MainWindow()
