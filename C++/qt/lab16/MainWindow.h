@@ -9,7 +9,7 @@
 #include <QTextEdit>
 #include <QLineEdit>
 #include <QPushButton>
-
+#include <QGridLayout> // новая разметка
 
 class MainWindow : public QDialog
 {
