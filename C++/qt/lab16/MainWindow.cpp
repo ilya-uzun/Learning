@@ -15,7 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
     circle->getText(t);
 
 
-// проба нового графического редактора
+// проба нового vменедже компановки
 //    QGridLayout* grid = new QGridLayout(this);
 //    grid->addWidget(circle, 3, 3);
 //    grid->addWidget(ed, 0, 1);
