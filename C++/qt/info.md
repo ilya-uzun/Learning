@@ -1,6 +1,9 @@
 #### Урок Qt QDialog слоты и сигналы
 > [Инфа](https://www.youtube.com/watch?v=aTZIJc-_nq4)
 
+#### хороший сайт с уроками
+[Уроки] (http://knzsoft.ru/qt-bgr-ls1/)
+
 #### BtreeeTerminal
 > бинарноге дерево в консоле
 
