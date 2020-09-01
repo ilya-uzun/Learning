@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QLayout>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -14,21 +15,27 @@ MainWindow::MainWindow(QWidget *parent)
     
     // Устанавливаем номера кнопок
     but_1->setText("1");
-    but_1->setText("2");
-    but_1->setText("3");
+    but_2->setText("2");
+    but_3->setText("3");
     
     // Добовляем кнопки на слои с вертикальной ориентацией
-    ui->verticalLayout->addWidget(but_1);
-    ui->verticalLayout->addWidget(but_2);
-    ui->verticalLayout->addWidget(but_3);
+    QWidget *window = new QWidget;
+    QVBoxLayout *layout = new QVBoxLayout;
+    layout->addWidget(but_1);
+    layout->addWidget(but_2);
+    layout->addWidget(but_3);
+    window->setLayout(layout);
+    window->show();// show - показывать
     
     //Подключаем к напкам индивидуальные слоты
+    //старый способ записи
     connect(but_1, SIGNAL(clicked()), this, SLOT(slotButton1()));
     connect(but_2, SIGNAL(clicked()), this, SLOT(slotButton2()));
     connect(but_3, SIGNAL(clicked()), this, SLOT(slotButton3()));
     
     // Подключаем сигнал с передачей номера кнопки к слоту вывода сообщения
-    connect(this, &MainWindow::signalFromButton, this, &MainWindow::slotMessage);
+    //новый способ записи
+    connect(this, &MainWindow::signalFormButton, this, &MainWindow::slotMessage);
 }
 
 MainWindow::~MainWindow()
@@ -40,17 +47,24 @@ MainWindow::~MainWindow()
 
 void MainWindow::slotButton1()
 {
-    emit signalFromButton(1);
+    emit signalFormButton(1);
 }    
 
 void MainWindow::slotButton2()
 {
-    emit signalFromButton(2);
+    emit signalFormButton(2);
 } 
 
 void MainWindow::slotButton3()
 {
-    emit signalFromButton(3);
-} 
+    emit signalFormButton(3);
+}
 
+// слоты вывод сообщения
 
+void MainWindow::slotMessage(int buttonID)
+{
+    QMessageBox::information(this,
+                             "Увидомление о нажатой кнопке",
+                             "Нажата кнопка под номером " + QString::number(buttonID));
+}

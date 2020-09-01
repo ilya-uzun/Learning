@@ -3,7 +3,8 @@
 
 #include <QMainWindow>
 #include <QPushButton>
-#include <QMessegeBox
+#include <QMessageBox>
+#include <QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -18,7 +19,7 @@ public:
     ~MainWindow();
 
 signals:
-    void signlaFormButton(int buttonID);// Сигнал для передачи номера нажатой кнопки
+    void signalFormButton(int buttonID);// Сигнал для передачи номера нажатой кнопки
 
 private:
     Ui::MainWindow *ui;
@@ -28,6 +29,6 @@ private slots:
     void slotButton2();
     void slotButton3();
     // слот вызывающий сообщения с номером нажатой кнопки
-    void slotMassege(int buttonID);
+    void slotMessage(int buttonID);
 };
 #endif // MAINWINDOW_H
