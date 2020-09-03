@@ -11,3 +11,4 @@ int main(int argc, char *argv[])
 }
 
 // https://evileg.com/ru/post/87/
+// https://evileg.com/ru/post/339/
