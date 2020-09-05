@@ -1,11 +1,19 @@
 #ifndef FORMULAWIDGET_H
 #define FORMULAWIDGET_H
 
-
-class FormulaWidget
+// Класс визуализации формулы
+class FormulaItem
 {
-public:
-    FormulaWidget();
-};
+ public:
+  explicit FormulaItem(QString value): m_value(value){}
+
+  static const QString RUGULAR_EXPRESSION; // Строка регулярного выражения для поиска формулы
+  //Метод отрисовки
+  QPoint draw(const QPoint& pos, QPainter& p) const;
+
+ privte:
+  QString m_value;// Значение форулы
+}
+
 
 #endif // FORMULAWIDGET_H
