@@ -5,6 +5,8 @@
 #include <QPoint>
 #include <QPainter>
 #include <QMainWindow>
+#include <QRegularExpression>
+#include <QStyleOption>
 
 // Класс визуализации формулы
 class FormulaItem
@@ -25,7 +27,7 @@ class FormulaItem
 class FormulaWidget : public QMainWindow
 {
     Q_OBJECT
-    using BaseClass = QWidget;
+    //using BaseClass = QWidget;
 public:
     explicit FormulaWidget(QWidget* parent = nullptr);
 

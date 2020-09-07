@@ -19,8 +19,7 @@ QPoint FormulaItem::draw(const QPoint& pos, QPainter& p) const
   return QPoint(pos.x() + valueWidht + 20, pos.y());
 }
 
-
-FormulaWidget::FormulaWidget(QWidget* parent) :
+FormulaWidget::FormulaWidget(QWidget* parent ) :
     BaseClass(parent)
 {
     //Установим цвет фона виджета, по умолчанию он такой же, как в системном оформлении ОС
@@ -38,7 +37,7 @@ void FormulaWidget::setFormula(const QString& formula)
     // Создаём объект регулярного выражения для поиска формулы
     QRegularExpression sqrt_value(FormulaItem::RUGULAR_EXPRESSION);
     // Ищем все вхождения формулы
-    QRegularExpressionMatchIrerator i = sqrt_value.globalMatch(formula);
+    QRegularExpressionMatchIterator i = sqrt_value.globalMatch(formula);
 
     // создаём все объекты формул
     while (i.hasNext())
@@ -46,7 +45,7 @@ void FormulaWidget::setFormula(const QString& formula)
         QRegularExpressionMatch match = i.next();
         if (match.hasMatch())
         {
-            m_items.append(FormulItem(match.captured("value")));
+            m_items.append(FormulaItem(match.captured("value")));
         }
     }
 
