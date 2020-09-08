@@ -5,6 +5,7 @@
 #include <QPoint>
 #include <QPainter>
 #include <QMainWindow>
+#include <QWidget>
 #include <QRegularExpression>
 #include <QStyleOption>
 
@@ -24,10 +25,10 @@ class FormulaItem
 };
 
 // класс для отрисовки всех формул
-class FormulaWidget : public QMainWindow
+class FormulaWidget : public QWidget
 {
     Q_OBJECT
-    //using BaseClass = QWidget;
+    using BaseClass = QWidget;
 public:
     explicit FormulaWidget(QWidget* parent = nullptr);
 
