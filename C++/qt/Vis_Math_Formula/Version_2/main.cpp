@@ -9,3 +9,6 @@ int main(int argc, char *argv[])
     w.show();
     return a.exec();
 }
+
+
+// отображает только запись формы sqrt(23232)

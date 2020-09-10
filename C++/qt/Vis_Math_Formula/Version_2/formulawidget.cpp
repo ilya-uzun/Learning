@@ -14,7 +14,7 @@ QPoint FormulaItem::draw(const QPoint& pos, QPainter& p) const
   p.drawLine(pos.x() + 5, 4 + valueHeight, pos.x() + 10, + pos.y() + 1);
   p.drawLine(pos.x() + 10, pos.y() + 1, pos.x() + 14 + valueWidht, pos.y() + 1);
 
-  p.drawText(QRect(pos.x() + 12, pos.y() + 4, pos.x() + 12 + valueWidht, pos.y() + 4 + valueHeight),m_value);
+  p.drawText(QRect(pos.x() + 12, pos.y() + 4, pos.x() + 12 + valueWidht, pos.y() + 4 + valueHeight), m_value);
   return QPoint(pos.x() + valueWidht + 20, pos.y());
 }
 
