@@ -20,20 +20,20 @@ QT_BEGIN_NAMESPACE
 class Ui_Widget
 {
 public:
+    FormulaWidget *formulaWidget;
     QLineEdit *lineEdit;
-    formulaWidget *formulaWidget;
 
     void setupUi(QWidget *Widget)
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QString::fromUtf8("Widget"));
-        Widget->resize(800, 600);
+        Widget->resize(508, 548);
+        formulaWidget = new FormulaWidget(Widget);
+        formulaWidget->setObjectName(QString::fromUtf8("formulaWidget"));
+        formulaWidget->setGeometry(QRect(30, 30, 411, 331));
         lineEdit = new QLineEdit(Widget);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setGeometry(QRect(100, 460, 161, 25));
-        formulaWidget = new formulaWidget(Widget);
-        formulaWidget->setObjectName(QString::fromUtf8("formulaWidget"));
-        formulaWidget->setGeometry(QRect(90, 70, 411, 331));
+        lineEdit->setGeometry(QRect(30, 460, 421, 25));
 
         retranslateUi(Widget);
 

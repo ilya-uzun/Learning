@@ -1,8 +1,6 @@
 #ifndef FORMULAWIDGET_H
 #define FORMULAWIDGET_H
 
-#include <QString>
-#include <QPoint>
 #include <QPainter>
 #include <QWidget>
 #include <QRegularExpression>

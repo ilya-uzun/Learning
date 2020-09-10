@@ -1,6 +1,6 @@
 #include "formulawidget.h"
 
-const QString FormulaItem::RUGULAR_EXPRESSION = "sqrt\\((?<value>))";
+const QString FormulaItem::RUGULAR_EXPRESSION = "sqrt\\((?<value>\\d+)\\)";
 /*
 Статическая постоянная переменная REGULAR_EXPRESSION является строкой,
 которая содержит регулярное выражение для поиска вхождения формулы
@@ -52,7 +52,7 @@ void FormulaWidget::setFormula(const QString& formula)
     update();
 }
 
-void FormulaWidget::paintEvent(QPaintEvent *event)
+void FormulaWidget::paintEvent(QPaintEvent *)
 {
     // Для перерисовки используется объект QPainter,
     // который обязательно должен получить объект за отрисовку которого он отвечает
