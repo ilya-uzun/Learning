@@ -27,6 +27,7 @@ QString Shapes::setText()
 	return text;
 }
 
+// метод для ввода текста
 void Shapes::getText(QString t)
 {
 	text = t;

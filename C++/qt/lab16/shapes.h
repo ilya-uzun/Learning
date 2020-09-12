@@ -24,7 +24,9 @@ public:
 public:
     void doPainting();
     void getText(QString t);
-    QString setText();
+
+public slots:
+     QString setText();
 
 };
 #endif // SHAPES_H

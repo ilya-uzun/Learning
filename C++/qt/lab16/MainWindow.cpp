@@ -31,7 +31,9 @@ MainWindow::MainWindow(QWidget *parent)
     QVBoxLayout *main = new QVBoxLayout;
     main->addLayout(layout);// Добавить на слой
     setLayout(main);// помещаем на окно
-    QObject::connect(ed, SIGNAL(textChanged(const QString)),circle,SLOT(getText(const QString)));
+    //QObject::connect(ed, SIGNAL(textChanged(const QString)),circle,SLOT(getText(const QString)));
+
+     connect(ed, &QLineEdit::textChanged, circle, &Shapes::getText);
 }
 
 QString MainWindow::setMainText()

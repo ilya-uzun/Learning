@@ -16,7 +16,7 @@ class MainWindow : public QDialog
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr); //Конструктор с параметром в виде указателя на родителський виджет
+    explicit MainWindow(QWidget *parent = nullptr); //Конструктор с параметром в виде указателя на родителський виджет
     ~MainWindow();
 
 private:
