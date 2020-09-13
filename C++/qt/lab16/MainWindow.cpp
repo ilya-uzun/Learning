@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     circle = new Shapes;
     ed = new QLineEdit;
     bt = new QPushButton("Название");// кнопка
+    lbl = new QLabel("0", this);
 
     QString t;
     connect(bt, SIGNAL(clicked()), this, SLOT(setMainText()));
@@ -24,8 +25,9 @@ MainWindow::MainWindow(QWidget *parent)
     // первый вертикальный слой (Оставил т.к. на горизонтальном находят друг на друга )
     QVBoxLayout *layout = new QVBoxLayout;
     layout->addWidget(circle); // добавить  горизонтальное расположение круг
-    layout->addWidget(ed);
-    layout->addWidget(bt);
+    layout->addWidget(lbl); // QLabel
+    layout->addWidget(ed);// Lenovo IdeaPad 3-15
+    layout->addWidget(bt); // Кнопка
 
 //    // Основной  горизонтальный слой
     QVBoxLayout *main = new QVBoxLayout;

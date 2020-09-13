@@ -8,6 +8,7 @@
 #include "shapes.h"
 #include <QTextEdit>
 #include <QLineEdit>
+#include <QLabel>
 #include <QPushButton>
 #include <QGridLayout> // новая разметка
 
@@ -23,6 +24,7 @@ private:
     Shapes *circle;
     QLineEdit *ed;
     QPushButton *bt;
+    QLabel *lbl;
 private slots:
     QString setMainText();
 };
