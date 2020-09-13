@@ -21,11 +21,12 @@ public:
     ~MainWindow();
 
 private:
+    QString text ;
     Shapes *circle;
     QLineEdit *ed;
     QPushButton *bt;
     QLabel *lbl;
 private slots:
-    QString setMainText();
+    void setMainText();
 };
 #endif // MAINWINDOW_H

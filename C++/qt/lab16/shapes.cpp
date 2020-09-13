@@ -1,8 +1,12 @@
 
 #include "shapes.h"
 
-Shapes::Shapes()  {}
+Shapes::Shapes()
+{
 
+}
+
+// метод печати
 void Shapes::paintEvent(QPaintEvent* e)
 {
     Q_UNUSED(e);
@@ -11,7 +15,9 @@ void Shapes::paintEvent(QPaintEvent* e)
 
 void Shapes::doPainting()
 {
+    //f = new QString;
     QPainter painter(this);
+    emit setText(text); // записыает значение из функции getText
     const QRect rect = QRect(40, 100, 60, 60);
     //QString text = "U"; // выводимый текст
     painter.setRenderHint(QPainter::Antialiasing);
@@ -19,18 +25,15 @@ void Shapes::doPainting()
     //painter.setBrush(QBrush(QColor("#888"))); // заполнение фигуры
     painter.drawText(rect, Qt::AlignCenter, text);
     painter.drawEllipse(40, 100, 60, 60);// первые две цифры- корденаты
-// если передовать одинаковые кардинаты то тект и фигура будут вместе
-}
+// если передовать одинаковые кординаты то тект и фигура будут вместе
 
-QString Shapes::setText()
-{
-	return text;
 }
 
 // метод для ввода текста
-void Shapes::getText(QString t)
+void Shapes::setText( QString t)
 {
-	text = t;
+  text = t;
+
 }
 
 Shapes::~Shapes()
