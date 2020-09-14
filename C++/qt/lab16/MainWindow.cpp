@@ -37,8 +37,8 @@ MainWindow::MainWindow(QWidget *parent)
     //QObject::connect(ed, SIGNAL(textChanged(const QString)),circle,SLOT(getText(const QString)));
     //connect(ed, &QLineEdit::textChanged, lbl, &QLabel::setText); // новый способ
     connect(ed, SIGNAL(textChanged(QString)), lbl, SLOT(setText(QString))); // старый способ
-    connect(ed, SIGNAL(textChanged(QString)), this, SLOT(setMainText()));
-    connect(bt, SIGNAL(clicked()), this, SLOT(setMainText()));
+    //connect(ed, SIGNAL(textChanged(QString)), this, SLOT(setMainText()));
+    QObject::connect(bt, SIGNAL(clicked()), circle, SLOT(setText(QString)));
     //connect(ed, &QLineEdit::textChanged, circle, &Shapes::setText);
     //text = lbl->text();
     //circle->getText(text);

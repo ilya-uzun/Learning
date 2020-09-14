@@ -2,6 +2,7 @@
 #define SHAPES_H
 
 #include <QWidget>
+#include <QDialog>
 #include <QApplication>
 #include <QPainter>
 #include <QPainterPath>
@@ -10,14 +11,16 @@
 
 //Класс рисует элементы
 
-class Shapes : public QWidget
+class Shapes : public QDialog
 {
+   // Q_OBJECT
+
 private:
     QString text ;
     QString *f ;
 
 public:
-    Shapes();
+    explicit Shapes(QWidget *parent = nullptr);
     ~Shapes();
 
 public:
@@ -30,7 +33,6 @@ public:
 
 public Q_SLOTS: // куда
 
-signals:
-     void setText( QString);
+     void setText(const QString &);
 };
 #endif // SHAPES_H

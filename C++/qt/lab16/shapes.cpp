@@ -1,9 +1,9 @@
 
 #include "shapes.h"
 
-Shapes::Shapes()
+Shapes::Shapes(QWidget *parent)
+    : QDialog(parent)
 {
-
 }
 
 // метод печати
@@ -30,10 +30,9 @@ void Shapes::doPainting()
 }
 
 // метод для ввода текста
-void Shapes::setText( QString t)
+void Shapes::setText(const QString &t)
 {
   text = t;
-
 }
 
 Shapes::~Shapes()
