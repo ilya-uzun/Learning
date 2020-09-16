@@ -38,7 +38,7 @@ MainWindow::MainWindow(QWidget *parent)
     //connect(ed, &QLineEdit::textChanged, lbl, &QLabel::setText); // новый способ
     connect(ed, SIGNAL(textChanged(QString)), lbl, SLOT(setText(QString))); // старый способ
     //connect(ed, SIGNAL(textChanged(QString)), this, SLOT(setMainText()));
-    QObject::connect(bt, SIGNAL(clicked()), circle, SLOT(setText(QString)));
+    connect(ed, SIGNAL (textChanged(QString)), this, SLOT(setMainText(setMainText(QString))));
     //connect(ed, &QLineEdit::textChanged, circle, &Shapes::setText);
     //text = lbl->text();
     //circle->getText(text);
@@ -46,11 +46,10 @@ MainWindow::MainWindow(QWidget *parent)
     //setMainText(text);s
 }
 
-void MainWindow::setMainText()
+emit void MainWindow::setMainText(const QString &t)
 {
-    QString ss;
-    ss = "sd";
-    emit circle->setText(ss);
+    QString tt = "fdsdf";
+     circle->setText(tt);
 }
 
 MainWindow::~MainWindow()

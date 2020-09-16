@@ -27,6 +27,6 @@ private:
     QPushButton *bt;
     QLabel *lbl;
 private slots:
-    void setMainText();
+    emit void setMainText(const QString &);
 };
 #endif // MAINWINDOW_H
