@@ -2,7 +2,7 @@
 #include "shapes.h"
 
 Shapes::Shapes(QWidget *parent)
-    : QDialog(parent)
+    : QMainWindow(parent)
 {
 }
 

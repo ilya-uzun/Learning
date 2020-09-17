@@ -1,6 +1,6 @@
 #ifndef SHAPES_H
 #define SHAPES_H
-
+#include <QMainWindow>
 #include <QWidget>
 #include <QDialog>
 #include <QApplication>
@@ -9,9 +9,14 @@
 
 #include "puff.h"
 
+QT_BEGIN_NAMESPACE
+namespace Ui { class MainWindow; }
+QT_END_NAMESPACE
+
+
 //Класс рисует элементы
 
-class Shapes : public QDialog
+class Shapes : public QMainWindow
 {
     //Q_OBJECT
 
