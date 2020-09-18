@@ -35,21 +35,29 @@ MainWindow::MainWindow(QWidget *parent)
     main->addLayout(layout);// Добавить на слой
     setLayout(main);// помещаем на окно
     //QObject::connect(ed, SIGNAL(textChanged(const QString)),circle,SLOT(getText(const QString)));
-    //connect(ed, &QLineEdit::textChanged, lbl, &QLabel::setText); // новый способ
-    connect(ed, SIGNAL(textChanged(QString)), lbl, SLOT(setText(QString))); // старый способ
+    connect(ed, &QLineEdit::textChanged, lbl, &QLabel::setText); // новый способ
+    //connect(ed, SIGNAL(textChanged(QString)), lbl, SLOT(setText(QString))); // старый способ
     //connect(ed, SIGNAL(textChanged(QString)), this, SLOT(setMainText()));
-    connect(ed, SIGNAL (textChanged(QString)), this, SLOT(setMainText(setMainText(QString))));
+    //connect(ed, SIGNAL (textChanged(QString)), this, SLOT(setMainText(setMainText(QString))));
     //connect(ed, &QLineEdit::textChanged, circle, &Shapes::setText);
     //text = lbl->text();
     //circle->getText(text);
     //setMainText(text); // проверка связи с класом shapes
-    //setMainText(text);s
+    //setMainText(text);
+    connect(bt, &QPushButton::clicked, this, &MainWindow::setButton);
+    connect(this, &MainWindow::signalForm, this, &MainWindow::slotMessage);
 }
 
-emit void MainWindow::setMainText(const QString &t)
+void MainWindow::setButton()
 {
-    QString tt = "fdsdf";
-     circle->setText(tt);
+    emit signalForm(121);
+}
+
+void MainWindow::slotMessage(int buttonID)
+{
+    QMessageBox::information(this,
+                             "Увидомление о нажатой кнопке",
+                             "Нажата кнопка под номером " + QString::number(buttonID));
 }
 
 MainWindow::~MainWindow()

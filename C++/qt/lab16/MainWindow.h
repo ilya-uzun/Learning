@@ -11,6 +11,7 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QGridLayout> // новая разметка
+#include <QMessageBox>
 
 class MainWindow : public QDialog
 {
@@ -20,6 +21,8 @@ public:
     explicit MainWindow(QWidget *parent = nullptr); //Конструктор с параметром в виде указателя на родителський виджет
     ~MainWindow();
 
+signals:
+    void signalForm (int buttonID);
 private:
     QString text ;
     Shapes *circle;
@@ -27,6 +30,7 @@ private:
     QPushButton *bt;
     QLabel *lbl;
 private slots:
-    emit void setMainText(const QString &);
+    void setButton();
+    void slotMessage(int buttonID);
 };
 #endif // MAINWINDOW_H
