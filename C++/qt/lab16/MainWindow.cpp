@@ -11,18 +11,6 @@ MainWindow::MainWindow(QWidget *parent)
     //QString e = "fds";
     //circle->setText(e);
 
-    //QString t;
-    //connect(bt, SIGNAL(clicked()), this, SLOT(setMainText()));
-    //ed->returnPressed();// сигнал что нажат Enter
-    //ed->setText(t);//setText - записывает в строку
-    //circle->getText(t);
-
-// проба нового vменедже компановки
-//    QGridLayout* grid = new QGridLayout(this);
-//    grid->addWidget(circle, 3, 3);
-//    grid->addWidget(ed, 0, 1);
-//    grid->addWidget(bt, 0, 2);
-
     // первый вертикальный слой (Оставил т.к. на горизонтальном находят друг на друга )
     QVBoxLayout *layout = new QVBoxLayout;
     layout->addWidget(circle); // добавить  горизонтальное расположение круг
@@ -34,30 +22,24 @@ MainWindow::MainWindow(QWidget *parent)
     QVBoxLayout *main = new QVBoxLayout;
     main->addLayout(layout);// Добавить на слой
     setLayout(main);// помещаем на окно
-    //QObject::connect(ed, SIGNAL(textChanged(const QString)),circle,SLOT(getText(const QString)));
     connect(ed, &QLineEdit::textChanged, lbl, &QLabel::setText); // новый способ
-    //connect(ed, SIGNAL(textChanged(QString)), lbl, SLOT(setText(QString))); // старый способ
-    //connect(ed, SIGNAL(textChanged(QString)), this, SLOT(setMainText()));
-    //connect(ed, SIGNAL (textChanged(QString)), this, SLOT(setMainText(setMainText(QString))));
-    //connect(ed, &QLineEdit::textChanged, circle, &Shapes::setText);
-    //text = lbl->text();
-    //circle->getText(text);
-    //setMainText(text); // проверка связи с класом shapes
-    //setMainText(text);
     connect(bt, &QPushButton::clicked, this, &MainWindow::setButton);
+    connect(ed, &QLineEdit::textChanged, this, &MainWindow::signalForm);// передает в signalForm
     connect(this, &MainWindow::signalForm, this, &MainWindow::slotMessage);
+
 }
 
 void MainWindow::setButton()
 {
-    emit signalForm(121);
+    emit signalForm(text);
 }
 
-void MainWindow::slotMessage(int buttonID)
+void MainWindow::slotMessage(QString buttonID)
 {
     QMessageBox::information(this,
-                             "Увидомление о нажатой кнопке",
-                             "Нажата кнопка под номером " + QString::number(buttonID));
+                             "Увидомление ",
+                             "Текст  " + (buttonID));
+
 }
 
 MainWindow::~MainWindow()

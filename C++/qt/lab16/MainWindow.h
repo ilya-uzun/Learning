@@ -22,7 +22,7 @@ public:
     ~MainWindow();
 
 signals:
-    void signalForm (int buttonID);
+    void signalForm (QString buttonID);
 private:
     QString text ;
     Shapes *circle;
@@ -31,6 +31,6 @@ private:
     QLabel *lbl;
 private slots:
     void setButton();
-    void slotMessage(int buttonID);
+    void slotMessage(QString buttonID);
 };
 #endif // MAINWINDOW_H
