@@ -36,13 +36,6 @@ void MainWindow::setButton(QString buttonID)
     text = buttonID;
 }
 
-void MainWindow::slotMessage(QString buttonID)
-{
-    QMessageBox::information(this,
-                             "Увидомление ",
-                             "Текст  " + (buttonID));
-}
-
 void MainWindow::on_pushButton_cliked()
 {
     circle = new Shapes; // создаем новый элемента

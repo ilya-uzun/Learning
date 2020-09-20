@@ -33,7 +33,6 @@ private:
     QVBoxLayout *layout;
 private slots:
     void setButton(QString buttonID);
-    void slotMessage(QString buttonID);
     void on_pushButton_cliked(); // слот для отработкиназатой кнопки
 };
 #endif // MAINWINDOW_H
