@@ -21,9 +21,6 @@ public:
     explicit MainWindow(QWidget *parent = nullptr); //Конструктор с параметром в виде указателя на родителський виджет
     ~MainWindow();
 
-
-signals:
-    void signalForm (QString buttonID);
 private:
     QString text ;
     Shapes *circle;
@@ -32,7 +29,7 @@ private:
     QLabel *lbl;
     QVBoxLayout *layout;
 private slots:
-    void setButton(QString buttonID);
+    void getLineEdit(const QString &); // метод запись из QLineEdit в перемменую
     void on_pushButton_cliked(); // слот для отработкиназатой кнопки
 };
 #endif // MAINWINDOW_H

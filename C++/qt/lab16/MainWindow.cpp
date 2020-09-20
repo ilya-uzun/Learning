@@ -24,16 +24,12 @@ MainWindow::MainWindow(QWidget *parent)
     setLayout(main);// помещаем на окно
     connect(ed, &QLineEdit::textChanged, lbl, &QLabel::setText); // новый способ
     connect(bt, &QPushButton::clicked, this, &MainWindow::on_pushButton_cliked);
-    connect(ed, &QLineEdit::textChanged, this, &MainWindow::setButton);// считыаем из QLineEdit
-    connect(ed, &QLineEdit::textChanged, this, &MainWindow::signalForm);// передает в buttonID
-    // connect(this, &MainWindow::signalForm, this, &MainWindow::slotMessage);
-
+    connect(ed, &QLineEdit::textChanged, this, &MainWindow::getLineEdit);// считыаем из QLineEdit
 }
-
-void MainWindow::setButton(QString buttonID)
+// метод запись из QLineEdit в перемменую
+void MainWindow::getLineEdit(const QString &t)
 {
-    emit signalForm(buttonID);
-    text = buttonID;
+    text = t;
 }
 
 void MainWindow::on_pushButton_cliked()
