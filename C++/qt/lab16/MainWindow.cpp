@@ -23,15 +23,11 @@ MainWindow::MainWindow(QWidget *parent)
     main->addLayout(layout);// Добавить на слой
     setLayout(main);// помещаем на окно
     connect(ed, &QLineEdit::textChanged, lbl, &QLabel::setText); // новый способ
-    //connect(bt, &QPushButton::clicked, this, &MainWindow::setButton);
+    connect(bt, &QPushButton::clicked, this, &MainWindow::on_pushButton_cliked);
     connect(ed, &QLineEdit::textChanged, this, &MainWindow::setButton);
     connect(ed, &QLineEdit::textChanged, this, &MainWindow::signalForm);// передает в buttonID
     // connect(this, &MainWindow::signalForm, this, &MainWindow::slotMessage);
 
-    if (bt::QC)
-    {
-        text = "ff";
-    }
 }
 
 void MainWindow::setButton(QString buttonID)
@@ -47,6 +43,11 @@ void MainWindow::slotMessage(QString buttonID)
     QMessageBox::information(this,
                              "Увидомление ",
                              "Текст  " + (buttonID));
+}
+
+void MainWindow::on_pushButton_cliked()
+{
+    lbl->setText("dddddd");
 }
 
 MainWindow::~MainWindow()
