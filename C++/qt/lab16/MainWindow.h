@@ -30,7 +30,7 @@ private:
     QLineEdit *ed;
     QPushButton *bt;
     QLabel *lbl;
-
+    QVBoxLayout *layout;
 private slots:
     void setButton(QString buttonID);
     void slotMessage(QString buttonID);

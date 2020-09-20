@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     //circle->setText(e);
 
     // первый вертикальный слой (Оставил т.к. на горизонтальном находят друг на друга )
-    QVBoxLayout *layout = new QVBoxLayout;
+    layout = new QVBoxLayout;
     //layout->addWidget(circle); // добавить  горизонтальное расположение круг
     layout->addWidget(lbl); // QLabel
     layout->addWidget(ed); //
@@ -47,7 +47,8 @@ void MainWindow::slotMessage(QString buttonID)
 
 void MainWindow::on_pushButton_cliked()
 {
-    lbl->setText("dddddd");
+     circle = new Shapes;
+    layout->addWidget(circle); // добавить  горизонтальное расположение круг
 }
 
 MainWindow::~MainWindow()
