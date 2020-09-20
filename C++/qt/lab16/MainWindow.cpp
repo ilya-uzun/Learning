@@ -24,7 +24,7 @@ MainWindow::MainWindow(QWidget *parent)
     setLayout(main);// помещаем на окно
     connect(ed, &QLineEdit::textChanged, lbl, &QLabel::setText); // новый способ
     connect(bt, &QPushButton::clicked, this, &MainWindow::on_pushButton_cliked);
-    connect(ed, &QLineEdit::textChanged, this, &MainWindow::setButton);
+    connect(ed, &QLineEdit::textChanged, this, &MainWindow::setButton);// считыаем из QLineEdit
     connect(ed, &QLineEdit::textChanged, this, &MainWindow::signalForm);// передает в buttonID
     // connect(this, &MainWindow::signalForm, this, &MainWindow::slotMessage);
 
@@ -34,8 +34,6 @@ void MainWindow::setButton(QString buttonID)
 {
     emit signalForm(buttonID);
     text = buttonID;
-    circle = new Shapes;
-
 }
 
 void MainWindow::slotMessage(QString buttonID)
@@ -47,8 +45,10 @@ void MainWindow::slotMessage(QString buttonID)
 
 void MainWindow::on_pushButton_cliked()
 {
-     circle = new Shapes;
+    circle = new Shapes; // создаем новый элемента
     layout->addWidget(circle); // добавить  горизонтальное расположение круг
+    circle->setText(text); // записываем текст в круг
+
 }
 
 MainWindow::~MainWindow()
