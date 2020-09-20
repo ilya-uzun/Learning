@@ -21,7 +21,7 @@ class Shapes : public QMainWindow
     //Q_OBJECT
 
 private:
-    QString text ;
+    // QString text;
     QString *f ;
 
 public:
@@ -33,8 +33,8 @@ public:
 
 
 public:
-
-    void doPainting();
+    QString text;
+    void doPainting(QString &);
 
 public Q_SLOTS: // куда
 

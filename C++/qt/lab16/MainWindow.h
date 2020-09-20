@@ -30,7 +30,7 @@ private:
     QPushButton *bt;
     QLabel *lbl;
 private slots:
-    void setButton();
+    void setButton(QString buttonID);
     void slotMessage(QString buttonID);
 };
 #endif // MAINWINDOW_H
