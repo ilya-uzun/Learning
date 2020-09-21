@@ -26,10 +26,13 @@ private:
     Shapes *circle;
     QLineEdit *ed;
     QPushButton *bt;
+    QPushButton *del;//удаление
     QLabel *lbl;
     QVBoxLayout *layout;
+
 private slots:
-    void getLineEdit(const QString &); // метод запись из QLineEdit в перемменую
-    void on_pushButton_cliked(); // слот для отработкиназатой кнопки
+    void setLineEdit(const QString &); // метод запись из QLineEdit в перемменую
+    void pushButton_cliked(); // слот для отработкиназатой кнопки
+    void pushButton_delete(); // слот для отработкиназатой кнопки
 };
 #endif // MAINWINDOW_H
