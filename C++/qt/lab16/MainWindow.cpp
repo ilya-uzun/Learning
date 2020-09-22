@@ -32,14 +32,14 @@ void MainWindow::setLineEdit(const QString &t)
 
 void MainWindow::pushButton_cliked()
 {
-    circle = new Shapes; // создаем новый элемента
+    Shapes *circle = new Shapes; // создаем новый элемента
     layout->addWidget(circle); // добавить  горизонтальное расположение круг
     circle->setText(text); // записываем текст в круг
 }
 
 void MainWindow::pushButton_delete()
 {
-    delete circle;
+
     //Узнать как правильно удалять
     //при попытке удалить второй раз прорамма закрывается с ошибкой
 }
