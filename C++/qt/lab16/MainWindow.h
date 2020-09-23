@@ -23,7 +23,7 @@ public:
 
 private:
     QString text ;
-    //Shapes *circle;
+    Shapes *circle;
     QLineEdit *ed;
     QPushButton *bt;
     QPushButton *del;//удаление
