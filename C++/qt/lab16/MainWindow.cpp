@@ -41,8 +41,6 @@ void MainWindow::pushButton_delete()
 {
     circle->close();
     //delete circle;
-    //Узнать как правильно удалять
-    //при попытке удалить второй раз прорамма закрывается с ошибкой
 }
 
 MainWindow::~MainWindow()
