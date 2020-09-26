@@ -1,6 +1,6 @@
 ## Docs
 
-инфа  в формате markdown
+инфа  в формате markdown 
 
 ## C++    
 1. Bubble_method - сортировка мотодом пузырьков    
