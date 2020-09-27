@@ -14,7 +14,7 @@
    <string>Lab16</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="createBt">
+   <widget class="QPushButton" name="searchBt">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>createButton</string>
+     <string>Поиск</string>
     </property>
    </widget>
    <widget class="QPushButton" name="addBt">
@@ -37,10 +37,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>addButton</string>
+     <string>Добавить</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="deleteBt">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -50,7 +50,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>deleteBt</string>
+     <string>Удалить</string>
     </property>
    </widget>
   </widget>

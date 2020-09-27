@@ -15,6 +15,14 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+
+private slots:
+    void on_searchBt_clicked(); // Поиск элемента
+
+    void on_addBt_clicked(); //Добавить элемент
+
+    void on_deleteBt_clicked(); //Удалить элемент
+
 private:
     Ui::MainWindow *ui;
 };
