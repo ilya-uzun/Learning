@@ -1,31 +1,16 @@
 #include "node.h"
-#include "graphwidget.h"
+#include "treeview.h"
 #include <QGraphicsSceneMouseEvent>
 #include <QStyleOption>
 #include "iostream"
 
-// Функция-предикат для проверки на равенство значений типа double с заданной точностью
 
-bool equals(double a, double b, double epsilon = 0.01) {
-    return fabs(a - b) < epsilon;
-}
+ //Конструктор с парметром в виде указателя на родительский виджет.
+//Создает условно пустой узел.
 
-// Функция-предикат для проверки значений типа double с заданной точностью на отношение "<"
-
-bool f_less(double a, double b) {
-    return !equals(a, b) && signbit(a - b);
-}
-
-// Функция-предикат для проверки значений типа double с заданной точностью на отношение ">"
-
-bool f_more(double a, double b) {
-    return !equals(a, b) && !signbit(a - b);
-}
-
-// Конструктор с парметром в виде указателя на родительский виджет.Создает условно пустой узел.
-
-Node::Node(GraphWidget *graphWidget) : graph(graphWidget) {
+Node::Node(TreeView *graphWidget) : graph(graphWidget) {
     this->data = -1000000.00;
+    this->data = 'a';
     this->parent = nullptr;
     this->left = nullptr;
     this->right = nullptr;
@@ -43,7 +28,7 @@ Node::Node(GraphWidget *graphWidget) : graph(graphWidget) {
 // значением узла.
 // Создает узел с заданным значением.
 
-Node::Node(GraphWidget *graphWidget, double data) : graph(graphWidget) {
+Node::Node(TreeView *graphWidget, char data) : graph(graphWidget) {
     this->data = data;
     this->left = nullptr;
     this->right = nullptr;
@@ -164,14 +149,11 @@ void Node::insertRight(Node *node) {
     }
 }
 
-
-
-
 //Метод-обработчик события изменения параметров узла.
 
 QVariant Node::itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant &value) {
     if (change == ItemPositionHasChanged && scene()) {   //Если позиция узла была измнеения
-        graph->startItemUpdateTimer();  //Запуск таймера обновления элементов виджета
+        graph->startTimerUpdate();  //Запуск таймера обновления элементов виджета
     }
     return QGraphicsItem::itemChange(change, value);
 }
@@ -258,7 +240,7 @@ bool Node::goToPos() {
     double x1 = currX;
     double dy = (y - currY);
     double dx = (x - currX);
-    double slope = (dy / dx == INFINITY) ? 0 : dy / dx;
+    double slope = (dy / dx == 1.0) ? 0 : dy / dx;
 
     if (abs(dy) > nodeSpeed || abs(dx) > nodeSpeed) {
         if (abs(dy) > abs(dx)) {
@@ -274,7 +256,7 @@ bool Node::goToPos() {
                 currX = (currY + slope * x1 - y1) / slope;
             }
 
-            if (abs(slope) < EP) {
+            if (abs(slope) < 0.1) { //0.1 Точность эпсилон
                 if (x > currX) {
                     currX += nodeSpeed;
                 } else {
@@ -290,7 +272,7 @@ bool Node::goToPos() {
                 currX -= nodeSpeed;
             }
 
-            if (abs(slope) < EP) {
+            if (abs(slope) < 0.1) { //0.1 Точность эпсилон
                 if (y > currY) {
                     currY += nodeSpeed;
                 } else {
@@ -355,7 +337,7 @@ bool Node::operator<=(const Node &rhs) const {
 bool Node::operator>=(const Node &rhs) const {
     return !(*this < rhs);
 }
-
+/*
 // Перегруженный оператор "==" для сравнения значения узла с другим значением такого же типа на равенство
 
 bool Node::operator==(const double &value) const {
@@ -381,18 +363,16 @@ bool Node::operator>(const double &value) const {
 }
 
 // Перегруженный оператор "==" для сравнения значенияузла с другим значением такого же типана отношение "<="
-
 bool Node::operator<=(const double &value) const {
     return f_less(data, value) || equals(data, value);
 }
 
 //Перегруженный оператор "==" для сравнения значения узла с другим значением такого же типа на отношение ">="
-
 bool Node::operator>=(const double &value) const {
     return f_more(data, value) || equals(data, value);
 }
-
+ */
 //СТАТИЧЕСКАЯ ИНИЦИАЛИЗАЦИЯ
 double Node::nodeRadius = 0;
-double Node::nodeCurrentRadius = MIN_NODE_RADIUS;
+double Node::nodeCurrentRadius = 25.0; //Минимальный радиус узла
 const double Node::nodeRadiusStep = 0.2;
