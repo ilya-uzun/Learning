@@ -22,6 +22,7 @@ public:
     ~MainWindow();
 
 private:
+// Создание элементов
     QString text ;
     Shapes *circle;
     QLineEdit *ed;
