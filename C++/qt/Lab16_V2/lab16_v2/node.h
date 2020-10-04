@@ -3,15 +3,20 @@
 
 #include <cstdlib>
 #include <QGraphicsItem>
+#include <QGraphicsSceneMouseEvent>
 #include <QVector>
+#include <math.h>
+#include "treeview.h"
+#include <QStyleOption>
+#include "iostream"
 
 using namespace std;
 
 class TreeView;
 
-/**
- * Класс "Узел дерева"
- */
+
+//Класс "Узел дерева"
+
 class Node : public QGraphicsItem {
 public:
     static double nodeRadius;           //Вычисленный целевой радиус узла

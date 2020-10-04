@@ -1,9 +1,4 @@
 #include "node.h"
-#include "treeview.h"
-#include <QGraphicsSceneMouseEvent>
-#include <QStyleOption>
-#include "iostream"
-
 
  //Конструктор с парметром в виде указателя на родительский виджет.
 //Создает условно пустой узел.
@@ -337,9 +332,22 @@ bool Node::operator<=(const Node &rhs) const {
 bool Node::operator>=(const Node &rhs) const {
     return !(*this < rhs);
 }
-/*
-// Перегруженный оператор "==" для сравнения значения узла с другим значением такого же типа на равенство
 
+//Функция-предикат для проверки на равенство значений типа double с заданной точностью
+bool equals(double a, double b, double epsilon = 0.01) {
+    return fabs(a - b) < epsilon;
+}
+
+//Функция-предикат для проверки значений типа double с заданной точностью на отношение "<"
+bool f_less(double a, double b) {
+    return !equals(a, b) && signbit(a - b);
+}
+//Функция-предикат для проверки значений типа double с заданной точностью на отношение ">"
+bool f_more(double a, double b) {
+    return !equals(a, b) && !signbit(a - b);
+}
+
+// Перегруженный оператор "==" для сравнения значения узла с другим значением такого же типа на равенство
 bool Node::operator==(const double &value) const {
     return equals(data, value);
 }
@@ -371,7 +379,7 @@ bool Node::operator<=(const double &value) const {
 bool Node::operator>=(const double &value) const {
     return f_more(data, value) || equals(data, value);
 }
- */
+
 //СТАТИЧЕСКАЯ ИНИЦИАЛИЗАЦИЯ
 double Node::nodeRadius = 0;
 double Node::nodeCurrentRadius = 25.0; //Минимальный радиус узла
