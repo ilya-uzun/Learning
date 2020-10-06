@@ -43,23 +43,14 @@ public:
 protected:
 
     QVariant itemChange(GraphicsItemChange change, const QVariant &value) override;   //Метод-обработчик события изменения параметров узла
-
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override; //Метод отрисовки текущего узла
-
     QRectF boundingRect() const override;   //Метод для получения прямоугольника ограничивающего узел
-
     QPainterPath shape() const override;    //Метол для получения фигуры узла
-
     void drawCircle(const QStyleOptionGraphicsItem *option, QPainter *painter);  //Метод отрисовки круглой части узла
-
     void drawText(QPainter *painter);       //Метод для отрисовки текста в узле
-
     void connectWithChildren(QPainter *painter);    //Метод для отрисовки соединяющих линий от текущего узла к дочерним
-
     bool goToPos();                         //Метод перемещения узла в целевую позицию
-
     void updatePos();                       //Метод для обновления координат узла на графическом виджете на основе вычилсяемых координат
-
     QPointF centerPos() const;              //Метод получения локального центра координат
 public:
     //Конструкторы
@@ -69,43 +60,26 @@ public:
 
     //Деструктор
     virtual ~Node();
-
     int type() const override { return Type; }   //Метод получения индекса текущего класса в перечислении графических элементов данного приложения
-
     static void recalculateRadius();    //Метод перерасчета целевога радиуса узла
-
     void detachFromParent();            //Метод для отсоединения текщего узла от родительского
-
     bool isEmpty();                     //Метод проверки, является ли узел условно пустым
-
     void insertLeft(Node *node);        //Метод для вставвки узла слева
-
     void insertRight(Node *node);       //Метод для вставвки узла справа
 
 
     //Переопределенные опереаторы равенства и сравнения
     bool operator==(const Node &rhs) const;
-
     bool operator!=(const Node &rhs) const;
-
     bool operator<(const Node &rhs) const;
-
     bool operator>(const Node &rhs) const;
-
     bool operator<=(const Node &rhs) const;
-
     bool operator>=(const Node &rhs) const;
-
     bool operator==(const double &value) const;
-
     bool operator!=(const double &value) const;
-
     bool operator<(const double &value) const;
-
     bool operator>(const double &value) const;
-
     bool operator<=(const double &value) const;
-
     bool operator>=(const double &value) const;
 };
 #endif // NODE_H

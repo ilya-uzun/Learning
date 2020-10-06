@@ -5,6 +5,7 @@
 #include <QInputDialog>
 #include <iostream>
 #include "binarytree.h"
+#include "node.h"
 
 
 QT_BEGIN_NAMESPACE
