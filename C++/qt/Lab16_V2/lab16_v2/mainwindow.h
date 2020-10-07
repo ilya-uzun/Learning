@@ -31,6 +31,6 @@ private slots:
     void on_deleteBt_clicked(); //Удалить элемент
 
 protected:
-    void mousePressEvent(QMouseEvent *event) override;  //Метод-обработчик события нажатия на кнопку мыши
+   // void mousePressEvent(QMouseEvent *event) override;  //Метод-обработчик события нажатия на кнопку мыши
 };
 #endif // MAINWINDOW_H
