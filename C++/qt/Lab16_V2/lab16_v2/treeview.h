@@ -7,9 +7,8 @@
 
 class Node;
 
-/*
- Класс для отрисовки дерева
- */
+// Класс для отрисовки дерева
+
 
 class TreeView : public QGraphicsView
 {
