@@ -1,8 +1,6 @@
 #include "node.h"
 
- //Конструктор с парметром в виде указателя на родительский виджет.
-//Создает условно пустой узел.
-
+//Конструктор с парметром в виде указателя на родительский виджет. Создает условно пустой узел.
 Node::Node(TreeView *graphWidget) : graph(graphWidget) {
     this->data = -1000000.00;
     this->data = 'a';
@@ -11,18 +9,14 @@ Node::Node(TreeView *graphWidget) : graph(graphWidget) {
     this->right = nullptr;
     this->graph = graphWidget;
     updatePos();
-
     //Флаг получения событий о наведении курсора
     setAcceptHoverEvents(true);
-
     //Флаг, что данный элемент посылает события об изменении своих координат
     setFlag(QGraphicsItem::ItemSendsScenePositionChanges);
 }
 
-// Конструктор с парметром в виде указателя на родительский виджет и
-// значением узла.
+// Конструктор с парметром в виде указателя на родительский виджет и значением узла.
 // Создает узел с заданным значением.
-
 Node::Node(TreeView *graphWidget, char data) : graph(graphWidget) {
     this->data = data;
     this->left = nullptr;
@@ -30,17 +24,13 @@ Node::Node(TreeView *graphWidget, char data) : graph(graphWidget) {
     this->parent = nullptr;
     this->graph = graphWidget;
     updatePos();
-
     //Флаг получения событий о наведении курсора
     setAcceptHoverEvents(true);
-
     //Флаг, что данный элемент посылает события об изменении своих координат
     setFlag(QGraphicsItem::ItemSendsScenePositionChanges);
 }
 
-//Конструктор копирования.
-//Учитывает самоприсваивание.
-
+//Конструктор копирования. Учитывает самоприсваивание.
 Node::Node(Node &nd) : graph(nd.graph) {
     if (this == &nd) {
         return;
@@ -55,23 +45,19 @@ Node::Node(Node &nd) : graph(nd.graph) {
     this->currY = nd.currY;
     this->graph = nd.graph;
     updatePos();
-
     //Флаг получения событий о наведении курсора
     setAcceptHoverEvents(true);
-
     //Флаг, что данный элемент посылает события об изменении своих координат
     setFlag(QGraphicsItem::ItemSendsScenePositionChanges);
 }
 
- //Деструктор
-
+//Деструктор
 Node::~Node() {
     detachFromParent();
 }
 
 
 //Метод перерасчета целевога радиуса узла
-
 void Node::recalculateRadius() {
     if (abs(nodeRadius - nodeCurrentRadius) > nodeRadiusStep) {
         if (nodeRadius > nodeCurrentRadius) {
@@ -83,7 +69,6 @@ void Node::recalculateRadius() {
 }
 
 //Метод для отсоединения текщего узла от родительского
-
 void Node::detachFromParent() {
     if (!parent) {
         return;
@@ -97,7 +82,6 @@ void Node::detachFromParent() {
 }
 
 // Метод проверки, является ли узел условно пустым
-
 bool Node::isEmpty() {
     return (this->data == -1000000.00
     && this->parent == nullptr
@@ -106,9 +90,8 @@ bool Node::isEmpty() {
 }
 
 
- // Метод для вставвки узла слева от текущего,
- // Т.е. в качестве левого дочернего узла.
-
+// Метод для вставвки узла слева от текущего,
+// Т.е. в качестве левого дочернего узла.
 void Node::insertLeft(Node *node) {
     if (!node) {
         return;
@@ -127,7 +110,6 @@ void Node::insertLeft(Node *node) {
 
 // Метод для вставвки узла справа от текущего,
 // Т.е. в качестве правого дочернего узла.
-
 void Node::insertRight(Node *node) {
     if (!node) {
         return;
@@ -145,7 +127,6 @@ void Node::insertRight(Node *node) {
 }
 
 //Метод-обработчик события изменения параметров узла.
-
 QVariant Node::itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant &value) {
     if (change == ItemPositionHasChanged && scene()) {   //Если позиция узла была измнеения
         graph->startTimerUpdate();  //Запуск таймера обновления элементов виджета
@@ -154,11 +135,10 @@ QVariant Node::itemChange(QGraphicsItem::GraphicsItemChange change, const QVaria
 }
 
 //Метод отрисовки текущего узла
-
 void Node::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *) {
     isInPosition = goToPos();
     connectWithChildren(painter);
-    drawCircle(option, painter);
+    drawCircle(painter);
     drawText(painter);
 
     if (!this->parent) {
@@ -168,16 +148,13 @@ void Node::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
 }
 
 // Метод для получения прямоугольника ограничивающего узел
-
 QRectF Node::boundingRect() const {
     return QRectF(-nodeCurrentRadius, -nodeCurrentRadius, nodeCurrentRadius * 2, nodeCurrentRadius * 2);
 }
 
-
 // Метол для получения фигуры узла.
 // Формирует фигуру в виде векторного объекта-пути
 // и возвращает её.
-
 QPainterPath Node::shape() const {
     QPainterPath path;
     path.addEllipse(centerPos(), nodeCurrentRadius * 2, nodeCurrentRadius * 2);
@@ -185,15 +162,13 @@ QPainterPath Node::shape() const {
 }
 
 //Метод отрисовки круглой части узла
-
-void Node::drawCircle(const QStyleOptionGraphicsItem *option, QPainter *painter) {
+void Node::drawCircle(QPainter *painter) {
     painter->setPen(QPen(Qt::black, 3));
     painter->setBrush(Qt::white);
     painter->drawEllipse(centerPos(), nodeCurrentRadius, nodeCurrentRadius);
 }
 
 //Метод для отрисовки текста в узле
-
 void Node::drawText(QPainter *painter) {
     QString str = QString::number(data, 'f', 2);
     painter->setFont(QFont("Arial", 12, QFont::Bold));
@@ -201,7 +176,6 @@ void Node::drawText(QPainter *painter) {
 }
 
 //Метод для отрисовки соединяющих линий от текущего узла к дочерним
-
 void Node::connectWithChildren(QPainter *painter) {
     painter->setPen(QPen(Qt::black, 3));
     if (left) {
@@ -218,10 +192,8 @@ void Node::connectWithChildren(QPainter *painter) {
     }
 }
 
-
  // Метод перемещения узла в целевую позицию.
  // Если узел уже на месте, то возращает true, иначе - false
-
 bool Node::goToPos() {
     double y1 = currY;
     double x1 = currX;
@@ -277,50 +249,42 @@ bool Node::goToPos() {
 }
 
 // Метод для обновления координат узла на графическом виджете на основе вычилсяемых координат
-
 void Node::updatePos() {
     setPos(graph->sceneRect().left() + currX, graph->sceneRect().bottom() - currY);
 }
 
 //Метод получения локального центра координат
-
 QPointF Node::centerPos() const {
     QPointF center = QPointF(this->boundingRect().center());
     return center;
 }
 
 // Перегруженный оператор проверки узлов на равенство
-
 bool Node::operator==(const Node &rhs) const {
     return data == rhs.data;
 }
 
 // Перегруженный оператор проверки узлов на неравенство
-
 bool Node::operator!=(const Node &rhs) const {
     return !(rhs == *this);
 }
 
 // Перегруженный оператор проверки узлов на отношение "<"
-
 bool Node::operator<(const Node &rhs) const {
     return data < rhs.data;
 }
 
 // Перегруженный оператор проверки узлов на отношение ">"
-
 bool Node::operator>(const Node &rhs) const {
     return rhs < *this;
 }
 
 //Перегруженный оператор проверки узлов на отношение "<="
-
 bool Node::operator<=(const Node &rhs) const {
     return !(rhs < *this);
 }
 
 // Перегруженный оператор проверки узлов на отношение ">="
-
 bool Node::operator>=(const Node &rhs) const {
     return !(*this < rhs);
 }
@@ -345,23 +309,19 @@ bool Node::operator==(const double &value) const {
 }
 
 // Перегруженный оператор "==" для сравнения значения узла с другим значением такого же типа на неравенство
-
 bool Node::operator!=(const double &value) const {
     return !equals(data, value);
 }
 
 //Перегруженный оператор "==" для сравнения значения узла с другим значением такого же типа на отношение "<"
-
 bool Node::operator<(const double &value) const {
     return f_less(data, value);
 }
 
 //Перегруженный оператор "==" для сравнения значенияузла с другим значением такого же типана отношение ">"
-
 bool Node::operator>(const double &value) const {
     return f_more(data, value);
 }
-
 // Перегруженный оператор "==" для сравнения значенияузла с другим значением такого же типана отношение "<="
 bool Node::operator<=(const double &value) const {
     return f_less(data, value) || equals(data, value);
@@ -372,7 +332,7 @@ bool Node::operator>=(const double &value) const {
     return f_more(data, value) || equals(data, value);
 }
 
-//СТАТИЧЕСКАЯ ИНИЦИАЛИЗАЦИЯ
+//статические переменные
 double Node::nodeRadius = 0;
 double Node::nodeCurrentRadius = 25.0; //Минимальный радиус узла
 const double Node::nodeRadiusStep = 0.2;

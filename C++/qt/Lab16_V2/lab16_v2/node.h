@@ -46,7 +46,7 @@ protected:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override; //Метод отрисовки текущего узла
     QRectF boundingRect() const override;   //Метод для получения прямоугольника ограничивающего узел
     QPainterPath shape() const override;    //Метол для получения фигуры узла
-    void drawCircle(const QStyleOptionGraphicsItem *option, QPainter *painter);  //Метод отрисовки круглой части узла
+    void drawCircle( QPainter *painter);  //Метод отрисовки круглой части узла
     void drawText(QPainter *painter);       //свойства текста в узле
     void connectWithChildren(QPainter *painter);    //Метод для отрисовки соединяющих линий от текущего узла к дочерним
     bool goToPos();                         //Метод перемещения узла в целевую позицию
@@ -57,16 +57,14 @@ public:
     Node(TreeView *graphWidget);
     explicit Node(TreeView *graphWidget, char data);
     Node(Node &nd);
+    virtual ~Node(); //Деструктор
 
-    //Деструктор
-    virtual ~Node();
     int type() const override { return Type; }   //Метод получения индекса текущего класса в перечислении графических элементов данного приложения
     static void recalculateRadius();    //Метод перерасчета целевога радиуса узла
     void detachFromParent();            //Метод для отсоединения текщего узла от родительского
     bool isEmpty();                     //Метод проверки, является ли узел условно пустым
     void insertLeft(Node *node);        //Метод для вставки узла слева
     void insertRight(Node *node);       //Метод для вставки узла справа
-
 
     //Переопределенные опереаторы равенства и сравнения
     bool operator==(const Node &rhs) const;
