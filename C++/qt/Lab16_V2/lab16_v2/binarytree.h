@@ -25,7 +25,7 @@ private:
     void destroyTree(Node *node);   //Рекурсивный метод удаления дерева
     Node * balancedTree(VectorIter* iter, VectorIter* end, long n);  //Метод для построения идеально-сбалансировного дерева
     void arrayToBST(char* arr, Node *root, int* index_ptr);  //Метод записи значений массива в дерево
-    void sortTree(Node *root);          //Метод для сортировки дерева
+    void sortTree(Node *root);          //Метод для сортировки дерева, сортировка нужна ля преобразования в бинарное дерево поиска convertToBalancedBST
     void storeInOrder(Node *node, char* inorder, int* index_ptr);  //Метод сохранения значений из дерева в массив
     void storeDataPreOrder(Node *root, vector<char> &dataList);    //Метод сохранения значений из дерева в вектор
     void update(Node *currNode, int level, int col);   //Метод обновления целевых позиций узлов дерева
@@ -39,22 +39,16 @@ public:
     Node * search(char key);   //Метод поиска элемента по значению
     void insert(char key);     //Метод вставки элемента по значению
     void remove(char key);     //Метод удаления элемента по значению
-    bool isFind(char key);     //Метод бинарного поиска элемента по значнию
-    void preOrder();             //Метод прямого обхода дерева с печатью
-    void inOrder();              //Метод симметричного обхода дерева с печатью
-    void postOrder();            //Метод обратного обхода дерева с печатью
     void makeBalancedTree(vector<char> &datalist);  //Метод создания идеально-сбалансированного дерева из вектора со значениями
     void convertToBalancedBST();    //Метод преобразования дерева в идеально-сбалансированное дерево поиска
     void storeDataInOrder(Node *root, vector<char> &dataList); //Метод сбора в вектор значений элементов дерева
     void insert(char key, Node *node);    //Метод вставки узла с заданным значением в дерево
     Node *search(char key, Node *node);   //Метод поиска элемента в дереве по значению
     void remove(char key, Node *node);    //Метод для удаления узла с заданным значением
-    bool isFind(char key, Node *node);    //Метод для двоичного поиска элемента в дереве по значнеию
     void storeNodesPreOrder(Node *root, vector<Node *> &nodes);  //Метод сбора в вектор узлов дерева в прямом обходе
     int getLevels(Node *currNode);  //Метод получения кол-ва уровней(глубины) дерева
     void update();                  //Метод обновления параметров отрисовки дерева
     void refreshNodesInScene();     //Метод обновления узлов в сцене виджета
-    void clearHighlight();          //Метод удаления подсветки со всех улов дерева
     int countNodes(Node *root);     //Метод для подсчета числа узлов в дереве, нужет для упорядочивания дерева
     bool checkOrder();              //Метод проверки упорядоченности элементов в дереве
 };

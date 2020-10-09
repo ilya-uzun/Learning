@@ -155,27 +155,9 @@ void BinaryTree::remove(char key, Node *node) {
     }
 }
 
-//Метод для двоичного поиска элемента в дереве по значнеию. Возвращает true, если элемент найден,иначе - false.
-bool BinaryTree::isFind(char key) {
-    return isFind(key, root);
-}
-
-// Рекурсивный метод для двоичного поиска элемента в дереве по значнеию, начиная с текущего переданного узла.
-// Возвращает true, если элемент найден, иначе - false.
-bool BinaryTree::isFind(char key, Node *node) {
-    if (nullptr == node) {
-        return false;
-    } else if (*node > key) {
-        return isFind(key, node->left);
-    } else if (*node < key) {
-        return isFind(key, node->right);
-    }
-    return true;
-}
 
 //Метод создания иделаьно-сбалансированного дереваиз вектора со значениями.
-//Формирует новое идеально-сбалансированное дерево поиска,
-//упорядоченность элементов в котором, однако не гарантируется,
+//Формирует новое идеально-сбалансированное дерево поиска, упорядоченность элементов в котором, однако не гарантируется,
 //т.к. идеально-сбалансированное не означает, что оно является еще и деревом поиска.
 
 void BinaryTree::makeBalancedTree(vector<char> &datalist) {
@@ -194,10 +176,8 @@ Node *BinaryTree::balancedTree(VectorIter *iter, VectorIter *end, long n) {
     double dt = **iter;
     (*iter)++;
     Node *tree = new Node(wGraph, dt);
-    //строим левое поддерево с n/2
-    //узлами, рекурсивно вызывая
-    //функцию (выполняя те же шаги,
-    //что и для создания корня)
+    //строим левое поддерево с n/2 узлами, рекурсивно вызывая
+    //функцию (выполняя те же шаги, что и для создания корня)
     tree->insertLeft(balancedTree(iter, end, n / 2));
     //строим правое поддерево с (n – n/2 – 1) узлами,
     // рекурсивно вызывая функцию (выполняя те же
@@ -314,7 +294,7 @@ void BinaryTree::update() {
     refreshNodesInScene();  //Очищение и повторная вставка элементов дерева на виджет
 }
 
-// Рекрсивный метод обновления целевых позиций в прямом обходе для всех узлов дерева, начиная с текущего переданного.
+// Рекурсивный метод обновления целевых позиций в прямом обходе для всех узлов дерева, начиная с текущего переданного.
 void BinaryTree::update(Node *currNode, int level, int col) {
     if (!currNode) {return;}
 
@@ -359,19 +339,4 @@ int BinaryTree::countNodes(Node *root) {
         return 0;
     }
     return countNodes(root->left) + countNodes(root->right) + 1;
-}
-
-// Метод проверки упорядоченности элементов дерева.
-// Возвращает true, если элменты упорядочены, иначе - false.
-
-bool BinaryTree::checkOrder() {
-    vector<char> nodes;
-    storeDataPreOrder(root, nodes);
-
-    for (auto &el : nodes) {
-        if (!isFind(el)) {
-            return false;
-        }
-    }
-    return true;
 }
