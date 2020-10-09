@@ -14,10 +14,7 @@ using namespace std;
 
 typedef vector<char>::iterator VectorIter;
 
-/**
- * Класс "Бинарное дерево"
- */
-
+// Класс "Бинарное дерево"
 class BinaryTree {
 private:
     Node* root = nullptr;       //Указатель на корневой узел
@@ -26,19 +23,12 @@ private:
     TreeView *wGraph;        //Указатель на графический виджет для вывода узлов дерева
 private:
     void destroyTree(Node *node);   //Рекурсивный метод удаления дерева
-    void preOrder(Node *node);      //Прямой обход с печатью
-    void inOrder(Node *node);     //Симметричный обход с печатью
-    void postOrder(Node *node);   //Обратный обход с печатью
-    Node *findMin(Node *node);    //Метод для поиска минимального элемента дерева
-    Node *findMax(Node *node);   //Метод для поиска максимального элемента дерева
     Node * balancedTree(VectorIter* iter, VectorIter* end, long n);  //Метод для построения идеально-сбалансировного дерева
     void arrayToBST(char* arr, Node *root, int* index_ptr);  //Метод записи значений массива в дерево
     void sortTree(Node *root);          //Метод для сортировки дерева
     void storeInOrder(Node *node, char* inorder, int* index_ptr);  //Метод сохранения значений из дерева в массив
     void storeDataPreOrder(Node *root, vector<char> &dataList);    //Метод сохранения значений из дерева в вектор
     void update(Node *currNode, int level, int col);   //Метод обновления целевых позиций узлов дерева
-    void highlightNode(Node *node, Node *currentNode); //Метод для подсветки переданного узла
-    void clearHighlight(Node *node);        //Метод удаления подсветки со всех узлов дерева
     void addNodesToScene(QGraphicsScene *widgetScene, Node *root);  //Метод добавления узлов в сцену виджета
 public:
     BinaryTree(TreeView *wGraph = nullptr);   //Конструктор с параметром
@@ -50,12 +40,10 @@ public:
     void insert(char key);     //Метод вставки элемента по значению
     void remove(char key);     //Метод удаления элемента по значению
     bool isFind(char key);     //Метод бинарного поиска элемента по значнию
-    Node * findMin();            //Метод бинарного поиска элемента с минимальным значением
-    Node * findMax();            //Метод бинарного поиска элемента с минимальным значением
     void preOrder();             //Метод прямого обхода дерева с печатью
     void inOrder();              //Метод симметричного обхода дерева с печатью
     void postOrder();            //Метод обратного обхода дерева с печатью
-    void makeBalancedTree(vector<char> &datalist);  ////Метод создания идеально-сбалансированного дерева из вектора со значениями
+    void makeBalancedTree(vector<char> &datalist);  //Метод создания идеально-сбалансированного дерева из вектора со значениями
     void convertToBalancedBST();    //Метод преобразования дерева в идеально-сбалансированное дерево поиска
     void storeDataInOrder(Node *root, vector<char> &dataList); //Метод сбора в вектор значений элементов дерева
     void insert(char key, Node *node);    //Метод вставки узла с заданным значением в дерево
@@ -66,9 +54,8 @@ public:
     int getLevels(Node *currNode);  //Метод получения кол-ва уровней(глубины) дерева
     void update();                  //Метод обновления параметров отрисовки дерева
     void refreshNodesInScene();     //Метод обновления узлов в сцене виджета
-    void highlightNode(Node *node); //Метод подсветки узла в дереве
     void clearHighlight();          //Метод удаления подсветки со всех улов дерева
-    int countNodes(Node *root);     //Метод для подсчета числа узлов в дереве
+    int countNodes(Node *root);     //Метод для подсчета числа узлов в дереве, нужет для упорядочивания дерева
     bool checkOrder();              //Метод проверки упорядоченности элементов в дереве
 };
 
