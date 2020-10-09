@@ -1,29 +1,5 @@
 #include "binarytree.h"
 
-// Функция-компаратор для сравнения чисел типа double.Используется в qsort.
-int compare(const void *a, const void *b) {
-    auto result = *(double *) a - *(double *) b;
-    if (result > 0) {
-        return 1;
-    }
-    if (result < 0) {
-        return -1;
-    }
-    return 0;
-}
-
-//Функция-компаратор для сравнения чисел типа double. Используется в qsort.
-int f_compare(const char a, const char b) {
-    auto result = a - b;
-    if (result > 0) {
-        return 1;
-    }
-    if (result < 0) {
-        return -1;
-    }
-    return 0;
-}
-
 // Конструктор с параметром в виде указателя на родителський виджет.  Создает пустое дерево и присваивает переданный указатель на виджет.
 BinaryTree::BinaryTree(TreeView *graph) {
     this->wGraph = graph;
@@ -254,13 +230,11 @@ void BinaryTree::sortTree(Node *root) {
         return;
     }
 
-    int n = countNodes(root);
+    char n = countNodes(root);
     // Create a temp array arr[] and store inorder traversal of tree in arr[]
     char *arr = new char[n];
     int i = 0;
     storeInOrder(root, arr, &i);
-    // Sort the array using library function for quick sort
-    qsort(arr, n, sizeof(arr[0]), compare);
     // Copy array elements back to Binary Tree
     i = 0;
     arrayToBST(arr, root, &i);
