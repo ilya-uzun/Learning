@@ -189,14 +189,6 @@ QPainterPath Node::shape() const {
 void Node::drawCircle(const QStyleOptionGraphicsItem *option, QPainter *painter) {
     painter->setPen(QPen(Qt::black, 3));
     painter->setBrush(Qt::white);
-
-    if (highlighted) {   //если узел подсвечен
-        painter->setPen(QPen(Qt::blue, 3));
-        painter->setBrush(Qt::yellow);
-    } else if (option->state & QStyle::State_MouseOver) {  //если курсор поверх узла
-        painter->setBrush(Qt::cyan);
-    }
-
     painter->drawEllipse(centerPos(), nodeCurrentRadius, nodeCurrentRadius);
 }
 

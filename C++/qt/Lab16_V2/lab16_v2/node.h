@@ -23,8 +23,8 @@ public:
     static double nodeCurrentRadius;    //Фактический текущий радиус узла
     static const double nodeRadiusStep; //Шаг измнеения радиуса узла
 
-    //double data;        //Поле с данными (значением узла)
-    char data;
+    double data;        //Поле с данными (значением узла)
+    //char data;
     Node *left;         //Указатель на левый дочерний узел
     Node *right;        //Указатель на правый дочерний узел
     Node *parent;       //Указатель на родительский узел
@@ -47,7 +47,7 @@ protected:
     QRectF boundingRect() const override;   //Метод для получения прямоугольника ограничивающего узел
     QPainterPath shape() const override;    //Метол для получения фигуры узла
     void drawCircle(const QStyleOptionGraphicsItem *option, QPainter *painter);  //Метод отрисовки круглой части узла
-    void drawText(QPainter *painter);       //Метод для отрисовки текста в узле
+    void drawText(QPainter *painter);       //свойства текста в узле
     void connectWithChildren(QPainter *painter);    //Метод для отрисовки соединяющих линий от текущего узла к дочерним
     bool goToPos();                         //Метод перемещения узла в целевую позицию
     void updatePos();                       //Метод для обновления координат узла на графическом виджете на основе вычилсяемых координат
@@ -64,8 +64,8 @@ public:
     static void recalculateRadius();    //Метод перерасчета целевога радиуса узла
     void detachFromParent();            //Метод для отсоединения текщего узла от родительского
     bool isEmpty();                     //Метод проверки, является ли узел условно пустым
-    void insertLeft(Node *node);        //Метод для вставвки узла слева
-    void insertRight(Node *node);       //Метод для вставвки узла справа
+    void insertLeft(Node *node);        //Метод для вставки узла слева
+    void insertRight(Node *node);       //Метод для вставки узла справа
 
 
     //Переопределенные опереаторы равенства и сравнения
