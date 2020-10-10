@@ -23,8 +23,8 @@ public:
     static double nodeCurrentRadius;    //Фактический текущий радиус узла
     static const double nodeRadiusStep; //Шаг измнеения радиуса узла
 
-    double data;        //Поле с данными (значением узла)
-    //char data;
+    //double data;        //Поле с данными (значением узла)
+    char data;
     Node *left;         //Указатель на левый дочерний узел
     Node *right;        //Указатель на правый дочерний узел
     Node *parent;       //Указатель на родительский узел
@@ -35,7 +35,7 @@ public:
     double currX = 0;   //Текущая фактическая координата x
     double currY = 0;   //Текущая фактическая координата y
     bool isInPosition = false;  //Признак, прибыл ли узел в вычисленную целевую позицию
-    bool highlighted = false;   //Признак, подсвечен ли данный узел
+    //bool highlighted = false;   //Признак, подсвечен ли данный узел
     double nodeSpeed = 20.0;     //Базовая скорость движения узла из текущей позиции в целевую вычисленную
     TreeView *graph;         //Указатель на графический виджета для отрисовки узлов
 
@@ -73,11 +73,11 @@ public:
     bool operator>(const Node &rhs) const;
     bool operator<=(const Node &rhs) const;
     bool operator>=(const Node &rhs) const;
-    bool operator==(const double &value) const;
-    bool operator!=(const double &value) const;
-    bool operator<(const double &value) const;
-    bool operator>(const double &value) const;
-    bool operator<=(const double &value) const;
-    bool operator>=(const double &value) const;
+    bool operator==(const char &value) const;
+    bool operator!=(const char &value) const;
+    bool operator<(const char &value) const;
+    bool operator>(const char &value) const;
+    bool operator<=(const char &value) const;
+    bool operator>=(const char &value) const;
 };
 #endif // NODE_H

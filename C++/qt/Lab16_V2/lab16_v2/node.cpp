@@ -2,15 +2,15 @@
 
 //Конструктор с парметром в виде указателя на родительский виджет. Создает условно пустой узел.
 Node::Node(TreeView *graphWidget) : graph(graphWidget) {
-    this->data = -1000000.00;
-    this->data = 'a';
+    //this->data = -1000000.00;
+    //this->data = 'a';
     this->parent = nullptr;
     this->left = nullptr;
     this->right = nullptr;
     this->graph = graphWidget;
     updatePos();
     //Флаг получения событий о наведении курсора
-    setAcceptHoverEvents(true);
+    //setAcceptHoverEvents(true);
     //Флаг, что данный элемент посылает события об изменении своих координат
     setFlag(QGraphicsItem::ItemSendsScenePositionChanges);
 }
@@ -25,7 +25,7 @@ Node::Node(TreeView *graphWidget, char data) : graph(graphWidget) {
     this->graph = graphWidget;
     updatePos();
     //Флаг получения событий о наведении курсора
-    setAcceptHoverEvents(true);
+    //setAcceptHoverEvents(true);
     //Флаг, что данный элемент посылает события об изменении своих координат
     setFlag(QGraphicsItem::ItemSendsScenePositionChanges);
 }
@@ -290,45 +290,45 @@ bool Node::operator>=(const Node &rhs) const {
 }
 
 //Функция-предикат для проверки на равенство значений типа double с заданной точностью
-bool equals(double a, double b, double epsilon = 0.01) {
+bool equals(char a, char b, double epsilon = 0.01) {
     return fabs(a - b) < epsilon;
 }
 
 //Функция-предикат для проверки значений типа double с заданной точностью на отношение "<"
-bool f_less(double a, double b) {
+bool f_less(char a, char b) {
     return !equals(a, b) && signbit(a - b);
 }
 //Функция-предикат для проверки значений типа double с заданной точностью на отношение ">"
-bool f_more(double a, double b) {
+bool f_more(char a, char b) {
     return !equals(a, b) && !signbit(a - b);
 }
 
 // Перегруженный оператор "==" для сравнения значения узла с другим значением такого же типа на равенство
-bool Node::operator==(const double &value) const {
+bool Node::operator==(const char &value) const {
     return equals(data, value);
 }
 
 // Перегруженный оператор "==" для сравнения значения узла с другим значением такого же типа на неравенство
-bool Node::operator!=(const double &value) const {
+bool Node::operator!=(const char &value) const {
     return !equals(data, value);
 }
 
 //Перегруженный оператор "==" для сравнения значения узла с другим значением такого же типа на отношение "<"
-bool Node::operator<(const double &value) const {
+bool Node::operator<(const char &value) const {
     return f_less(data, value);
 }
 
 //Перегруженный оператор "==" для сравнения значенияузла с другим значением такого же типана отношение ">"
-bool Node::operator>(const double &value) const {
+bool Node::operator>(const char &value) const {
     return f_more(data, value);
 }
 // Перегруженный оператор "==" для сравнения значенияузла с другим значением такого же типана отношение "<="
-bool Node::operator<=(const double &value) const {
+bool Node::operator<=(const char &value) const {
     return f_less(data, value) || equals(data, value);
 }
 
 //Перегруженный оператор "==" для сравнения значения узла с другим значением такого же типа на отношение ">="
-bool Node::operator>=(const double &value) const {
+bool Node::operator>=(const char &value) const {
     return f_more(data, value) || equals(data, value);
 }
 

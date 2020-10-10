@@ -123,15 +123,7 @@ void BinaryTree::remove(char key, Node *node) {
         remove(key, node->left);
     } else if (*node < key) {
         remove(key, node->right);
-    } /*else if (nullptr != node->left && nullptr != node->right) {
-        Node *replacingNode = findMin(node->right);
-        if (isFind(replacingNode->data, node->right)) {
-            node->data = replacingNode->data;
-            remove(node->data, node->right);
-        } else {
-            throw runtime_error("Элемент не может быть удален, т.к. дерево не упорядочено!");
-        }
-    } */ else {
+    }  else {
         if (!node->parent && !node->left && !node->right) {
             destroyTree();
             return;
