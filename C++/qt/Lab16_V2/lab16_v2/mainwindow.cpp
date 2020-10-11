@@ -34,4 +34,8 @@ void MainWindow::on_deleteBt_clicked()
 
 }
 
+//Сформировать Дерево поиска
+void MainWindow::on_searchTreeBt_clicked()
+{
 
+}
