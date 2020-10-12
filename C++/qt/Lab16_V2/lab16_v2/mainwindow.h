@@ -30,6 +30,8 @@ private slots:
     void on_addBt_clicked(); //Добавить элемент
     void on_deleteBt_clicked(); //Удалить элемент
 
+    void on_searchTreeBt_clicked();
+
 protected:
    // void mousePressEvent(QMouseEvent *event) override;  //Метод-обработчик события нажатия на кнопку мыши
 };
