@@ -2,7 +2,7 @@
 #include <iostream>
 #include <cstring>
 
-using namespace std:
+using namespace std;
 
 Man::Man(int lName){
     cout << "Constructor is working" << endl;

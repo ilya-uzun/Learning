@@ -1,5 +1,9 @@
 #include <fstream>
+#include <string.h>//strcmp
+#include <iostream>
 #include "Man.h"
+
+using namespace std;
 
 const char filename[] = "dbase.txt";
 int main()
@@ -16,7 +20,7 @@ int main()
     }
 
     int i = 0;
-    while (fin.getline(buf? l_buf))
+    while (fin.getline(buf, l_buf))
       {
         if (i >= maxn_record)
           {
@@ -27,7 +31,7 @@ int main()
         man[i].SetPay(buf);
         i++;
       }
-    int n_recor = i, n_man = 0;
+    int n_record = i, n_man = 0;
     float mean_pay = 0;
 
     while (true)
