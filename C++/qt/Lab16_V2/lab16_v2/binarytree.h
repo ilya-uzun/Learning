@@ -24,9 +24,9 @@ private:
 private:
     void destroyTree(Node *node);   //Рекурсивный метод удаления дерева
     Node * balancedTree(VectorIter* iter, VectorIter* end, long n);  //Метод для построения идеально-сбалансировного дерева
-    void arrayToBST(char* arr, Node *root, int* index_ptr);  //Метод записи значений массива в дерево
+    void arrayToBST(char* arr, Node *root, char* index_ptr);  //Метод записи значений массива в дерево
     void sortTree(Node *root);          //Метод для сортировки дерева, сортировка нужна ля преобразования в бинарное дерево поиска convertToBalancedBST
-    void storeInOrder(Node *node, char* inorder, int* index_ptr);  //Метод сохранения значений из дерева в массив
+    void storeInOrder(Node *node, char* inorder, char* index_ptr);  //Метод сохранения значений из дерева в массив
     void storeDataPreOrder(Node *root, vector<char> &dataList);    //Метод сохранения значений из дерева в вектор
     void update(Node *currNode, int level, int col);   //Метод обновления целевых позиций узлов дерева
     void addNodesToScene(QGraphicsScene *widgetScene, Node *root);  //Метод добавления узлов в сцену виджета

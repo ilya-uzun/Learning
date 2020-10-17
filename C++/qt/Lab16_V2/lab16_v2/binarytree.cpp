@@ -180,18 +180,16 @@ Node *BinaryTree::balancedTree(VectorIter *iter, VectorIter *end, long n) {
 }
 
 //Рекурсивный метод для сохранения значений элементов дерева в массив в симметричном обходе
-void BinaryTree::storeInOrder(Node *node, char *inorder, int *index_ptr) {
+void BinaryTree::storeInOrder(Node *node, char *inorder, char *index_ptr) {
     if (node == nullptr) {
         return;
     }
 
     //Сбор значений из левого поддерева
     storeInOrder(node->left, inorder, index_ptr);
-
     //Запись значения узла в массив
     inorder[*index_ptr] = node->data;
     (*index_ptr)++;  //увеличение индекса
-
     //Сбор значений из правого поддерева
     storeInOrder(node->right, inorder, index_ptr);
 }
@@ -205,10 +203,10 @@ void BinaryTree::sortTree(Node *root) {
     char n = countNodes(root);
     // Create a temp array arr[] and store inorder traversal of tree in arr[]
     char *arr = new char[n];
-    int i = 0;
+    char i = '1';
     storeInOrder(root, arr, &i);
     // Copy array elements back to Binary Tree
-    i = 0;
+    i = '1';
     arrayToBST(arr, root, &i);
     // delete dynamically allocated memory to avoid meory leak
     delete[] arr;
@@ -216,7 +214,7 @@ void BinaryTree::sortTree(Node *root) {
 
 //Рекурсивный метод для распределения значений из массива в элементы дерева в симметричном обходе.
 //Если элементы в массиве упорядочены, то делает дерево упорядоченным.
-void BinaryTree::arrayToBST(char *arr, Node *root, int *index_ptr) {
+void BinaryTree::arrayToBST(char *arr, Node *root, char *index_ptr) {
     if (root == nullptr) { return; }
     //Вызов метода для левого поддерева
     arrayToBST(arr, root->left, index_ptr);
