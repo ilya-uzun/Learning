@@ -12,10 +12,11 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -24,28 +25,28 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QWidget *layoutWidget;
-    QGridLayout *gridLayout_2;
-    QTextEdit *textEdit_13;
-    QTextEdit *textEdit_14;
-    QTextEdit *textEdit_10;
-    QTextEdit *textEdit_18;
-    QTextEdit *textEdit_15;
-    QTextEdit *textEdit_12;
-    QTextEdit *textEdit_16;
-    QTextEdit *textEdit_11;
-    QTextEdit *textEdit_17;
     QWidget *widget;
+    QGridLayout *gridLayout_3;
+    QLabel *label;
+    QLabel *label_2;
+    QLabel *label_3;
+    QLabel *label_7;
+    QLabel *label_5;
+    QLabel *label_6;
+    QLabel *label_4;
+    QLabel *label_8;
+    QLabel *label_9;
+    QWidget *widget1;
     QGridLayout *gridLayout;
-    QTextEdit *textEdit;
-    QTextEdit *textEdit_2;
-    QTextEdit *textEdit_3;
-    QTextEdit *textEdit_6;
-    QTextEdit *textEdit_5;
-    QTextEdit *textEdit_4;
-    QTextEdit *textEdit_9;
-    QTextEdit *textEdit_8;
-    QTextEdit *textEdit_7;
+    QLineEdit *lineEdit;
+    QLineEdit *lineEdit_2;
+    QLineEdit *lineEdit_3;
+    QLineEdit *lineEdit_5;
+    QLineEdit *lineEdit_6;
+    QLineEdit *lineEdit_4;
+    QLineEdit *lineEdit_8;
+    QLineEdit *lineEdit_9;
+    QLineEdit *lineEdit_7;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -56,127 +57,119 @@ public:
         MainWindow->resize(755, 619);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        layoutWidget = new QWidget(centralwidget);
-        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(460, 40, 224, 224));
-        gridLayout_2 = new QGridLayout(layoutWidget);
-        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        textEdit_13 = new QTextEdit(layoutWidget);
-        textEdit_13->setObjectName(QString::fromUtf8("textEdit_13"));
-        QFont font;
-        font.setPointSize(12);
-        textEdit_13->setFont(font);
-
-        gridLayout_2->addWidget(textEdit_13, 1, 0, 1, 1);
-
-        textEdit_14 = new QTextEdit(layoutWidget);
-        textEdit_14->setObjectName(QString::fromUtf8("textEdit_14"));
-        textEdit_14->setFont(font);
-
-        gridLayout_2->addWidget(textEdit_14, 1, 1, 1, 1);
-
-        textEdit_10 = new QTextEdit(layoutWidget);
-        textEdit_10->setObjectName(QString::fromUtf8("textEdit_10"));
-        textEdit_10->setFont(font);
-
-        gridLayout_2->addWidget(textEdit_10, 0, 0, 1, 1);
-
-        textEdit_18 = new QTextEdit(layoutWidget);
-        textEdit_18->setObjectName(QString::fromUtf8("textEdit_18"));
-        textEdit_18->setFont(font);
-
-        gridLayout_2->addWidget(textEdit_18, 2, 2, 1, 1);
-
-        textEdit_15 = new QTextEdit(layoutWidget);
-        textEdit_15->setObjectName(QString::fromUtf8("textEdit_15"));
-        textEdit_15->setFont(font);
-
-        gridLayout_2->addWidget(textEdit_15, 1, 2, 1, 1);
-
-        textEdit_12 = new QTextEdit(layoutWidget);
-        textEdit_12->setObjectName(QString::fromUtf8("textEdit_12"));
-        textEdit_12->setFont(font);
-
-        gridLayout_2->addWidget(textEdit_12, 0, 2, 1, 1);
-
-        textEdit_16 = new QTextEdit(layoutWidget);
-        textEdit_16->setObjectName(QString::fromUtf8("textEdit_16"));
-        textEdit_16->setFont(font);
-
-        gridLayout_2->addWidget(textEdit_16, 2, 0, 1, 1);
-
-        textEdit_11 = new QTextEdit(layoutWidget);
-        textEdit_11->setObjectName(QString::fromUtf8("textEdit_11"));
-        textEdit_11->setFont(font);
-
-        gridLayout_2->addWidget(textEdit_11, 0, 1, 1, 1);
-
-        textEdit_17 = new QTextEdit(layoutWidget);
-        textEdit_17->setObjectName(QString::fromUtf8("textEdit_17"));
-        textEdit_17->setFont(font);
-
-        gridLayout_2->addWidget(textEdit_17, 2, 1, 1, 1);
-
         widget = new QWidget(centralwidget);
         widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(40, 40, 224, 224));
-        gridLayout = new QGridLayout(widget);
+        widget->setGeometry(QRect(50, 330, 221, 191));
+        gridLayout_3 = new QGridLayout(widget);
+        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
+        gridLayout_3->setContentsMargins(0, 0, 0, 0);
+        label = new QLabel(widget);
+        label->setObjectName(QString::fromUtf8("label"));
+
+        gridLayout_3->addWidget(label, 0, 0, 1, 1);
+
+        label_2 = new QLabel(widget);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+
+        gridLayout_3->addWidget(label_2, 0, 1, 1, 1);
+
+        label_3 = new QLabel(widget);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+
+        gridLayout_3->addWidget(label_3, 0, 2, 1, 1);
+
+        label_7 = new QLabel(widget);
+        label_7->setObjectName(QString::fromUtf8("label_7"));
+
+        gridLayout_3->addWidget(label_7, 1, 0, 1, 1);
+
+        label_5 = new QLabel(widget);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+
+        gridLayout_3->addWidget(label_5, 1, 1, 1, 1);
+
+        label_6 = new QLabel(widget);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+
+        gridLayout_3->addWidget(label_6, 1, 2, 1, 1);
+
+        label_4 = new QLabel(widget);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+
+        gridLayout_3->addWidget(label_4, 2, 0, 1, 1);
+
+        label_8 = new QLabel(widget);
+        label_8->setObjectName(QString::fromUtf8("label_8"));
+
+        gridLayout_3->addWidget(label_8, 2, 1, 1, 1);
+
+        label_9 = new QLabel(widget);
+        label_9->setObjectName(QString::fromUtf8("label_9"));
+
+        gridLayout_3->addWidget(label_9, 2, 2, 1, 1);
+
+        widget1 = new QWidget(centralwidget);
+        widget1->setObjectName(QString::fromUtf8("widget1"));
+        widget1->setGeometry(QRect(50, 50, 221, 161));
+        gridLayout = new QGridLayout(widget1);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        textEdit = new QTextEdit(widget);
-        textEdit->setObjectName(QString::fromUtf8("textEdit"));
-        textEdit->setFont(font);
+        lineEdit = new QLineEdit(widget1);
+        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        QFont font;
+        font.setPointSize(12);
+        font.setStyleStrategy(QFont::PreferDefault);
+        lineEdit->setFont(font);
 
-        gridLayout->addWidget(textEdit, 0, 0, 1, 1);
+        gridLayout->addWidget(lineEdit, 0, 0, 1, 1);
 
-        textEdit_2 = new QTextEdit(widget);
-        textEdit_2->setObjectName(QString::fromUtf8("textEdit_2"));
-        textEdit_2->setFont(font);
+        lineEdit_2 = new QLineEdit(widget1);
+        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
+        lineEdit_2->setFont(font);
 
-        gridLayout->addWidget(textEdit_2, 0, 1, 1, 1);
+        gridLayout->addWidget(lineEdit_2, 0, 1, 1, 1);
 
-        textEdit_3 = new QTextEdit(widget);
-        textEdit_3->setObjectName(QString::fromUtf8("textEdit_3"));
-        textEdit_3->setFont(font);
+        lineEdit_3 = new QLineEdit(widget1);
+        lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
+        lineEdit_3->setFont(font);
 
-        gridLayout->addWidget(textEdit_3, 0, 2, 1, 1);
+        gridLayout->addWidget(lineEdit_3, 0, 2, 1, 1);
 
-        textEdit_6 = new QTextEdit(widget);
-        textEdit_6->setObjectName(QString::fromUtf8("textEdit_6"));
-        textEdit_6->setFont(font);
+        lineEdit_5 = new QLineEdit(widget1);
+        lineEdit_5->setObjectName(QString::fromUtf8("lineEdit_5"));
+        lineEdit_5->setFont(font);
 
-        gridLayout->addWidget(textEdit_6, 1, 0, 1, 1);
+        gridLayout->addWidget(lineEdit_5, 1, 0, 1, 1);
 
-        textEdit_5 = new QTextEdit(widget);
-        textEdit_5->setObjectName(QString::fromUtf8("textEdit_5"));
-        textEdit_5->setFont(font);
+        lineEdit_6 = new QLineEdit(widget1);
+        lineEdit_6->setObjectName(QString::fromUtf8("lineEdit_6"));
+        lineEdit_6->setFont(font);
 
-        gridLayout->addWidget(textEdit_5, 1, 1, 1, 1);
+        gridLayout->addWidget(lineEdit_6, 1, 1, 1, 1);
 
-        textEdit_4 = new QTextEdit(widget);
-        textEdit_4->setObjectName(QString::fromUtf8("textEdit_4"));
-        textEdit_4->setFont(font);
+        lineEdit_4 = new QLineEdit(widget1);
+        lineEdit_4->setObjectName(QString::fromUtf8("lineEdit_4"));
+        lineEdit_4->setFont(font);
 
-        gridLayout->addWidget(textEdit_4, 1, 2, 1, 1);
+        gridLayout->addWidget(lineEdit_4, 1, 2, 1, 1);
 
-        textEdit_9 = new QTextEdit(widget);
-        textEdit_9->setObjectName(QString::fromUtf8("textEdit_9"));
-        textEdit_9->setFont(font);
+        lineEdit_8 = new QLineEdit(widget1);
+        lineEdit_8->setObjectName(QString::fromUtf8("lineEdit_8"));
+        lineEdit_8->setFont(font);
 
-        gridLayout->addWidget(textEdit_9, 2, 0, 1, 1);
+        gridLayout->addWidget(lineEdit_8, 2, 0, 1, 1);
 
-        textEdit_8 = new QTextEdit(widget);
-        textEdit_8->setObjectName(QString::fromUtf8("textEdit_8"));
-        textEdit_8->setFont(font);
+        lineEdit_9 = new QLineEdit(widget1);
+        lineEdit_9->setObjectName(QString::fromUtf8("lineEdit_9"));
+        lineEdit_9->setFont(font);
 
-        gridLayout->addWidget(textEdit_8, 2, 1, 1, 1);
+        gridLayout->addWidget(lineEdit_9, 2, 1, 1, 1);
 
-        textEdit_7 = new QTextEdit(widget);
-        textEdit_7->setObjectName(QString::fromUtf8("textEdit_7"));
-        textEdit_7->setFont(font);
+        lineEdit_7 = new QLineEdit(widget1);
+        lineEdit_7->setObjectName(QString::fromUtf8("lineEdit_7"));
+        lineEdit_7->setFont(font);
 
-        gridLayout->addWidget(textEdit_7, 2, 2, 1, 1);
+        gridLayout->addWidget(lineEdit_7, 2, 2, 1, 1);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
@@ -195,6 +188,15 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
+        label->setText(QString());
+        label_2->setText(QString());
+        label_3->setText(QString());
+        label_7->setText(QString());
+        label_5->setText(QString());
+        label_6->setText(QString());
+        label_4->setText(QString());
+        label_8->setText(QString());
+        label_9->setText(QString());
     } // retranslateUi
 
 };
