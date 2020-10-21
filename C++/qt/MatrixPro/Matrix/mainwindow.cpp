@@ -39,15 +39,15 @@ void MainWindow::on_pushButton_clicked()
     int int18  =  ui->lineEdit_18->text().toInt();
 
     //перевод из int  в QString
-    QString dec1 = QString::number(int1);
-    QString dec2 = QString::number(int2);
-    QString dec3 = QString::number(int3);
-    QString dec4 = QString::number(int4);
-    QString dec5 = QString::number(int5);
-    QString dec6 = QString::number(int6);
-    QString dec7 = QString::number(int7);
-    QString dec8 = QString::number(int8);
-    QString dec9 = QString::number(int9);
+    QString dec1 = QString::number(int1 + int10);
+    QString dec2 = QString::number(int2 + int11);
+    QString dec3 = QString::number(int3 + int12);
+    QString dec4 = QString::number(int4 + int13);
+    QString dec5 = QString::number(int5 + int14);
+    QString dec6 = QString::number(int6 + int15);
+    QString dec7 = QString::number(int7 + int16);
+    QString dec8 = QString::number(int8 + int17);
+    QString dec9 = QString::number(int9 + int18);
     // Запись в Libel
     ui->label->setText(dec1);
     ui->label_2->setText(dec2);
