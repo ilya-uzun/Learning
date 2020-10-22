@@ -6,6 +6,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this); 
+
+    int1 = new int;
 }
 
 MainWindow::~MainWindow()
@@ -17,7 +19,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_clicked()
 {
     //Запись из и перевод из QString в int
-    int int1  =  ui->lineEdit->text().toInt();
+    int1  =  ui->lineEdit->text().toInt();
     int int2  =  ui->lineEdit_2->text().toInt();
     int int3  =  ui->lineEdit_3->text().toInt();
     int int4  =  ui->lineEdit_4->text().toInt();
