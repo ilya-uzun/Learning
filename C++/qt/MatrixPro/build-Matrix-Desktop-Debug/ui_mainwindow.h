@@ -43,12 +43,12 @@ public:
     QLineEdit *lineEdit;
     QLineEdit *lineEdit_2;
     QLineEdit *lineEdit_3;
-    QLineEdit *lineEdit_5;
-    QLineEdit *lineEdit_4;
     QLineEdit *lineEdit_6;
     QLineEdit *lineEdit_7;
     QLineEdit *lineEdit_8;
     QLineEdit *lineEdit_9;
+    QLineEdit *lineEdit_5;
+    QLineEdit *lineEdit_4;
     QWidget *layoutWidget_2;
     QGridLayout *gridLayout_2;
     QLineEdit *lineEdit_10;
@@ -151,18 +151,6 @@ public:
 
         gridLayout->addWidget(lineEdit_3, 0, 2, 1, 1);
 
-        lineEdit_5 = new QLineEdit(layoutWidget1);
-        lineEdit_5->setObjectName(QString::fromUtf8("lineEdit_5"));
-        lineEdit_5->setFont(font);
-
-        gridLayout->addWidget(lineEdit_5, 1, 0, 1, 1);
-
-        lineEdit_4 = new QLineEdit(layoutWidget1);
-        lineEdit_4->setObjectName(QString::fromUtf8("lineEdit_4"));
-        lineEdit_4->setFont(font);
-
-        gridLayout->addWidget(lineEdit_4, 1, 1, 1, 1);
-
         lineEdit_6 = new QLineEdit(layoutWidget1);
         lineEdit_6->setObjectName(QString::fromUtf8("lineEdit_6"));
         lineEdit_6->setFont(font);
@@ -186,6 +174,18 @@ public:
         lineEdit_9->setFont(font);
 
         gridLayout->addWidget(lineEdit_9, 2, 2, 1, 1);
+
+        lineEdit_5 = new QLineEdit(layoutWidget1);
+        lineEdit_5->setObjectName(QString::fromUtf8("lineEdit_5"));
+        lineEdit_5->setFont(font);
+
+        gridLayout->addWidget(lineEdit_5, 1, 1, 1, 1);
+
+        lineEdit_4 = new QLineEdit(layoutWidget1);
+        lineEdit_4->setObjectName(QString::fromUtf8("lineEdit_4"));
+        lineEdit_4->setFont(font);
+
+        gridLayout->addWidget(lineEdit_4, 1, 0, 1, 1);
 
         layoutWidget_2 = new QWidget(centralwidget);
         layoutWidget_2->setObjectName(QString::fromUtf8("layoutWidget_2"));

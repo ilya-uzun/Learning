@@ -59,3 +59,8 @@ void MainWindow::on_pushButton_clicked()
     ui->label_8->setText(dec8);
     ui->label_9->setText(dec9);
 }
+
+void MainWindow::on_pushButton_2_clicked()
+{
+
+}

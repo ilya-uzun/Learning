@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Сумма</string>
     </property>
    </widget>
    <widget class="QWidget" name="layoutWidget">
@@ -305,6 +305,19 @@
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>290</y>
+      <width>111</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Сумма</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
