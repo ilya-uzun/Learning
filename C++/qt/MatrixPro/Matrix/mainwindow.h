@@ -12,7 +12,24 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 private:
-    int *int1;
+    int int1;
+    int int2;
+    int int3;
+    int int4;
+    int int5;
+    int int6;
+    int int7;
+    int int8;
+    int int9;
+    int int10;
+    int int11;
+    int int12;
+    int int13;
+    int int14;
+    int int15;
+    int int16;
+    int int17;
+    int int18;
 
 public:
     MainWindow(QWidget *parent = nullptr);
