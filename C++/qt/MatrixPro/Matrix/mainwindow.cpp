@@ -6,27 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this); 
-        //Запись из и перевод из QString в int
-     int1  =  ui->lineEdit->text().toInt();
-     int2  =  ui->lineEdit_2->text().toInt();
-     int3  =  ui->lineEdit_3->text().toInt();
-     int4  =  ui->lineEdit_4->text().toInt();
-     int5  =  ui->lineEdit_5->text().toInt();
-     int6  =  ui->lineEdit_6->text().toInt();
-     int7  =  ui->lineEdit_7->text().toInt();
-     int8  =  ui->lineEdit_8->text().toInt();
-     int9  =  ui->lineEdit_9->text().toInt();
 
-    //Запись из и перевод из QString в int
-     int10  =  ui->lineEdit_10->text().toInt();
-     int11  =  ui->lineEdit_11->text().toInt();
-     int12  =  ui->lineEdit_12->text().toInt();
-     int13  =  ui->lineEdit_13->text().toInt();
-     int14  =  ui->lineEdit_14->text().toInt();
-     int15  =  ui->lineEdit_15->text().toInt();
-     int16  =  ui->lineEdit_16->text().toInt();
-     int17  =  ui->lineEdit_17->text().toInt();
-     int18  =  ui->lineEdit_18->text().toInt();
 
 }
 
@@ -38,6 +18,27 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
+    //Запись из и перевод из QString в int
+  int1  =  ui->lineEdit->text().toInt();
+ int int2  =  ui->lineEdit_2->text().toInt();
+ int int3  =  ui->lineEdit_3->text().toInt();
+ int int4  =  ui->lineEdit_4->text().toInt();
+ int int5  =  ui->lineEdit_5->text().toInt();
+ int int6  =  ui->lineEdit_6->text().toInt();
+ int int7  =  ui->lineEdit_7->text().toInt();
+ int int8  =  ui->lineEdit_8->text().toInt();
+ int int9  =  ui->lineEdit_9->text().toInt();
+
+//Запись из и перевод из QString в int
+ int10  =  ui->lineEdit_10->text().toInt();
+ int11  =  ui->lineEdit_11->text().toInt();
+ int12  =  ui->lineEdit_12->text().toInt();
+ int13  =  ui->lineEdit_13->text().toInt();
+ int14  =  ui->lineEdit_14->text().toInt();
+ int15  =  ui->lineEdit_15->text().toInt();
+ int16  =  ui->lineEdit_16->text().toInt();
+ int17  =  ui->lineEdit_17->text().toInt();
+ int18  =  ui->lineEdit_18->text().toInt();
     //перевод из int  в QString
     QString dec1 = QString::number(int1 + int10);
     QString dec2 = QString::number(int2 + int11);
