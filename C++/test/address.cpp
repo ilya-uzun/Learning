@@ -16,5 +16,6 @@ cout <<" i j k\n";
 cout << i << j << k << endl;
 f (i, &j, k);
 cout << i << j << k << endl;
+//результат 1 3 4 
 return 0;
 }
