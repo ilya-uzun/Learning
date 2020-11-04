@@ -26,8 +26,8 @@ bool number_3(int n, int m)
 int main ()
 {
 int n, m;
-cout << "Enter n : " << endl; cin >> n;
-
+cout << "Enter n : " << endl; 
+cin >> n;
 cout << "Enter m : " << endl;
 cin >> m; // вводим m
 cout << "m - (++n) = " << number_1(n, m) << endl;
