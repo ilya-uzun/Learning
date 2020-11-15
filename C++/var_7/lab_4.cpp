@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     setlocale(LC_ALL, "rus");
-    const int n = 150;
+    const int n = 101;
     int arr[n];
     int size = 100;
     cout << "Укажите размер массива от 0 до 100 -    ";
@@ -60,19 +60,27 @@ int main()
 
 
     // Добавить после элемента массива с заданным индексом элемент со значением 100.
-    //добавляем элемент в массив после M[i-1]+2 старое
+   
+    
+    
     for (int i = 0; i < size; i++)
         // проверка чтобы первый массив е
     {
-        cout<<endl << "Enter element ";
-
+        size = size + 1; // увеличить размер на один
+        int nn;// число от пользователя
+        cout<< endl << "Ведите номер элемента ";
+        cin >> nn;
         {
-            for (int j = size; j > i; j--)
-                arr[j] = arr[j - 1];
+            
+             for (int j = size; j < nn; j++) // считаем пока не будет больше введеного числа
+                arr[10] = 100;
                 size++;
-            arr[i + 1] = (i > 0) ? (arr[i - 1] + 2) : (arr[size - 1] + 2);
-            cout << endl<<"Добавляем после M[i-1]+2 = \t";
+            
+             cout << endl<<"Добавляем после введенного 100 : ";
+
             for (int i = 0; i < size; i++) cout << arr[i] << ' ';
             break;
         }
-    }     return 0;}
+    }     
+  return 0;
+}
