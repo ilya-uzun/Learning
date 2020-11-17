@@ -25,7 +25,7 @@ void ShowArray(int* const arr, const int size)
     cout << endl;
 }
 
-void push_back(int *&arr, int &size, int value)
+void push_100(int *&arr, int &size, int value)
 {
     size++;
     int *newArr = new int[size+1]; // сoздаём новый массив больший на единицу
@@ -76,7 +76,7 @@ int main()
     int *arr = new int[size]; // указатель под массив и выделяем под него память
     FillArrey(arr, size); // вызываем функцию для создания массива
     ShowArray(arr, size); // вывод на экран
-    push_back(arr, size, 6);
+    push_100(arr, size, 6);
     ShowArray(arr, size); // вывод на экран новый массив
     //pop_back(arr, size);
     //ShowArray(arr, size); // вывод на экран новый массив
