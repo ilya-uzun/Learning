@@ -31,8 +31,13 @@ void ShowArray(int **matrix_1, int nR, int nC)
 	 }  
 }
 void ChangeArrey(int **matrix_1, int nR, int nC)
-{
-	cout << endl;
+  {
+	 cout << endl;
+
+	 int n = 1;
+	 int *a1 = new int[n];
+	 int *a2 = new int[n];
+
 	//создаём новый массив для запеси заменны
 	int **matrix_2= new int* [nR];// указатель на указатель типа int, память под массив указателей на строки массива
 	int i,j,ch;
@@ -42,24 +47,45 @@ void ChangeArrey(int **matrix_1, int nR, int nC)
 		matrix_2[i] = new int[nC]; // каждому элементу указателей на сроку присваиваим адрес начала участка памяти
 	  }
 	
-     // 
+    // Выводим массив
+	// for (int  i= 0; i < nR; i++)
+	//  {
+	// 	for (int j = 0; j < nC; j++)
+	// 	{
+	// 		matrix_2[i][j] = matrix_1[i][j];			
+	// 	}
+	//  }  
 
-	int n =1;
-	 int *a1 = new int[n];
-	 int *a2 = new int[n];
-	 for (int  i= 0; i < nR; i++)
-	  {
-		  a1[i] = matrix_1[i][1];
-		  a2[i] = matrix_1[i][2];
 
-		  matrix_1[i][1] = a2[i];
-		  matrix_1[i][2] = a1[i];
-	  }
+	 	for (int  i= 0; i < nR; i++)
+	 	 {
+			 if (matrix_1[i][j] == matrix_1[i][j+1])
+	           {
+		 		 a1[i] = matrix_1[i][1];
+		 		 a2[i] = matrix_1[i][2];
+
+		  		 matrix_1[i][1] = a2[i];
+		  		 matrix_1[i][2] = a1[i];
+			  } else
+			  {
+				  matrix_1[i][j] = matrix_1[i][j];
+			  }
+			  
+	   	 }
+	  
+
+	// for (int  i= 0; i < nR; i++)
+	//  {
+	// 	for (int j = 0; j < nC; j++)
+	// 	{
+	// 		matrix_1[i][j] = matrix_2[i][j];			
+	// 	}
+	//  }  
 
 	delete[] a1;
 	delete[] a2;
 	delete[] matrix_2;
-}
+  }
 
 
 int main()
@@ -80,4 +106,4 @@ int main()
     ShowArray(matrix_1, nRow, nCol); // вывод на экран
 	delete[] matrix_1;
 	return 0;
-	}
+}
