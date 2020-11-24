@@ -42,10 +42,11 @@ void ChangeArrey(int **matrix_1, int nR, int nC)
 	int **matrix_2= new int* [nR];// указатель на указатель типа int, память под массив указателей на строки массива
 	int i,j,ch;
 	// Цикл для выделение памяти под каждую строку
-	for (i=0; i<nR; i++)
-	  {
-		matrix_2[i] = new int[nC]; // каждому элементу указателей на сроку присваиваим адрес начала участка памяти
-	  }
+	matrix_2[i] = new int[nC];
+	// for (i=0; i<nR; i++)
+	//   {
+	// 	 // каждому элементу указателей на сроку присваиваим адрес начала участка памяти
+	//   }
 	
     // Выводим массив
 	// for (int  i= 0; i < nR; i++)
@@ -55,32 +56,37 @@ void ChangeArrey(int **matrix_1, int nR, int nC)
 	// 		matrix_2[i][j] = matrix_1[i][j];			
 	// 	}
 	//  }  
+/*  если условие выполняется  вкаждом цыкле ошибки сигментации нет, 
+при попытке несколько раз прописать -ошибка  */ 
 
+	 	// for (int  i= 0; i < nR; i++)
+	 	//  {
+		// 	  for (int  j= 0; j < nC; j++)
+	 	// 		 {
+		// 	//  if (matrix_1[i][j] == matrix_1[i+1][j]) 
+	    //     //    {
+		//  	// 	 a1[i] = matrix_1[i][1];
+		//  	// 	 a2[i] = matrix_1[i][2];
 
-	 	for (int  i= 0; i < nR; i++)
-	 	 {
-			 if (matrix_1[i][j] == matrix_1[i][j+1])
-	           {
-		 		 a1[i] = matrix_1[i][1];
-		 		 a2[i] = matrix_1[i][2];
-
-		  		 matrix_1[i][1] = a2[i];
-		  		 matrix_1[i][2] = a1[i];
-			  } else
-			  {
-				  matrix_1[i][j] = matrix_1[i][j];
-			  }
-			  
-	   	 }
+		//   	// 	 matrix_1[i][1] = a2[i];
+		//   	// 	 matrix_1[i][2] = a1[i];
+		// 	//   } else
+		// 	//   {
+		// 	// 	cout << "Матрица не имеет одинаковых первых элементов" << endl;
+		// 	// 	 matrix_1[i][j] = matrix_1[i][j];
+		// 	//   }
+		// 	 		 matrix_2[i][j] = matrix_1[i][j];
+		// 		  }
+	   	//  }
 	  
-
-	// for (int  i= 0; i < nR; i++)
-	//  {
-	// 	for (int j = 0; j < nC; j++)
-	// 	{
-	// 		matrix_1[i][j] = matrix_2[i][j];			
-	// 	}
-	//  }  
+// незаписвает в новую матрицу
+	for (int  i= 0; i < nR; i++)
+	 {
+		for (int j = 0; j < nC; j++)
+		{
+			matrix_2[i][j] = matrix_1[i][j];			
+		}
+	 }  
 
 	delete[] a1;
 	delete[] a2;
