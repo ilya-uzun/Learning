@@ -113,3 +113,35 @@ int main()
 	delete[] matrix_1;
 	return 0;
 }
+
+
+/* вроде рабочий код
+
+const int n = 3;
+const int m = 3;
+int mass[n][m];
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < m; j++)
+    {
+        mass[i][j] = rand() % 5;
+        std::cout << mass[i][j] << " ";
+    }
+    std::cout << std::endl;
+}
+
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < m; j++)
+    {
+        for (int s = i; s < n; s++)
+        {
+            for (int t = j + 1; t < m; t++)
+                if (mass[i][j] == mass[s][t])
+                {
+                    std::cout << "mass[" << i << "][ " << j <<
+                        "] == mass[ " << s << "][" << t << "]" << std::endl;
+                }
+        }
+    }
+*/
