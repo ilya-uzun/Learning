@@ -32,17 +32,36 @@ void ShowArray(int **matrix_1, int nR, int nC)
 }
 void ChangeArrey(int **matrix_1, int nR, int nC)
   {
-	 cout << endl;
 
-	 int n = 1;
-	 int *a1 = new int[n];
-	 int *a2 = new int[n];
+//int mass[nR][nC];
+
+
+	for (int i = 0; i < nR; i++)
+	{
+		for (int j = 0; j < nC; j++)
+		{
+			for (int s = i; s < nR; s++)
+			{
+				for (int t = j + 1; t < nC; t++)
+					if (matrix_1[i][j]== matrix_1[s][t])
+					{
+						std::cout << "mass[" << i << "][ " << j <<
+							"] == mass[ " << s << "][" << t << "]" << std::endl;
+					}
+			}
+		}
+	}
+	//  cout << endl;
+
+	//  int n = 1;
+	//  int *a1 = new int[n];
+	//  int *a2 = new int[n];
 
 	//создаём новый массив для запеси заменны
-	int **matrix_2= new int* [nR];// указатель на указатель типа int, память под массив указателей на строки массива
-	int i,j,ch;
+	// int **matrix_2= new int* [nR];// указатель на указатель типа int, память под массив указателей на строки массива
+	// int i,j,ch;
 	// Цикл для выделение памяти под каждую строку
-	matrix_2[i] = new int[nC];
+	// matrix_2[i] = new int[nC];
 	// for (i=0; i<nR; i++)
 	//   {
 	// 	 // каждому элементу указателей на сроку присваиваим адрес начала участка памяти
@@ -80,17 +99,17 @@ void ChangeArrey(int **matrix_1, int nR, int nC)
 	   	//  }
 	  
 // незаписвает в новую матрицу
-	for (int  i= 0; i < nR; i++)
-	 {
-		for (int j = 0; j < nC; j++)
-		{
-			matrix_2[i][j] = matrix_1[i][j];			
-		}
-	 }  
+	// for (int  i= 0; i < nR; i++)
+	//  {
+	// 	for (int j = 0; j < nC; j++)
+	// 	{
+	// 		matrix_2[i][j] = matrix_1[i][j];			
+	// 	}
+	//  }  
 
-	delete[] a1;
-	delete[] a2;
-	delete[] matrix_2;
+	// delete[] a1;
+	// delete[] a2;
+	// delete[] matrix_2;
   }
 
 
