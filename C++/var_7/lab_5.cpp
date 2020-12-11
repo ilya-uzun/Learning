@@ -33,24 +33,32 @@ void ShowArray(int **matrix_1, int nR, int nC)
 void ChangeArrey(int **matrix_1, int nR, int nC)
   {
 
-//int mass[nR][nC];
 
+	// for (int i = 0; i < nR; i++)
+	// {
+	// 	for (int j = 0; j < nC; j++)
+	// 	{
+	// 		for (int s = i; s < nR; s++)
+	// 		{
+	// 			for (int t = j + 1; t < nC; t++)
+	// 				if (matrix_1[i][j]== matrix_1[s][t])
+	// 				{
+	// 					std::cout << "mass[" << i << "][ " << j <<
+	// 						"] == mass[ " << s << "][" << t << "]" << std::endl;
+	// 				}
+	// 		}
+	// 	}
+	// }
 
-	for (int i = 0; i < nR; i++)
+		for (int i = 0; i < 3; i++)
 	{
-		for (int j = 0; j < nC; j++)
-		{
-			for (int s = i; s < nR; s++)
-			{
-				for (int t = j + 1; t < nC; t++)
-					if (matrix_1[i][j]== matrix_1[s][t])
+				for (int j = 0; j < 3; j++)
 					{
-						std::cout << "mass[" << i << "][ " << j <<
-							"] == mass[ " << s << "][" << t << "]" << std::endl;
+						std::cout << i << " " << j << std::endl;
 					}
-			}
-		}
+			
 	}
+
 	//  cout << endl;
 
 	//  int n = 1;
@@ -98,18 +106,6 @@ void ChangeArrey(int **matrix_1, int nR, int nC)
 		// 		  }
 	   	//  }
 	  
-// незаписвает в новую матрицу
-	// for (int  i= 0; i < nR; i++)
-	//  {
-	// 	for (int j = 0; j < nC; j++)
-	// 	{
-	// 		matrix_2[i][j] = matrix_1[i][j];			
-	// 	}
-	//  }  
-
-	// delete[] a1;
-	// delete[] a2;
-	// delete[] matrix_2;
   }
 
 
