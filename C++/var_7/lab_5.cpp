@@ -33,79 +33,18 @@ void ShowArray(int **matrix_1, int nR, int nC)
 void ChangeArrey(int **matrix_1, int nR, int nC)
   {
 
-
-	// for (int i = 0; i < nR; i++)
-	// {
-	// 	for (int j = 0; j < nC; j++)
-	// 	{
-	// 		for (int s = i; s < nR; s++)
-	// 		{
-	// 			for (int t = j + 1; t < nC; t++)
-	// 				if (matrix_1[i][j]== matrix_1[s][t])
-	// 				{
-	// 					std::cout << "mass[" << i << "][ " << j <<
-	// 						"] == mass[ " << s << "][" << t << "]" << std::endl;
-	// 				}
-	// 		}
-	// 	}
-	// }
-
-		for (int i = 0; i < 3; i++)
-	{
-				for (int j = 0; j < 3; j++)
-					{
-						std::cout << i << " " << j << std::endl;
-					}
-			
-	}
-
-	//  cout << endl;
-
-	//  int n = 1;
-	//  int *a1 = new int[n];
-	//  int *a2 = new int[n];
-
-	//создаём новый массив для запеси заменны
-	// int **matrix_2= new int* [nR];// указатель на указатель типа int, память под массив указателей на строки массива
-	// int i,j,ch;
-	// Цикл для выделение памяти под каждую строку
-	// matrix_2[i] = new int[nC];
-	// for (i=0; i<nR; i++)
-	//   {
-	// 	 // каждому элементу указателей на сроку присваиваим адрес начала участка памяти
-	//   }
-	
+      int  x=0, y=1, temp;
+ 
+      
     // Выводим массив
-	// for (int  i= 0; i < nR; i++)
-	//  {
-	// 	for (int j = 0; j < nC; j++)
-	// 	{
-	// 		matrix_2[i][j] = matrix_1[i][j];			
-	// 	}
-	//  }  
-/*  если условие выполняется  вкаждом цыкле ошибки сигментации нет, 
-при попытке несколько раз прописать -ошибка  */ 
+	for (int  i= 0; i < nR; i++)
+	 {
+	    temp = matrix_1[i][x];
+        matrix_1[i][x] = matrix_1[i][y];
+        matrix_1[i][y] = temp;
+		cout << endl;    
+	 } 
 
-	 	// for (int  i= 0; i < nR; i++)
-	 	//  {
-		// 	  for (int  j= 0; j < nC; j++)
-	 	// 		 {
-		// 	//  if (matrix_1[i][j] == matrix_1[i+1][j]) 
-	    //     //    {
-		//  	// 	 a1[i] = matrix_1[i][1];
-		//  	// 	 a2[i] = matrix_1[i][2];
-
-		//   	// 	 matrix_1[i][1] = a2[i];
-		//   	// 	 matrix_1[i][2] = a1[i];
-		// 	//   } else
-		// 	//   {
-		// 	// 	cout << "Матрица не имеет одинаковых первых элементов" << endl;
-		// 	// 	 matrix_1[i][j] = matrix_1[i][j];
-		// 	//   }
-		// 	 		 matrix_2[i][j] = matrix_1[i][j];
-		// 		  }
-	   	//  }
-	  
   }
 
 
