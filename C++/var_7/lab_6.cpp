@@ -1,82 +1,53 @@
-#include<iostream>
-#include <cmath>
-#include <iomanip>
+#include <cstdio>
+#include <iostream>
+
 using namespace std;
 
-// Объявляем функцию
-double f(const double& x)
+int main()
 {
-	double fx = cos(x / 2) - 2 * sin(x / 3) + x;
-  return fx;
-}
-// перемменная от функции
-double fder1(const double& x)
-{
-	double fder = 1 - sin(x / 2) / 2 - 2 * cos(x / 3) / 3;
-	return fder;
-}
 
-double fder2(const double& x)
-{
-	double fder = 2 * sin(x / 3) / 9 - cos(x / 2) / 4;
-	return fder;
-}
+	const int size = 257;
+	char str[size];
 
-double Newton(double a, double b, double e, int* n1)
-{
-	double x = 0;
-	if (f(a) * fder2(a) > 0) x = a;
-	else x = b;
+	cout << " Введите слова не более 255:\n";
+	fgets(str, size, stdin);
 
-	while (abs(f(x) / fder1(x)) >= e)
-  {
-		x = x - (f(x) / fder1(x));
-		(*n1)++;
-  }
-	return x;
-}
-// М половинчатого деления
- double Divison(double a, double b,  double e, int* n)
- {
-	 double x = (a + b) / 2;
+	//проверка, чтобы массив не был отрицателным
+	if (size <= 0)
+		{
+			cerr<<"Invalid size"<< endl;
+			return 1; //Завершить программу с ошибкой
+		}
 
-	 while (abs(a - b) >= e)
-   {
-		 if (f(x) * f(a) < 0) b = x;
-		 else a = x;
-		 x = (a + b) / 2;
-		 (*n)++;
-	  }
-  return x;
-  }
-
-   double Iteration(double a, double b, double e, int* n2)
-   {
-  	 double x0 = (a + b) / 2;
-  	 double xn = 2 * sin(x0 / 3) - cos(x0 / 2);
-
-  	 while (abs(x0 - xn) >= e)
-     {
-  		 x0 = xn;
-  		 xn = 2 * sin(x0 / 3) - cos(x0 / 2);
-  		 (*n2)++;
-  	 }
-  	 return xn;
+	cout << "\nБуквы отсортированы по возрастанию.:\n";
+	    for(int i=0; i < size; i++)
+    {// вводим массив
+        cout << "str[" << i << "] = ";
+        cin >> str[i];
+    }
+    // cортировка массива пузырьков
+    for(int i = 0; i < size-1; i++)
+    {
+        for(int j=0; j < size-i-1; j++)
+        {
+            if(str[j]>str[j+1])
+            {//меняем элементы местами
+            int temp = str[j];
+            str[j] = str[j+1];
+            str[j+1] = temp;
+            }
+        }
+    }
+    for(int i=0; i < size; i++)
+    {// выводим массива
+        cout << str[i] << " ";
     }
 
-  int main()
-  {
-  	const double a = -3.5, b = 2.5, e = 0.0001;
-  	int n = 0;
-  	int n1 = 0;
-  	int n2 = 0;
-  	cout << "Дано уравнение: f(x) = cos(x/2) - sin(x) + x" << "\n\n";
-  	cout << "Методом половинного деления..."<< endl<< fixed << setprecision(6) << "x = "<< Divison(a, b, e, &n) << "\n\n";
-  	cout << "Число N - " << n<< endl;
-  	cout << "Методом Ньютона..." << endl << fixed << setprecision(6) << "x = "<< Newton(a, b, e, &n1) << "\n\n";
-  	cout << "Число N - " << n1 << endl;
-  	cout << "Метод простых итераций..."<< endl<< fixed << setprecision(6) << "x = "<< Iteration(a, b, e, &n2) << "\n\n";
-  	cout << "Число N - " << n2 << endl;
-  	system("pause");
-  	return 0;
-  }
+return 0;
+}
+ 	// Преобразовать строку так, чтобы все буквы в ней были отсортированы по возрастанию.
+
+
+ 
+
+ 
