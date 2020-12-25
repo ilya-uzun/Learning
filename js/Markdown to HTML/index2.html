@@ -27,7 +27,6 @@
         <script>
             var output ='';
             inputTextarea = document.querySelector('#inputTextarea');
-            outputTextarea = document.querySelector('#outputTextarea');
 
             buttonPreview = document.querySelector('#buttonPreview');
 
@@ -38,7 +37,6 @@
 
                 if(preview && inputTextarea.value) {
                     output = converter.makeHtml(inputTextarea.value);
-                    outputTextarea.value = output;
                     preview.innerHTML = output;
                 } else {
                     preview.innerHTML = "Markdown im Textfeld eingeben und Preview klicken";
