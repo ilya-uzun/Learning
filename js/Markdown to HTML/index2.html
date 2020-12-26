@@ -16,18 +16,15 @@
   </head>
   <body>
         <dav class="conteiner">
-            <h3>Markdown to HTML converter </h3>
+
             <textarea id="inputTextarea"># Beispiel h1 </textarea>
             <button id="buttonPreview" class="button-primary">Preview</button>
-            <textarea id="outputTextarea"></textarea>
-
             <div id="preview"></div>
         </dav>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
         <script>
+            // element.write('/file.md');
             var output ='';
-            inputTextarea = document.querySelector('#inputTextarea');
-
             buttonPreview = document.querySelector('#buttonPreview');
 
             buttonPreview.addEventListener('click', function(){
