@@ -8,9 +8,9 @@ using namespace std;
 	typedef struct {
 		char name[31];
 		char capital[31];
-		int population;
-		int square;
-    }STATE;
+		int group; // номер группы
+		float rating; // рейтинг студента rating
+    }STATE; //student STUDENT
 
 STATE createState(){
 	STATE newSTATE;
@@ -20,14 +20,14 @@ STATE createState(){
 	cout << "Введите название столицы государства: ";
 	cin >> newSTATE.capital;
 	cout << "Введите численность населения государства: ";
-	cin >> newSTATE.population;
+	cin >> newSTATE.group;
 
 	if (cin.fail()){
 		cerr << "\n\nОшибка: введен некорректный символ. Завершениепрограммы...\n";
 		exit(EXIT_FAILURE);
 	}
 	cout << "Введите площадь территории, занимаемой государством: ";
-	cin >> newSTATE.square;
+	cin >> newSTATE.rating;
 
 	if (cin.fail()){
 		cerr << "\n\nОшибка: введен некорректный символ. Заверешение программы...\n";
@@ -48,77 +48,9 @@ void StateFileEnd(const char* filename, const STATE& countryToAdd) {//добав
 	fout.write((char*)&countryToAdd, sizeof(countryToAdd));
 	fout.close();
 }
-//добавить страну в файл после элемента
-void AddState(const char* filename, const int& num,const STATE& countryToAdd){
 
-	if (num < 1) return;
-
-	ifstream f1(filename, ios::binary | ios::in);
-
-	if (!f1.is_open()){
-		cerr << "Не удалось открыть файл. Завершение программы...";
-		exit(EXIT_FAILURE);
-	}
-
-	int fileSize = 0;
-
-	STATE tmp;
-	while (f1.read((char*)&tmp, sizeof(tmp))) fileSize++;
-
-	f1.clear();
-	f1.seekg(0, ios::beg);
-
-	if (fileSize == 0 || num >= fileSize){
-		f1.close();
-		StateFileEnd(filename, countryToAdd);
-		cout << "Запись эелемента в файл прошла успешно.\n\n";
-	}
-	else{
-		ofstream f2("tmp.bin", ios::binary | ios::out | ios::app);
-
-		if (!f2.is_open()){
-			cerr << "Не удалось открыть файл. Завершение программы...";
-			exit(EXIT_FAILURE);
-		}
-
-		int count = 0;
-		STATE tmp;
-
-		while (count != num){
-			f1.read((char*)&tmp, sizeof(tmp));
-			f2.write((char*)&tmp, sizeof(tmp));
-			count++;
-		}
-
-		f2.write((char*)&countryToAdd, sizeof(countryToAdd));
-
-		while (f1.read((char*)&tmp, sizeof(tmp)))
-
-		f2.write((char*)&tmp, sizeof(tmp));
-
-		if (f1.eof()) cout << "Запись элелемента в файл прошла успешно.\n\n";
-		else {
-			cerr << "Произошел сбой при чтении файла. Завершение программы...";
-			exit(EXIT_FAILURE);
-		}
-
-		f1.close();
-		f2.close();
-
-		if (rename(filename, "prev.bin")){
-			cerr << "Аварийное завершение программы...";
-			exit(EXIT_FAILURE);
-		}
-		if (rename("tmp.bin", filename)){
-			cerr << "Аварийное завершение программы...";
-			exit(EXIT_FAILURE);
-		}
-		remove("prev.bin");
-	}
-}
-
-//удалить из файла в зависимости от населения
-void DelFileMinPopulation(const char* filename, const int& limit)
+//удалить из файла студентов с низким рейтингом (4.3)
+void DelFileMinRating(const char* filename, const int& limit)
 {
 	ifstream f1(filename, ios::binary | ios::in);
 	ofstream f2("tmp.bin", ios::binary | ios::out);
@@ -132,7 +64,7 @@ void DelFileMinPopulation(const char* filename, const int& limit)
 	STATE tmp;
 	while (f1.read((char*)&tmp, sizeof(tmp)))
   {
-		if (tmp.population > limit) f2.write((char*)&tmp, sizeof(tmp));
+		if (tmp.rating > limit) f2.write((char*)&tmp, sizeof(tmp));
 		else continue;
 	}
 
@@ -176,7 +108,7 @@ void PrintFile(const char* filename)
 	while (fin.read((char*)&tmp, sizeof(tmp)))
   {
 		isEmpty = false;
-		cout << tmp.name << '\n' << tmp.capital << '\n' << tmp.population << '\n' << tmp.square << "\n\n";
+		cout << tmp.name << '\n' << tmp.capital << '\n' << tmp.group << '\n' << tmp.rating << "\n\n";
 	}
 
 	if (isEmpty)
@@ -200,15 +132,15 @@ int main()
 {
 
 	STATE newSTATE;
-	cout << "Укажите количество стран: ";
+	cout << "Укажите количество студенов: ";
 	int n;
-	cin >> n;
-	cout <<endl;
+	cin >> n;// указали кол студентов
+	cout << endl;
 
 	const char* filename = "Countries.bin";
 
 	for (int i = 0; i < n; i++)
-  {
+  	{
 		STATE tmp = createState();
 		cout << "Записываем государство " << tmp.name << " в файл "<< filename << "...\n\n";
 		StateFileEnd(filename, tmp);
@@ -216,9 +148,11 @@ int main()
 
 	PrintFile(filename);
 
-	const int limit = 20000000;
+	const float limit = 4.3;
 	cout << "Удаляем информацию о государствах, с малым количеством населения из файла " <<filename<< "...\n\n";
-	DelFileMinPopulation(filename, limit);
+	DelFileMinRating(filename, limit);
+	cout << "Что осталось " <<filename<< "...\n\n";
+	PrintFile(filename);// вы
 	cout << "Укажите информацию о государстве, которое хотите добавить в файл.\n\n";
 	newSTATE = createState();
 	cout << "\nУкажите позицию, которую государство должно занять(кроме 1) : ";
@@ -226,7 +160,7 @@ int main()
 	cin >> num;
 	cout << endl;
 	cout << "Добавляем государство " << newSTATE.name << " в файл "<< filename << "...\n\n";
-	AddState(filename, num - 1, newSTATE);
+	//AddState(filename, num - 1, newSTATE);
 	PrintFile(filename);
 
 	return 0;
