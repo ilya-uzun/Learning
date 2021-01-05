@@ -1,12 +1,22 @@
-Программа:
-
-#include<iostream>
+#include <iostream>
 #include <vector>
 #include <string>
 #include <fstream>
-// #include <windows.h>
 
 using namespace std;
+
+bool pmark(const char& c)
+{
+	switch (c){
+	case ',':
+	case '.':
+	case '!':
+	case '?':
+	case ':':
+	case ';': return true;
+	default: return false;
+	}
+}
 
 vector<string> ReadFile(const char* filename){
 	ifstream fin(filename, ios::in);
@@ -62,15 +72,17 @@ void WrideFile(const char* filename,const vector<string>& content){
 	fout.close();
 }
 
-void СountСharacters(const char* filename)
+// подсчет символов
+void count_characters(const char* filename)
 {
+	// Открываем файл
 	ifstream fin(filename, ios::in);
-
+	
 	if (!fin.is_open())
-  {
+ 	 {
 		cout << "Не удалось открыть файл. Завершение программы...";
 		exit(EXIT_FAILURE);
-	}
+	 }
 
 	int count = 0;
 	cout << "Файл \"" << filename << "\" содержит:\n\n";
@@ -80,37 +92,23 @@ void СountСharacters(const char* filename)
 		cout << str << '\n';
 		count += str.size();
 	}
-	fin.close();
+	fin.close(); // закрываем файл
 	cout << "\nИтого " << count << " символов.\n";
-}
-
-bool pmark(const char& c)
-{
-	switch (c){
-	case ',':
-	case '.':
-	case '!':
-	case '?':
-	case ':':
-	case ';': return true;
-	default: return false;
-	}
 }
 
 int main()
 {
-	// SetConsoleCP(1251);
-	// SetConsoleOutputCP(1251);
+
 	char mainFile[15] = "F1.txt";
 	char newFile[15] = "F2.txt";
 	cout << "Считываем текст из файла \"" << mainFile << "\"...\n\n";
 	vector<string> mainText = ReadFile(mainFile);
-	СountСharacters(mainFile);
+	count_characters(mainFile);
 	cout << "\nВыбираем строки, которые начинаются и заканчиваются на одну и ту же букву...\n";
 	vector<string> newText = getTrueContent(mainText);
 	cout << "Помещаем их в файл \"" << newFile << "\"...\n\n";
 	WrideFile(newFile, newText);
-	СountСharacters(newFile);
+	count_characters(newFile);
 	
 	return 0;
 }
