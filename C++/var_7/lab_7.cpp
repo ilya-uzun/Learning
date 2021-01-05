@@ -30,15 +30,30 @@
 #include <iostream>
 #include <cstdarg>
 using namespace std;
+//для чисел типа double
+double min (double num, ...){
+    va_list argList;// j,]объект типа va_list использует макросы va_start, va_arg
+    va_start(argList, num);// Макрос va_start() инициализирует ap для последующего использования в va_arg()
+    double min = va_arg(argList, double);
 
-int min (int num, ...){
-    va_list argList;// переменная типа va_list
-    va_start(argList, num);//
-    int min = va_arg(argList, int);
-    for(size_t i = 1; i > num; ++i)
+    for(size_t i = 1; i < num; ++i)
     {
-        int val = va_arg(argList, int);
-        //max = std::min(val, max);
+        double val = va_arg(argList, double); //Макрос va_arg() раскрывается в выражение, 
+        min = std::min(val, min); //используется для определения наименьшего числа, переданного ему. Возвращает первый из них, если их больше одного. 
+    }
+    va_end(argList);
+    return min;
+}
+//для чисел типа int
+int min (int num, ...){
+    va_list argList;// j,]объект типа va_list использует макросы va_start, va_arg
+    va_start(argList, num);// Макрос va_start() инициализирует ap для последующего использования в va_arg()
+    int min = va_arg(argList, int);
+
+    for(size_t i = 1; i < num; ++i)
+    {
+        int val = va_arg(argList, int); //Макрос va_arg() раскрывается в выражение, 
+        min = std::min(val, min); //используется для определения наименьшего числа, переданного ему. Возвращает первый из них, если их больше одного. 
     }
     va_end(argList);
     return min;
@@ -46,7 +61,7 @@ int min (int num, ...){
 
 int main(){
 
-	cout << "min из (1, 2, 3, 5, 3): "<< min(6, 2, 2, 3, 5, 3) << endl;
-	//cout << "min из (1, 2, 3, 4, 5, 6, 7, 8, 10, 3) :"<< min(10, 2, 2, 3, 4, 5, 6, 7, 8, 10, 3) << endl;
-	//cout << "min из (3, 2, 3, 4, 5, 6, 1, 8, 9, 10, 12, 4) :" << min(12, 3, 2, 3, 4, 5, 6, 1, 8, 9, 10, 12, 4) << endl;
+	cout << "min из (2, 2, 3, 5, 3): "<< min(5, 2, 2, 3, 5, 3) << endl;
+	cout << "min из (10, 7, 4, 4, 4, 5, 6, 7, 8, 10, 2) :"<< min(10, 7, 4, 4, 4, 5, 6, 7, 8, 10, 2) << endl;
+	cout << "min из (12.0, 3.0, 2.0, 3.0, 4.0, 5.0, 6.0, 2.0, 8.0, 9.0, 10.0, 12.0, 4.0) :" << min(12.0, 3.0, 2.0, 3.0, 4.0, 5.0, 6.0, 2.0, 8.0, 9.0, 10.0, 12.0, 4.0) << endl;
 return 0;}
