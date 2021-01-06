@@ -143,11 +143,7 @@ int main()
 {
     ifstream finF1("F1.txt");
     ofstream outF2("F2.txt");
-    
- 
     string strF1;
-    string strF2;
-
      // проверка открытия файла
     if(!finF1.is_open())
     {
@@ -158,26 +154,50 @@ int main()
     // Переносим слова на А в файл F2
     while(finF1 >> strF1)
     {
-        if(strF1[0] == 'A')
-            outF2 << strF1 << endl;
+        if(strF1[0] != 'A')  
+        outF2 << strF1 << endl;
     }
     finF1.close();
     outF2.close();
 
+    int number;
     ifstream finF2("F2.txt");
+    string strF2;
+    if(!finF2.is_open())
+    {
+        cout << "Error";
+        exit(EXIT_FAILURE);
+    }
     // считаем символы в первом слове F2
-    while (getline(finF2, strF2)){
+    
+     
+    while (!finF2.eof() ){
         int sum;
 		cout << strF2 << '\n'; //вывод содержания файла по строчно
 		sum += strF2.size();
         cout << sum << '\n'; 
 	}
 
-    
     finF2.close();
     
     return 0;
 }
+
+// пример подсчёта первого слова .. попробовать внести его в функцию
+// void getText () {
+//      std::vector<int> numbers;
+//      int number;
+//      std::ifstream file("file_name.txt")
+//      if (!file) {
+//           std::cout << "error open file file_name.txt" << std::endl;
+//           return;
+//      }
+//      while(!file.eof()) {
+//          file >> number;
+//          numbers.push_back(number);
+//      }
+// }
+
 
     // 1)  Скопировать из файла F1 в файл F2 все строки, кроме тех, что начинаются на букву А. 
     // 2)  Подсчитать количество символов в первом слове F2.
