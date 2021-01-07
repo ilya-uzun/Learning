@@ -3,14 +3,14 @@
 #include <fstream>
 #include <cstdlib>
 #include <string>
-# include <vector>
+
 using namespace std; 
 
 int main()
 {
     ifstream finF1("F1.txt"); // открыть для чтения
-    ofstream outF2("F2.txt", ios_base::out); // открыть для записи
-    vector<string> content;
+    ofstream outF2("F2.txt"); // открыть для записи
+   
     string strF1;
      // проверка открытия файла
     if(!finF1.is_open())
@@ -21,14 +21,22 @@ int main()
   
     // Переносим слова на А в файл F2
     while(finF1 >> strF1)
-    {        
-        if(strF1[0] != 'A') 
-        outF2 << strF1 << ' ';     
+    {      
+            if(strF1[0] != 'A') // выводить строки которые не начинаются на А
+            {
+                outF2 << strF1 << ' ';
+                    for(int i=0; i<=strF1.length(); i++) // переход на новую строку
+                        {
+                            if(strF1[i] == '.' )
+                            outF2 << '\n';
+                        }
+            } 
+      
     }
     finF1.close();
     outF2.close();
 
-    ifstream finF2("F2.txt", ios_base::in); // открыть для чтения
+    ifstream finF2("F2.txt"); // открыть для чтения
     string strF2;
     if(!finF2.is_open())
     {
@@ -43,7 +51,7 @@ int main()
 		finF2 >> strInput;
 		cout << strInput << endl;
         cout << strInput.size() << endl; // считаем символы
-        exit(1); //
+        break; //
 	}
     
     finF2.close();
