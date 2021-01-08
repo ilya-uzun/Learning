@@ -12,7 +12,7 @@ struct l_list
 	l_list* prev;
 	l_list* next;
 };
-
+// список добавить
 void listAddEnd(l_list*& begin, const char* str)
 {
 	if (begin == nullptr)
@@ -287,6 +287,7 @@ int main()
 	AddElement(List, "Леонид", elemToAdd);
 	cout << "Списоксодержит:\n";
 	listPrint(List);
+
 	const char filename[15] = "myList.txt";
 	cout << "Записываем  в файл..." << endl;
 	WriteFile(List, filename);
