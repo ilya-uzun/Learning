@@ -44,8 +44,6 @@ int main()
         exit(EXIT_FAILURE);
     }
     // считаем символы в первом слове F2
-
-   
     while (finF2){ // пока есть данные 
     	string strInput;
 		finF2 >> strInput;
