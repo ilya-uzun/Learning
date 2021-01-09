@@ -2,6 +2,7 @@
 #include <fstream>
 #include <cstring>
 #include <cstdarg>
+#include <string>
 #include <sstream> // для stringstream
 
 using namespace std;
@@ -93,6 +94,7 @@ public:
             MyList* temp = Head;
             stringstream myString;
             string str;
+
             if (!fout.is_open()){
                 cout << "Не удалось открыть файл." << '\n';
             return;
@@ -100,14 +102,12 @@ public:
 
             while (temp != nullptr)
             {
-
                 myString << temp->x << ' '; // без (<< ' ') записывает только первую переменную
                 myString >> str;
                 fout << str << ' ';
                 temp = temp->Next;
             } 
-           
-                fout << '\n'; <
+
                 fout.close();
         } 
 
@@ -115,26 +115,35 @@ public:
     void ReadFile (const char* filename) {
             ifstream fout(filename);
             MyList* temp = new MyList;
-            
+            stringstream myString;
+            int in_str;
+            string str;
             if (!fout.is_open()){
                 cout << "Не удалось открыть файл." << '\n';
-            return;
+                return;
             }
-        cout << "файл открыть файл для чтения ." << '\n';
-            int n = 0;
-            // while (!fout.eof()) {
-            //     n++;  // считаем количество циклов  
-            //     cout << n << '\n';
-            // }
-            
-            while (n != 0) {
-                int in_temp = 0;
-                fout>>in_temp;
-                temp->Add(in_temp);
-                if (!fout.eof()) temp->Show();
-            }       
-            fout.close();
-            delete temp;
+            else {
+                cout << "файл открыть файл для чтения ." << '\n';  
+                cout << "переписываем данные в список :" << '\n';  
+                int n = 0;
+                //char ch;
+                while (!fout.eof()) {
+                    //n++;  // считаем количество циклов 
+                    str ="";
+                    //getline(fout, str);
+                    fout >> str;
+                    //cout << str << '\n';
+                    myString << str << ' ';  // вставляем (числовую) строку в поток
+                    myString >> in_str; // преобразовываем string в int
+                    temp->Add(in_str);
+                    //n++;
+                   // temp->Show();
+                    //cout << n << '\n';
+                }
+                temp->Show();                   
+            }
+        delete temp;
+        fout.close();
     }  
     /*ДЕСТРУКТОР ДЛЯ КОРРЕКТНОГО ВЫСВОБОЖДЕНИЯ ПАМЯТИ*/                               
     ~MyList(){
