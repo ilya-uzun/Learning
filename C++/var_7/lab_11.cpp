@@ -115,7 +115,7 @@ public:
     void ReadFile (const char* filename) {
             ifstream fout(filename);
             MyList* temp = new MyList;
-            stringstream myString;
+            stringstream myString; // для преобразования
             int in_str;
             string str;
 
@@ -171,6 +171,5 @@ int main() {
     cout << "Список пуст" << '\n';
     List1.Show();   // вывод в консоль
     List1.ReadFile(filename);
-    //List1.Show();
 }
 
