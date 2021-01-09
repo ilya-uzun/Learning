@@ -2,6 +2,7 @@
 #include <fstream>
 #include <cstring>
 #include <cstdarg>
+#include <sstream> // для stringstream
 
 using namespace std;
 
@@ -90,7 +91,8 @@ public:
     void WriteFile (const char* filename) {
             ofstream fout(filename, ios::out);
             MyList* temp = Head;
-            
+            stringstream myString;
+            string str;
             if (!fout.is_open()){
                 cout << "Не удалось открыть файл." << '\n';
             return;
@@ -98,11 +100,14 @@ public:
 
             while (temp != nullptr)
             {
-                fout << temp->x << ' ';
+
+                myString << temp->x << ' '; // без (<< ' ') записывает только первую переменную
+                myString >> str;
+                fout << str << ' ';
                 temp = temp->Next;
             } 
            
-                fout << '\n';
+                fout << '\n'; <
                 fout.close();
         } 
 
@@ -117,10 +122,10 @@ public:
             }
         cout << "файл открыть файл для чтения ." << '\n';
             int n = 0;
-            while (!fout.eof()) {
-                n++;  // считаем количество циклов  
-                cout << n << '\n';
-            }
+            // while (!fout.eof()) {
+            //     n++;  // считаем количество циклов  
+            //     cout << n << '\n';
+            // }
             
             while (n != 0) {
                 int in_temp = 0;
