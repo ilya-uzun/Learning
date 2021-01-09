@@ -18,10 +18,10 @@ int main ()
   while (an > eps)
   {
   n = n + 1.0;
-	an = 1 / ((3*n-2)*(3*n+1));
+	an = 1  / ((3*n-2)*(3*n+1));
 	sum = sum + an;
   }
   cout << sum << " - sum " << endl; // выводим сумму
-  cout << fixed << setprecision(10) << an <<" - an "; // fixedпе
+  cout << fixed << setprecision(10) << an <<" - an "<< '\n'; // fixedпе
 
 }
