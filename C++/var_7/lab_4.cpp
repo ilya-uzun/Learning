@@ -40,19 +40,15 @@ void del_zero(int *&arr, int &size)
         size--; // каждый раз при удаление уменьшаем массив
      }
             
-    for (int i = 0; i < size; i++)
-     {
-        if (newArr_del_zero[i] == 0 && arr[i + 1] == 0)
+    for (int i = size-1; i != 0; i--)
+      {
+ 
+        if (newArr_del_zero[i] == 0)
         {
-            for (int j = i; j < size - 2; j++)
-                newArr_del_zero[j] = newArr_del_zero[j + 2];
-            size -= 2;
-        }
-        else if (newArr_del_zero[i] == 0)
-        {
-            for (int j = i; j < size - 1; j++)
+            for (int j = i; j < size ; j++)
                 newArr_del_zero[j] = newArr_del_zero[j + 1];
             size--;
+             break;
         }
      }
      
