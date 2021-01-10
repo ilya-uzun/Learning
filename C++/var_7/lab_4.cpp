@@ -40,7 +40,7 @@ void del_zero(int *&arr, int &size)
         size--; // каждый раз при удаление уменьшаем массив
      }
             
-    for (int i = size-1; i != 0; i--)
+    for (int i = size-1; i != 0; i--) // считаем  массив с конца
       {
  
         if (newArr_del_zero[i] == 0)
@@ -48,7 +48,7 @@ void del_zero(int *&arr, int &size)
             for (int j = i; j < size ; j++)
                 newArr_del_zero[j] = newArr_del_zero[j + 1];
             size--;
-             break;
+             break; // выходим как только нашли ноль
         }
      }
      
