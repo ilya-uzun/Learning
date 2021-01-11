@@ -4,6 +4,7 @@ using namespace std;
 
 void f (int i, int* j, int& k)
 {
+  
   i++;
   (*j)++;
   k++;
