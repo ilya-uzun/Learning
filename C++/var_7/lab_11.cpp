@@ -128,7 +128,7 @@ public:
                 cout << "восстанавливаем данные из файла в список :" << '\n';  
                 int n = 0;
                 while (!fout.eof()) {
-                    str ="";
+                    str = "";
                     fout >> str;
                     myString << str << ' ';  // вставляем (числовую) строку в поток
                     myString >> in_str; // преобразовываем string в int
