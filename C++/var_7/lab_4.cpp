@@ -73,7 +73,7 @@ void push_back(int *&arr, int &size, int value)
         for (int i = size; i >= value-1; i--)
             {
                 newArr[i+1] = arr[i];
-                newArr[value-1] = 100;// добовляем значени 100
+                newArr[value+1] = 100;// добовляем значени 100
             }
     }else
         {
