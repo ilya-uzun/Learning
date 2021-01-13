@@ -104,7 +104,7 @@ public:
             {
                 myString << temp->x << ' '; // без (<< ' ') записывает только первую переменную
                 myString >> str;
-                fout << str << ' ';
+                fout << str << '\n';
                 temp = temp->Next;
             } 
 
@@ -127,9 +127,7 @@ public:
                 cout << "файл открыть файл для чтения ." << '\n';  
                 cout << "восстанавливаем данные из файла в список :" << '\n';  
                 int n = 0;
-                while (!fout.eof()) {
-                    str = "";
-                    fout >> str;
+                while (getline(fout, str)) {
                     myString << str << ' ';  // вставляем (числовую) строку в поток
                     myString >> in_str; // преобразовываем string в int
                     temp->Add(in_str);
