@@ -56,29 +56,27 @@ void del_zero(int *&arr, int &size)
     arr = newArr_del_zero; // изменяем адрес, так как элемен передан по ссылке, то что мы с ним сделаем повлияет а указатель arr
 }
 
-void push_back(int *&arr, int &size, int value)
+void push_back(int *&arr, int &size, int index)
 {
     size++; // увеличиваем массив на единицу
     int *newArr = new int[size]; // сoздаём новый массив больший на единицу
     
-     if (value > 0 && value < size)// проверка правильности ввода
+     if (index >= 0 && index < size-1)// проверка правильности ввода
     {
         // Присваеваем элементы к новому масству
-        for (int i = 0; i < size; i++)
-        {
-            newArr[i] = arr[i];
-        }
+           
+        for (int i = 0; i < size; i++)  newArr[i] = arr[i];
+
+        newArr[index +1] = 100;
+
+	// добавляем 100 после выбраной позиции value
+	
+        for (int i = index +2; i < size; i++) newArr[i] = arr[i-1];
     
-        // добавляем 100 после выбраной позиции value
-        for (int i = size; i >= value-1; i--)
-            {
-                newArr[i+1] = arr[i];
-                newArr[value+1] = 100;// добовляем значени 100
-            }
     }else
         {
              cout <<  "Введенно не корретное значение позиции элемента" << endl;
-             cout <<  "Введите значение с 1 по последеий элемент " << endl;
+             cout <<  "Введите индекс с 0 по последий элемент " << endl;
         }
         
     delete[] arr; // удаляем старый массив
@@ -91,7 +89,7 @@ int main()
     const int n = 150;
     int *arr = new int[n]; // указатель под массив и выделяем под него память
     int size = 100;
-    int number = 1;
+    int index= 1;
     cout << "Укажите размер массива от 0 до 100 :  ";
     cin >> size;
     
@@ -105,8 +103,8 @@ int main()
     ShowArray(arr, size); // вывод на экранмассив  без нулей
 
     cout << "Укажите номер элемента после которого нужно добавить 100  - ";
-    cin >> number;
-    push_back(arr, size, number); // добавляем 100 после выбраного элемента
+    cin >> index;
+    push_back(arr, size,index); // добавляем 100 после выбраного элемента
 
     cout << "Массив после добавления 100 в выбранный элемент: "<< endl;
     ShowArray(arr, size); // вывод на экран новый массив с добавлением 100
