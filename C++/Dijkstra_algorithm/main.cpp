@@ -105,3 +105,7 @@ int main()
   getchar(); getchar();
   return 0;
 }
+
+
+// попробовать реализовать код 
+// https://evileg.com/ru/post/533/
