@@ -36,3 +36,12 @@ y[0][1] = 'as'; //присвоить значение
 y[1][0] = 'asw'; //присвоить значение
 y[1][1] = 'as'; //присвоить значение
 console.log(y);// вывод одного элеента
+
+//result = prompt(title, [default]);
+
+// преобразование типов
+
+let value = true;
+console.log(value);
+value = String(value); // преобразование  string
+console.log(value);
