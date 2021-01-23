@@ -45,3 +45,8 @@ let value = true;
 console.log(value);
 value = String(value); // преобразование  string
 console.log(value);
+
+let s = 2, a = 3;
+console.log(s+a); 
+let xw = 2+2-4;
+console.log(xw); 
