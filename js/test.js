@@ -50,3 +50,26 @@ let s = 2, a = 3;
 console.log(s+a); 
 let xw = 2+2-4;
 console.log(xw); 
+
+
+// логические оператор
+console.log(2>1);// true
+console.log(2<1);// false
+console.log(2==1);// false
+console.log('a'== 'b');// false
+console.log(null === undefined);// false При строгом равенстве ===, значения различны, так как различны их типы.
+console.log(null == undefined);// true
+
+console.log('---------');// false
+
+console.log('dddddddd');
+
+console.log(null > 0 );// false
+console.log(null == 0 );// false
+console.log(null >= 0 );// true
+
+let dd = 'd';
+let ss = 34;
+
+
+console.log( dd + (ss - 4));
