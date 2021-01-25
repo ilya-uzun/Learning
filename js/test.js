@@ -71,5 +71,17 @@ console.log(null >= 0 );// true
 let dd = 'd';
 let ss = 34;
 
-
 console.log( dd + (ss - 4));
+
+// простая функция
+function showS(){
+    let m = "Тестовая переменная";
+    console.log('showS', m);
+}
+// вызов функции
+showS();
+// возврат значения
+function sum(a, b){
+    return a+b;
+}
+console.log(sum(1,2), " - функция sum");
