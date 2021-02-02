@@ -85,3 +85,20 @@ function sum(a, b){
     return a+b;
 }
 console.log(sum(1,2), " - функция sum");
+
+// объекты
+var person = {
+    firstName: "Щипунов",
+    lastName : "Андрей",
+    age: 50,
+    eysColor: "Зелёный",
+    // метод класса
+    fullName : function() {
+        return this.firstName + " " + this.firstName;
+    }
+    
+};
+// доступ усвойствам объекта
+console.log(person.age);
+console.log(person.eysColor);
+name = person.fullName;
