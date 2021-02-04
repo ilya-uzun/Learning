@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=adge"> 
+    <title>Тест 3</title>
+  </head>
+  <body> 
+  <input type="file" id="your-files" multiple>
+    <script>
+
+    var control = document.getElementById("your-files");
+      control.addEventListener("change", function(event){
+        // Когда происходит изменение элементов управления, значит появились новые файлы
+        var i = 0,
+        files = control.files,
+        len = files.length;
+
+        for (; i < len; i++){
+          // выведит в консоль информацию о файле
+          console.log("Filename: " + files[i].name);
+          console.log("Type: " + files[i].type);
+          console.log("Size: " + files[i].size + " bytes");
+          // выведет в окна и выведет информацию
+          alert("Filename: " + files[i].name + "\n" + "Type: "  + files[i].type + "\n" + "Size: " + files[i].size + " bytes");
+
+        }
+      }, false);
+      
+      var form = new FormData();
+      form.append("name", "Илья");
+      form.append("photo", control.files[0]);
+
+      // отправить через xhr
+      var xhr = new XMLHttpRequest();
+      xhr.onload = function(){
+        console.log("Отправка завершена");
+      };
+      xhr.open("post", "/entrypoint", true);
+      xhr.send(form);
+    </script>
+  </body>
+</html>
+
+<!-- инфа
+http://fh7922mg.bget.ru/articles/file-api-in-javascript/file-api-in-javascript.html -->
