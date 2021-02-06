@@ -8,23 +8,15 @@
   </head>
   <body> 
   <!-- <input type="file" id="img" multiple>   -->
-  <img id="img" >
   <!-- multiple Позволяет загрузить несколько файлов одновременно. -->
     <script>
-      var reader = new FileReader();
+      var request = new XMLHttpRequest;
+      reader.open('GET', 'file.md', true)
+
       reader.onload = function(event){
-        var dataUri = event.target.result,
-        img = document.createElement("img");
-
-        img.src = dataUri;
-        document.boby.appendChild(img);
+        console.log(request.responseText);
       };
-
-      reader.onerror = function(event){
-        console.error("Файл е можетбыть причитан " + event.target.error.code);
-      };
-
-      reader.readAsDataURL(file);
+      request.send(null);
     </script>
   </body>
 </html>
