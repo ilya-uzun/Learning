@@ -102,3 +102,19 @@ var person = {
 console.log(person.age);
 console.log(person.eysColor);
 name = person.fullName;
+
+// оператор if 
+let year = 2016;
+
+
+if (year == 2015) {
+    console.log('Вы правы');
+} else if (year > 2015){
+    console.log('> 2015');
+}else {
+    console.log('< 2015');
+}
+
+// более короткая запись с помощью оператора ?
+let age2 = 18;
+let varible = ( age2 > 18) ? true : false;
