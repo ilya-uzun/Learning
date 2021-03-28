@@ -84,6 +84,7 @@ showS();
 function sum(a, b){
     return a+b;
 }
+
 console.log(sum(1,2), " - функция sum");
 
 // объекты
@@ -118,3 +119,13 @@ if (year == 2015) {
 // более короткая запись с помощью оператора ?
 let age2 = 18;
 let varible = ( age2 > 18) ? true : false;
+
+// функции стрелки укороценный вариант запеси
+
+let func = (a, b) => a*b;
+// длинная форма
+// function sum(a, b){
+//     return a*b;
+// }
+
+console.log(func(4,2), " - функция func");
