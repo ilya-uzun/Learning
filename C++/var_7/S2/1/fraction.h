@@ -2,8 +2,8 @@
 class fraction
 {
 private:
-	int first;
-	int second;
+	double first; // коэффициент А
+	double second;  // коэффициент В
 public:
 	void Read(); // метод для чтения значений полей
 	int Cost();  // вычисление  степени
