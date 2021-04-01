@@ -3,6 +3,12 @@
 #include "fraction.h"
 using namespace std;
 
+fraction::fraction(double f, double s, double x_){
+    first = f;
+    second = s;
+    x = x_;
+}
+
 void fraction::Read()
 {
 	cout <<  "\n Enter A - ";
@@ -10,13 +16,13 @@ void fraction::Read()
 	cout << "\n Enter B -  ";
 	cin >> second;
 }
-// стоимость товара
-int fraction::Cost()
+// 
+double  fraction::Cost()
 {
 	return (first * second);
 }
 
-int fraction::Init()
+double  fraction::Init()
 {
   first = 0;
   second = 0;

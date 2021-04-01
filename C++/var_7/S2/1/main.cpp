@@ -11,7 +11,6 @@ fraction make_fraction(int F, int S) {
 
 int main()
 {
-
 	// статическая инициализация структуры
 	cout << "Static initialization of the structure :" << endl;
 
@@ -32,7 +31,6 @@ int main()
 	fraction mas[3];
 	for (int i = 0; i < 3; i++) mas[i].Init();
 	for (int i = 0; i < 3; i++) mas[i].Show();
-
 
 	// Инициализация динамического массива структуры
 	cout << "Initializing a dynamic array of a structure." << endl;
