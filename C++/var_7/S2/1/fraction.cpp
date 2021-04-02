@@ -3,10 +3,8 @@
 #include "fraction.h"
 using namespace std;
 
-fraction::fraction(double f, double s, double x_){
-    first = f;
-    second = s;
-    x = x_;
+fraction::fraction(){
+    fraction::set_P(0,0,0); 
 }
 
 void fraction::Read()
@@ -16,17 +14,15 @@ void fraction::Read()
 	cout << "\n Enter B -  ";
 	cin >> second;
 }
-// 
+/* 
 double  fraction::Cost()
 {
 	return (first * second);
 }
-
+*/
 double  fraction::Init()
 {
-  first = 0;
-  second = 0;
-    // проверка корректности ввода
+   // проверка корректности ввода
   fraction::Read(); // вызов метода чтения
       if (cin.fail())
       {
@@ -40,11 +36,20 @@ double  fraction::Init()
 void fraction::Show()
 {
 
-	cout <<" Value of goods = "<< fraction::Cost() << "\n ";//Стоимость товара 
+	cout <<"y=A*x+B= "<< fraction::function(x) << "\n ";//Стоимость товара 
 	cout << "\n ";
 }
 
-void fraction::function(double x) {
+void Set_P(double f, double s, double x_)
+{
+    first = f;
+    second = s;
+    x = x_;
 
-  return (first*x+second);
+}
+
+
+double  fraction::function(double x_) {
+
+  return (first * x_ + second);
 }
