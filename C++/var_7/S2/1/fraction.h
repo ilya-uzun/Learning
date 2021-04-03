@@ -1,4 +1,3 @@
-#pragma once
 class fraction
 {
 private:
@@ -11,7 +10,7 @@ public:
 	double Init();  // инициализация и проверка на корректность
 	void Read(); // ввод с клавиатуры
 	void Show(); // вывод на экран
-    void Set_P(double, double, double);
+    //void Set_P(double f, double s, double x);
    // double Get_first();
    // double Get_second();
     double function(double );

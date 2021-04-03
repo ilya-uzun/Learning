@@ -1,9 +1,8 @@
-#pragma once
 #include <iostream>
 #include "fraction.h"
 using namespace std;
 
-fraction make_fraction(int F, int S) {
+fraction make_fraction(double  F, double S) {
 	fraction t;
 	t.Init();
 	return t;
@@ -42,7 +41,7 @@ int main()
 
 	cout << "Initialization via make_ " << endl;
 	double y;
-	int z;
+    double z;
 	cout << "first? ";
 	cin >> y;
 	cout << "second? ";

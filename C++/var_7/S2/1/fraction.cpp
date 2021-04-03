@@ -4,7 +4,10 @@
 using namespace std;
 
 fraction::fraction(){
-    fraction::set_P(0,0,0); 
+    //fraction::set_P(0,0,0); 
+    first = 0;
+    second = 0;
+    x = 0;
 }
 
 void fraction::Read()
@@ -13,7 +16,10 @@ void fraction::Read()
 	cin >> first;
 	cout << "\n Enter B -  ";
 	cin >> second;
+	cout << "\n Enter x -  ";
+	cin >> x;
 }
+
 /* 
 double  fraction::Cost()
 {
@@ -40,13 +46,13 @@ void fraction::Show()
 	cout << "\n ";
 }
 
-void Set_P(double f, double s, double x_)
+/* void Set_P(double f, double s, double x_)
 {
     first = f;
     second = s;
     x = x_;
 
-}
+} */
 
 
 double  fraction::function(double x_) {
