@@ -14,6 +14,6 @@ int main()
 {
 	cl x;
 	x.load_i (100);
-	cout<<x.get_i();
+	cout<<x.get_i()<<'\n';
 	return 0;
 }
