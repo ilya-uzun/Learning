@@ -1,24 +1,23 @@
-#pragma once
+
 #include <iostream>
 #include <string>
 using namespace std;
 
 class Route {
     //атрибуты
-    string start; // пункт  отправления
-    string finish; // пункт  назначения
-    float time_in_way; // время в пути
-
+    string CPU; 
+    int PAM; 
+    int HDD; 
 public:
     Route(); //конструктор без параметров
-    Route(string, string, float);// конструктор с параметрами
+    Route(string, int, int);// конструктор с параметрами
     Route(const Route&);// конструктор копирования
     ~Route();//деструктор
-    string get_start();//селектор
-    string get_finish();//селектор
-    float  get_time_in_way();//селектор
-    void set_start(string);//модификатор
-    void set_finish(string);//модификатор
-    void set_time_in_way(float);//модификатор
+    string get_CPU();//селектор
+    int get_RAM();//селектор
+    int  get_HDD();//селектор
+    void set_CPU(string);//модификатор
+    void set_RAM(int);//модификатор
+    void set_HDD(int);//модификатор
     void show();//просмотр  атрибутов
 };

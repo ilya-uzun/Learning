@@ -6,15 +6,15 @@ using namespace std;
 //  Конструктор без параметров
 Route::Route()
 {
-	start = "";
+	CPU = "";
 	finish = "";
 	time_in_way = 0.0;
 	// this указатель на класс
 	cout << "Constructor without parameters for the object " << this << endl;//Конструктор без параметров для объекта
 }
 //  Конструктор c параметров
-Route::Route(string N, string K, float S) {
-	start = N;
+Route::Route(string c, string K, float S) {
+	CPU = c;
 	finish = K;
 	time_in_way = S;
 	cout << "Constructor with parameters for an object " << this << endl;//Конструктор c параметров для объекта 
@@ -22,7 +22,7 @@ Route::Route(string N, string K, float S) {
 //  Конструктор копирования
 Route::Route(const Route&t)
 {
-	start = t.start;
+	CPU = t.start;
 	finish = t.finish;
 	time_in_way = t.time_in_way;
 	cout << "Copy constructor for an object " << this << endl;//Конструктор копирования для объекта 
@@ -46,7 +46,7 @@ float Route::get_time_in_way()
 	return time_in_way;
 }
 
-//модификаторыs
+//модификаторы
 void Route::set_start(string N)
 {
 	start = N;
