@@ -1,7 +1,6 @@
 ﻿#pragma once
 #include <iostream>
 #include <string>
-#include <windows.h>
 #include "Route.h"
 using namespace std;
 
@@ -27,7 +26,7 @@ void print_Route(Route t)
 }
 
 int main(){
-	setlocale(LC_ALL, "russian");
+
 	//конструкор без параметрами
 	Route t1;
 	t1.show();
