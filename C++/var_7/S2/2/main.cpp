@@ -7,8 +7,8 @@ using namespace std;
 // Функци для возврата объекта как результата
 Route make_Route() {
 	string s;
-	string i;
-	float d;
+	int i;
+	int d;
 	cout << "Enter the name of the: ";// Введите наименование 
 	cin >> s;
 	cout << "Enter the quantity : ";//Введите количество
@@ -35,9 +35,9 @@ int main(){
 	t2.show();
 	//конструкор копирования
 	Route t3 = t2;
-	t3.set_start("Perm 2");
-	t3.set_finish("Moscow");
-	t3.set_time_in_way(24.0);
+	t3.set_CPU("ADM Ryzen 5 5600X");
+	t3.set_PAM(8);
+	t3.set_HDD(950);
 	//конструкор копирования
 	print_Route(t3);
 	//конструкор копирования
