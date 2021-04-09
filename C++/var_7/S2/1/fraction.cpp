@@ -1,10 +1,9 @@
 #include <iostream>
-#include <cstdlib>
+//#include <cstdlib>
 #include "fraction.h"
 using namespace std;
 
 fraction::fraction(){
-    //fraction::set_P(0,0,0); 
     first = 0;
     second = 0;
     x = 0;
@@ -20,12 +19,6 @@ void fraction::Read()
 	cin >> x;
 }
 
-/* 
-double  fraction::Cost()
-{
-	return (first * second);
-}
-*/
 double  fraction::Init()
 {
    // проверка корректности ввода
@@ -33,8 +26,7 @@ double  fraction::Init()
       if (cin.fail())
       {
         cout << "\n Input error, invalid data type! " << endl;//Ошибка ввода, неверный тип данных!
-        system("pause");
-        exit(1); //выход если ввод ошибочный
+	return 1;
       }
   return 0;
 }
@@ -45,15 +37,6 @@ void fraction::Show()
 	cout <<"y=A*x+B= "<< fraction::function(x) << "\n ";//Стоимость товара 
 	cout << "\n ";
 }
-
-/* void Set_P(double f, double s, double x_)
-{
-    first = f;
-    second = s;
-    x = x_;
-
-} */
-
 
 double  fraction::function(double x_) {
 
