@@ -6,12 +6,8 @@ private:
     double x;
 public:
 	fraction();
-  // double Cost();  // вычисление  степени
 	double Init();  // инициализация и проверка на корректность
 	void Read(); // ввод с клавиатуры
 	void Show(); // вывод на экран
-    //void Set_P(double f, double s, double x);
-   // double Get_first();
-   // double Get_second();
-    double function(double );
+        double function(double );
 };
