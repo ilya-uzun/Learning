@@ -7,8 +7,8 @@ using namespace std;
 Route::Route()
 {
 	CPU = "";
-	PAM= 0;
-    HDD= 0;
+	RAM = 0;
+    HDD = 0;
 	// this указатель на класс
 	cout << "Constructor without parameters for the object " << this << endl;//Конструктор без параметров для объекта
 }
@@ -23,7 +23,7 @@ Route::Route(string c, int K, int S) {
 Route::Route(const Route&t)
 {
 	CPU = t.CPU;
-	PAM = t.PAM;
+	RAM = t.RAM;
 	HDD = t.HDD;
 	cout << "Copy constructor for an object " << this << endl;//Конструктор копирования для объекта 
 }
@@ -35,11 +35,11 @@ Route::~Route()
 //селекторы
 string Route::get_CPU()
 {
-	return CPU
+	return CPU;
 }
-int Route::get_PAM()
+int Route::get_RAM()
 {
-	return PAM;
+	return RAM;
 }
 
 int Route::get_HDD()
@@ -52,10 +52,12 @@ void Route::set_CPU(string N)
 {
 	CPU = N;
 }
-void Route::set_PAM(int K)
+
+void Route::set_RAM(int K)
 {
-	PAM = K;
+	RAM = K;
 }
+
 void Route::set_HDD(int S)
 {
 	HDD = S;
@@ -65,6 +67,6 @@ void Route::set_HDD(int S)
 void Route::show()
 {
 	cout << "CPU : " << CPU << endl;
-	cout << "PAM : " << PAM << endl;
-	cout << "HDD: " << HDD  << endl;
+	cout << "PAM : " << RAM << endl;
+	cout << "HDD : " << HDD << endl;
 }

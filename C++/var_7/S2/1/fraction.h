@@ -9,5 +9,5 @@ public:
 	double Init();  // инициализация и проверка на корректность
 	void Read(); // ввод с клавиатуры
 	void Show(); // вывод на экран
-        double function(double );
+        double function(double);
 };

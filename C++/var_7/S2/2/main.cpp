@@ -36,7 +36,7 @@ int main(){
 	//конструкор копирования
 	Route t3 = t2;
 	t3.set_CPU("ADM Ryzen 5 5600X");
-	t3.set_PAM(8);
+	t3.set_RAM(8);
 	t3.set_HDD(950);
 	//конструкор копирования
 	print_Route(t3);

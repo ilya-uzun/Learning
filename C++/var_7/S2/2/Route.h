@@ -6,7 +6,7 @@ using namespace std;
 class Route {
     //атрибуты
     string CPU; 
-    int PAM; 
+    int RAM; 
     int HDD; 
 public:
     Route(); //конструктор без параметров
