@@ -3,11 +3,6 @@
 #include "fraction.h"
 using namespace std;
 
-fraction::fraction(){
-    first = 0;
-    second = 0;
-    x = 0;
-}
 
 void fraction::Read()
 {

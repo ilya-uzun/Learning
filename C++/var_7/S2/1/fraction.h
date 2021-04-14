@@ -5,9 +5,9 @@ private:
 	double second;  // коэффициент В
     double x;
 public:
-	fraction();
+	fraction(){first = second = x = 0;}
 	double Init();  // инициализация и проверка на корректность
 	void Read(); // ввод с клавиатуры
 	void Show(); // вывод на экран
-        double function(double);
+    double function(double);
 };
