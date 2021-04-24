@@ -6,6 +6,6 @@ fun main(args: Array<String>){
 
 private fun placeOrder(){
     val indexOfApostrohe = TAVERN_NAME.indexOf('\'')
-    val tarernMaster = TAVERN_NAME.substring(0 until indexOfApostrophe)
+    val tarernMaster = TAVERN_NAME.substring(0 until indexOfApostrohe)
     println("Madrigal speaks with $tarernMaster about their order.")
 }
