@@ -1,0 +1,13 @@
+android{
+    compileSdkVersion 28
+    defaultConfig{
+        applicationId "com.habr.hello"
+        minSdkVersion 20
+        targetSdkVersion 28
+    }
+    buildTypes{
+        release{
+            minifyEnabled false
+        }
+    }
+}
