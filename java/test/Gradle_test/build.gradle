@@ -8,8 +8,8 @@ dependencies {
     compile "joda-time:joda-time:2.2"
 }
 
-jar {
-   manifest {
-       attribures 'Main-Class': 'Hello'
-   }
-}
+// jar {
+//    manifest {
+//        attribures 'Main-Class': 'Hello'
+//    }
+// }
