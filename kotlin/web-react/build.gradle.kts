@@ -33,7 +33,7 @@ dependencies {
     implementation(npm("react", "17.0.1"))
     implementation(npm("react-dom", "17.0.1"))
 
-    //Kotlin Styled (chapter 3)
+    //Kotlin Styled  CSS (chapter 3)
     implementation("org.jetbrains:kotlin-styled:5.2.1-pre.148-kotlin-1.4.21")
     implementation(npm("styled-components", "~5.2.1"))
 

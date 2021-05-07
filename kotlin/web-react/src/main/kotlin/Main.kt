@@ -1,4 +1,6 @@
 import react.dom.*
+import kotlinx.css.*
+import styled.*
 import kotlinx.browser.document
 
 
@@ -37,9 +39,15 @@ fun main() {
                 + "Четвертый параграф"
             }
         }
-        div {
+        // использование css
+        styledDiv {
+            css {
+                position = Position.absolute
+                top = 10.px
+                right = 10.px
+            }
             h3 {
-                + "Загаловок перед картиной"
+                +"John Doe: Building and breaking things"
             }
             img {
                 attrs {
@@ -49,9 +57,10 @@ fun main() {
         }
         for (video in unwatchedVideos){
             p {
-                +"${video.speaker}: ${video.title}"
+                +"${video.speaker}: ${video.title} : ${video.videoUrl}"
             }
         }
    }   
 }
 
+// инфа https://habr.com/ru/post/555744/
