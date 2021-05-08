@@ -9,48 +9,13 @@ import kotlinx.browser.document
 class App : RComponent<RProps, RState>() {
 
     override fun RBuilder.render() {
-        css {
-            position = Position.absolute
-            top = 10.px
-            right = 10.px
+
+        h1 {
+             +" Hello, React+Kotlin" 
         }
-        styledDiv {
-            h1 {
-                +" Hello, React+Kotlin" 
-            }
-        }
-        styledDiv {
-            css {
-                position = Position.absolute
-                top = 10.px
-                right = 10.px
-            }
-            h3 {
-                +"Видио "
-            }
-            p {
-                + "Первый параграф"
-            }
-            p {
-                + "Второй параграф"
-            }
-            p {
-                + "Третий параграф"
-            }
-            h3 {
-                + "Videos watched"
-            }
-            p {
-                + "Четвертый параграф"
-            }
-        }
-        // использование css
-        styledDiv {
-            css {
-                position = Position.absolute
-                top = 10.px
-                right = 10.px
-            }
+    
+        div {
+ 
             h3 {
                 +"Videos to watch"
             }
@@ -71,6 +36,10 @@ class App : RComponent<RProps, RState>() {
                 position = Position.absolute
                 top = 10.px
                 right = 10.px
+                //borderStyle = solid
+            }
+            h3 {
+                +"John Doe: Building and breaking things"
             }
             img {
                  attrs {
@@ -78,7 +47,5 @@ class App : RComponent<RProps, RState>() {
                 }
             }
         }
-   }   
-    
-    
+   }      
 }

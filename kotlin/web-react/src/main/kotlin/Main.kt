@@ -20,4 +20,3 @@ fun main() {
     }
 }
 
-// инфа https://habr.com/ru/post/555744/

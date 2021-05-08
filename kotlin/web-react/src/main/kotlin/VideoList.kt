@@ -24,19 +24,4 @@ class VideoList : RComponent<VideoListProps, RState>() {
         }
         
     }
-
-    // fun RBuilder.videoList(handler: VideoListProps.() -> Unit): ReactElement {
-    //     return child(VideoList::class) {
-    //         attrs.handler()
-    //     }
-    //     p {
-    //         key = video.id.toString()
-    //         attrs {
-    //             onClickFunction = {
-    //                 window.alert("Clicked $video!")
-    //             }
-    //         }
-    //         +"${video.speaker}: ${video.title}"
-    //     }
-    //}
 }
