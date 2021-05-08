@@ -9,9 +9,6 @@ external interface VideoListProps : RProps {
     var onSelectVideo: (Video) -> Unit
 }
 
-//external interface VideoListState : RState {
-//    var selectedVideo: Video?
-//}
 
 @JsExport
 class VideoList : RComponent<VideoListProps, RState>() {
