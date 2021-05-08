@@ -2,16 +2,19 @@ import react.*
 import react.dom.*
 import kotlinx.css.*
 import styled.*
-import kotlinx.browser.document
+import styled.styledDiv
 
+
+external inrerface AppState: RState {
+    var currentVideo: Video?
+}
 
 @JsExport
-class App : RComponent<RProps, RState>() {
-
+class App : RComponent<RProps, AppState>() {
     override fun RBuilder.render() {
 
         h1 {
-             +" Hello, React+Kotlin" 
+             +"KotlinConf Explorer" 
         }
     
         div {
@@ -19,16 +22,16 @@ class App : RComponent<RProps, RState>() {
             h3 {
                 +"Videos to watch"
             }
-            child(VideoList::class){
-                attrs.videos = unwatchedVideos
+            videoList {
+                videos = unwatchedVideos
             }
 
             h3 {
                 +"Videos watched"
             }
-            child(VideoList::class){
-                attrs.videos = watchedVideos
-            }       
+            videoList {
+                videos = watchedVideos
+            }     
  
         }
         styledDiv {
