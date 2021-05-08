@@ -15,52 +15,9 @@ val watchedVideos = listOf(
 )
 
 fun main() {
-    render (document.getElementById("root")){
-        h1 {
-            +" Hello, React+Kotlin" 
-        }
-        div{
-            h3 {
-                +"Видио "
-            }
-            p {
-                + "Первый параграф"
-            }
-            p {
-                + "Второй параграф"
-            }
-            p {
-                + "Третий параграф"
-            }
-            h3 {
-                + "Videos watched"
-            }
-            p {
-                + "Четвертый параграф"
-            }
-        }
-        // использование css
-        styledDiv {
-            css {
-                position = Position.absolute
-                top = 10.px
-                right = 10.px
-            }
-            h3 {
-                +"John Doe: Building and breaking things"
-            }
-            img {
-                attrs {
-                    src = "https://via.placeholder.com/640x360.png?text=Video+Player+Placeholder"
-                }
-            }
-        }
-        for (video in unwatchedVideos){
-            p {
-                +"${video.speaker}: ${video.title} : ${video.videoUrl}"
-            }
-        }
-   }   
+    render(document.getElementById("root")){
+       child(App::class) {}
+    }
 }
 
 // инфа https://habr.com/ru/post/555744/
