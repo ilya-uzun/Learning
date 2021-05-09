@@ -46,20 +46,9 @@ class App : RComponent<RProps, AppState>() {
             }     
  
         }
-        styledDiv {
-            css {
-                position = Position.absolute
-                top = 10.px
-                right = 10.px
-                //borderStyle = solid
-            }
-            h3 {
-                +"John Doe: Building and breaking things"
-            }
-            img {
-                 attrs {
-                  src = "https://via.placeholder.com/640x360.png?text=Video+Player+Placeholder"
-                }
+        state.currentVideo?.let { currentVideo -> 
+            videoPlayer {
+                video = currentVideo
             }
         }
    }      
