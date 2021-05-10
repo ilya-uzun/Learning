@@ -1,15 +1,17 @@
 (function (root, factory) {
   if (typeof define === 'function' && define.amd)
-    define(['exports', 'kotlin', 'kotlin-wrappers-kotlin-react-dom-jsLegacy', 'kotlin-wrappers-kotlin-react-jsLegacy', 'kotlinx-html-js', 'kotlin-css', 'kotlin-wrappers-kotlin-styled-jsLegacy', 'react-share', 'react-youtube-lite'], factory);
+    define(['exports', 'kotlin', 'kotlinx-coroutines-core', 'kotlin-wrappers-kotlin-react-jsLegacy', 'kotlin-wrappers-kotlin-react-dom-jsLegacy', 'kotlinx-html-js', 'kotlin-css', 'kotlin-wrappers-kotlin-styled-jsLegacy', 'react-share', 'react-youtube-lite'], factory);
   else if (typeof exports === 'object')
-    factory(module.exports, require('kotlin'), require('kotlin-wrappers-kotlin-react-dom-jsLegacy'), require('kotlin-wrappers-kotlin-react-jsLegacy'), require('kotlinx-html-js'), require('kotlin-css'), require('kotlin-wrappers-kotlin-styled-jsLegacy'), require('react-share'), require('react-youtube-lite'));
+    factory(module.exports, require('kotlin'), require('kotlinx-coroutines-core'), require('kotlin-wrappers-kotlin-react-jsLegacy'), require('kotlin-wrappers-kotlin-react-dom-jsLegacy'), require('kotlinx-html-js'), require('kotlin-css'), require('kotlin-wrappers-kotlin-styled-jsLegacy'), require('react-share'), require('react-youtube-lite'));
   else {
     if (typeof kotlin === 'undefined') {
       throw new Error("Error loading module 'confexplorer'. Its dependency 'kotlin' was not found. Please, check whether 'kotlin' is loaded prior to 'confexplorer'.");
-    }if (typeof this['kotlin-wrappers-kotlin-react-dom-jsLegacy'] === 'undefined') {
-      throw new Error("Error loading module 'confexplorer'. Its dependency 'kotlin-wrappers-kotlin-react-dom-jsLegacy' was not found. Please, check whether 'kotlin-wrappers-kotlin-react-dom-jsLegacy' is loaded prior to 'confexplorer'.");
+    }if (typeof this['kotlinx-coroutines-core'] === 'undefined') {
+      throw new Error("Error loading module 'confexplorer'. Its dependency 'kotlinx-coroutines-core' was not found. Please, check whether 'kotlinx-coroutines-core' is loaded prior to 'confexplorer'.");
     }if (typeof this['kotlin-wrappers-kotlin-react-jsLegacy'] === 'undefined') {
       throw new Error("Error loading module 'confexplorer'. Its dependency 'kotlin-wrappers-kotlin-react-jsLegacy' was not found. Please, check whether 'kotlin-wrappers-kotlin-react-jsLegacy' is loaded prior to 'confexplorer'.");
+    }if (typeof this['kotlin-wrappers-kotlin-react-dom-jsLegacy'] === 'undefined') {
+      throw new Error("Error loading module 'confexplorer'. Its dependency 'kotlin-wrappers-kotlin-react-dom-jsLegacy' was not found. Please, check whether 'kotlin-wrappers-kotlin-react-dom-jsLegacy' is loaded prior to 'confexplorer'.");
     }if (typeof this['kotlinx-html-js'] === 'undefined') {
       throw new Error("Error loading module 'confexplorer'. Its dependency 'kotlinx-html-js' was not found. Please, check whether 'kotlinx-html-js' is loaded prior to 'confexplorer'.");
     }if (typeof this['kotlin-css'] === 'undefined') {
@@ -20,25 +22,36 @@
       throw new Error("Error loading module 'confexplorer'. Its dependency 'react-share' was not found. Please, check whether 'react-share' is loaded prior to 'confexplorer'.");
     }if (typeof this['react-youtube-lite'] === 'undefined') {
       throw new Error("Error loading module 'confexplorer'. Its dependency 'react-youtube-lite' was not found. Please, check whether 'react-youtube-lite' is loaded prior to 'confexplorer'.");
-    }root.confexplorer = factory(typeof confexplorer === 'undefined' ? {} : confexplorer, kotlin, this['kotlin-wrappers-kotlin-react-dom-jsLegacy'], this['kotlin-wrappers-kotlin-react-jsLegacy'], this['kotlinx-html-js'], this['kotlin-css'], this['kotlin-wrappers-kotlin-styled-jsLegacy'], this['react-share'], this['react-youtube-lite']);
+    }root.confexplorer = factory(typeof confexplorer === 'undefined' ? {} : confexplorer, kotlin, this['kotlinx-coroutines-core'], this['kotlin-wrappers-kotlin-react-jsLegacy'], this['kotlin-wrappers-kotlin-react-dom-jsLegacy'], this['kotlinx-html-js'], this['kotlin-css'], this['kotlin-wrappers-kotlin-styled-jsLegacy'], this['react-share'], this['react-youtube-lite']);
   }
-}(this, function (_, Kotlin, $module$kotlin_wrappers_kotlin_react_dom_jsLegacy, $module$kotlin_wrappers_kotlin_react_jsLegacy, $module$kotlinx_html_js, $module$kotlin_css, $module$kotlin_wrappers_kotlin_styled_jsLegacy, $module$react_share, $module$react_youtube_lite) {
+}(this, function (_, Kotlin, $module$kotlinx_coroutines_core, $module$kotlin_wrappers_kotlin_react_jsLegacy, $module$kotlin_wrappers_kotlin_react_dom_jsLegacy, $module$kotlinx_html_js, $module$kotlin_css, $module$kotlin_wrappers_kotlin_styled_jsLegacy, $module$react_share, $module$react_youtube_lite) {
   'use strict';
   var $$importsForInline$$ = _.$$importsForInline$$ || (_.$$importsForInline$$ = {});
-  var listOf = Kotlin.kotlin.collections.listOf_i5x0yv$;
-  var listOf_0 = Kotlin.kotlin.collections.listOf_mh5how$;
+  var MainScope = $module$kotlinx_coroutines_core.kotlinx.coroutines.MainScope;
   var Unit = Kotlin.kotlin.Unit;
   var setState = $module$kotlin_wrappers_kotlin_react_jsLegacy.react.setState_kpl3tw$;
+  var COROUTINE_SUSPENDED = Kotlin.kotlin.coroutines.intrinsics.COROUTINE_SUSPENDED;
+  var CoroutineImpl = Kotlin.kotlin.coroutines.CoroutineImpl;
+  var launch = $module$kotlinx_coroutines_core.kotlinx.coroutines.launch_s496o7$;
   var minus = Kotlin.kotlin.collections.minus_2ws7j4$;
   var plus = Kotlin.kotlin.collections.plus_qloxvw$;
   var RComponent_init = $module$kotlin_wrappers_kotlin_react_jsLegacy.react.RComponent_init_lqgejo$;
   var Kind_CLASS = Kotlin.Kind.CLASS;
   var RComponent = $module$kotlin_wrappers_kotlin_react_jsLegacy.react.RComponent;
+  var await_0 = $module$kotlinx_coroutines_core.kotlinx.coroutines.await_t11jrl$;
+  var throwCCE = Kotlin.throwCCE;
+  var IntRange = Kotlin.kotlin.ranges.IntRange;
+  var async = $module$kotlinx_coroutines_core.kotlinx.coroutines.async_pda6u4$;
+  var awaitAll = $module$kotlinx_coroutines_core.kotlinx.coroutines.awaitAll_60afti$;
+  var coroutineScope = $module$kotlinx_coroutines_core.kotlinx.coroutines.coroutineScope_awg8ri$;
+  var emptyList = Kotlin.kotlin.collections.emptyList_287e2$;
   var attributesMapOf = $module$kotlin_wrappers_kotlin_react_dom_jsLegacy.$$importsForInline$$['kotlinx-html-js'].kotlinx.html.attributesMapOf_jyasbz$;
   var H3_init = $module$kotlin_wrappers_kotlin_react_dom_jsLegacy.$$importsForInline$$['kotlinx-html-js'].kotlinx.html.H3;
   var RDOMBuilder_init = $module$kotlin_wrappers_kotlin_react_dom_jsLegacy.react.dom.RDOMBuilder;
   var H1_init = $module$kotlin_wrappers_kotlin_react_dom_jsLegacy.$$importsForInline$$['kotlinx-html-js'].kotlinx.html.H1;
   var DIV_init = $module$kotlin_wrappers_kotlin_react_dom_jsLegacy.$$importsForInline$$['kotlinx-html-js'].kotlinx.html.DIV;
+  var collectionSizeOrDefault = Kotlin.kotlin.collections.collectionSizeOrDefault_ba2ldo$;
+  var ArrayList_init = Kotlin.kotlin.collections.ArrayList_init_ww73n8$;
   var getKClass = Kotlin.getKClass;
   var render = $module$kotlin_wrappers_kotlin_react_dom_jsLegacy.react.dom.render_2955dm$;
   var set_onClickFunction = $module$kotlinx_html_js.kotlinx.html.js.set_onClickFunction_pszlq2$;
@@ -84,9 +97,68 @@
   function App() {
     RComponent_init(this);
   }
+  function App$init$lambda$lambda(closure$videos) {
+    return function ($receiver) {
+      $receiver.unwatchedVideos = closure$videos;
+      return Unit;
+    };
+  }
+  function Coroutine$App$init$lambda(this$App_0, $receiver_0, controller, continuation_0) {
+    CoroutineImpl.call(this, continuation_0);
+    this.$controller = controller;
+    this.exceptionState_0 = 1;
+    this.local$this$App = this$App_0;
+  }
+  Coroutine$App$init$lambda.$metadata$ = {
+    kind: Kotlin.Kind.CLASS,
+    simpleName: null,
+    interfaces: [CoroutineImpl]
+  };
+  Coroutine$App$init$lambda.prototype = Object.create(CoroutineImpl.prototype);
+  Coroutine$App$init$lambda.prototype.constructor = Coroutine$App$init$lambda;
+  Coroutine$App$init$lambda.prototype.doResume = function () {
+    do
+      try {
+        switch (this.state_0) {
+          case 0:
+            this.state_0 = 2;
+            this.result_0 = fetchVideos(this);
+            if (this.result_0 === COROUTINE_SUSPENDED)
+              return COROUTINE_SUSPENDED;
+            continue;
+          case 1:
+            throw this.exception_0;
+          case 2:
+            var videos = this.result_0;
+            return setState(this.local$this$App, App$init$lambda$lambda(videos)), Unit;
+          default:this.state_0 = 1;
+            throw new Error('State Machine Unreachable execution');
+        }
+      } catch (e) {
+        if (this.state_0 === 1) {
+          this.exceptionState_0 = this.state_0;
+          throw e;
+        } else {
+          this.state_0 = this.exceptionState_0;
+          this.exception_0 = e;
+        }
+      }
+     while (true);
+  };
+  function App$init$lambda(this$App_0) {
+    return function ($receiver_0, continuation_0, suspended) {
+      var instance = new Coroutine$App$init$lambda(this$App_0, $receiver_0, this, continuation_0);
+      if (suspended)
+        return instance;
+      else
+        return instance.doResume(null);
+    };
+  }
   App.prototype.init_bc6fkx$ = function ($receiver) {
-    $receiver.unwatchedVideos = listOf([new KotlinVideo(1, 'Building and breaking things', 'John Doe', 'https://youtu.be/PsaFVLr8t4E'), new KotlinVideo(2, 'The development process', 'Jane Smith', 'https://youtu.be/PsaFVLr8t4E'), new KotlinVideo(3, 'The Web 7.0', 'Matt Miller', 'https://youtu.be/PsaFVLr8t4E')]);
-    $receiver.watchedVideos = listOf_0(new KotlinVideo(4, 'Mouseless development', 'Tom Jerry', 'https://youtu.be/PsaFVLr8t4E'));
+    $receiver.unwatchedVideos = emptyList();
+    $receiver.watchedVideos = emptyList();
+    var mainScope = MainScope();
+    launch(mainScope, void 0, void 0, App$init$lambda(this));
   };
   function App$render$lambda$lambda$lambda$lambda(closure$video) {
     return function ($receiver) {
@@ -183,6 +255,171 @@
     simpleName: 'App',
     interfaces: [RComponent]
   };
+  function Coroutine$fetchVideo(id_0, continuation_0) {
+    CoroutineImpl.call(this, continuation_0);
+    this.exceptionState_0 = 1;
+    this.local$id = id_0;
+  }
+  Coroutine$fetchVideo.$metadata$ = {
+    kind: Kotlin.Kind.CLASS,
+    simpleName: null,
+    interfaces: [CoroutineImpl]
+  };
+  Coroutine$fetchVideo.prototype = Object.create(CoroutineImpl.prototype);
+  Coroutine$fetchVideo.prototype.constructor = Coroutine$fetchVideo;
+  Coroutine$fetchVideo.prototype.doResume = function () {
+    do
+      try {
+        switch (this.state_0) {
+          case 0:
+            var tmp$;
+            this.state_0 = 2;
+            this.result_0 = await_0(window.fetch('https://my-json-server.typicode.com/kotlin-hands-on/kotlinconf-json/videos/' + this.local$id), this);
+            if (this.result_0 === COROUTINE_SUSPENDED)
+              return COROUTINE_SUSPENDED;
+            continue;
+          case 1:
+            throw this.exception_0;
+          case 2:
+            this.state_0 = 3;
+            this.result_0 = await_0(this.result_0.json(), this);
+            if (this.result_0 === COROUTINE_SUSPENDED)
+              return COROUTINE_SUSPENDED;
+            continue;
+          case 3:
+            var response = this.result_0;
+            return Kotlin.isType(tmp$ = response, Object) ? tmp$ : throwCCE();
+          default:this.state_0 = 1;
+            throw new Error('State Machine Unreachable execution');
+        }
+      } catch (e) {
+        if (this.state_0 === 1) {
+          this.exceptionState_0 = this.state_0;
+          throw e;
+        } else {
+          this.state_0 = this.exceptionState_0;
+          this.exception_0 = e;
+        }
+      }
+     while (true);
+  };
+  function fetchVideo(id_0, continuation_0, suspended) {
+    var instance = new Coroutine$fetchVideo(id_0, continuation_0);
+    if (suspended)
+      return instance;
+    else
+      return instance.doResume(null);
+  }
+  function Coroutine$fetchVideos$lambda$lambda$lambda(closure$id_0, $receiver_0, controller, continuation_0) {
+    CoroutineImpl.call(this, continuation_0);
+    this.$controller = controller;
+    this.exceptionState_0 = 1;
+    this.local$closure$id = closure$id_0;
+  }
+  Coroutine$fetchVideos$lambda$lambda$lambda.$metadata$ = {
+    kind: Kotlin.Kind.CLASS,
+    simpleName: null,
+    interfaces: [CoroutineImpl]
+  };
+  Coroutine$fetchVideos$lambda$lambda$lambda.prototype = Object.create(CoroutineImpl.prototype);
+  Coroutine$fetchVideos$lambda$lambda$lambda.prototype.constructor = Coroutine$fetchVideos$lambda$lambda$lambda;
+  Coroutine$fetchVideos$lambda$lambda$lambda.prototype.doResume = function () {
+    do
+      try {
+        switch (this.state_0) {
+          case 0:
+            this.state_0 = 2;
+            this.result_0 = fetchVideo(this.local$closure$id, this);
+            if (this.result_0 === COROUTINE_SUSPENDED)
+              return COROUTINE_SUSPENDED;
+            continue;
+          case 1:
+            throw this.exception_0;
+          case 2:
+            return this.result_0;
+          default:this.state_0 = 1;
+            throw new Error('State Machine Unreachable execution');
+        }
+      } catch (e) {
+        if (this.state_0 === 1) {
+          this.exceptionState_0 = this.state_0;
+          throw e;
+        } else {
+          this.state_0 = this.exceptionState_0;
+          this.exception_0 = e;
+        }
+      }
+     while (true);
+  };
+  function fetchVideos$lambda$lambda$lambda(closure$id_0) {
+    return function ($receiver_0, continuation_0, suspended) {
+      var instance = new Coroutine$fetchVideos$lambda$lambda$lambda(closure$id_0, $receiver_0, this, continuation_0);
+      if (suspended)
+        return instance;
+      else
+        return instance.doResume(null);
+    };
+  }
+  function Coroutine$fetchVideos$lambda($receiver_0, controller, continuation_0) {
+    CoroutineImpl.call(this, continuation_0);
+    this.$controller = controller;
+    this.exceptionState_0 = 1;
+    this.local$$receiver = $receiver_0;
+  }
+  Coroutine$fetchVideos$lambda.$metadata$ = {
+    kind: Kotlin.Kind.CLASS,
+    simpleName: null,
+    interfaces: [CoroutineImpl]
+  };
+  Coroutine$fetchVideos$lambda.prototype = Object.create(CoroutineImpl.prototype);
+  Coroutine$fetchVideos$lambda.prototype.constructor = Coroutine$fetchVideos$lambda;
+  Coroutine$fetchVideos$lambda.prototype.doResume = function () {
+    do
+      try {
+        switch (this.state_0) {
+          case 0:
+            var $receiver = new IntRange(1, 25);
+            var destination = ArrayList_init(collectionSizeOrDefault($receiver, 10));
+            var tmp$;
+            tmp$ = $receiver.iterator();
+            while (tmp$.hasNext()) {
+              var item = tmp$.next();
+              destination.add_11rb$(async(this.local$$receiver, void 0, void 0, fetchVideos$lambda$lambda$lambda(item)));
+            }
+
+            this.state_0 = 2;
+            this.result_0 = awaitAll(destination, this);
+            if (this.result_0 === COROUTINE_SUSPENDED)
+              return COROUTINE_SUSPENDED;
+            continue;
+          case 1:
+            throw this.exception_0;
+          case 2:
+            return this.result_0;
+          default:this.state_0 = 1;
+            throw new Error('State Machine Unreachable execution');
+        }
+      } catch (e) {
+        if (this.state_0 === 1) {
+          this.exceptionState_0 = this.state_0;
+          throw e;
+        } else {
+          this.state_0 = this.exceptionState_0;
+          this.exception_0 = e;
+        }
+      }
+     while (true);
+  };
+  function fetchVideos$lambda($receiver_0, continuation_0, suspended) {
+    var instance = new Coroutine$fetchVideos$lambda($receiver_0, this, continuation_0);
+    if (suspended)
+      return instance;
+    else
+      return instance.doResume(null);
+  }
+  function fetchVideos(continuation) {
+    return coroutineScope(fetchVideos$lambda, continuation);
+  }
   function KotlinVideo(id, title, speaker, videoUrl) {
     this.id_s0czfv$_0 = id;
     this.title_jawebu$_0 = title;
@@ -393,6 +630,8 @@
   }
   $$importsForInline$$['kotlin-wrappers-kotlin-react-dom-jsLegacy'] = $module$kotlin_wrappers_kotlin_react_dom_jsLegacy;
   _.App = App;
+  _.fetchVideo_za3lpa$ = fetchVideo;
+  _.fetchVideos = fetchVideos;
   _.KotlinVideo = KotlinVideo;
   _.main = main;
   _.VideoList = VideoList;
