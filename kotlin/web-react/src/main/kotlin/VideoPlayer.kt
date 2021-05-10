@@ -22,6 +22,28 @@ class VideoPlayer : RComponent<VideoPlayerProps, RState>() {
             h3 {
                 +"${props.video.speaker}: ${props.video.title}"
             }
+            //две кнопки нпд видео плеером
+            styledDiv {
+                css {
+                    display = Display.flex
+                    marginBottom = 10.px
+                }
+                emailShareButton {
+                    attrs.url = props.video.videoUrl
+                    emailIcon {
+                        attrs.size = 32
+                        attrs.round = true
+                    }
+                }
+                telegramShareButton {
+                    attrs.url = props.video.videoUrl
+                    telegramIcon {
+                        attrs.size = 32
+                        attrs.round = true
+                    }
+                }
+            }
+            // видео плеер
             styledButton {
                 css {
                     display = Display.block

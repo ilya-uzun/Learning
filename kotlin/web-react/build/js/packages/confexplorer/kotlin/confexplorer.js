@@ -1,8 +1,8 @@
 (function (root, factory) {
   if (typeof define === 'function' && define.amd)
-    define(['exports', 'kotlin', 'kotlin-wrappers-kotlin-react-dom-jsLegacy', 'kotlin-wrappers-kotlin-react-jsLegacy', 'kotlinx-html-js', 'kotlin-css', 'kotlin-wrappers-kotlin-styled-jsLegacy', 'react-youtube-lite'], factory);
+    define(['exports', 'kotlin', 'kotlin-wrappers-kotlin-react-dom-jsLegacy', 'kotlin-wrappers-kotlin-react-jsLegacy', 'kotlinx-html-js', 'kotlin-css', 'kotlin-wrappers-kotlin-styled-jsLegacy', 'react-share', 'react-youtube-lite'], factory);
   else if (typeof exports === 'object')
-    factory(module.exports, require('kotlin'), require('kotlin-wrappers-kotlin-react-dom-jsLegacy'), require('kotlin-wrappers-kotlin-react-jsLegacy'), require('kotlinx-html-js'), require('kotlin-css'), require('kotlin-wrappers-kotlin-styled-jsLegacy'), require('react-youtube-lite'));
+    factory(module.exports, require('kotlin'), require('kotlin-wrappers-kotlin-react-dom-jsLegacy'), require('kotlin-wrappers-kotlin-react-jsLegacy'), require('kotlinx-html-js'), require('kotlin-css'), require('kotlin-wrappers-kotlin-styled-jsLegacy'), require('react-share'), require('react-youtube-lite'));
   else {
     if (typeof kotlin === 'undefined') {
       throw new Error("Error loading module 'confexplorer'. Its dependency 'kotlin' was not found. Please, check whether 'kotlin' is loaded prior to 'confexplorer'.");
@@ -16,11 +16,13 @@
       throw new Error("Error loading module 'confexplorer'. Its dependency 'kotlin-css' was not found. Please, check whether 'kotlin-css' is loaded prior to 'confexplorer'.");
     }if (typeof this['kotlin-wrappers-kotlin-styled-jsLegacy'] === 'undefined') {
       throw new Error("Error loading module 'confexplorer'. Its dependency 'kotlin-wrappers-kotlin-styled-jsLegacy' was not found. Please, check whether 'kotlin-wrappers-kotlin-styled-jsLegacy' is loaded prior to 'confexplorer'.");
+    }if (typeof this['react-share'] === 'undefined') {
+      throw new Error("Error loading module 'confexplorer'. Its dependency 'react-share' was not found. Please, check whether 'react-share' is loaded prior to 'confexplorer'.");
     }if (typeof this['react-youtube-lite'] === 'undefined') {
       throw new Error("Error loading module 'confexplorer'. Its dependency 'react-youtube-lite' was not found. Please, check whether 'react-youtube-lite' is loaded prior to 'confexplorer'.");
-    }root.confexplorer = factory(typeof confexplorer === 'undefined' ? {} : confexplorer, kotlin, this['kotlin-wrappers-kotlin-react-dom-jsLegacy'], this['kotlin-wrappers-kotlin-react-jsLegacy'], this['kotlinx-html-js'], this['kotlin-css'], this['kotlin-wrappers-kotlin-styled-jsLegacy'], this['react-youtube-lite']);
+    }root.confexplorer = factory(typeof confexplorer === 'undefined' ? {} : confexplorer, kotlin, this['kotlin-wrappers-kotlin-react-dom-jsLegacy'], this['kotlin-wrappers-kotlin-react-jsLegacy'], this['kotlinx-html-js'], this['kotlin-css'], this['kotlin-wrappers-kotlin-styled-jsLegacy'], this['react-share'], this['react-youtube-lite']);
   }
-}(this, function (_, Kotlin, $module$kotlin_wrappers_kotlin_react_dom_jsLegacy, $module$kotlin_wrappers_kotlin_react_jsLegacy, $module$kotlinx_html_js, $module$kotlin_css, $module$kotlin_wrappers_kotlin_styled_jsLegacy, $module$react_youtube_lite) {
+}(this, function (_, Kotlin, $module$kotlin_wrappers_kotlin_react_dom_jsLegacy, $module$kotlin_wrappers_kotlin_react_jsLegacy, $module$kotlinx_html_js, $module$kotlin_css, $module$kotlin_wrappers_kotlin_styled_jsLegacy, $module$react_share, $module$react_youtube_lite) {
   'use strict';
   var $$importsForInline$$ = _.$$importsForInline$$ || (_.$$importsForInline$$ = {});
   var listOf = Kotlin.kotlin.collections.listOf_i5x0yv$;
@@ -49,14 +51,15 @@
   var set_right = $module$kotlin_css.kotlinx.css.set_right_n8chyh$;
   var Display = $module$kotlin_css.kotlinx.css.Display;
   var set_display = $module$kotlin_css.kotlinx.css.set_display_qidz4o$;
+  var set_marginBottom = $module$kotlin_css.kotlinx.css.set_marginBottom_n8chyh$;
   var Color = $module$kotlin_css.kotlinx.css.Color;
   var set_backgroundColor = $module$kotlin_css.kotlinx.css.set_backgroundColor_ommczd$;
+  var html = $module$kotlin_wrappers_kotlin_styled_jsLegacy.$$importsForInline$$['kotlinx-html-js'].kotlinx.html;
+  var DIV_init_0 = $module$kotlin_wrappers_kotlin_styled_jsLegacy.$$importsForInline$$['kotlinx-html-js'].kotlinx.html.DIV;
+  var StyledDOMBuilder_init = $module$kotlin_wrappers_kotlin_styled_jsLegacy.styled.StyledDOMBuilder;
   var enumEncode = $module$kotlin_wrappers_kotlin_styled_jsLegacy.$$importsForInline$$['kotlinx-html-js'].kotlinx.html.attributes.enumEncode_m4whry$;
   var attributesMapOf_0 = $module$kotlin_wrappers_kotlin_styled_jsLegacy.$$importsForInline$$['kotlinx-html-js'].kotlinx.html.attributesMapOf_alerag$;
   var BUTTON_init = $module$kotlin_wrappers_kotlin_styled_jsLegacy.$$importsForInline$$['kotlinx-html-js'].kotlinx.html.BUTTON;
-  var StyledDOMBuilder_init = $module$kotlin_wrappers_kotlin_styled_jsLegacy.styled.StyledDOMBuilder;
-  var html = $module$kotlin_wrappers_kotlin_styled_jsLegacy.$$importsForInline$$['kotlinx-html-js'].kotlinx.html;
-  var DIV_init_0 = $module$kotlin_wrappers_kotlin_styled_jsLegacy.$$importsForInline$$['kotlinx-html-js'].kotlinx.html.DIV;
   App.prototype = Object.create(RComponent.prototype);
   App.prototype.constructor = App;
   VideoList.prototype = Object.create(RComponent.prototype);
@@ -297,18 +300,42 @@
       return new H3_init(attributesMapOf('class', closure$classes), it);
     };
   }
+  function styledDiv$lambda(it) {
+    return new DIV_init_0(html.emptyMap, it);
+  }
   function styledButton$lambda(closure$formEncType, closure$formMethod, closure$type) {
     return function (it) {
       return new BUTTON_init(attributesMapOf_0(['formenctype', closure$formEncType != null ? enumEncode(closure$formEncType) : null, 'formmethod', closure$formMethod != null ? enumEncode(closure$formMethod) : null, 'type', closure$type != null ? enumEncode(closure$type) : null]), it);
     };
   }
-  function styledDiv$lambda(it) {
-    return new DIV_init_0(html.emptyMap, it);
-  }
   function VideoPlayer() {
     RComponent_init(this);
   }
-  function VideoPlayer$render$lambda$lambda$lambda$lambda(this$VideoPlayer) {
+  function VideoPlayer$render$lambda$lambda$lambda$lambda($receiver) {
+    $receiver.attrs.size = 32;
+    $receiver.attrs.round = true;
+    return Unit;
+  }
+  function VideoPlayer$render$lambda$lambda$lambda(this$VideoPlayer) {
+    return function ($receiver) {
+      $receiver.attrs.url = this$VideoPlayer.props.video.videoUrl;
+      $receiver.invoke_eb8iu4$($module$react_share.EmailIcon, VideoPlayer$render$lambda$lambda$lambda$lambda);
+      return Unit;
+    };
+  }
+  function VideoPlayer$render$lambda$lambda$lambda$lambda_0($receiver) {
+    $receiver.attrs.size = 32;
+    $receiver.attrs.round = true;
+    return Unit;
+  }
+  function VideoPlayer$render$lambda$lambda$lambda_0(this$VideoPlayer) {
+    return function ($receiver) {
+      $receiver.attrs.url = this$VideoPlayer.props.video.videoUrl;
+      $receiver.invoke_eb8iu4$($module$react_share.TelegramIcon, VideoPlayer$render$lambda$lambda$lambda$lambda_0);
+      return Unit;
+    };
+  }
+  function VideoPlayer$render$lambda$lambda$lambda$lambda_1(this$VideoPlayer) {
     return function (it) {
       this$VideoPlayer.props.onWatchedButtonPressed(this$VideoPlayer.props.video);
       return Unit;
@@ -329,17 +356,24 @@
     var $receiver_0_0 = new RDOMBuilder_init(h3$lambda_0(null));
     $receiver_0_0.unaryPlus_pdl1vz$(this.props.video.speaker + ': ' + this.props.video.title);
     $receiver_0.child_52psg1$($receiver_0_0.create());
-    var $receiver_0_1 = new StyledDOMBuilder_init(styledButton$lambda(null, null, null));
+    var $receiver_0_1 = new StyledDOMBuilder_init(styledDiv$lambda);
     var $receiver_2 = $receiver_0_1.css;
-    set_display($receiver_2, Display.block);
-    set_backgroundColor($receiver_2, this.props.unwatchedVideo ? Color.Companion.lightGreen : Color.Companion.red);
-    set_onClickFunction($receiver_0_1.attrs, VideoPlayer$render$lambda$lambda$lambda$lambda(this));
-    if (this.props.unwatchedVideo) {
-      $receiver_0_1.unaryPlus_pdl1vz$('Mark as watched');
-    } else {
-      $receiver_0_1.unaryPlus_pdl1vz$('Mark as unwatched');
-    }
+    set_display($receiver_2, Display.flex);
+    set_marginBottom($receiver_2, get_px(10));
+    $receiver_0_1.invoke_eb8iu4$($module$react_share.EmailShareButton, VideoPlayer$render$lambda$lambda$lambda(this));
+    $receiver_0_1.invoke_eb8iu4$($module$react_share.TelegramShareButton, VideoPlayer$render$lambda$lambda$lambda_0(this));
     $receiver_0.child_52psg1$($receiver_0_1.create());
+    var $receiver_0_2 = new StyledDOMBuilder_init(styledButton$lambda(null, null, null));
+    var $receiver_3 = $receiver_0_2.css;
+    set_display($receiver_3, Display.block);
+    set_backgroundColor($receiver_3, this.props.unwatchedVideo ? Color.Companion.lightGreen : Color.Companion.red);
+    set_onClickFunction($receiver_0_2.attrs, VideoPlayer$render$lambda$lambda$lambda$lambda_1(this));
+    if (this.props.unwatchedVideo) {
+      $receiver_0_2.unaryPlus_pdl1vz$('Mark as watched');
+    } else {
+      $receiver_0_2.unaryPlus_pdl1vz$('Mark as unwatched');
+    }
+    $receiver_0.child_52psg1$($receiver_0_2.create());
     $receiver_0.invoke_eb8iu4$($module$react_youtube_lite.ReactYouTubeLite, VideoPlayer$render$lambda$lambda(this));
     $receiver.child_52psg1$($receiver_0.create());
   };
