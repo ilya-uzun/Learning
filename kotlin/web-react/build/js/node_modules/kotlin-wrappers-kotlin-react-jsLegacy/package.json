@@ -1,0 +1,12 @@
+{
+  "name": "kotlin-wrappers-kotlin-react-jsLegacy",
+  "version": "1.0.0-SNAPSHOT",
+  "main": "kotlin-wrappers-kotlin-react-jsLegacy.js",
+  "devDependencies": {},
+  "dependencies": {
+    "react": "^17.0.1"
+  },
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "bundledDependencies": []
+}
