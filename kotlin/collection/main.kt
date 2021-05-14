@@ -1,4 +1,4 @@
-package com.kiparo
+//package com.kiparo
 
 // class coll {
 //     val list = listOf("111", "222", "3333")
