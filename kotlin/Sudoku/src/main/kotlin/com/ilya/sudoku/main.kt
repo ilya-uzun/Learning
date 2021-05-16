@@ -1,5 +1,5 @@
-//@file:JvmName( name: "Main")
-package com.githab.ilya-uzun.sudoku
+@file:JvmName("Main")
+package com.ilya.sudoku
 
 fun main() {
     println("test")
