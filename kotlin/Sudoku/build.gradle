@@ -12,7 +12,12 @@ repositories {
 
 // точка входа
 mainClassName = 'com.ilya.sudoku.Main'
-
+//Манифест для компановк в jar пакет
+jar {
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+}
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
 }
