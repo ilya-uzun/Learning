@@ -1,15 +1,12 @@
 @file:JvmName("Main")
 package com.ilya.sudoku
 
-fun main() {
-    val firstNumber = 10.0
-    val secondNumber = 256
-    val therdNumder = firstNumber + secondNumber
-    println(therdNumder)
-    //вывод массива
-    val firstArray = arrayOf(1, 2, 34, 5)
-    println(firstArray.contentToString())
+import java.io.File
+import java.io.InputStream
 
-    val modiArray = firstArray.map { number -> number * 10 }.toIntArray()
-    println(modiArray.contentToString())
+fun main() {
+   // val input = File( pathname = "input").readLines()
+    val inputStream: InputStream = File("input").inputStream()
+    val inputString = inputStream.bufferedReader().use { it.readText() }
+    println(inputString)
 }
