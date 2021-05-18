@@ -5,8 +5,20 @@ import java.io.File
 import java.io.InputStream
 
 fun main() {
-   // val input = File( pathname = "input").readLines()
-    val inputStream: InputStream = File("input").inputStream()
-    val inputString = inputStream.bufferedReader().use { it.readText() }
-    println(inputString)
+    val input = File("input")
+        .readLines()
+        .withIndex()
+        .flatMap { indexedValue ->
+            val xCoordinate = indexedValue.index
+            indexedValue.value.toCharArray().withIndex()
+                .filter { indexedChar -> indexedChar.value != '.'}
+                .map{ indexedChar ->
+                val yCoordinate = indexedChar.index
+                (xCoordinate to yCoordinate) to indexedChar.value
+            }
+        }
+        .toMap()
+//    val input: InputStream = File("input").inputStream()
+//    val inputString = input.bufferedReader().use { it.readText() }
+    println(input)
 }
