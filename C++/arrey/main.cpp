@@ -38,7 +38,7 @@ void push_100(int *&arr, int &size, int value)
             newArr[i] = arr[i];
         }
     
-        // добавляем 100 после выбраной позиции value
+        // добовляем 100 после выбраной позиции value
         for (int i = size; i >= value-1; i--)
             {
                 newArr[i+1] = arr[i];
