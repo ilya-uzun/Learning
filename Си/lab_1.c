@@ -1,13 +1,19 @@
-main(){
-    int n =0, m=0;
-   int s = sum(n,m);
- printf(s);
+#include <stdio.h> 
+
+sum (int *n, int *m, int *s){
+   // первый интервал
+   for (int i = 0; i < *n; i++) (*s)++;
+   // второй интервал
+   if (*n = *s) for (int j=0; j < *m; j++) (*s)++;
 }
 
-int sum (int n,int m){
-   int summa 0;
-   for (int i=0,n = i, i++)summa++;
-   if (n = summa){
-   for (int j=0,m = j, j++)summa++;
-   return summa;
+int main(){
+    int n = 0, m = 0, s = 0 ;
+    printf("Enter n and m \n");
+    scanf("%d", &n);
+    scanf("%d", &m);
+    sum(&n, &m, &s);
+    printf("summa %d \n", s);
+    return 0;
 }
+
