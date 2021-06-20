@@ -1,4 +1,18 @@
 #include <stdio.h> 
+#include <stdlib.h>
+
+int enterIntControl(void);
+sum (int *n, int *m, int *s);
+
+int main(){
+    int n = 0, m = 0, s = 0 ;
+    printf("Enter n and m \n");
+    n = enterIntControl(); 
+    m = enterIntControl();                        
+    sum(&n, &m, &s);
+    printf("summa %d \n", s);
+    return 0;
+}
 
 sum (int *n, int *m, int *s){
    // первый интервал
@@ -7,13 +21,14 @@ sum (int *n, int *m, int *s){
    if (*n = *s) for (int j=0; j < *m; j++) (*s)++;
 }
 
-int main(){
-    int n = 0, m = 0, s = 0 ;
-    printf("Enter n and m \n");
-    scanf("%d", &n);
-    scanf("%d", &m);
-    sum(&n, &m, &s);
-    printf("summa %d \n", s);
-    return 0;
+int enterIntControl(void)
+{
+    int input;
+    while (scanf("%d",&input)==0)
+    {
+          printf("Enter the number \n");
+          while (getchar()!='\n')
+          continue;
+    }
+return input;
 }
-
