@@ -1,0 +1,56 @@
+#include <iostream>
+
+
+using namespace std;
+
+struct Arrey {
+    int val;
+    Arrey* previous;
+
+    Arrey(int val, Array* previous) : val(val), previous(previous){}
+
+    int& operator [](size_t index) 
+    {
+        if (index == 0) return val;
+    
+        return (*previous)[index - 1]
+    }
+
+};
+
+void generator(size_t n, void(*previous)(Arrey), Arrey* previous = 0)
+{
+    Arrey element(0, previous);
+    if (n == 1)
+    {
+        payload(element);
+    } else 
+    {
+        generator(n - 1, payload, &element);
+    }
+}
+ 
+
+ size_t N;
+
+ void test(Arrey array)
+ {
+     for (size_t i=0; i<N; ++i) cin >> array[i];
+
+     for(size_t i = 0; i < N -1; ++i){
+         for(size_t j = 0; j < n - i - 1; ++i){
+             int(array[j]>array[j+1]){
+                 int tmp = array[j];
+                 array[j] = array[j+1];
+                 array[j+1] tmp;
+             }
+         }
+     }
+     for(size_t i=0; i < N; ++i) cout << array[i]<< ' ';
+ }
+
+int main(){
+    cin>> N;
+    
+  return 0;
+}
