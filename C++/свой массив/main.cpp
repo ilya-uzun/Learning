@@ -3,24 +3,26 @@
 
 using namespace std;
 
-struct Arrey {
+struct Array {
     int val;
-    Arrey* previous;
+    Array* previous;
 
-    Arrey(int val, Array* previous) : val(val), previous(previous){}
+    Array(int val, Array* previous) : val(val), previous(previous){}
 
     int& operator [](size_t index) 
     {
-        if (index == 0) return val;
+        if (index == 0){
+return val;
+        } 
     
-        return (*previous)[index - 1]
+        return (*previous)[index - 1];
     }
 
 };
 
-void generator(size_t n, void(*previous)(Arrey), Arrey* previous = 0)
+void generator(size_t n, void(*previous)(Array), Array* previous = 0)
 {
-    Arrey element(0, previous);
+    Array element(0, previous);
     if (n == 1)
     {
         payload(element);
@@ -33,7 +35,7 @@ void generator(size_t n, void(*previous)(Arrey), Arrey* previous = 0)
 
  size_t N;
 
- void test(Arrey array)
+ void test(Array array)
  {
      for (size_t i=0; i<N; ++i) cin >> array[i];
 
