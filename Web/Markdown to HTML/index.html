@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <mate name="viewport" content="width=device-width, initial-scale=1.0">
+    <mate http-equiv="X-UA-Compatible" content"ie=egle">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <title>Markdown converter </title>
+    <style>
+    textarea{
+        margin-button: 5px;
+        width: 100%;
+        height: 15vh;
+    }
+    </style>
+  </head>
+  <body>
+        <dav class="conteiner">
+            <h3>Markdown to HTML converter </h3>
+            <textarea id="inputTextarea"># Beispiel h1 </textarea>
+            <button id="buttonPreview" class="button-primary">Preview</button>
+            <button id="buttonClear">Clear</button>
+            <button id="buttonCopyMarkdown">Copy Markdown to Clipbard</button>
+            <textarea id="outputTextarea"></textarea>
+            <button id="buttonCopyHTML">Copy HTML to Cliboard</button>
+            <div id="preview"></div>
+        </dav>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
+        <script>
+            var output ='';
+            inputTextarea = document.querySelector('#inputTextarea');
+            outputTextarea = document.querySelector('#outputTextarea');
+            buttonClear = document.querySelector('#buttonClear');
+            buttonCopyHTML= document.querySelector('#buttonCopyHTML');
+            buttonCopyMarkdown = document.querySelector('#buttonCopyMarkdown');
+            buttonPreview = document.querySelector('#buttonPreview');
+
+            buttonPreview.addEventListener('click', function(){
+                const converter = new showdown.Converter(),
+                    preview = document.getElementById('preview');
+                showdown.setFlavor('github');
+
+                if(preview && inputTextarea.value) {
+                    output = converter.makeHtml(inputTextarea.value);
+                    outputTextarea.value = output;
+                    preview.innerHTML = output;
+                } else {
+                    preview.innerHTML = "Markdown im Textfeld eingeben und Preview klicken";
+                }
+            });
+
+            buttonClear.addEventListener('click', function() {
+                inputTextarea.value ="";
+                inputTextarea.select();
+                outputTextarea.value = "";
+                preview.innerHTML = "Markdown im Textfeld eingeben und Preview klicken";
+            });
+
+            buttonCopyHTML.addEventListener('click', function() {
+                outputTextarea.select();
+                document.execCommand('Copy');
+            });
+
+            buttonCopyMarkdown.addEventListener('click', function() {
+                inputTextarea.select();
+                document.execCommand('Copy');
+            });
+
+            buttonPreview.click();
+
+
+        </script>
+  </body>
+</html>
