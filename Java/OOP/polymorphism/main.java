@@ -13,7 +13,7 @@ class Employee extends Person {
         System.out.println("Running Fast...");
     }
 
-    public static void main(Srting[] arg){
+    public static void main(String[] arg){
         Person p = new Employee();
         p.walk();
     }
