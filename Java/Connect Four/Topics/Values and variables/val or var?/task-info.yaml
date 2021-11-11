@@ -1,0 +1,11 @@
+type: code
+files:
+- name: src/Main.kt
+  visible: true
+  text: |-
+    val number = 2
+    number = 5
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/7307#comment
+status: Unchecked
+record: -1

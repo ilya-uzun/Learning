@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Connect_Four.iml" filepath="$PROJECT_DIR$/.idea/modules/Connect_Four.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Topics/Values and variables/Swap/Connect_Four.Topics-Values_and_variables-Swap.iml" filepath="$PROJECT_DIR$/.idea/modules/Topics/Values and variables/Swap/Connect_Four.Topics-Values_and_variables-Swap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Topics/Values and variables/Swap/Connect_Four.Topics-Values_and_variables-Swap.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Topics/Values and variables/Swap/Connect_Four.Topics-Values_and_variables-Swap.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Topics/Values and variables/Swap/Connect_Four.Topics-Values_and_variables-Swap.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Topics/Values and variables/Swap/Connect_Four.Topics-Values_and_variables-Swap.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Topics/Values and variables/Theory/Connect_Four.Topics-Values_and_variables-Theory.iml" filepath="$PROJECT_DIR$/.idea/modules/Topics/Values and variables/Theory/Connect_Four.Topics-Values_and_variables-Theory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Topics/Values and variables/Theory/Connect_Four.Topics-Values_and_variables-Theory.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Topics/Values and variables/Theory/Connect_Four.Topics-Values_and_variables-Theory.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Topics/Values and variables/Theory/Connect_Four.Topics-Values_and_variables-Theory.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Topics/Values and variables/Theory/Connect_Four.Topics-Values_and_variables-Theory.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Topics/Values and variables/Very Big Number/Connect_Four.Topics-Values_and_variables-Very_Big_Number.iml" filepath="$PROJECT_DIR$/.idea/modules/Topics/Values and variables/Very Big Number/Connect_Four.Topics-Values_and_variables-Very_Big_Number.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Topics/Values and variables/Very Big Number/Connect_Four.Topics-Values_and_variables-Very_Big_Number.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Topics/Values and variables/Very Big Number/Connect_Four.Topics-Values_and_variables-Very_Big_Number.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Topics/Values and variables/Very Big Number/Connect_Four.Topics-Values_and_variables-Very_Big_Number.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Topics/Values and variables/Very Big Number/Connect_Four.Topics-Values_and_variables-Very_Big_Number.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Topics/Values and variables/val or var?/Connect_Four.Topics-Values_and_variables-val_or_var_.iml" filepath="$PROJECT_DIR$/.idea/modules/Topics/Values and variables/val or var?/Connect_Four.Topics-Values_and_variables-val_or_var_.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Topics/Values and variables/val or var?/Connect_Four.Topics-Values_and_variables-val_or_var_.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Topics/Values and variables/val or var?/Connect_Four.Topics-Values_and_variables-val_or_var_.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Topics/Values and variables/val or var?/Connect_Four.Topics-Values_and_variables-val_or_var_.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Topics/Values and variables/val or var?/Connect_Four.Topics-Values_and_variables-val_or_var_.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/Connect_Four.util.iml" filepath="$PROJECT_DIR$/.idea/modules/util/Connect_Four.util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/Connect_Four.util.main.iml" filepath="$PROJECT_DIR$/.idea/modules/util/Connect_Four.util.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/Connect_Four.util.test.iml" filepath="$PROJECT_DIR$/.idea/modules/util/Connect_Four.util.test.iml" />
+    </modules>
+  </component>
+</project>
